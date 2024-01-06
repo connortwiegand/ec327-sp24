@@ -1,0 +1,30 @@
+---
+title: Template Slide
+author: Connor T. Wiegand
+format: 
+   revealjs:
+      theme: serif
+      preview-links: true
+      chalkboard: false
+      slide-number: true
+      menu:
+         side: right
+      scrollable: true
+      smaller: true
+      incremental: true
+      slide-level: 3
+   # html:
+      # embed-resources: true
+   # pdf
+# editor:
+#    render-on-save: true
+---
+
+::: {.hidden}
+<!-- Latex Macros -->
+<!-- $$
+ \def\RR{{\bf R}}
+ \def\bold#1{{\bf #1}}
+$$ -->
+:::
+

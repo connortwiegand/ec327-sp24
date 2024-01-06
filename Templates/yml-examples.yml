@@ -1,0 +1,26 @@
+# Useful YAML options for Quarto
+format:
+   html: 
+      embed-resources: true
+# format: 
+   revealjs:
+      theme: serif
+      preview-links: true
+      chalkboard: false
+      slide-number: true
+      menu:
+         side: right
+      scrollable: true
+      smaller: true
+      incremental: true
+      slide-level: 3
+
+editor:
+   render-on-save: true
+
+crossref:
+   eq-prefix: "" 
+   ref-hyperlink: false
+
+engine: knitr
+
