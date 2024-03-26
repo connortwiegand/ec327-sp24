@@ -1,0 +1,302 @@
+---
+title: Intro to Game Theory
+author: Connor T. Wiegand
+format: 
+   revealjs:
+      theme: 
+         -  ~/Themes/qSlides.scss ## overall theme
+         - ../sp24-slides.scss ## term theme
+         # - ./deck-n.scss ## doc-specific mods
+      preview-links: true
+      chalkboard: false
+      slide-number: true
+      menu:
+         side: right
+      smaller: true
+      incremental: true
+      slide-level: 3
+   # html:
+      # embed-resources: true
+   # pdf
+# editor:
+#    render-on-save: true
+---
+
+### Game
+
+- Partner up
+
+- Determine who is player 1 & who is player 2
+   - age
+   - voice pitch
+   - last name
+
+---
+
+- Player 1 is the _dictator_, while player 2 is the _ultimator_
+
+- The dictator has $100. They can choose an amount $a\in[0,100]$ which they can give to the ultimator, keeping the rest for themself.
+   - ex: if I am the dictator, \$46 $\sim$ I keep \$53, while my partner receives \$46. 
+
+- This constitutues the moves player 1 has
+
+- The ultimator has only 2 moves: _yes_ and _no_. 
+   - [yes]: both players walk away with the dollar amounts specified by player 1
+   - [no]: both players leave with **$0**
+
+- Go
+
+### 
+
+What do you notice?
+
+- ...now switch
+
+- <!-- New outcomes -->
+
+## Course info
+
+### About me
+
+### Syllabus
+
+### Course Administration
+
+      ## New Game
+
+### 2/3 Average Game
+
+- Your moveset: pick any number $x\in[0,100]$
+
+- Your goal: be as close to the target number as possible
+
+- The target number...
+   1. Label each player's guess as $x_i$
+
+   2. Compute the average guess, $\overline{x}$ (For $n$ players: $\sum_{i=1}^{n} x_i$)
+
+   3. Let $T=\frac{2}{3}\overline{x}$
+
+- That is, the target number is 2/3 of the average of the guesses from all players
+
+- Now, submit your guesses by ??? emailing me at [cwiegand@uoregon.edu](mailto:cwiegand@uoregon.edu)
+
+### Go!
+
+```{r 2-3_avg}
+x_vec <- c()
+# replace (?<=\d)\s+?(?=\d) with `$1:space:`
+x_bar <- mean(x_vec)
+
+tar <- (2/3) * x_bar
+tar
+```
+
+
+### What is a game?
+
+What are some key components to a game?
+- 
+- 
+- 
+- 
+
+--- 
+
+There are three things that are essential to specifying a game:
+
+1. Players
+1. Strategies
+1. Payoffs
+
+### Players
+
+- Agents, users, etc. 
+
+Consider the following example:
+
+   <!--
+      2 player ex. where 1 player is practially useless
+   -->
+
+- This is something we might think of as a "game", but is really just a decision with some [exogeneity]{.hi} [footnote: exogenous == 'falls from the sky'] from the environment
+
+- Having two or more _real_ players is sometimes known as "strategic interaction"
+
+### Strategies
+
+- AKA
+   - Moves
+   - Actions
+
+- What choices the player has 
+
+- For now, the above terms can be treated as identical. 
+
+- Later, when we introduce imperfect information, we will consider 
+
+:::{three-col}
+#### Moves
+
+- informal, coloqial, general
+
+#### Strategies
+
+- Technical, precise
+
+- *Def*: an information-contingent plan of action
+
+#### Actions
+
+- The components of a strategy, typically for each info. set
+
+:::
+
+### Payoffs
+
+- Crucial to economics
+
+- The utility (or payoff*) obtained from a specific outcome in a game
+
+   - (outcome = result of each player playing their **strategy**)
+
+* $u(\cdot)$ vs. $\pi(\cdot)$
+
+### Economics as a modeling discipline
+
+- common throughout all subfields of economics
+   - metrics, micro, macro, trade, etc.
+
+- mapmaker example
+
+- Our models often have extreme generalizations and/or simplifications -- often times these are labelled _assumptions_
+- these models help us understand some phenomena in a vacuum
+- then you worry about adding frictions
+
+### Assumptions
+
+_Let game $G$ be composed of players [you]{.pl} and [I]{.pl}_
+
+RotG:
+
+1. I know the rules of the game
+
+:::{slide-fragment = 3}
+   - I know that you know the rules of the game
+:::
+
+:::{slide-fragment = 3}
+   - I know that you know that I know the rules of the game
+:::
+
+:::{slide-fragment = 3}
+   - I know that you know that I know that you know the rules of the game
+:::
+
+:::{slide-fragment = 4}
+   - ...
+:::
+
+
+2. You know the rules of the game
+
+:::{slide-fragment = 4}
+ - You know that I know the rules of the game
+:::
+
+:::{slide-fragment = 4}
+   - You know that I know that you know the rules of the game
+:::
+
+:::{slide-fragment = 4}
+   - You know that I know that you know that I know the rules of the game
+:::
+
+:::{slide-fragment = 4}
+   - ...
+:::
+
+   <!-- need some examples!  -->
+
+### Common Knowledge of RotG
+
+Let $\Gamma$ be a game with players $P_1,\dots,P_k$
+
+Assumption 1: Common Knowledge of the Rules of the Game
+
+- Every Statement of the form "Player $i$ knows that player $j$ knows that ... player $k$ knows the rules of the game" is true.
+
+- [Blue Eyed Islander Problem](VIDEO)
+
+### Assumptions, cont.
+
+1. Common Knowledge of the Rules of the Game
+
+2. Common Knowledge of **Rationality**
+
+   a. I am rational
+      - I know that you are rational
+      - I know that you know that I am rational
+      - ...
+   b. you are rational
+      - You know that I am rational
+      - You know that I know that you are rational
+      - ...
+
+... but what is rationality?
+
+### Rationality
+
+What is it?
+
+- ~~Players maximize their expected payoffs~~
+
+Technically speaking, rational agents (agents with rational preferences) are those who exhibit preferences which satisfy both of:
+
+1. Completeness
+
+2. Transitivity
+
+### Preferences
+
+Wait, what?
+
+- *def*: An agent
+
+1. Completeness:
+
+   - *Def*: Given $x,y\in X$, at least one of the following is true:
+      - $x\succsim y$
+      - $y \succsim x$
+
+   - [Ex.]
+
+2. Transitivity:
+
+   - *Def*: Given $x, y, z\in X$, suppose that $x\succsim y$ and $y\succsim z$. Then $x\succsim z$
+
+   - [Ex.]
+
+### Assumptions
+...so...?
+
+We assume agents' preferences follow the classical assumptions of microeconomics...
+(Players maximize their expected payoffs)
+
+1. Common Knowledge of the Rules of the Game
+
+2. Common Knowledge of Rationality
+
+and that's it!
+
+## Math
+
+### Symbol Reference
+
+### Techniques
+
+- Probability
+
+- Solve 2-variable system of eqs. 
+
+### Exercises[???]

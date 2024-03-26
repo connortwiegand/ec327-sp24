@@ -1,0 +1,20 @@
+---
+title: Intro to Game Theory
+author: Connor T. Wiegand
+format: 
+   revealjs:
+      theme: 
+         -  ~/Themes/qSlides.scss ## overall theme
+         - ../sp24-slides.scss ## term theme
+         # - ./draft-theme.scss ## draft theme will change over time
+      preview-links: true
+      slide-number: true
+      menu:
+         side: right
+      smaller: true
+      incremental: true
+      slide-level: 3
+# editor:
+#    render-on-save: true
+---
+
