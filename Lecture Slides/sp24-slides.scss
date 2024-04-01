@@ -72,6 +72,26 @@ $selection-bg: #2c2646 !default;
    display: inline-block;
 }
 
+.bottom {
+   position: absolute;
+   bottom: 10%;
+}
+
+.ul {
+   text-decoration: underline;
+}
+
+.def,
+.ulb {
+   text-decoration: underline;
+   font-weight: bold;
+}
+
+.uli {
+   text-decoration: underline;
+   font-style: italic;
+}
+
 
 // *Reveal* 
 .reveal {

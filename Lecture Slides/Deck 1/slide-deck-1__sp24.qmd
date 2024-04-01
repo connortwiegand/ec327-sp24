@@ -8,7 +8,6 @@ format:
          - ../../qSlides.scss ## Very basics (fonts, title-slide,) 
   
          # - ./deck-n.scss ## doc-specific mods to theme
-         # - ../temp.scss
       preview-links: true
       chalkboard: false
       slide-number: true
@@ -18,11 +17,8 @@ format:
       incremental: true
       slide-level: 3
       embed-resources: true
-   html:
-      embed-resources: true
-   # pdf
-editor:
-   render-on-save: true
+# editor:
+#    render-on-save: true
 ---
 
 ### Game Time
