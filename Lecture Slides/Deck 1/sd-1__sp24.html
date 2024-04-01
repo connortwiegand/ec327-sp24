@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="slide-deck-1_327_sp24__files/libs/clipboard/clipboard.min.js"></script>
-<script src="slide-deck-1_327_sp24__files/libs/quarto-html/tabby.min.js"></script>
-<script src="slide-deck-1_327_sp24__files/libs/quarto-html/popper.min.js"></script>
-<script src="slide-deck-1_327_sp24__files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="slide-deck-1_327_sp24__files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="slide-deck-1_327_sp24__files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="slide-deck-1_327_sp24__files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="slide-deck-1_327_sp24__files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.450">
+<script src="sd-1__sp24_files/libs/clipboard/clipboard.min.js"></script>
+<script src="sd-1__sp24_files/libs/quarto-html/tabby.min.js"></script>
+<script src="sd-1__sp24_files/libs/quarto-html/popper.min.js"></script>
+<script src="sd-1__sp24_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="sd-1__sp24_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="sd-1__sp24_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="sd-1__sp24_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="sd-1__sp24_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.4.549">
 
-  <meta name="author" content="Connor T. Wiegand">
-  <title>Intro to Game Theory</title>
+  <meta name="author" content="with Connor T. Wiegand">
+  <title>Introduction to Game Theory</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="slide-deck-1_327_sp24__files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="slide-deck-1_327_sp24__files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="sd-1__sp24_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="sd-1__sp24_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -29,12 +29,77 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="slide-deck-1_327_sp24__files/libs/revealjs/dist/theme/quarto.css">
-  <link href="slide-deck-1_327_sp24__files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="slide-deck-1_327_sp24__files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="slide-deck-1_327_sp24__files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="slide-deck-1_327_sp24__files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="sd-1__sp24_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="sd-1__sp24_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="sd-1__sp24_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="sd-1__sp24_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="sd-1__sp24_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -156,7 +221,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -243,7 +309,6 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
-      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -326,95 +391,384 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Intro to Game Theory</h1>
+  <h1 class="title">Introduction to Game Theory</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Connor T. Wiegand 
+<span class="with">with</span> Connor T. Wiegand 
 </div>
 </div>
 </div>
 
 </section>
-<section id="game" class="slide level3">
-<h3>Game</h3>
+<section id="game-time" class="slide level3">
+<h3>Game Time</h3>
 <ul>
 <li class="fragment"><p>Partner up</p></li>
 <li class="fragment"><p>Determine who is player 1 &amp; who is player 2</p>
 <ul>
 <li class="fragment">age</li>
-<li class="fragment">voice pitch</li>
-<li class="fragment">last name</li>
+<li class="fragment">alphabetical by middle name</li>
+<li class="fragment">reverse alphabetical last name</li>
 </ul></li>
-</ul>
-</section>
-<section class="slide level3">
-
-<ul>
 <li class="fragment"><p>Player 1 is the <em>dictator</em>, while player 2 is the <em>ultimator</em></p></li>
-<li class="fragment"><p>The dictator has $100. They can choose an amount <span class="math inline">\(a\in[0,100]\)</span> which they can give to the ultimator, keeping the rest for themself.</p>
+<li class="fragment"><p>The dictator has $100. They can choose an amount <span class="math inline">\(a\in[0,100]\)</span> which they can give to the ultimator, keeping the rest for themselves.</p>
 <ul>
-<li class="fragment">ex: if I am the dictator, $46 <span class="math inline">\(\sim\)</span> I keep $53, while my partner receives $46.</li>
+<li class="fragment">ex: if I am the dictator, “$46” <span class="math inline">\(\rightarrow\)</span> “I keep $54, while my partner receives $46”</li>
 </ul></li>
-<li class="fragment"><p>This constitutues the moves player 1 has</p></li>
+<li class="fragment"><p>This constitutes player 1’s moves</p></li>
 <li class="fragment"><p>The ultimator has only 2 moves: <em>yes</em> and <em>no</em>.</p>
 <ul>
-<li class="fragment"></li>
-<li class="fragment"></li>
+<li class="fragment"><span class="hii">yes</span>: both players walk away with the dollar amounts specified by player 1</li>
+<li class="fragment"><span class="hii">no</span>: both players leave with <em>$0</em></li>
 </ul></li>
-<li class="fragment"><p>Go</p></li>
+<li class="fragment"><p><span class="hi"><em>Go</em></span></p></li>
 </ul>
 </section>
-<section id="section" class="slide level3">
-<h3></h3>
-<p>What do you notice?</p>
-<ul>
-<li class="fragment"><p>…now switch</p></li>
-<li class="fragment"><!-- New outcomes --></li>
-</ul>
+<section id="what-do-you-notice" class="slide level3">
+<h3>What do you notice?</h3>
+<p><span class="fragment absolute" data-fragment-index="2" style="bottom: 10px; ">…now switch</span></p>
+</section>
+<section id="now-what-do-we-notice" class="slide level3">
+<h3>Now what do we notice?</h3>
+<!-- Empty on purp. -->
 </section>
 <section>
 <section id="course-info" class="title-slide slide level2 center">
 <h2>Course info</h2>
 
 </section>
-<section id="about-me" class="slide level3">
-<h3>About me</h3>
-</section>
 <section id="syllabus" class="slide level3">
 <h3>Syllabus</h3>
+<!-- Insert Link to silly (or something)-->
+</section></section>
+<section>
+<section id="new-game" class="title-slide slide level2 center">
+<h2>New Game</h2>
+
 </section>
-<section id="course-administration" class="slide level3">
-<h3>Course Administration</h3>
-<pre><code>  ## New Game</code></pre>
-</section>
-<section id="average" class="slide level3">
-<h3>2/3 Average</h3>
+<section id="average-game" class="slide level3">
+<h3>2/3 Average Game</h3>
 <ul>
-<li class="fragment">Let <span class="math inline">\(x\)</span> be a target</li>
+<li class="fragment"><p>Your moveset: pick any number <span class="math inline">\(x\in[0,100]\)</span></p></li>
+<li class="fragment"><p>Your goal: be as close to the target number as possible</p></li>
+<li class="fragment"><p>The target number…</p>
+<ol type="1">
+<li class="fragment"><p>Label each player’s guess as <span class="math inline">\(x_i\)</span></p></li>
+<li class="fragment"><p>Compute the average guess, <span class="math inline">\(\overline{x}\)</span> (For <span class="math inline">\(n\)</span> players: <span class="math inline">\(\sum_{i=1}^{n} x_i\)</span>)</p></li>
+<li class="fragment"><p>Let <span class="math inline">\(T=\frac{2}{3}\overline{x}\)</span></p></li>
+</ol></li>
+<li class="fragment"><p>That is, the target number is 2/3 of the average of the guesses from all players</p></li>
+<li class="fragment"><p>Now, submit your guesses by emailing me at <a href="mailto:cwiegand@uoregon.edu">cwiegand@uoregon.edu</a></p></li>
 </ul>
+</section>
+<section id="go" class="slide level3">
+<h3>Go!</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>x_vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">89</span>, <span class="dv">30</span>, <span class="dv">23</span>, <span class="fl">13.25</span>, <span class="dv">17</span>, <span class="dv">23</span>, <span class="dv">38</span>, <span class="dv">24</span>, <span class="dv">30</span>, <span class="dv">29</span>, <span class="dv">57</span>, <span class="dv">31</span>, <span class="dv">100</span>, <span class="dv">99</span>, <span class="fl">51.51</span>, <span class="dv">84</span>, <span class="dv">1</span>, <span class="dv">34</span>, <span class="dv">35</span>, <span class="dv">38</span>, <span class="dv">10</span>, <span class="dv">25</span>, <span class="dv">20</span>, <span class="dv">25</span>, <span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">16</span>, <span class="dv">27</span>, <span class="dv">8</span>, <span class="dv">28</span>, <span class="dv">33</span>, <span class="dv">14</span>, <span class="dv">37</span>, <span class="dv">63</span>, <span class="dv">22</span>, <span class="dv">25</span>, <span class="dv">3</span>, <span class="dv">38</span>, <span class="dv">27</span>, <span class="fl">26.67</span>, <span class="dv">33</span>, <span class="dv">89</span>, <span class="dv">50</span>, <span class="dv">14</span>, <span class="dv">11</span>, <span class="dv">66</span>)</span>
+<span id="cb1-2"><a href=""></a><span class="co"># replace (?&lt;=\d)\s+?(?=\d) with `$1:space:`</span></span>
+<span id="cb1-3"><a href=""></a>x_bar <span class="ot">&lt;-</span> <span class="fu">mean</span>(x_vec)</span>
+<span id="cb1-4"><a href=""></a></span>
+<span id="cb1-5"><a href=""></a>tar <span class="ot">&lt;-</span> (<span class="dv">2</span><span class="sc">/</span><span class="dv">3</span>) <span class="sc">*</span> x_bar</span>
+<span id="cb1-6"><a href=""></a>tar</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 24.16565</code></pre>
+</div>
+</div>
+</section>
+<section id="what-is-a-game" class="slide level3">
+<h3>What is a game?</h3>
+<p>What are some key components to a game?</p>
+<div class="absolute" style="bottom: 0px; ">
+<ul>
+<li class="fragment">There are three things that are essential to specifying a game:</li>
+</ul>
+<ol type="1">
+<li class="fragment">Players</li>
+<li class="fragment">Strategies</li>
+<li class="fragment">Payoffs</li>
+</ol>
+</div>
+</section>
+<section id="players" class="slide level3">
+<h3>Players</h3>
+<ul>
+<li class="fragment"><p>Agents, users, etc.</p></li>
+<li class="fragment"><p>To be a proper game, there should be <u> at least two </u> players</p></li>
+<li class="fragment"><p>Consider the following example:</p>
+<p><!--
+    2 player ex. where 1 player is practially useless
+ --></p></li>
+<li class="fragment"><p>This is something we might think of as a “game”, but is really just a decision with some <span class="hi">exogeneity</span><sup>1</sup> from the environment</p></li>
+<li class="fragment"><p>Having two or more <em>real</em> players is sometimes known as “strategic interaction”</p></li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>exogenous = ‘falls from the sky’</p></li></ol></aside></section>
+<section id="strategies" class="slide level3">
+<h3>Strategies</h3>
+<ul>
+<li class="fragment"><p>AKA</p>
+<ul>
+<li class="fragment">Moves</li>
+<li class="fragment">Actions</li>
+</ul></li>
+<li class="fragment"><p>What choices the player has</p></li>
+<li class="fragment"><p>For now, the above terms can be treated as identical.</p></li>
+<li class="fragment"><p>Later, when we introduce imperfect information, we will consider</p></li>
+</ul>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:15%;">
+<h4 id="moves">Moves</h4>
+<ul>
+<li class="fragment">informal</li>
+<li class="fragment">colloquial</li>
+<li class="fragment">general</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<h4 id="strategies-1">Strategies</h4>
+<ul>
+<li class="fragment"><p>Technical</p></li>
+<li class="fragment"><p>Precise</p></li>
+<li class="fragment"><p><u> <strong>Def:</strong> </u></p>
+<p><em>an information-contingent plan of action</em></p></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<h4 id="actions">Actions</h4>
+<ul>
+<li class="fragment">The components of a strategy
+<ul>
+<li class="fragment">…typically for each info. set</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="payoffs" class="slide level3">
+<h3>Payoffs</h3>
+<ul>
+<li class="fragment"><p>Crucial to economics</p></li>
+<li class="fragment"><p>The utility (or payoff*) obtained from a specific outcome in a game</p>
+<ul>
+<li class="fragment">(outcome = result of each player playing a pre-determined <strong>strategy</strong>)</li>
+</ul></li>
+</ul>
+<!-- * $u(\cdot)$ vs. $\pi(\cdot)$ (maybe) -->
+</section>
+<section id="economics-as-a-modeling-discipline" class="slide level3">
+<h3>Economics as a modeling discipline</h3>
+<ul>
+<li class="fragment">Common throughout all subfields of economics
+<ul>
+<li class="fragment">metrics, micro, macro, trade, etc.</li>
+</ul></li>
+<li class="fragment">Our models often have extreme generalizations and/or simplifications – often times these are labelled <em>assumptions</em></li>
+<li class="fragment">these models help us understand some phenomena in a vacuum</li>
+<li class="fragment">then you worry about adding frictions</li>
+</ul>
+</section>
+<section id="mapmaker-example" class="slide level3">
+<h3>Mapmaker Example</h3>
+<ul>
+<li class="fragment"><p><strong>On Exactitude in Science</strong></p>
+<ul>
+<li class="fragment">Jorge Luis Borges, Collected Fictions, translated by Andrew Hurley.</li>
+</ul>
+<blockquote>
+<p>…In that Empire, the Art of Cartography attained such Perfection that the map of a single Province occupied the entirety of a City, and the map of the Empire, the entirety of a Province. In time, those Unconscionable Maps no longer satisfied, and the Cartographers Guilds struck a Map of the Empire whose size was that of the Empire, and which coincided point for point with it. The following Generations, who were not so fond of the Study of Cartography as their Forebears had been, saw that that vast Map was Useless, and not without some Pitilessness was it, that they delivered it up to the Inclemencies of Sun and Winters. In the Deserts of the West, still today, there are Tattered Ruins of that Map, inhabited by Animals and Beggars; in all the Land there is no other Relic of the Disciplines of Geography.</p>
+</blockquote>
+<p>— Suarez Miranda,Viajes de varones prudentes, Libro IV,Cap. XLV, Lerida, 1658</p></li>
+</ul>
+</section>
+<section id="assumptions" class="slide level3">
+<h3>Assumptions</h3>
+<ul>
+<li class="fragment">Let game <span class="math inline">\(G\)</span> be composed of players <span class="pl1">you</span> and <span class="pl2">I</span></li>
+</ul>
+<!-- no clue -->
+<ul>
+<li class="fragment"><em>Rules of the game</em>:</li>
+</ul>
+<ol type="1">
+<li class="fragment">I know the rules of the game</li>
+</ol>
+<div class="fragment" data-fragment-index="3">
+<ul>
+<li class="fragment">I know that you know the rules of the game</li>
+</ul>
+</div>
+<ul>
+<li class="fragment"><p>I know that you know that I know the rules of the game</p></li>
+<li class="fragment"><p>I know that you know that I know that you know the rules of the game</p></li>
+<li class="fragment"><p>…</p></li>
+</ul>
+<div class="fragment" data-fragment-index="2">
+<ol type="1">
+<li class="fragment">You know the rules of the game</li>
+</ol>
+</div>
+<div class="fragment" data-fragment-index="4">
+<ul>
+<li class="fragment">You know that I know the rules of the game</li>
+</ul>
+</div>
+<ul>
+<li class="fragment"><p>You know that I know that you know the rules of the game</p></li>
+<li class="fragment"><p>You know that I know that you know that I know the rules of the game</p></li>
+<li class="fragment"><p>…</p></li>
+</ul>
+<p><!-- need some examples!  --></p>
+</section>
+<section id="common-knowledge-of-rotg" class="slide level3">
+<h3>Common Knowledge of RotG</h3>
+<p>Let <span class="math inline">\(\Gamma\)</span> be a game with players <span class="math inline">\(P_1,\dots,P_k\)</span></p>
+<p>Assumption 1: Common Knowledge of the Rules of the Game</p>
+<ul>
+<li class="fragment"><p>Every Statement of the form “Player <span class="math inline">\(i\)</span> knows that player <span class="math inline">\(j\)</span> knows that … player <span class="math inline">\(k\)</span> knows the rules of the game” is true.</p></li>
+<li class="fragment"><p><a href="https://www.youtube.com/watch?v=98TQv5IAtY8">Blue Eyed Islander Problem</a></p></li>
+</ul>
+</section>
+<section id="assumptions-cont." class="slide level3">
+<h3>Assumptions, cont.</h3>
+<ol type="1">
+<li class="fragment"><p>Common Knowledge of the Rules of the Game</p></li>
+<li class="fragment"><p>Common Knowledge of <strong>Rationality</strong></p>
+<ol type="a">
+<li class="fragment">I am rational
+<ul>
+<li class="fragment">I know that you are rational</li>
+<li class="fragment">I know that you know that I am rational</li>
+<li class="fragment">…</li>
+</ul></li>
+<li class="fragment">you are rational
+<ul>
+<li class="fragment">You know that I am rational</li>
+<li class="fragment">You know that I know that you are rational</li>
+<li class="fragment">…</li>
+</ul></li>
+</ol></li>
+</ol>
+<p>… but what is rationality?</p>
+</section>
+<section id="rationality" class="slide level3">
+<h3>Rationality</h3>
+<p>What is it?</p>
+<ul>
+<li class="fragment"><del>Players maximize their expected payoffs</del></li>
+</ul>
+<p>Technically speaking, rational agents (agents with rational preferences) are those who exhibit preferences which satisfy both of:</p>
+<ol type="1">
+<li class="fragment"><p>Completeness</p></li>
+<li class="fragment"><p>Transitivity</p></li>
+</ol>
+</section>
+<section id="preferences" class="slide level3">
+<h3>Preferences</h3>
+<p>Wait, what?</p>
+<ul>
+<li class="fragment"><u> <strong>Def</strong> </u> : An agent</li>
+</ul>
+<ol type="1">
+<li class="fragment"><p>Completeness:</p>
+<ul>
+<li class="fragment"><strong>Def</strong>: Given <span class="math inline">\(x,y\in X\)</span>, at least one of the following is true:
+<ul>
+<li class="fragment"><span class="math inline">\(x\succsim y\)</span></li>
+<li class="fragment"><span class="math inline">\(y \succsim x\)</span></li>
+</ul></li>
+<li class="fragment">[Ex.]</li>
+</ul></li>
+</ol>
+<div class="absolute" style="bottom: 12%; ">
+<ol start="2" type="1">
+<li class="fragment"><p>Transitivity:</p>
+<ul>
+<li class="fragment"><p><strong>Def</strong>: Given <span class="math inline">\(x, y, z\in X\)</span>, suppose that <span class="math inline">\(x\succsim y\)</span> and <span class="math inline">\(y\succsim z\)</span>. Then <span class="math inline">\(x\succsim z\)</span></p></li>
+<li class="fragment"><p>[Ex.]</p></li>
+</ul></li>
+</ol>
+</div>
+</section>
+<section id="assumptions-1" class="slide level3">
+<h3>Assumptions</h3>
+<p>…so…?</p>
+<ul>
+<li class="fragment">We assume agents’ preferences follow the classical assumptions of microeconomics…
+<ul>
+<li class="fragment">(Players maximize their expected payoffs)</li>
+</ul></li>
+</ul>
+<ol type="1">
+<li class="fragment"><p>Common Knowledge of the Rules of the Game</p></li>
+<li class="fragment"><p>Common Knowledge of Rationality</p></li>
+</ol>
+<ul>
+<li class="fragment">and that’s it!</li>
+</ul>
+</section>
+<section id="extra-slide-1" class="slide level3">
+<h3>Extra Slide 1</h3>
+</section>
+<section id="extra-slide-2" class="slide level3">
+<h3>Extra Slide 2</h3>
+</section>
+<section id="extra-slide-3" class="slide level3">
+<h3>Extra Slide 3</h3>
+</section>
+<section id="extra-slide-4" class="slide level3">
+<h3>Extra Slide 4</h3>
+</section>
+<section id="extra-slide-5" class="slide level3">
+<h3>Extra Slide 5</h3>
+<!-- 
+## Next Time
+
+### Math
+
+Symbols
+
+   - Greek
+
+   - Logic 
+
+Set Theory
+
+- I advise you to watch the following videos. They are overkill, but they will help understand lecture better
+
+   - https://www.youtube.com/watch?v=tyDKR4FG3Yw
+
+   - https://www.youtube.com/watch?v=5ZhNmKb-dqk
+
+Techniques
+
+   - Probability
+
+   - Solve 2-variable system of eqs.  -->
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
+</div>
 </section></section>
+
     </div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="slide-deck-1_327_sp24__files/libs/revealjs/dist/reveal.js"></script>
+  <script src="sd-1__sp24_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="slide-deck-1_327_sp24__files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="slide-deck-1_327_sp24__files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="slide-deck-1_327_sp24__files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="slide-deck-1_327_sp24__files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="slide-deck-1_327_sp24__files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="sd-1__sp24_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="sd-1__sp24_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="sd-1__sp24_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="sd-1__sp24_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="sd-1__sp24_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="slide-deck-1_327_sp24__files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="slide-deck-1_327_sp24__files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="slide-deck-1_327_sp24__files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="slide-deck-1_327_sp24__files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="sd-1__sp24_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="sd-1__sp24_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="sd-1__sp24_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="sd-1__sp24_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -424,7 +778,6 @@ Connor T. Wiegand
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': true,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -609,6 +962,44 @@ Connor T. Wiegand
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
@@ -685,10 +1076,9 @@ Connor T. Wiegand
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn) {
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -698,8 +1088,17 @@ Connor T. Wiegand
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 

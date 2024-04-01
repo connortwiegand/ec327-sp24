@@ -1,0 +1,77 @@
+/*-- scss:defaults --*/
+@import "Lecture Slides/sp24-slides.scss";
+
+// Fonts**
+@import url(https://fonts.googleapis.com/css?family=Roboto:200,200i,300,300i,350,350i,400,400i);
+$font-family-sans-serif: "Roboto", sans-serif !default;
+$presentation-heading-font: "Roboto", sans-serif !default;
+
+/*-- scss:rules --*/
+
+// Title Slide
+#title-slide {
+   text-align: left;
+
+   .title {
+      color: $accent; //body-color;
+      font-size: calc(1.75em/0.7);
+      font-weight: 550;
+      font-family: 'Copperplate', 'Papyrus', 'Times New Roman', Times, serif;
+   }
+
+   .subtitle {
+      color: $accent;
+      // font-style: italic;
+      margin-top: 0em;
+      font-weight: lighter;
+      font-size: 1.4em;
+   }
+
+   .institute,
+   .quarto-title-affiliation,
+   .quarto-title-author-email {
+      font-style: italic;
+      // font-weight: bold;
+      // padding-left: .05em;
+      font-size: 0.75em;
+      color: #7F7F7F;
+   }
+
+   .author,
+   .quarto-title-author-name {
+      color: #efefef;
+      margin-bottom: 0.25em;
+      margin-top: 0.1em;
+      font-size: 1.75em;
+      font-family: 'Garamond', 'Franklin Gothic Medium', serif;
+   }
+   
+   .quarto-title-authors {
+      display: flex;
+      justify-content: space-between;
+      text-align: left;
+      
+      .quarto-title-author {
+         padding-left: 0%;
+         padding-right: 0em;
+         // width: 100%;
+      }
+   }
+
+   .with{
+      font-size: 0.4em;
+   }
+}
+
+
+
+/*-- Remarks --*/
+
+/*  
+  ** Note: This theme uses the Roboto font family imported from Google Fonts. 
+  While you can use a local installation of Roboto, this is generally not recommended since the weighting will likely be wrong (probably too light). 
+  You may wish to remove "Roboto" from the choice set if the family is installed locally.
+
+  OTOH, importing from Google Fonts can cause some issues in secure environments due the external CDN. In that case, simply comment out `@import url(...)` below and the theme will use the default Sans Serif font on your system (e.g., Helvetica on a Mac). 
+
+*/
