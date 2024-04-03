@@ -18,3 +18,34 @@ format:
 #    render-on-save: true
 ---
 
+### 
+::::::{.columns}
+
+:::{.column width="15%"}
+
+#### Moves
+
+- informal
+- colloquial
+- general
+:::
+
+:::{.column width="45%"}
+
+#### Strategies
+
+- Technical
+- Precise
+
+- <u> **Def:** </u>
+
+   _an information-contingent plan of action_
+:::
+
+:::{.column width="40%"}
+#### Actions
+
+- The components of a strategy
+   - ...typically for each info. set
+:::
+::::::

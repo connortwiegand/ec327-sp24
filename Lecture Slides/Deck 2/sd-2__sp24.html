@@ -7,7 +7,10 @@
 <link href="sd-2__sp24_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="sd-2__sp24_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="sd-2__sp24_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="sd-2__sp24_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="sd-2__sp24_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="sd-2__sp24_files/libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="sd-2__sp24_files/libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="sd-2__sp24_files/libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.549">
 
   <meta name="author" content="with Connor T. Wiegand">
@@ -338,22 +341,79 @@
 
 </section>
 <section>
+<section id="intro" class="title-slide slide level2 center">
+<h2>Intro</h2>
+
+</section>
+<section id="what-are-examples-of-games" class="slide level3">
+<h3>What are examples of games?</h3>
+<ul>
+<li class="fragment"><p>Ticket to Ride</p></li>
+<li class="fragment"><p>League</p></li>
+<li class="fragment"><p>Football</p></li>
+<li class="fragment"><p>Baldur’s Gate</p></li>
+<li class="fragment"><p>Duopoly competition</p></li>
+<li class="fragment"><p>Job Market</p></li>
+</ul>
+</section>
+<section id="game-theory-games" class="slide level3">
+<h3>Game theory Games</h3>
+<ul>
+<li class="fragment">Typically smaller-scale, isloated scenarios
+<ul>
+<li class="fragment">Analyze a piece of a bigger game</li>
+<li class="fragment">In a vacuum (remember: modeling discipline)</li>
+</ul></li>
+</ul>
+<p><br>
+</p>
+<ul>
+<li class="fragment">Prisoner’s Dilema</li>
+<li class="fragment">Matching Pennies</li>
+<li class="fragment">Chicken</li>
+<li class="fragment">Beer/quiche</li>
+<li class="fragment">RPS</li>
+<li class="fragment">How much college? (job market signaling)</li>
+<li class="fragment">BoS</li>
+</ul>
+</section>
+<section id="who-cares" class="slide level3">
+<h3>Who Cares?</h3>
+<ul>
+<li class="fragment"><p>Amazon</p></li>
+<li class="fragment"><p>Verizon</p></li>
+<li class="fragment"><p>Coke/Pepsi</p></li>
+<li class="fragment"><p>Valve</p></li>
+<li class="fragment"><p>Everyday Uses:</p>
+<ul>
+<li class="fragment">How should you fight family over the holidays?</li>
+<li class="fragment">How should you approach returning an item to a store?</li>
+<li class="fragment">When should you email your professor?</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
 <section id="whats-in-a-game" class="title-slide slide level2 center">
 <h2>What’s in a Game?</h2>
 
 </section>
 <section id="from-last-time" class="slide level3">
 <h3>From last time…</h3>
+<ul>
+<li class="fragment">There are three things that are essential to specifying a game:</li>
+</ul>
+<ol type="1">
+<li class="fragment">Players</li>
+<li class="fragment">Strategies</li>
+<li class="fragment">Payoffs</li>
+</ol>
 </section>
 <section id="players" class="slide level3">
 <h3>Players</h3>
 <ul>
 <li class="fragment"><p>Agents, users, etc.</p></li>
-<li class="fragment"><p>To be a proper game, there should be <u> at least two </u> players</p></li>
-<li class="fragment"><p>Consider the following example:</p>
-<p><!--
-    2 player ex. where 1 player is practially useless
- --></p></li>
+<li class="fragment"><p>To be a proper game, there should be <u>at least 2</u> players</p></li>
+<li class="fragment"><p><span class="ex">Ex</span> Sukhjit is taking a penalty kick in soccer. There is a 50% chance the goalie defends left, and 20% chance they defend the middle, and a 30% chance they defend right.</p></li>
 <li class="fragment"><p>This is something we might think of as a “game”, but is really just a decision with some <span class="hi">exogeneity</span><sup>1</sup> from the environment</p></li>
 <li class="fragment"><p>Having two or more <em>real</em> players is sometimes known as “strategic interaction”</p></li>
 </ul>
@@ -367,115 +427,122 @@
 <li class="fragment">Actions</li>
 </ul></li>
 <li class="fragment"><p>What choices the player has</p></li>
-<li class="fragment"><p>For now, the above terms can be treated as identical.</p></li>
-<li class="fragment"><p>Later, when we introduce imperfect information, we will consider</p></li>
-</ul>
-<div class="fragment">
-<div class="columns">
-<div class="column" style="width:15%;">
-<h4 id="moves">Moves</h4>
+<li class="fragment"><p>For now, the above terms can be treated as identical</p></li>
+<li class="fragment"><p>Later, when we get to sequential games, we will start using these terms with a little more care</p>
 <ul>
-<li class="fragment">informal</li>
-<li class="fragment">colloquial</li>
-<li class="fragment">general</li>
-</ul>
-</div><div class="column" style="width:45%;">
-<h4 id="strategies-1">Strategies</h4>
+<li class="fragment">Namely, a <strong>strategy</strong> is an <span class="uli">an information-contingent plan of action</span></li>
+<li class="fragment">An action is a <em>component</em> of a strategy</li>
+</ul></li>
+<li class="fragment"><p>Typically finite, can be infinite</p>
 <ul>
-<li class="fragment"><p>Technical</p></li>
-<li class="fragment"><p>Precise</p></li>
-<li class="fragment"><p><u> <strong>Def:</strong> </u></p>
-<p><em>an information-contingent plan of action</em></p></li>
-</ul>
-</div><div class="column" style="width:40%;">
-<h4 id="actions">Actions</h4>
-<ul>
-<li class="fragment">The components of a strategy
-<ul>
-<li class="fragment">…typically for each info. set</li>
+<li class="fragment">Ultimatum game, 2/3 avg, price-setting</li>
 </ul></li>
 </ul>
-</div>
-</div>
-</div>
 </section>
 <section id="payoffs" class="slide level3">
 <h3>Payoffs</h3>
 <ul>
 <li class="fragment"><p>Crucial to economics</p></li>
-<li class="fragment"><p>The utility (or payoff*) obtained from a specific outcome in a game</p>
+<li class="fragment"><p>The payoff/utility<sup>1</sup> obtained from a specific outcome in a game</p>
 <ul>
 <li class="fragment">(outcome = result of each player playing a pre-determined <strong>strategy</strong>)</li>
 </ul></li>
+<li class="fragment"><p>Can be specified via a function</p>
+<ul>
+<li class="fragment"><span class="ex">Ex.</span> <span class="math inline">\(\pi(P,Q) = (100 + q_{1} + q_2) - 5q_1\)</span></li>
+</ul></li>
+<li class="fragment"><p>Or a list</p>
+<ul>
+<li class="fragment"><span class="ex">Ex.</span> Outcomes <span class="math inline">\((A, B, C, D)\)</span> correspond to payoffs <span class="math inline">\((20, 40, 60, 80)\)</span><br>
+</li>
+<li class="fragment"><span class="ex">Ex.</span> <span class="math inline">\(u(s_1, s_2)=\)</span> <code>&lt;value&gt;</code> for each strategy <span class="math inline">\(s_i\)</span> that player <span class="math inline">\(i\)</span> could play</li>
+</ul></li>
+<li class="fragment"><p>Basically: a map from outcomes to numbers</p></li>
 </ul>
-<!-- * $u(\cdot)$ vs. $\pi(\cdot)$ (maybe) -->
-</section></section>
-<section>
-<section id="ec-301-review" class="title-slide slide level2 center">
-<h2>EC 301 Review</h2>
-
-</section>
-<section id="agents-utility-etc." class="slide level3">
-<h3>Agents, utility, etc.</h3>
-</section></section>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>We may use either of <span class="math inline">\(u(\cdot)\)</span> (“utility”) or <span class="math inline">\(\pi(\cdot)\)</span> (“payoff”)</p></li></ol></aside></section></section>
 <section>
 <section id="assumptions-in-game-theory" class="title-slide slide level2 center">
 <h2>Assumptions in Game Theory</h2>
 
 </section>
-<section id="assumptions" class="slide level3">
+<section id="assumptions" class="slide level3 sp-45">
 <h3>Assumptions</h3>
 <ul>
-<li class="fragment">Let game <span class="math inline">\(G\)</span> be composed of players <span class="pl1">you</span> and <span class="pl2">I</span></li>
-</ul>
-<!-- no clue -->
+<li class="fragment"><p>Suppose that <span class="pl1">you</span> and <span class="pl2">I</span> represent the players in a game</p></li>
+<li class="fragment"><p>One mild assumption we would like to impose is that you and I are on the same page regarding the details of the game</p>
 <ul>
-<li class="fragment"><em>Rules of the game</em>:</li>
+<li class="fragment">e.g., the players, strategies, and outcomes</li>
+</ul></li>
+<li class="fragment"><p>We refer to these details as the <span class="uli">rules of the game</span></p></li>
+<li class="fragment"><p>But how do we formalize “on the same page”?</p></li>
 </ul>
-<ol type="1">
-<li class="fragment">I know the rules of the game</li>
+<aside class="notes">
+<p>In 2/3 average game, everyone knew the rules of the game.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-rules-of-the-game" class="slide level3">
+<h3>The Rules of the Game</h3>
+<ol>
+<li class="fragment" data-fragment-index="4">
+I know the rules of the game
+</li>
+<ul>
+<li class="fragment" data-fragment-index="6">
+I know that you know the rules of the game
+</li>
+<li class="fragment" data-fragment-index="8">
+I know that you know that I know the rules of the game
+</li>
+<li class="fragment" data-fragment-index="10">
+I know that you know that I know that you know the rules of the game
+</li>
+<li class="fragment" data-fragment-index="12">
+…
+</li>
+</ul>
+<li class="fragment" data-fragment-index="5">
+You know the rules of the game
+</li>
+<ul>
+<li class="fragment" data-fragment-index="7">
+You know that I know the rules of the game
+</li>
+<li class="fragment" data-fragment-index="9">
+You know that I know that you know the rules of the game
+</li>
+<li class="fragment" data-fragment-index="11">
+You know that I know that you know that I know the rules of the game
+</li>
+<li class="fragment" data-fragment-index="12">
+…
+</li>
+</ul>
 </ol>
-<div class="fragment" data-fragment-index="3">
-<ul>
-<li class="fragment">I know that you know the rules of the game</li>
-</ul>
-</div>
-<ul>
-<li class="fragment"><p>I know that you know that I know the rules of the game</p></li>
-<li class="fragment"><p>I know that you know that I know that you know the rules of the game</p></li>
-<li class="fragment"><p>…</p></li>
-</ul>
-<div class="fragment" data-fragment-index="2">
-<ol type="1">
-<li class="fragment">You know the rules of the game</li>
-</ol>
-</div>
-<div class="fragment" data-fragment-index="4">
-<ul>
-<li class="fragment">You know that I know the rules of the game</li>
-</ul>
-</div>
-<ul>
-<li class="fragment"><p>You know that I know that you know the rules of the game</p></li>
-<li class="fragment"><p>You know that I know that you know that I know the rules of the game</p></li>
-<li class="fragment"><p>…</p></li>
-</ul>
-<p><!-- need some examples!  --></p>
 </section>
 <section id="common-knowledge-of-rotg" class="slide level3">
 <h3>Common Knowledge of RotG</h3>
-<p>Let <span class="math inline">\(\Gamma\)</span> be a game with players <span class="math inline">\(P_1,\dots,P_k\)</span></p>
-<p>Assumption 1: Common Knowledge of the Rules of the Game</p>
+<p>Let <span class="math inline">\(\Gamma\)</span> be a game with players <span class="math inline">\(P_1,\dots,P_n\)</span></p>
+<p><u>Assumption 1:</u> Common Knowledge of the Rules of the Game</p>
 <ul>
-<li class="fragment">Every Statement of the form “Player <span class="math inline">\(i\)</span> knows that player <span class="math inline">\(j\)</span> knows that … player <span class="math inline">\(k\)</span> knows the rules of the game” is true.</li>
+<li class="fragment"><em>Every statement of the form “player <span class="math inline">\(i\)</span> knows that player <span class="math inline">\(j\)</span> knows that … player <span class="math inline">\(k\)</span> knows the rules of the game” is true</em></li>
 </ul>
 <div class="fragment">
 <div style="margin-left: 25%;">
 <iframe data-external="1" src="https://www.youtube.com/embed/98TQv5IAtY8?si=8W3TkARkYYBKxrvb" width="612" height="378" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </div>
-<div class="{aside}">
-<p><a href="https://www.youtube.com/watch?v=98TQv5IAtY8">Blue Eyed Islander Problem – backup</a></p>
-</div>
+<ul>
+<li class="fragment"><a href="https://www.youtube.com/watch?v=98TQv5IAtY8">Blue Eyed Islander Problem – backup</a></li>
+</ul>
 </div>
 </section>
 <section id="assumptions-cont." class="slide level3">
@@ -490,7 +557,7 @@
 <li class="fragment">I know that you know that I am rational</li>
 <li class="fragment">…</li>
 </ul></li>
-<li class="fragment">you are rational
+<li class="fragment">You are rational
 <ul>
 <li class="fragment">You know that I am rational</li>
 <li class="fragment">You know that I know that you are rational</li>
@@ -506,17 +573,47 @@
 <h3>Rationality</h3>
 <p>What is it?</p>
 <ul>
-<li class="fragment"><del>Players maximize their expected payoffs</del></li>
+<li class="fragment"><span class="fragment strike">Players maximize their expected payoffs</span></li>
 </ul>
-<p>Technically speaking, rational agents (agents with rational preferences) are those who exhibit preferences which satisfy both of:</p>
+<div class="fragment">
+<p>Technically speaking, rational agents are those who exhibit preferences which satisfy both of:</p>
 <ol type="1">
 <li class="fragment"><p>Completeness</p></li>
 <li class="fragment"><p>Transitivity</p></li>
 </ol>
+</div>
 </section>
-<section id="preferences" class="slide level3">
-<h3>Preferences</h3>
-<p>Wait, what?</p>
+<section id="wait-what" class="slide level3">
+<h3>Wait, what?</h3>
+<div class="fragment">
+<p>Recall:</p>
+<ul>
+<li class="fragment"><p>In microeconomics, agents are said to have <em>preferences</em> over goods (or <em>bundles</em> of goods)</p></li>
+<li class="fragment"><p>We represent these preference relations with the <span class="math inline">\(\succsim\)</span> symbol, as follows</p></li>
+<li class="fragment"><p>For (bundles of) goods <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, consider Taylor’s preferences:</p>
+<ul>
+<li class="fragment"><span class="math inline">\(x\succsim y\)</span> reads <em>“Taylor weakly prefers <span class="math inline">\(x\)</span> to <span class="math inline">\(y\)</span>”</em>
+<ul>
+<li class="fragment">or <em>“Taylor wants <span class="math inline">\(x\)</span> as least as much as <span class="math inline">\(y\)</span>”</em></li>
+</ul></li>
+<li class="fragment"><span class="math inline">\(y\succsim x\)</span> reads <em>“Taylor strictly prefers <span class="math inline">\(y\)</span> to <span class="math inline">\(x\)</span>”</em></li>
+</ul></li>
+<li class="fragment"><p>This allows us to define two more notions:</p>
+<ul>
+<li class="fragment">When <span class="math inline">\(x\succsim y\)</span> <u>and</u> <span class="math inline">\(y\succsim x\)</span>, we say
+<ul>
+<li class="fragment"><span class="math inline">\(x\sim y\)</span>: <em>“Taylor is indifferent between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>”</em></li>
+</ul></li>
+<li class="fragment">When <span class="math inline">\(x\succsim y\)</span> but <span class="math inline">\(y\not\succsim x\)</span>, we say
+<ul>
+<li class="fragment"><span class="math inline">\(x\succ y\)</span>: <em>“Taylor strictly prefers <span class="math inline">\(x\)</span> to <span class="math inline">\(y\)</span>”</em></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="rational-preferences" class="slide level3">
+<h3>Rational Preferences</h3>
 <ol type="1">
 <li class="fragment"><p>Completeness:</p>
 <ul>
@@ -525,16 +622,13 @@
 <li class="fragment"><span class="math inline">\(x\succsim y\)</span></li>
 <li class="fragment"><span class="math inline">\(y \succsim x\)</span></li>
 </ul></li>
-<li class="fragment">[Ex.]</li>
+<li class="fragment"><span class="ex">Ex.</span>: <a href="#/sec-comp">Jump to appendix</a></li>
 </ul></li>
-</ol>
-<p><br>
-</p>
-<ol start="2" type="1">
 <li class="fragment"><p>Transitivity:</p>
 <ul>
 <li class="fragment"><p><span class="def">Def</span> Given <span class="math inline">\(x, y, z\in X\)</span>, suppose that <span class="math inline">\(x\succsim y\)</span> and <span class="math inline">\(y\succsim z\)</span>. Under these conditions, an agent’s preferences are <strong>transitive</strong> provided that <span class="math inline">\(x\succsim z\)</span></p></li>
-<li class="fragment"><p>[Ex.]</p></li>
+<li class="fragment"><p><span class="ex">Ex.</span><br>
+Jake roots for the Lions when they play the Bengals, and the Bengals when they play the Bears. <strong>But</strong>, Jake roots for the Bears when they play the Lions</p></li>
 </ul></li>
 </ol>
 </section>
@@ -542,51 +636,113 @@
 <h3>Assumptions</h3>
 <p>…so…?</p>
 <ul>
-<li class="fragment">We assume agents’ preferences follow the classical assumptions of microeconomics…
+<li class="fragment"><p>We assume agents’ preferences follow the classical assumptions of microeconomics…</p>
 <ul>
 <li class="fragment">(Players maximize their expected payoffs)</li>
 </ul></li>
-</ul>
+<li class="fragment"><p>Given this, our two assumptions moving forward are</p>
 <ol type="1">
 <li class="fragment"><p>Common Knowledge of the Rules of the Game</p></li>
 <li class="fragment"><p>Common Knowledge of Rationality</p></li>
-</ol>
-<ul>
-<li class="fragment">and that’s it!</li>
+</ol></li>
+<li class="fragment"><p>and that’s it!</p></li>
 </ul>
 </section></section>
 <section>
-<section id="math-review" class="title-slide slide level2 center">
-<h2>Math Review</h2>
+<section id="review" class="title-slide slide level2 center">
+<h2>Review</h2>
 
 </section>
-<section id="logic-review" class="slide level3">
-<h3>Logic Review</h3>
+<section id="sec-cheats" class="slide level3">
+<h3>Symbol Cheat-Sheets</h3>
+<div>
+<p><em>Some selected tables of symbols which may be useful</em></p>
+<ul>
+<li><p><a href="#/sec-greek">Greek</a></p></li>
+<li><p><a href="#/sec-set">Set Theory</a></p></li>
+<li><p><a href="#/sec-logic">Logic</a></p></li>
+</ul>
+</div>
 </section>
-<section id="symbols" class="slide level3">
-<h3>Symbols</h3>
-</section>
-<section id="mathematical-techniques" class="slide level3">
-<h3>Mathematical Techniques</h3>
+<section id="some-math-resources" class="slide level3">
+<h3>Some Math Resources</h3>
+<ul>
+<li class="fragment">As-needed basis:
+<ul>
+<li class="fragment"><a href="https://tutorial.math.lamar.edu/Classes/Alg/Alg.aspx">Paul’s online math notes</a> is <u>great</u>
+<ul>
+<li class="fragment">I have attached the link to the algebra section, but make sure to brief yourself with whatever you need (graphing, etc.).</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br>
+</p>
+<ul>
+<li class="fragment"><p>Overkill, but will be helpful to skim through before next class:</p>
+<ul>
+<li class="fragment"><p><a href="https://www.youtube.com/watch?v=tyDKR4FG3Yw">Set theory video 1</a></p></li>
+<li class="fragment"><p><a href="https://www.youtube.com/watch?v=5ZhNmKb-dqk">Set theory video 2</a></p></li>
+</ul></li>
+</ul>
+<p><br>
+</p>
+<ul>
+<li class="fragment"><span class="hi uli">Please</span> reach out if you need further (specific) resources</li>
+</ul>
 </section></section>
 <section>
-<section id="extra-slides" class="title-slide slide level2 center">
-<h2>Extra Slides</h2>
+<section id="appendix" class="title-slide slide level2 center">
+<h2>Appendix</h2>
 
 </section>
-<section id="extra-slide-1" class="slide level3">
+<section id="sec-comp" class="slide level3" data-visibility="uncounted">
+<h3>Incomplete Preferences</h3>
+<p>Via <code>economics.stackexchange</code>:</p>
+<blockquote>
+<p>Let <span class="math inline">\(X\)</span> be the number of possible baskets of goods that one can buy from a Walmart Superstore. Even if there were only 1,000 distinct items and we could only buy at most one of each item, that’d be <span class="math inline">\(2^{1000}\)</span> possible baskets. (Note that <span class="math inline">\(X \gg 2^{1000}&gt;10^{300}\gg10^{100}&gt;\)</span> “any estimate of the number of particles in the universe”.)</p>
+<p>Even as a normative matter, it is debatable whether a perfectly rational being “should” have a complete preference ordering over these <span class="math inline">\(X\)</span> baskets.</p>
+<p>But as a positive matter, many (if not all) human beings will not have a complete preference ordering over these <span class="math inline">\(X\)</span> baskets.</p>
+</blockquote>
+<p><a href="#/rational-preferences">Go back</a></p>
+</section>
+<section id="sec-greek" class="slide level3">
+<h3>Select Greek</h3>
+<p><a href="greek-ann.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="greek-ann.png"></a></p>
+<p><a href="#/sec-cheats">Go back</a></p>
+</section>
+<section id="sec-set" class="slide level3">
+<h3>Some Set Theory Symbols</h3>
+<div class="columns">
+<div class="column">
+<p><a href="setTheory-ann.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img data-src="setTheory-ann.png" width="400"></a></p>
+</div><div class="column" style="width:40%;">
+<p><a href="#/sec-cheats">Go back</a></p>
+</div>
+</div>
+</section>
+<section id="sec-logic" class="slide level3">
+<h3>Some Logical Symbols</h3>
+<div class="columns">
+<div class="column">
+<p><a href="logic-ann.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img data-src="logic-ann.png" width="350"></a></p>
+</div><div class="column" style="width:40%;">
+<p><a href="#/sec-cheats">Go back</a></p>
+</div>
+</div>
+</section>
+<section id="extra-slide-1" class="slide level3" data-visibility="uncounted">
 <h3>Extra Slide 1</h3>
 </section>
-<section id="extra-slide-2" class="slide level3">
+<section id="extra-slide-2" class="slide level3" data-visibility="uncounted">
 <h3>Extra Slide 2</h3>
 </section>
-<section id="extra-slide-3" class="slide level3">
+<section id="extra-slide-3" class="slide level3" data-visibility="uncounted">
 <h3>Extra Slide 3</h3>
 </section>
-<section id="extra-slide-4" class="slide level3">
+<section id="extra-slide-4" class="slide level3" data-visibility="uncounted">
 <h3>Extra Slide 4</h3>
 </section>
-<section id="extra-slide-5" class="slide level3">
+<section id="extra-slide-5" class="slide level3" data-visibility="uncounted">
 <h3>Extra Slide 5</h3>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
@@ -959,6 +1115,31 @@
       }
     });
     </script>
+    <script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom"});
+    window.onload = () => {
+      lightboxQuarto.on('slide_before_load', (data) => {
+        const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+        const href = trigger.getAttribute('href');
+        if (href !== null) {
+          const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+          if (imgEl !== null) {
+            const srcAttr = imgEl.getAttribute("src");
+            if (srcAttr && srcAttr.startsWith("data:")) {
+              slideConfig.href = srcAttr;
+            }
+          }
+        } 
+      });
+
+      lightboxQuarto.on('slide_after_load', (data) => {
+        const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(slideNode);
+        }
+      });
+
+    };
+              </script>
     
 
 </body></html>

@@ -5,11 +5,12 @@
 $jet: #131516;
 $accent: #238257;
 $accent2 :#0c9c7f;
-$accent3: #44d7a8;
+$accent3: #42d1a4;
 $accent4: mix(#000, #AAF0BE, 25%);
 $acc-alt1: #e64173;
 $acc-alt2: mix(#000, #107895, 33%);
 $right-arrow: "\2192"; // Unicode character for right arrow
+$en-dash: "\2012";
 
 // #0c9c7f, mix(#000, #AAF0BE, 25%), #44d7a8, #49E3B2, #9a2515
 
@@ -36,8 +37,14 @@ $selection-bg: #2c2646 !default;
    color: $acc-alt1;
 }
 
+.ex {
+   color: lighten($accent, 15%);
+   text-decoration: underline dotted;
+}
+
 .h {
-   color: $accent2
+   color: lighten($accent, 15%);
+   text-decoration: underline dotted;
 }
 
 .hi {
@@ -77,7 +84,7 @@ $selection-bg: #2c2646 !default;
    bottom: 10%;
 }
 
-.ul {
+.ul, .uli, .ulb {
    text-decoration: underline;
 }
 
@@ -88,10 +95,12 @@ $selection-bg: #2c2646 !default;
 }
 
 .uli {
-   text-decoration: underline;
    font-style: italic;
 }
 
+*.sp-45 ul {
+   min-height: 45%;
+}
 
 // *Reveal* 
 .reveal {
@@ -99,7 +108,7 @@ $selection-bg: #2c2646 !default;
       line-height: 1.5em;
       text-decoration: underline;
    }
-
+   
    p {
       // font-weight: 300;
       // font-weight: lighter;
@@ -134,50 +143,36 @@ $selection-bg: #2c2646 !default;
    }
    
    // Lists
-   ol {
+   ul, ol {
+      margin-left: 1em;
+      padding-left: 16px;
       // font-weight: 300;
       // font-weight: lighter;
-      padding-left: 16px;
-      
-      li::marker {
-         color: $accent;
-      }
-   }
-   
-   ul {
-      // font-weight: 300;
-      // font-weight: lighter;
-      margin: unset;
-      padding-left: 16px;
       display: flex;
       flex-direction: column;
-      align-content: space-around;
       justify-content: space-around;
       
-      // li { padding-top: 0.4em; } 
-      // ul li { padding-top: 0; }
-            
       li::marker {
          color: mix($accent, white, 70%);
       }
+
+      li span.MathJax {
+         scale: 80;
+      }
+   }
+
+   ol ul,
+   ul ul {
+      margin-left: 1em;
+      padding-left: 16px; 
+      list-style-type: $right-arrow + ' ';
    }
    
-   ul ul {
-      list-style-type: $right-arrow + ' ';
-      // display: inline-block;
-      
-      // li:before {
-         //   content: $right-arrow;
-         //   color: mix($accent, white, 60%);
-         //   display: inline-block;
-         //   width: 1em;
-         //   margin-left: -1em;
-         //   margin-right: 0.5em;
-      // }
+   ul ul ul {
+      margin-left: 1em;
+      padding-left: 16px;
+      list-style-type: $en-dash + ' ';
    }
-
-
-
 } // end-reveal //
 
 
@@ -190,10 +185,10 @@ $selection-bg: #2c2646 !default;
 
 //// Unordered lists
 /* .reveal section.slide ul li {
-  margin: auto;
-  margin-top: 0.8em;
-
-  ul li {
-    margin-top: 0.6em;
-  }
+   margin: auto;
+   margin-top: 0.8em;
+   
+   ul li {
+      margin-top: 0.6em;
+   }
 } */
