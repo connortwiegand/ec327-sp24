@@ -4,8 +4,8 @@ author: "[with]{.with} Connor T. Wiegand"
 format: 
    revealjs:
       theme: 
-         - ../sp24-slides.scss ## Term-specific theme for slides
-         - ../../qSlides.scss ## Very basics (fonts, title-slide,) 
+         - ../../sp24-slides.scss ## Term-specific theme for slides
+         - ../../../qSlides.scss ## Very basics (fonts, title-slide,) 
   
          # - ./deck-n.scss ## doc-specific mods to theme
       preview-links: true
