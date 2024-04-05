@@ -1,0 +1,376 @@
+---
+title: Introduction to Game Theory
+author: "[with]{.with} Connor T. Wiegand"
+format: 
+   revealjs:
+      theme: 
+         - ../../sp24-slides.scss ## Term-specific theme for slides
+         - ../../../qSlides.scss ## Very basics (fonts, title-slide,) 
+  
+         # - ./deck-n.scss ## doc-specific mods to theme
+      preview-links: true
+      slide-number: true
+      menu:
+         side: right
+      smaller: true
+      incremental: true
+      slide-level: 3
+      chalkboard: false
+      embed-resources: true
+lightbox: true
+editor:
+   render-on-save: true
+---
+
+## Intro
+
+### What are examples of games?
+
+- Ticket to Ride
+
+- League
+
+- Football
+
+- Baldur's Gate
+
+- Duopoly competition
+
+- Job Market 
+
+### Game theory Games
+
+- Typically smaller-scale, isloated scenarios
+   - Analyze a piece of a bigger game
+   - In a vacuum (remember: modeling discipline)
+
+\
+
+- Prisoner's Dilema
+- Matching Pennies
+- Chicken
+- Beer/quiche
+- RPS
+- How much college? (job market signaling)
+- BoS
+
+### Who Cares?
+
+- Amazon
+- Verizon
+- Coke/Pepsi
+- Valve
+
+- Everyday Uses:
+   - How should you fight family over the holidays?
+   - How should you approach returning an item to a store?
+   - When should you email your professor?
+
+## What's in a Game?
+
+### From last time...
+
+- There are three things that are essential to specifying a game:
+
+1. Players
+1. Strategies
+1. Payoffs
+
+### Players
+
+- Agents, users, etc. 
+
+- To be a proper game, there should be [at least 2]{.ul} players
+
+- [Ex]{.ex} Sukhjit is taking a penalty kick in soccer. There is a 50% chance the goalie defends left, and 20% chance they defend the middle, and a 30% chance they defend right. 
+
+- This is something we might think of as a "game", but is really just a decision with some [exogeneity]{.hi}^[exogenous = 'falls from the sky'] from the environment
+
+- Having two or more _real_ players is sometimes known as "strategic interaction"
+
+### Strategies
+
+- AKA
+   - Moves
+   - Actions
+
+- What choices the player has 
+
+- For now, the above terms can be treated as identical
+
+- Later, when we get to sequential games, we will start using these terms with a little more care
+   - Namely, a **strategy** is an [an information-contingent plan of action]{.uli}
+   - An action is a _component_ of a strategy
+
+- Typically finite, can be infinite
+   - Ultimatum game, 2/3 avg, price-setting
+
+### Payoffs
+
+- Crucial to economics
+
+- The payoff/utility^[We may use either of $u(\cdot)$ ("utility") or $\pi(\cdot)$ ("payoff")] obtained from a specific outcome in a game
+
+   - (outcome = result of each player playing a pre-determined **strategy**)
+
+- Can be specified via a function 
+   - [Ex.]{.ex} $\pi(P,Q) = (100 + q_{1} + q_2) - 5q_1$
+
+- Or a list
+   - [Ex.]{.ex} Outcomes $(A, B, C, D)$ correspond to payoffs $(20, 40, 60, 80)$  
+   - [Ex.]{.ex} $u(s_1, s_2)=$ `<value>` for each strategy $s_i$ that player $i$ could play
+
+- Basically: a map from outcomes to numbers
+
+## Assumptions in Game Theory
+
+### Assumptions {.sp-45}
+
+- Suppose that [you]{.pl1} and [I]{.pl2} represent the players in a game
+
+- One mild assumption we would like to impose is that you and I are on the same page regarding the details of the game
+   - e.g., the players, strategies, and outcomes
+
+- We refer to these details as the [rules of the game]{.uli}
+
+- But how do we formalize "on the same page"?
+
+:::{.notes}
+In 2/3 average game, everyone knew the rules of the game. 
+:::
+
+### The Rules of the Game
+
+<ol>
+   <li class="fragment" data-fragment-index="4"> I know the rules of the game </li>
+   <ul>
+      <li class="fragment" data-fragment-index="6"> I know that you know the rules of the game </li>
+      <li class="fragment" data-fragment-index="8"> I know that you know that I know the rules of the game </li>
+      <li class="fragment" data-fragment-index="10"> I know that you know that I know that you know the rules of the game </li>
+      <li class="fragment" data-fragment-index="12">...</li>
+   </ul>
+
+
+<li class="fragment" data-fragment-index="5">You know the rules of the game</li>
+<ul>
+   <li class="fragment" data-fragment-index="7"> You know that I know the rules of the game </li>
+   <li class="fragment" data-fragment-index="9"> You know that I know that you know the rules of the game </li>
+   <li class="fragment" data-fragment-index="11"> You know that I know that you know that I know the rules of the game </li>
+   <li class="fragment" data-fragment-index="12">...</li>
+</ul>
+</ol>
+
+### Common Knowledge of RotG
+
+Let $\Gamma$ be a game with players $P_1,\dots,P_n$
+
+[Assumption 1:]{.ul} Common Knowledge of the Rules of the Game
+
+   - _Every statement of the form "player $i$ knows that player $j$ knows that ... player $k$ knows the rules of the game" is true_
+
+. . .
+
+:::{style="margin-left: 25%;"}
+{{< video https://www.youtube.com/embed/98TQv5IAtY8?si=8W3TkARkYYBKxrvb width="612" height="378" >}}
+:::
+
+
+- [Blue Eyed Islander Problem -- backup](https://www.youtube.com/watch?v=98TQv5IAtY8) 
+
+### Assumptions, cont.
+
+1. Common Knowledge of the Rules of the Game
+
+2. Common Knowledge of **Rationality**
+
+   a. I am rational
+      - I know that you are rational
+      - I know that you know that I am rational
+      - ...
+   b. You are rational
+      - You know that I am rational
+      - You know that I know that you are rational
+      - ...
+
+. . .
+
+
+[... but what is rationality?]{.bottom}
+
+### Rationality
+
+What is it?
+
+- [Players maximize their expected payoffs]{.fragment .strike}
+
+. . . 
+
+Technically speaking, rational agents are those who exhibit preferences which satisfy both of:
+
+1. Completeness
+
+2. Transitivity
+
+### Wait, what?
+
+. . .
+
+Recall:
+
+- In microeconomics, agents are said to have _preferences_ over goods (or _bundles_ of goods)
+
+- We represent these preference relations with the $\succsim$ symbol, as follows
+
+- For (bundles of) goods $x$ and $y$, consider Taylor's preferences:
+
+   - $x\succsim y$ reads _"Taylor weakly prefers $x$ to $y$"_
+      - or _"Taylor wants $x$ as least as much as $y$"_
+
+   - $y\succsim x$ reads _"Taylor strictly prefers $y$ to $x$"_
+
+- This allows us to define two more notions:
+
+   - When $x\succsim y$ [and]{.ul} $y\succsim x$, we say
+      - $x\sim y$: _"Taylor is indifferent between $x$ and $y$"_
+
+   - When $x\succsim y$ but $y\not\succsim x$, we say
+      - $x\succ y$: _"Taylor strictly prefers $x$ to $y$"_
+
+
+
+
+### Rational Preferences
+
+1. Completeness:
+
+   - [Def]{.def} Given $x,y\in X$, an agent's preferences are **complete** provided at least one of the following is true:
+      - $x\succsim y$
+      - $y \succsim x$
+
+   - [Ex.]{.ex}: [Jump to appendix](#sec-comp)
+
+2. Transitivity:
+
+   - [Def]{.def} Given $x, y, z\in X$, suppose that $x\succsim y$ and $y\succsim z$. Under these conditions, an agent's preferences are **transitive** provided that $x\succsim z$
+
+   - [Ex.]{.ex}\
+      Jake roots for the Lions when they play the Bengals, and the Bengals when they play the Bears. **But**, Jake roots for the Bears when they play the Lions
+
+
+### Assumptions
+
+...so...?
+
+- We assume agents' preferences follow the classical assumptions of microeconomics...
+   - (Players maximize their expected payoffs)
+
+- Given this, our two assumptions moving forward are
+
+   1. Common Knowledge of the Rules of the Game
+
+   2. Common Knowledge of Rationality
+
+- and that's it!
+
+
+
+## Review
+
+### Symbol Cheat-Sheets {#sec-cheats}
+
+:::{.nonincremental}
+
+_Some selected tables of symbols which may be useful_
+
+- [Greek](#sec-greek)
+
+- [Set Theory](#sec-set)
+
+- [Logic](#sec-logic)
+:::
+
+### Some Math Resources
+
+- As-needed basis:
+   - [Paul's online math notes](https://tutorial.math.lamar.edu/Classes/Alg/Alg.aspx) is [great]{.underline}
+      - I have attached the link to the algebra section, but make sure to brief yourself with whatever you need (graphing, etc.). 
+
+\
+
+- Overkill, but will be helpful to skim through before next class:
+   
+   - [Set theory video 1](https://www.youtube.com/watch?v=tyDKR4FG3Yw)
+
+   - [Set theory video 2](https://www.youtube.com/watch?v=5ZhNmKb-dqk)
+
+\
+
+- [Please]{.hi .uli} reach out if you need further (specific) resources
+
+## Appendix
+
+### Incomplete Preferences {#sec-comp visibility="uncounted"}
+
+Via `economics.stackexchange`:
+
+> Let $X$ be the number of possible baskets of goods that one can buy from a Walmart Superstore. Even if there were only 1,000 distinct items and we could only buy at most one of each item, that'd be $2^{1000}$ possible baskets. (Note that $X \gg 2^{1000}>10^{300}\gg10^{100}>$ "any estimate of the number of particles in the universe".)
+>
+> Even as a normative matter, it is debatable whether a perfectly rational being "should" have a complete preference ordering over these $X$ baskets.
+>
+> But as a positive matter, many (if not all) human beings will not have a complete preference ordering over these $X$ baskets.
+
+[Go back](#rational-preferences)
+
+### Select Greek {#sec-greek}
+
+![](greek-ann.png){width=default}
+
+[Go back](#sec-cheats)
+
+### Some Set Theory Symbols {#sec-set}
+
+::::{.columns}
+
+:::{.column}
+![](setTheory-ann.png){width=400px}
+:::
+
+:::{.column width=40%}
+[Go back](#sec-cheats)
+:::
+::::
+
+### Some Logical Symbols {#sec-logic}
+
+::::{.columns}
+
+:::{.column}
+
+![](logic-ann.png){width=350px}
+:::
+
+
+:::{.column width=40%}
+[Go back](#sec-cheats)
+:::
+
+::::
+
+### Extra 
+
+:::{.nonincremental}
+
+We introduced some set-theory notation on the chalkboard, including
+
+- Sets 
+   - e.g. $S=\{(a,b):\text{a is even, b is odd}\}$ reads "S is the set of all pairs $(a,b)$ such that $a$ is even and $b$ is odd"
+   - I will use this $S$ for the examples below as well. 
+- Elements of sets
+   - e.g. $(6,10)\in S$ 
+   - Importantly, $x\in[0,80)$ is the same as $0\le x < 80$
+- The cartesian product of sets
+   - If $E=\{\text{even numbers}\}$ and $O=\{\text{odd numbers}\}$, then $E\times O=S$
+
+To introduce these concepts, we began discussing strategy spaces, strategy profiles, and the set of strategy profiles, but this will be covered formally at a later date (e.g. next week)
+
+:::

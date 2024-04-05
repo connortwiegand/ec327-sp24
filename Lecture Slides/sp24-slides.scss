@@ -166,6 +166,10 @@ $selection-bg: #2c2646 !default;
       margin-left: 1em;
       padding-left: 16px; 
       list-style-type: $right-arrow + ' ';
+      
+      li span.MathJax {
+         scale: 100;
+      }
    }
    
    ul ul ul {
