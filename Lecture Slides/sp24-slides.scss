@@ -44,7 +44,7 @@ $selection-bg: #2c2646 !default;
 
 .h {
    color: lighten($accent, 15%);
-   text-decoration: underline dotted;
+   opacity: 85%;
 }
 
 .hi {
@@ -57,11 +57,11 @@ $selection-bg: #2c2646 !default;
 }
 
 .pl1{
-   color: #9a2515;
+   color: red;
 }
 
 .pl2{
-   color: $acc-alt2;
+   color: blue;
 }
 
 .f1 {

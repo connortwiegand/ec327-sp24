@@ -1,0 +1,281 @@
+---
+title: Games in Normal Form
+author: "[with]{.with} Connor T. Wiegand"
+format: 
+   revealjs:
+      theme: 
+         - ../../sp24-slides.scss ## Term-specific theme for slides
+         - ../../../qSlides.scss ## Very basics (fonts, title-slide,) 
+         # - ./deck-n.scss ## doc-specific mods to theme
+      preview-links: true
+      slide-number: true
+      menu:
+         side: right
+      smaller: true
+      incremental: true
+      slide-level: 3
+      chalkboard: true
+         # src: imgs/chalkboard.json
+      fig-align: center
+      # embed-resources: true
+lightbox: true
+# editor:
+#    render-on-save: true
+---
+
+## Intro
+
+### What do games look like?
+
+- Normal form
+   - via a _payoff matrix_
+
+- Extensive form 
+   - via _game tree_
+
+- Freeform text
+
+### Roadmap
+
+- Normal Form
+   - Structure
+   - Reducing
+   - Equilibrium
+   - Solving
+
+- Extensive Form
+   - Structure
+   - Refined Equilibrium
+   - Solving
+   - Comparison with normal form
+
+- Back to Normal Form
+   - Full set of equilibrium
+   - Solving
+
+- Specific Games
+
+## Normal Form Representation
+
+### Simultaneous-move games
+
+- Games in normal form use a table-like box called a [payoff matrix]{.uli} 
+
+- This representation is typically used to represent simultaneous-move games
+   - Or stages of a game which can be modelled as simultaneous-move play
+
+. . .
+
+#### Structure of Simultaneous-move games
+
+- Players move at the same time
+
+- They play once and never again
+
+- There is no prior communication between the players.
+
+### A Normal Form Game
+
+- We will start with so-called "2x2" games (really 2x2x2)
+   - 2 players
+   - each with 2 strategies
+
+. . . 
+
+![](imgs/ex-game.png){fig-align="center" width=50%}
+
+
+### Players
+
+
+![](imgs/ex-game--players.png){fig-align="center" width=50%}
+
+- Players:
+
+   - Row player
+      - [Player 1]{.pl1}
+   
+   - Column player
+      - [Player 2]{.pl2}
+
+### Strategies 
+
+![](imgs/ex-game--strats.png){fig-align="center" width=50%}
+
+### Strategies (Math)
+
+- Strategies
+   - Moves available to the player
+   - In general, let $S_{i}$ denote player $i$'s [strategy space]^[or "set of strategies"]
+      - Ex: $S_{1}=\{a,b\}$, $S_2=\{x,y\}$
+
+### Strategy Profiles
+
+[**Def:**]{.alert}
+: - A [strategy profile]{.ulb} $s$ specifies a strategy for each player in the game
+: - The [set of strategy profiles]{.ul}, $S$, is equal to 
+   $$S=S_{1}\times\dots\times S_{n}$$
+
+- Typically represented by an $n-$tuple: $s=(s_1,\dots,s_n)$ denotes a strategy profile where $s_1\in S_1$, $\dots$, $s_n\in S_n$
+- Consider the strategy profile $(a,x)$
+   - I may sometimes write $(ax)$, $ax$, or $a,x$ [if I feel it is clear to do so]{.uli}
+      - Please clarify if you are unsure
+      - Please try to be clear + consistent in your own notation, for your grader's sake
+
+### Payoffs
+
+![](imgs/ex-game--payoffs.png){fig-align="center" width=50%}
+
+- Row player's payoff always listed first
+   - In general, payoffs are in order of player number
+
+### Payoffs (Math)
+
+- Properly speaking, 
+   $$\pi_i:S=S_{i}\times S_{-i}\to \mathbb{R}$$
+
+- $S_{-i}$ denotes the set of strategies of all other players except for player $i$
+   - $s_{-i}\in S_{-i}$ is one of such strategies
+
+- We will keep order of inputs for $\pi_{i}$ independent of $i$:
+   - $\pi_1(s_1,s_2)$ and $\pi_2(s_1,s_2)$
+      - not: $\pi_2(s_2, s_1)$
+
+
+## Towards an Equilibrium
+
+### What is an equilibrium?
+
+- What is our goal in modeling games?
+
+- What do companies want you to be able to do with economic data? 
+
+. . .
+
+- Goal: come up with a good **prediction** for the outcome of a game
+
+
+### What is a good prediction?
+
+- Recall our assumptions: 
+   - Common knowledge of the rules of the game
+   - Common knowledge of rationality
+   - Foreshadowing: given these two assumptions, should players experience regret at the end of a simultaneous-move game
+
+- Key idea:
+
+   - Let's start by thinking about _bad_ predictions, rather than good ones
+
+## Dominated Strategies
+
+### Definition
+
+- A strategy $s_i, s_i'\in S_i$, we say [$s_i$ **strictly dominates** $s_i'$ for player $i$]{.ul} provided that 
+   $$u_i(s_i, s_{-i})>u_{i}(s_i', s_{-i})$$
+
+   for [all]{.ul} $s_{-i}\in S_{-i}$
+
+- e.g., provided that $s_i$ does better than $s_i'$ for player $i$, [regardless of what my opponents do]
+
+- [**Note:**]{.alert} players may share strategies -- or at least the abbreviation of a strategy -- therefore, it is important to include [which player we are talking about]{.hi} 
+   - ..."for player $i$"
+
+- I like using the preference symbol, $\succsim_{D}$, to denote domination:
+   - "$s_{i}\succsim_{D} s_{i}'$ for player $i$" reads "$s_i$ dominates s_i' for player $i$"
+
+### Alt. Def. 
+
+- The previous definition can also be reversed to construct the notion of **strictly dominated by**
+
+- You can use $\succsim_{D}$ for free to mean "dominates". However, you must [clearly note]{.ul .alert} if you are using any shorthand for "is dominated by"
+
+### Dominant Strategies
+
+- Def: $s_{i}\in S_{i}$ is said to be **strictly dominant** if it strictly dominates all other $s_i'\in S_{i}$
+
+- Dominant = better than everything else I can do, regardless of what my opponent does
+
+### Weak Domination
+
+- We can formulate any of the above definitions using the notion of [weak]{.ul} dominance
+
+- This replaces $u_i(s_i, s_{-i})>u_{i}(s_i', s_{-i})$ with $u_i(s_i, s_{-i})\ge u_{i}(s_i', s_{-i})$
+
+- There is a reason we don't want to do this, though
+   - Forthcoming homework problem
+
+- Note: Strict domination $\implies$ weak domination
+
+### Examples: _PD_
+
+![](imgs/pd-game.png)
+
+### Examples: _Chicken_
+
+![](imgs/chicken-game.png)
+
+### Examples: _BoS_
+
+![](imgs/bos-game.png)
+
+## IDSDS
+
+### Recall:
+
+- Recall common knowledge assumptions
+
+- If both players know the rules of the game, they can both work out dominated strategies
+
+- Rational players won't play dominated strategies
+
+- Idea: once both players figure this out, they should just _remove the dominated strategy from the game_
+
+### IDSDS
+
+- Iterated Deletion of Strictly Dominated Strategies
+   - ~~Deletion~~ $\longrightarrow$ Elimination: IESDS
+   - IDS/ISD if I'm lazy
+
+- Consider the following game:
+<!-- foo -->
+
+### 
+
+<!-- cont -->
+
+###
+
+<!-- cont -->
+
+###
+
+<!-- cont -->
+
+
+
+### Theorem
+
+**Lemma:**
+
+- IDSDS never eliminates a "good prediction"
+   - keep this in mind for the homework
+
+. . .
+
+**Theorem:**
+
+- If a [unique]{.ul} strategy profile survives IDSDS, then it is the unique "good prediction" for the game
+
+. . .
+
+**Corollary:**
+
+- When performing IDSDS, order of operations does not matter
+   - Sometimes, there is only one order you can go in
+   - Sometimes, there are many...as long as you are following the rules of IDSDS, it doesn't matter which you choose!
+
+- Given this last theorem, make sure to [**clearly**]{.alert} list the order in which you are eliminating
+   - In addition to being clear about which strategy you are eliminating...
+   - ...for which player...
+   - ...and why
+
