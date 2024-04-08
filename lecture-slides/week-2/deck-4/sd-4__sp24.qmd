@@ -1,0 +1,31 @@
+---
+title: Games in Normal Form
+author: "[with]{.with} Connor T. Wiegand"
+format: 
+   revealjs:
+      theme: 
+         - ../../sp24-slides.scss ## Term-specific theme for slides
+         - ../../../qSlides.scss ## Very basics (fonts, title-slide,) 
+         # - ./deck-n.scss ## doc-specific mods to theme
+      preview-links: true
+      slide-number: true
+      menu:
+         side: right
+      smaller: true
+      incremental: true
+      slide-level: 3
+      chalkboard: true
+         # src: imgs/chalkboard.json
+      fig-align: center
+      # embed-resources: true
+lightbox: true
+# editor:
+#    render-on-save: true
+---
+
+### Latex
+
+![](test.svg)
+
+###
+
