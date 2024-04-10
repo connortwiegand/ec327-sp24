@@ -1,0 +1,38 @@
+project:
+  title: "ec327-sp24"
+
+format: 
+  revealjs: 
+    theme:
+      - lecture-slides/sp24-slides.scss ## Term-specific theme for slides
+      - qSlides.scss ## Very basics (fonts, title-slide,) 
+      # - ./deck-n.scss ## doc-specific mods to theme
+    slide-number: true
+    menu:
+      side: right
+    smaller: true
+    incremental: true
+    preview-links: true
+
+lightbox: true
+
+filters:
+  - imagify
+
+imagify:
+   header-includes: |
+      \usepackage{sgamex, pstricks, pst-node}
+      \gamemathtrue
+      \newcommand\hstrike[3][red]{
+      \ncline[linewidth=1pt, nodesepA=-12pt, nodesepB=-12pt, linecolor=#1]{#2}{#3}
+      }
+      \newcommand\vstrike[3][blue]{
+      \ncline[linewidth=1pt, nodesepA=-10pt, nodesepB=-12pt, linecolor=#1]{#2}{#3}
+      }
+   zoom: 1.75
+   pdf_engine: xelatex
+
+
+
+
+
