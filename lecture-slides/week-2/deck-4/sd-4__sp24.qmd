@@ -30,11 +30,11 @@ format:
 ::::::{.columns}
 ::::{.r-stack .column}
 :::{.fragment .fade-out .absolute right="10"}
-[](tex-games/ex1-4x4-v0.tex)
+![](tex-games/ex1-4x4-v0.tex)
 :::
 
 :::{.fragment .absolute fragment-index=2 right="10"}
-[](tex-games/ex1-4x4-v1.tex)
+![](tex-games/ex1-4x4-v1.tex)
 :::
 ::::
 
@@ -55,26 +55,26 @@ format:
 ::::{.r-stack .column}
 :::{.fragment .fade-out .absolute right="10"}
 :::{.fragment .fade-out fragment-index=3}
-[](tex-games/ex1-3x4-v0.tex)
+![](tex-games/ex1-3x4-v0.tex)
 :::
 :::
 
 :::{.fragment .absolute fragment-index=3 right="10"}
-[](tex-games/ex1-3x4-v1.tex)
+![](tex-games/ex1-3x4-v1.tex)
 :::
 ::::
 
 ::::{.r-stack}
 :::{.fragment .absolute fragment-index=4 right="65" bottom="100"}
-[](tex-games/ex1-3x3-v0.tex)
+![](tex-games/ex1-3x3-v0.tex)
 :::
 
 :::{.fragment .absolute fragment-index=6 right="65" bottom="100"}
-[](tex-games/ex1-3x3-v1.tex)
+![](tex-games/ex1-3x3-v1.tex)
 :::
 
 :::{.fragment .absolute fragment-index=7 right="65" bottom="93"}
-[](tex-games/ex1-3x3-v2.tex)
+![](tex-games/ex1-3x3-v2.tex)
 :::
 ::::
 
@@ -113,6 +113,53 @@ format:
 
 ### Take it back now y'all
 
+::::::{.columns}
+::::{.r-stack .column}
+:::{.fragment .absolute right="10"}
+![](tex-games/ex1-4x4-v2.tex)
+:::
+:::
+
+
+::::{.column width=60%}
+:::{.fragment fragment-index=1}
+1. [$C\succ_{D} B$]{.pl1} for Tim
+2. [$Z\succ_{D} Y$]{.pl2} for Eric
+3. [$C\succ_{D} A$]{.pl1} for Tim
+4. [$X\succ_{D} W$]{.pl2} for Eric
+5. [$C\succ_{D} D$]{.pl1} for Tim
+6. [$Z\succ_{D} X$]{.pl2} for Eric
+:::
+
+::::
+::::::
+
+### 
+
+::::::{.columns}
+::::{.r-stack .column}
+:::{.fragment .absolute right="10"}
+![](tex-games/ex1-4x4-v0.tex)
+:::
+:::
+
+
+::::{.column width=60%}
+:::{.fragment fragment-index=1}
+- Is $(C, Z)$ a good prediction for the outcome of this game?
+   - yes! 
+
+- Are there any other good predictions for the outcome of this game?
+   - probably not
+   - we were pretty conservative in what we eliminated
+
+- Does $X\succ_{D} W$ for Eric?
+   - No
+   - Only in the context of IDSDS
+:::
+
+::::
+::::::
 
 ### Theorem
 
@@ -127,15 +174,81 @@ format:
 
 - If a [unique]{.ul} strategy profile survives IDSDS, then it is the unique "good prediction" for the game
 
+- Games of this variety are often called [Dominance Solvable]{.hii}
+
 . . .
 
 **Corollary:**
 
 - When performing IDSDS, order of operations does not matter
-   - Sometimes, there is only one order you can go in
-   - Sometimes, there are many...as long as you are following the rules of IDSDS, it doesn't matter which you choose!
+   - ...as long as you are following the rules of IDSDS
+
+- Remark: it's okay to eliminate two strategies in a row for the same player
+
+### Be clear
 
 - Given this last theorem, make sure to [**clearly**]{.alert} list the order in which you are eliminating
    - In addition to being clear about which strategy you are eliminating...
    - ...for which player...
    - ...and why
+
+### Example 2
+
+![](tex-games/ex2.tex)
+
+### Example 3
+
+![](tex-games/ex3.tex)
+
+## Towards a better Equilibrium
+
+### BoS
+
+- What do we do if there are no dominated strategies?
+
+![](tex-games/BoS.tex)
+
+### Motivation
+
+- Players are rational optimizers (+ Common Knowledge)
+   - Given the option to switch to a better outcome, they will take it
+
+   - put another way: holding fixed their opponents move, players will [respond]{.hi} in the [best]{.hi} way possible
+
+- Food for thought: if players were not best-responding, we would hardly be at something worth calling an equilibrium
+   - Or: players wouldn't be rational
+
+### Definition
+
+A [**Best Response Correspondence**]{.alert} (or [function]{.hi}) is a map for player $i$,
+   
+$$BR{i}: S_{-i}\to S_{i}$$
+
+such that, if $s_{i}^{BR}\in BR_{i}(s_{-i})$ (resp. [$s_{i}^{BR}= BR_{i}(s_{-i})$]{.hi})
+
+then 
+
+$$\pi_{i}(s_{i}^{BR}, s_{-i})\ge \pi_{i}(s_{i}', s_{-i})$$
+
+for all $s_{i}'\in S_{i}$
+
+### What. 
+
+
+### NE 
+
+- [**Def**]: A [Nash Equilibrium]{.hii} is a set (or intersection) of mutual Best Responses
+
+- That is:
+
+   - $s^{*}=(s_{1}^{*},\dots,s_{n}^{*})$ is a [NE]{.hi} if, $\forall i$, 
+
+      $$\pi_{i}(s_{i}^{*}, s_{-i}^{*})\ge \pi_{i}(s_{i}', s_{-i}^{*})$$
+
+      for any $s_{i}'\in S_{i}$
+
+- Aside: an equilibrium is [**always**]{.ul .alert} a strategy profile, [not]{.ul} a payoff (or payoff tuple)
+
+### PD
+
+![](tex-games/PD.tex)

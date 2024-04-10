@@ -4,10 +4,9 @@ author: "[with]{.with} Connor T. Wiegand"
 format: 
    revealjs:
       slide-level: 3
-      chalkboard:
-         src: ./chalkboard.json
-         readOnly: true
-      # embed-resources: true
+      # chalkboard: true
+         # src: imgs/chalkboard.json
+      embed-resources: true
 # editor:
 #    render-on-save: true
 ---
