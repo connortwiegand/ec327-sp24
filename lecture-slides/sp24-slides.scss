@@ -42,6 +42,11 @@ $selection-bg: #2c2646 !default;
    text-decoration: underline dotted;
 }
 
+.go {
+   color: lighten($jet, 30%);
+   opacity: 80%;
+}
+
 .h {
    color: lighten($accent, 15%);
    opacity: 85%;

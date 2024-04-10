@@ -14,8 +14,8 @@ format:
       smaller: true
       incremental: true
       slide-level: 3
-      chalkboard: true
-         # src: imgs/chalkboard.json
+      chalkboard: 
+         src: imgs/chalkboard.json
       fig-align: center
       # embed-resources: true
 lightbox: true

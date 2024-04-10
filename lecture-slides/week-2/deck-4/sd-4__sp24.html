@@ -7,10 +7,7 @@
 <link href="sd-4__sp24_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="sd-4__sp24_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="sd-4__sp24_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="sd-4__sp24_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="sd-4__sp24_files/libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="sd-4__sp24_files/libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="sd-4__sp24_files/libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
+<link href="sd-4__sp24_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.549">
 
   <meta name="author" content="with Connor T. Wiegand">
@@ -342,18 +339,124 @@
 </div>
 
 </section>
-<section id="latex" class="slide level3">
-<h3>Latex</h3>
-<p><a href="test.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="test.svg"></a></p>
+<section id="names" class="title-slide slide level2 center">
+<h2>Names</h2>
+
 </section>
-<section id="section" class="slide level3">
-<h3></h3>
+
+<section>
+<section id="idsds" class="title-slide slide level2 center">
+<h2>IDSDS</h2>
+
+</section>
+<section id="recall" class="slide level3">
+<h3>Recall</h3>
+<ul>
+<li class="fragment"><p>Recall common knowledge assumptions</p></li>
+<li class="fragment"><p>If both players know the rules of the game, they can both work out dominated strategies</p></li>
+<li class="fragment"><p>Rational players won’t play dominated strategies</p></li>
+<li class="fragment"><p>Idea: once both players figure this out, they should just <em>remove the dominated strategy from the game</em></p></li>
+</ul>
+</section>
+<section id="example" class="slide level3">
+<h3>Example<sup>1</sup></h3>
+<div class="columns">
+<div class="r-stack column">
+<div class="fragment fade-out absolute" style="right: 10px; ">
+<p><a href="tex-games/ex1-4x4-v0.tex"></a></p>
+</div>
+<div class="fragment absolute" data-fragment-index="2" style="right: 10px; ">
+<p><a href="tex-games/ex1-4x4-v1.tex"></a></p>
+</div>
+</div><div class="column" style="width:60%;">
+<div class="fragment" data-fragment-index="2">
+<ul>
+<li>Recall that we said <span class="math inline">\(C\succ_{D}B\)</span> for Tim</li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="3">
+<ul>
+<li>Given that both players know this, we should simply proceed as if that row weren’t there</li>
+</ul>
+</div>
+</div>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>slightly modified since last time</p></li></ol></aside></section>
+<section id="example-cont." class="slide level3">
+<h3>Example (cont.)</h3>
+<div class="columns">
+<div class="r-stack column">
+<div class="fragment fade-out absolute" style="right: 10px; ">
+<div class="fragment fade-out" data-fragment-index="3">
+<p><a href="tex-games/ex1-3x4-v0.tex"></a></p>
+</div>
+</div>
+<div class="fragment absolute" data-fragment-index="3" style="right: 10px; ">
+<p><a href="tex-games/ex1-3x4-v1.tex"></a></p>
+</div>
+</div><div class="r-stack">
+<div class="fragment absolute" data-fragment-index="4" style="bottom: 100px; right: 65px; ">
+<p><a href="tex-games/ex1-3x3-v0.tex"></a></p>
+</div>
+<div class="fragment absolute" data-fragment-index="6" style="bottom: 100px; right: 65px; ">
+<p><a href="tex-games/ex1-3x3-v1.tex"></a></p>
+</div>
+<div class="fragment absolute" data-fragment-index="7" style="bottom: 93px; right: 65px; ">
+<p><a href="tex-games/ex1-3x3-v2.tex"></a></p>
+</div>
+</div><div class="column" style="width:60%;">
+<div class="fragment" data-fragment-index="1">
+<ul>
+<li>Now what do we notice?</li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="2">
+<ul>
+<li>Since both players know that Tim will never rationally play <span class="math inline">\(B\)</span>,
+<ul>
+<li><span class="pl2"><span class="math inline">\(Z\succ_{D} Y\)</span></span> for Eric <span class="go">(in the reduced game)</span></li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="3">
+<ul>
+<li>…so let’s eliminate it!</li>
+</ul>
+</div>
+<p><br>
+</p>
+<p><br>
+</p>
+<div class="fragment" data-fragment-index="5">
+<ul>
+<li>Now what?
+<ul>
+<li>Rinse and repeat</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="6">
+<ul>
+<li>Now <span class="pl1"><span class="math inline">\(C\succ_{D} A\)</span></span> for Tim</li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="7">
+<ul>
+<li>Given this, <span class="pl2"><span class="math inline">\(X\succ_{D} W\)</span></span> for Eric</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="take-it-back-now-yall" class="slide level3">
+<h3>Take it back now y’all</h3>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
 </div>
-</section>
+</section></section>
+
     </div>
   </div>
 
@@ -720,31 +823,6 @@
       }
     });
     </script>
-    <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false});
-    window.onload = () => {
-      lightboxQuarto.on('slide_before_load', (data) => {
-        const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-        const href = trigger.getAttribute('href');
-        if (href !== null) {
-          const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-          if (imgEl !== null) {
-            const srcAttr = imgEl.getAttribute("src");
-            if (srcAttr && srcAttr.startsWith("data:")) {
-              slideConfig.href = srcAttr;
-            }
-          }
-        } 
-      });
-
-      lightboxQuarto.on('slide_after_load', (data) => {
-        const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(slideNode);
-        }
-      });
-
-    };
-              </script>
     
 
 </body></html>
