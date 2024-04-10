@@ -114,8 +114,6 @@ format:
 ### Take it back now y'all
 
 
-
-
 ### Theorem
 
 **Lemma:**

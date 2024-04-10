@@ -7,7 +7,10 @@
 <link href="sd-4__sp24_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="sd-4__sp24_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="sd-4__sp24_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="sd-4__sp24_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="sd-4__sp24_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="sd-4__sp24_files/libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="sd-4__sp24_files/libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="sd-4__sp24_files/libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.549">
 
   <meta name="author" content="with Connor T. Wiegand">
@@ -363,10 +366,10 @@
 <div class="columns">
 <div class="r-stack column">
 <div class="fragment fade-out absolute" style="right: 10px; ">
-<p><a href="tex-games/ex1-4x4-v0.tex"></a></p>
+<p><a href="svg-games/ex1-4x4-v0.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="svg-games/ex1-4x4-v0.svg"></a></p>
 </div>
 <div class="fragment absolute" data-fragment-index="2" style="right: 10px; ">
-<p><a href="tex-games/ex1-4x4-v1.tex"></a></p>
+<p><a href="svg-games/ex1-4x4-v1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img data-src="svg-games/ex1-4x4-v1.svg"></a></p>
 </div>
 </div><div class="column" style="width:60%;">
 <div class="fragment" data-fragment-index="2">
@@ -388,21 +391,21 @@
 <div class="r-stack column">
 <div class="fragment fade-out absolute" style="right: 10px; ">
 <div class="fragment fade-out" data-fragment-index="3">
-<p><a href="tex-games/ex1-3x4-v0.tex"></a></p>
+<p><a href="svg-games/ex1-3x4-v0.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img data-src="svg-games/ex1-3x4-v0.svg"></a></p>
 </div>
 </div>
 <div class="fragment absolute" data-fragment-index="3" style="right: 10px; ">
-<p><a href="tex-games/ex1-3x4-v1.tex"></a></p>
+<p><a href="svg-games/ex1-3x4-v1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img data-src="svg-games/ex1-3x4-v1.svg"></a></p>
 </div>
 </div><div class="r-stack">
 <div class="fragment absolute" data-fragment-index="4" style="bottom: 100px; right: 65px; ">
-<p><a href="tex-games/ex1-3x3-v0.tex"></a></p>
+<p><a href="svg-games/ex1-3x3-v0.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img data-src="svg-games/ex1-3x3-v0.svg"></a></p>
 </div>
 <div class="fragment absolute" data-fragment-index="6" style="bottom: 100px; right: 65px; ">
-<p><a href="tex-games/ex1-3x3-v1.tex"></a></p>
+<p><a href="svg-games/ex1-3x3-v1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img data-src="svg-games/ex1-3x3-v1.svg"></a></p>
 </div>
 <div class="fragment absolute" data-fragment-index="7" style="bottom: 93px; right: 65px; ">
-<p><a href="tex-games/ex1-3x3-v2.tex"></a></p>
+<p><a href="svg-games/ex1-3x3-v2.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img data-src="svg-games/ex1-3x3-v2.svg"></a></p>
 </div>
 </div><div class="column" style="width:60%;">
 <div class="fragment" data-fragment-index="1">
@@ -450,9 +453,41 @@
 </section>
 <section id="take-it-back-now-yall" class="slide level3">
 <h3>Take it back now y’all</h3>
+</section>
+<section id="theorem" class="slide level3">
+<h3>Theorem</h3>
+<p><strong>Lemma:</strong></p>
+<ul>
+<li class="fragment">IDSDS never eliminates a “good prediction”
+<ul>
+<li class="fragment">keep this in mind for the homework</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<p><strong>Theorem:</strong></p>
+<ul>
+<li class="fragment">If a <u>unique</u> strategy profile survives IDSDS, then it is the unique “good prediction” for the game</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Corollary:</strong></p>
+<ul>
+<li class="fragment">When performing IDSDS, order of operations does not matter
+<ul>
+<li class="fragment">Sometimes, there is only one order you can go in</li>
+<li class="fragment">Sometimes, there are many…as long as you are following the rules of IDSDS, it doesn’t matter which you choose!</li>
+</ul></li>
+<li class="fragment">Given this last theorem, make sure to <span class="alert"><strong>clearly</strong></span> list the order in which you are eliminating
+<ul>
+<li class="fragment">In addition to being clear about which strategy you are eliminating…</li>
+<li class="fragment">…for which player…</li>
+<li class="fragment">…and why</li>
+</ul></li>
+</ul>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
+</div>
 </div>
 </div>
 </section></section>
@@ -823,6 +858,31 @@
       }
     });
     </script>
+    <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":false,"openEffect":"zoom","selector":".lightbox","descPosition":"bottom"});
+    window.onload = () => {
+      lightboxQuarto.on('slide_before_load', (data) => {
+        const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+        const href = trigger.getAttribute('href');
+        if (href !== null) {
+          const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+          if (imgEl !== null) {
+            const srcAttr = imgEl.getAttribute("src");
+            if (srcAttr && srcAttr.startsWith("data:")) {
+              slideConfig.href = srcAttr;
+            }
+          }
+        } 
+      });
+
+      lightboxQuarto.on('slide_after_load', (data) => {
+        const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(slideNode);
+        }
+      });
+
+    };
+              </script>
     
 
 </body></html>
