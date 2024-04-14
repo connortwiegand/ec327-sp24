@@ -226,7 +226,7 @@ Recall:
    - $x\succsim y$ reads _"Taylor weakly prefers $x$ to $y$"_
       - or _"Taylor wants $x$ as least as much as $y$"_
 
-   - $y\succsim x$ reads _"Taylor strictly prefers $y$ to $x$"_
+   - $y\succsim x$ reads _"Taylor weakly prefers $y$ to $x$"_
 
 - This allows us to define two more notions:
 

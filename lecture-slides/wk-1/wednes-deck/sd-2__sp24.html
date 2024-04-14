@@ -596,7 +596,7 @@ You know that I know that you know that I know the rules of the game
 <ul>
 <li class="fragment">or <em>“Taylor wants <span class="math inline">\(x\)</span> as least as much as <span class="math inline">\(y\)</span>”</em></li>
 </ul></li>
-<li class="fragment"><span class="math inline">\(y\succsim x\)</span> reads <em>“Taylor strictly prefers <span class="math inline">\(y\)</span> to <span class="math inline">\(x\)</span>”</em></li>
+<li class="fragment"><span class="math inline">\(y\succsim x\)</span> reads <em>“Taylor weakly prefers <span class="math inline">\(y\)</span> to <span class="math inline">\(x\)</span>”</em></li>
 </ul></li>
 <li class="fragment"><p>This allows us to define two more notions:</p>
 <ul>
@@ -1115,7 +1115,7 @@ Jake roots for the Lions when they play the Bengals, and the Bengals when they p
       }
     });
     </script>
-    <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":false,"openEffect":"zoom","selector":".lightbox","descPosition":"bottom"});
+    <script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom"});
     window.onload = () => {
       lightboxQuarto.on('slide_before_load', (data) => {
         const { slideIndex, slideNode, slideConfig, player, trigger } = data;
