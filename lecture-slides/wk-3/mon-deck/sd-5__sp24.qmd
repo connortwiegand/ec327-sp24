@@ -17,7 +17,7 @@ format:
 
 - We got a mathy def. of best responses
 
-- ...
+- [Go there](#sec-br-def)
 
 - Function vs. Correspondence
 
@@ -27,10 +27,14 @@ format:
 
 ### Visualization of $BR(\cdot)$
 
-- a
+This photo shows some examples of maps ("functions") in set theory. Think of $S$ as being the set of opponents strategies, and think of $A$ as being the set of your strategies. Any of these could be valid BR functions. 
 
-<!-- sketch of a set-values plot -->
+!![](imgs/set-theory-map.png){fig-align="center"}
 
+- See next slide for more details
+
+
+### Visualization of $BR(\cdot)$ (cont.)
 - In words: the Best response function
    - Takes a particular strategy profile _from your opponents' strategies_ as an input
    - Spits out your best response
@@ -40,8 +44,7 @@ format:
 
 - put 2 + 2 together
    - Your best response function takes an opponents' strategy [profile] as an input, and outputs a subset of your strategies which are at least as good as all the others, if not better. 
-   - E.g.
-   <!-- def -->
+   - E.g...(see next slide)
 
 ### Recall: Best Response Definition {#sec-br-def}
 
@@ -62,14 +65,15 @@ for all $s_{i}'\in S_{i}$
 - T or F: Given some collection of opponents' strategies $\hat{s}$, the payoff for any one strategy in $BR_{i}(\hat{s})$ is the same as the payoff for any other strategy in $BR_{i}(\hat{s})$.
 
 
-### 
+### BR Example 1
 
-[]()
+![](tex-games/br-ex-1.tex)
 
 
-### 
 
-[]()
+### BR Example 2
+
+![](tex-games/br-ex-2.tex)
 
 
 
@@ -99,7 +103,7 @@ for all $s_{i}'\in S_{i}$
 
 ### PD
 
-[](tex-games/PD.tex)
+![](tex-games/PD.tex)
 
 ### Dominance and NE
 
@@ -113,23 +117,23 @@ for all $s_{i}'\in S_{i}$
 
 - To help us keep track of best responses, we can simply underline the payoffs which correspond to best responses
 
-### 
+### NE Example 1: BoS
 
-[]()
+![](tex-games/BoS.tex)
 
-###
+### NE Example 2: Chicken
 
-[]()
+![](tex-games/chicken.tex)
 
-###
+### NE Example 3 {#sec-ex}
 
-[]()
+![](tex-games/ne-ex-3.tex)
 
 
 
 ### Matching Pennies
 
-[](Matching Pennies)
+![](tex-games/matching-pennies.tex)
 
 ### Food for thought
 
@@ -155,7 +159,6 @@ for all $s_{i}'\in S_{i}$
 - Instantiation
 
 
-{{{
 ### Never Best Responses
 
 - [Def]{.def} [[Version 1.0]]: 
@@ -164,7 +167,7 @@ for all $s_{i}'\in S_{i}$
 
 ### Ex
 
-[]()
+[jump back](#sec-ex)
 
 - $x \succsim_{W} y$ for _____
    - and y is NBR
@@ -184,14 +187,13 @@ for all $s_{i}'\in S_{i}$
    - Proof:
 
 - [_Remark_]{.alert} we will return to this later
-}}}
 
 
 ## Next time
 
 ### Recall: BRs and NE
 
-[]()
+<!-- []() -->
 
 <!-- ## Mixed Strategies -->
 

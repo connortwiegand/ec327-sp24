@@ -4,9 +4,208 @@ author: "[with]{.with} Connor T. Wiegand"
 format: 
    revealjs:
       slide-level: 3
-      chalkboard: true
-         # src: chalkboard.json
-      # embed-resources: true
+      chalkboard: false
+         # src: imgs/chalkboard.json
+      embed-resources: true
 # editor:
 #    render-on-save: true
 ---
+
+## Best Responses
+
+### Last time
+
+- We got a mathy def. of best responses
+
+- [Go there](#sec-br-def)
+
+- Function vs. Correspondence
+
+- [Some comments on choice in mathematics](#sec-mathabs)
+
+- What does it mean?
+
+### Visualization of $BR(\cdot)$
+
+This photo shows some examples of maps ("functions") in set theory. Think of $S$ as being the set of opponents strategies, and think of $A$ as being the set of your strategies. Any of these could be valid BR functions. 
+
+!![](imgs/set-theory-map.png){fig-align="center"}
+
+- See next slide for more details
+
+
+### Visualization of $BR(\cdot)$ (cont.)
+- In words: the Best response function
+   - Takes a particular strategy profile _from your opponents' strategies_ as an input
+   - Spits out your best response
+
+- What is a "best response"?
+   - something that's at least as good as anything else you can do, _given the same input_
+
+- put 2 + 2 together
+   - Your best response function takes an opponents' strategy [profile] as an input, and outputs a subset of your strategies which are at least as good as all the others, if not better. 
+   - E.g...(see next slide)
+
+### Recall: Best Response Definition {#sec-br-def}
+
+A [**Best Response Correspondence**]{.alert} (or [function]{.hi}) is a map for player $i$,
+   
+$$BR_{i}: S_{-i}\to S_{i}$$
+
+such that, if $s_{i}^{BR}\in BR_{i}(s_{-i})$ (resp. [$s_{i}^{BR}= BR_{i}(s_{-i})$]{.hi})
+
+then 
+
+$$\pi_{i}(s_{i}^{BR}, s_{-i})\ge \pi_{i}(s_{i}', s_{-i})$$
+
+for all $s_{i}'\in S_{i}$
+
+### Pop Quiz
+
+- T or F: Given some collection of opponents' strategies $\hat{s}$, the payoff for any one strategy in $BR_{i}(\hat{s})$ is the same as the payoff for any other strategy in $BR_{i}(\hat{s})$.
+
+- _Answer: [T]{.hi}_
+
+### BR Example 1
+
+::::{.columns}
+::::{.column width=60%}
+![](tex-games/br-ex-1.tex)
+
+:::{.fragment}
+$$
+\begin{aligned}
+BR_B(C)&=P\\
+BR_B(D)&=T\\
+BR_B(H)&=P\\
+BR_B(S)&=T
+\end{aligned}
+$$
+:::
+
+::::
+
+:::{.column .fragment width=40%}
+$$
+\begin{aligned}
+BR_A(P)&=D \\
+BR_A(T)&=S
+\end{aligned}
+$$
+:::
+
+::::
+
+### BR Example 2
+
+![](tex-games/br-ex-2.tex)
+
+:::{.fragment}
+$$
+BR_D(F)=\{F, S\}\\
+BR_W(S)=\{F, R\}\\
+$$
+:::
+
+## Nash Equilibria --  Math
+
+
+### To an equilibrium
+
+1. [**Def**]: A [Nash Equilibrium]{.hii} is a set^[or _intersection_] of mutual Best Responses
+   - E.g., a strategy profile is a [NE]{.hi} provided that all players are best responding to the other players' moves
+
+2. Mathematically,
+
+   - $s^{*}=(s_{1}^{*},\dots,s_{n}^{*})$ is a [NE]{.hi} if, $\forall i$, 
+
+      $$\pi_{i}(s_{i}^{*}, s_{-i}^{*})\ge \pi_{i}(s_{i}', s_{-i}^{*})$$
+
+      for any $s_{i}'\in S_{i}$
+
+- [Compare to Best Response def](#sec-br-def)
+
+### NE (cont.)
+
+3. A strategy profile $s^{*}=(s^{*}_{1},\dots,s^{*}_{n})$ is a [NE]{.hi} provided that no player can unilaterally deviate from their strategy $s_{i}^{*}$ an receive a strictly better payoff (holding all other players' moves fixed)
+
+- Aside: an equilibrium is [**always**]{.ul .alert} a strategy profile, [not]{.ul} a payoff (or payoff tuple)
+
+### PD
+
+::::::{.columns}
+
+::::{.column width=55%}
+- Start at $(Q,Q)$
+   - $BR_A(Q)=S$, so Abed would deviate from $Q\to S$
+- $(Q,S)$
+   - $BR_T(S)=S$, so Troy would deviate from $Q\to S$
+- $(S,S)$
+   - $BR_T(S)=S$
+   - $BR_A(S)=S$
+- Therefore, $(S,S)$ is a Nash equilibrium
+- Why?
+   - Mutual best responses
+      - $\color{red}{BR_T}(\color{blue}{BR_A}(\color{red}{S}))=\color{red}{S}$
+   - No unilateral deviations to strictly higher payoffs
+::::
+
+
+:::{.column width=45%}
+![](tex-games/PD.tex)
+:::
+
+::::::
+
+
+### PD (cont. )
+
+![](tex-games/PD__solved.tex)
+
+- $(S,S)$ is a Nash equilibrium
+- Why?
+   - Mutual best responses
+      - $\color{red}{BR_T}(\color{blue}{BR_A}(\color{red}{S}))=\color{red}{S}$
+   - No unilateral deviations to strictly higher payoffs
+
+- Remark: We could have done this starting anywhere, or we could have started with Troy first instead of Abed
+
+### Dominance and NE
+
+- Recall the Iterated Deletion Method:
+   - IDSDS never eliminates a ~~good prediction~~ [NE]{.hi}
+   - If a unique strategy profile survives IDSDS, then it is the unique ~~good prediction~~ [Nash equilibrium]{.hi} for the game
+
+## Nash Equilibria -- Solving
+
+### Idea
+
+- To help us keep track of best responses, we can simply underline the payoffs which correspond to best responses
+
+### NE Example 1: BoS
+
+::::::{.columns}
+
+::::{.column width=40%}
+![](tex-games/BoS.tex)
+
+- $\color{red}{BR_A(F)=F}$
+- $\color{blue}{BR_B(F)=\{F,B\}}$
+::::
+
+:::{.column .fragment width=60%}
+$\longrightarrow\quad$ ![](tex-games/BoS__solved.tex)
+:::
+
+::::::
+
+## Appendix
+
+### Abstraction in Math {#sec-mathabs}
+
+- Arbitrary
+
+- $\forall$ (For all)
+
+- Instantiation
+

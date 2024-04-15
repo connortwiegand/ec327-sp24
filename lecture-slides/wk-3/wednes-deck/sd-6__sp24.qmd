@@ -1,0 +1,98 @@
+---
+title: Solving Games for NE
+author: "[with]{.with} Connor T. Wiegand"
+format: 
+   revealjs:
+      slide-level: 3
+      chalkboard: true
+      # embed-resources: true
+# editor:
+#    render-on-save: true
+---
+
+
+### Never Best Responses
+
+- [Def]{.def} [[Version 1.0]]: 
+
+- How is this related to strict/weak domination?
+
+### Ex
+
+[jump back](#sec-ex)
+
+- $x \succsim_{W} y$ for _____
+   - and y is NBR
+
+- $z$ is not dominated by anything for ____
+   - but $z$ is still NBR
+
+### Never Best Responses
+
+:::{.nonincremental}
+- [Def]{.def} [[Version 1.0]]: 
+
+- How is this related to strict/weak domination?
+:::
+
+- [**Fact:**]{.alert} a strictly dominated strategy is never a best response
+   - Proof:
+
+- [_Remark_]{.alert} we will return to this later
+
+### Recall: BRs and NE
+
+<!-- []() -->
+
+<!-- ## Mixed Strategies -->
+
+### Matching Pennies
+
+### Probabilistic Strategies
+
+- Such a strategy is called a [Mixed Strategy]
+- Contrast to Pure strategies -- what we have been discussing thus far
+   - $s_{i}\in S_i$ denotes a pure strategy in a player's space of pure strategies
+   - $\sigma_{i}(\cdot)\in \Sigma_{i}$ denotes a mixed strategy in a player's space of mixed strategies
+- Mixed 
+
+### When will I play a mixed strategy?
+
+### Theorem
+
+### How do we find MSNE?
+
+- It's complicated...we'll return to this later
+
+- For now, I primarily want you to know when/why players mix and Nash's theorem
+
+
+### NE Example 2: Chicken
+
+![](tex-games/chicken.tex)
+
+### NE Example 3 {#sec-ex}
+
+![](tex-games/ne-ex-3.tex)
+
+
+
+### Matching Pennies
+
+![](tex-games/matching-pennies.tex)
+
+### Stochastic Play
+
+- What if players did not play every game the same way?
+   - Think of Rock, Paper, Scissors
+
+- Abstracting away from _how_ our opponent may make a randomized^[or _stochastic_] decision, let's simply model their strategy according to the probability that they select each of their moves
+
+- E.g. $$ p_{H}H + p_{T}T $$
+
+- This generates two new questions for us
+   - What are probabilities are reasonable to play?
+   - Why would someone play such a strategy?
+
+### Mixed Strategies
+

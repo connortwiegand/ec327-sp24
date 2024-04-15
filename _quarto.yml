@@ -38,7 +38,7 @@ filters:
 
 imagify:
    header-includes: |
-      \usepackage{sgamex, mathtools, pstricks, pst-node}
+      \usepackage{sgamex, mathtools, pstricks, pst-node, colortbl}
       \gamemathtrue
       \newcommand\hstrike[3][red]{
       \ncline[linewidth=1pt, nodesepA=-12pt, nodesepB=-12pt, linecolor=#1]{#2}{#3}
@@ -47,6 +47,7 @@ imagify:
       \ncline[linewidth=1pt, nodesepA=-10pt, nodesepB=-12pt, linecolor=#1]{#2}{#3}
       }
    zoom: 1.75
+  #  embed: false
 
 
 

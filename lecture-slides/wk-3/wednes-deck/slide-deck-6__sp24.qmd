@@ -1,0 +1,11 @@
+---
+title: Solving Games for NE
+author: "[with]{.with} Connor T. Wiegand"
+format: 
+   revealjs:
+      slide-level: 3
+      # chalkboard: true
+      embed-resources: true
+# editor:
+#    render-on-save: true
+---
