@@ -9,3 +9,193 @@ format:
 # editor:
 #    render-on-save: true
 ---
+
+### Recall: BRs and NE
+
+- Best response function: maps opponents' strategies to ones own best responses
+
+- Nash equilibrium: 
+   - Mutual (_intersection of_) best responses
+   - No unilateral deviations
+
+
+### NE: Chicken
+
+- Let's practice underlining best responses again
+
+
+![](imgs/chicken.png){.absolute top=10% right=5% width=480}
+
+### NE: Chicken --Solved
+
+- NE: (RD, R) and (SG, S)
+
+![](imgs/chicken__solved.png){.absolute top=10% right=5% width=480}
+
+
+### NE-Ex
+
+- This is a totally made up game, but it's good practice
+
+![](imgs/ne-ex-3.png){.absolute top=10% right=5% width=33%}
+
+
+### NE-Ex --Solved
+
+![](imgs/ne-ex-3__solved.png){.absolute top=10% right=5% width=33%}
+
+
+### Matching Pennies
+
+- Sean
+   - $BR_S(H)=H$
+   - $BR_S(T)=T$
+- Bean
+   - $BR_B(H)=T$
+   - $BR_B(T)=H$
+
+![](imgs/matching-pennies.png){.absolute top=10% right=5% width=33%}
+
+### Matching Pennies --Solved?
+
+- So...there's no NE?
+   - How do we make a good prediction?
+
+![](imgs/matching-pennies__solved.png){.absolute top=10% right=5% width=33%}
+
+### Probabilistic Play
+
+- What if players did not play every game the same way?
+   - Think of Rock, Paper, Scissors
+
+- Abstracting away from _how_ our opponent may make a randomized^[or _stochastic_] decision, let's simply model their "random" strategy according to the probability that they select each of their moves
+
+- E.g. $(p_{H})\cdot H + (p_{T})\cdot T$
+   - That is, $p_{H}\equiv$ the probability that Sean plays Heads
+   - Likewise, $p_{T}\equiv$ the probability that Sean plays Tails
+
+### Mixed Strategies
+
+- Such a strategy is called a [Mixed Strategy]{.ulb .hi}
+
+- Contrast to _pure_ strategies -- what we have been discussing thus far
+   - $s_{i}\in S_i$ denotes a pure strategy in a player's space of pure strategies
+   - $\sigma_{i}(\cdot)\in \Sigma_{i}$ denotes a mixed strategy in a player's space of mixed strategies
+
+- With mixed strategies, we now want to make explicit that we are thinking about players [expected]{.uli} payoffs
+
+### Sean's Expected Payoffs
+
+- Sean's strategy: let's call it $\sigma_S$: 
+   $$\sigma_S=p_{H}H + p_{T}T$$
+
+- Note: we denote the expected value with the $E[\cdot]$ operator. Hence, $E[u_{i}(\cdot)]$(or $E[\pi_i(\cdot)]$) denote expected payoffs.
+
+- What is $E[u_S(\sigma_S, H)]$? $E[u_S(\sigma_S, T)]$?
+   - $E[u_S(\sigma_S, H)]= p_{H} \cdot u_S(H,H) + p_T \cdot u_S(T,H) = p_H - p_T$
+   - $E[u_S(\sigma_S, T)]= p_{H} \cdot u_S(H,T) + p_T \cdot u_S(T,T) = p_T - p_H$
+
+- This generates two new questions for us
+   - What are probabilities are reasonable to play?
+   - Why would someone play such a strategy?
+
+
+### The importance of mixed strategies
+
+- What Nash did for his dissertation 
+
+- [**Theorem**]{.alert}: _Every "reasonable" game has a Nash Equilibria_
+   - Remarks
+      - I want you to assume that every game I show you in this class is "reasonable"
+      - In particular, I'm never looking for the answer "this game does not have any NE"
+      - Maybe none _of a certain flavor_ or _class_, but not "none"
+   - "Reasonable"
+      - Every game with a finite strategy space
+      - If infinite strategies $\implies$ need compact strategy space^[basically...bounded + no holes]
+
+### When will someone play a mixed strategy?
+
+- Let's take for granted that Sean might be playing a mixed strategy
+
+- Given this, Bean is thinking about playing a mixed strategy as well. When does it make sense to do so?
+   - Let's compare $E[u_B(\sigma_S, H)]$ vs. $E[u_B(\sigma_S, T)]$
+
+1. Suppose $E[u_B(\sigma_S, H)] > E[u_B(\sigma_S, T)]$
+   - What does this say in words?
+   - "Bean gets a higher e.p.^[expected payoff] from playing H than T"
+   - So: does Bean have any reason to play $T$?
+      - No! That would be adding probability to a worse outcome
+      - Bean should just play $H$
+
+### When will someone play a mixed strategy? (cont.)
+
+1. Suppose $E[u_B(\sigma_S, H)] > E[u_B(\sigma_S, T)]$
+   - "Bean gets a higher e.p. from playing H than T"
+   - So Bean should just play $H$
+
+2. Instead suppose $E[u_B(\sigma_S, H)] < E[u_B(\sigma_S, T)]$
+   - "Bean gets a higher e.p. from playing T than H"
+   - Does Bean have any reason to play $H$?
+      - No! Bean should just play $T$
+
+- Should you ever play a mixed strategy that includes quitting?
+   - Not if you want to win
+   - "Juking out your opponent" doesn't work if it's too dumb
+
+### When will someone play a mixed strategy? (cont.)
+
+1. Suppose $E[u_B(\sigma_S, H)] > E[u_B(\sigma_S, T)]$
+   - Bean should just play $H$
+2. Suppose $E[u_B(\sigma_S, H)] < E[u_B(\sigma_S, T)]$
+   - Bean should just play $T$
+3. What if $E[u_B(\sigma_S, H)] = E[u_B(\sigma_S, T)]$?
+   - What does this say in words?
+   - "Bean is _indifferent_ between playing $H$ and $T$"
+
+- If Bean gets equal (expected) payoffs from playing either pure strategy, then (and only then) will they have reason to play a mixed strategy
+
+- This holds true in general:
+   - An agent will only play a mixed strategy when they are indifferent between a subset of their pure strategies, _holding fixed what the other player is doing_
+   - ...and, assuming these strategies are the best pure strategies they can play, in response to the opponent's strategy
+      - Ex. scream $\sim$ cry, but **try** is better than both
+
+
+### How do we find MSNE?
+
+- It's complicated...we'll return to this later
+
+- For now, I primarily want you to know when/why players mix and Nash's existence theorem
+
+
+### Never Best Responses
+
+- [Def]{.def} [[Version 1.0]{.alert}]: A (pure) strategy $\tilde{s}\in S_{i}$ is said to be [Never a Best Response]{.hii} provided that $\tilde{s}\notin BR_{i}(s_{-i})$ for [any]{.ul} $s_{-i}\in S_{-i}$
+
+- How is this related to strict/weak domination?
+
+### NBR Example
+
+![](imgs/nbr-ex.png){.absolute top=10% right=5% width=33%}
+
+- $H \succ_{SD} C$ for $P_A$
+   - and $C$ is NBR
+
+- Hit is not dominated by anything for $P_A$
+   - but Hit is still NBR
+
+### Never Best Responses
+
+:::{.nonincremental}
+- [Def]{.def} [[Version 1.0]{.alert}]: A (pure) strategy $\tilde{s}\in S_{i}$ is said to be [Never a Best Response]{.hii} provided that $\tilde{s}\notin BR_{i}(s_{-i})$ for [any]{.ul} $s_{-i}\in S_{-i}$
+
+- How is this related to strict/weak domination?
+:::
+
+- [**Fact:**]{.alert} a strictly dominated strategy is never a best response
+   - Why?
+
+- Do we want to eliminate NBRs _a la_ IDSDS? 
+   - No, at least not using this definition
+   - We will return to this later, when we resume mixed strategies
+
+

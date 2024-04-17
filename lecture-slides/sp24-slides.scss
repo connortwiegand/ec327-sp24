@@ -8,7 +8,8 @@ $accent2 :#0c9c7f;
 $accent3: #42d1a4;
 $accent4: mix(#000, #AAF0BE, 25%);
 $acc-alt1: #e64173;
-$acc-alt2: mix(#000, #107895, 33%);
+$acc-alt2: #ef876a;
+$acc-alt3: mix(#000, #107895, 33%);
 $right-arrow: "\2192"; // Unicode character for right arrow
 $en-dash: "\2012";
 
@@ -35,6 +36,10 @@ $selection-bg: #2c2646 !default;
 // User-defined
 .alert {
    color: $acc-alt1;
+}
+
+.alert2 {
+   color: $acc-alt2;
 }
 
 .ex {
@@ -93,7 +98,12 @@ $selection-bg: #2c2646 !default;
    text-decoration: underline;
 }
 
-.def,
+.def {
+   // font-weight: bold;
+   color: $acc-alt1;
+   font-style: italic;
+}
+
 .ulb {
    text-decoration: underline;
    font-weight: bold;

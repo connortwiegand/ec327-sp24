@@ -13,41 +13,47 @@ format:
     smaller: true
     incremental: true
     preview-links: true
+    # include-in-header: |
+    #   ```{=bash}
+    #   bash typ2png4reveal.sh
+    #   ```
+    # auto-stretch: false
 
-  pdf: 
-    documentclass: standalone
-    # papersize: letter
-    # fontsize: 15pt
-    pdf-engine: xelatex
-    # latex: 
-    include-in-header: 
-      - text: | 
-          \usepackage{sgamex, mathtools, pstricks, pst-node}
-          \gamemathtrue
-          \newcommand\hstrike[3][red]{
-          \ncline[linewidth=1pt, nodesepA=-12pt, nodesepB=-12pt, linecolor=#1]{#2}{#3}
-          }
-          \newcommand\vstrike[3][blue]{
-          \ncline[linewidth=1pt, nodesepA=-10pt, nodesepB=-12pt, linecolor=#1]{#2}{#3}
-          }
+# lightbox: true
 
-lightbox: true
+# <format:>
+#   pdf: 
+#     documentclass: standalone
+#     # papersize: letter
+#     # fontsize: 15pt
+#     pdf-engine: xelatex
+#     # latex: 
+#     include-in-header: 
+#       - text: | 
+#           \usepackage{sgamex, mathtools, pstricks, pst-node}
+#           \gamemathtrue
+#           \newcommand\hstrike[3][red]{
+#           \ncline[linewidth=1pt, nodesepA=-12pt, nodesepB=-12pt, linecolor=#1]{#2}{#3}
+#           }
+#           \newcommand\vstrike[3][blue]{
+#           \ncline[linewidth=1pt, nodesepA=-10pt, nodesepB=-12pt, linecolor=#1]{#2}{#3}
+#           }
 
-filters:
-  - imagify
+# filters:
+#   - imagify
 
-imagify:
-   header-includes: |
-      \usepackage{sgamex, mathtools, pstricks, pst-node, colortbl}
-      \gamemathtrue
-      \newcommand\hstrike[3][red]{
-      \ncline[linewidth=1pt, nodesepA=-12pt, nodesepB=-12pt, linecolor=#1]{#2}{#3}
-      }
-      \newcommand\vstrike[3][blue]{
-      \ncline[linewidth=1pt, nodesepA=-10pt, nodesepB=-12pt, linecolor=#1]{#2}{#3}
-      }
-   zoom: 1.75
-  #  embed: false
+# imagify:
+#    header-includes: |
+#       \usepackage{sgamex, mathtools, pstricks, pst-node, colortbl}
+#       \gamemathtrue
+#       \newcommand\hstrike[3][red]{
+#       \ncline[linewidth=1pt, nodesepA=-12pt, nodesepB=-12pt, linecolor=#1]{#2}{#3}
+#       }
+#       \newcommand\vstrike[3][blue]{
+#       \ncline[linewidth=1pt, nodesepA=-10pt, nodesepB=-12pt, linecolor=#1]{#2}{#3}
+#       }
+#    zoom: 1.75
+#   #  embed: false
 
 
 
