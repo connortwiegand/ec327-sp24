@@ -1,0 +1,23 @@
+---
+title: Extensive Form Games
+author: "[with]{.with} Connor T. Wiegand"
+from: markdown+emoji
+stripcomments: true
+format: 
+   revealjs:
+      slide-level: 3
+      # chalkboard: false
+      embed-resources: true
+      incremental: false
+# editor:
+#    render-on-save: true
+lightbox: true
+---
+
+## Previously
+
+### Extensive Form Games
+
+
+
+###
