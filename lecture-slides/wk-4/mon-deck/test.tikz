@@ -1,0 +1,34 @@
+\usetikzlibrary{arrows.meta, positioning, calc}
+\begin{tikzpicture}[thin,
+   level 1/.style={sibling distance=40mm},
+   level 2/.style={sibling distance=16mm},
+   level 3/.style={sibling distance=15mm},
+   every circle node/.style={minimum size=1.5mm,inner sep=0mm}] -->
+   \node[circle,draw,label=above:1] (root) {}
+   child { node [circle,fill,label=above:2] {}
+      child { 
+         node {2,2}
+         edge from parent
+         node[left] {X}}
+      child { 
+         node {4,0}
+         edge from parent
+         node[right] {Z}}
+      edge from parent
+      node[above left] {Veto}}
+   child { node [circle,fill,label=above:2] {}
+      child { 
+         node {2,2}
+         edge from parent
+         node[left, xshift = -1] {$X$}}
+      child { 
+         node {0,4}
+         edge from parent
+         node[left, xshift = 1] {$Y$}}
+      child { 
+         node {4,0}
+         edge from parent
+         node[right, xshift = 1] {$Z$}}
+      edge from parent
+      node[above right] {Don't Veto}};
+\end{tikzpicture}

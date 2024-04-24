@@ -4,8 +4,222 @@ author: "[with]{.with} Connor T. Wiegand"
 format: 
    revealjs:
       slide-level: 3
-      # chalkboard: true
+      # chalkboard: false
       embed-resources: true
 # editor:
 #    render-on-save: true
 ---
+
+### Games in Sequence
+
+- So far, we've modeled games as occurring simultaneously
+   - The representation of choice for these games is called "Normal Form" or "Srategic Form"
+   - The primary tool is a payoff matrix 
+      - Other than some geometric bookkeeping, this tool is pretty straightforward to use
+      - Provides direct access to our so-called "good predictions"
+
+
+- However, we may think of games as occurring _in-sequence_ where one player makes a move and the other(s) respond
+   - The payoff matrix will not be as helpful here
+   - Instead, we will use trees :evergreen_tree:
+   - This representation (e.g., [model]{.hi}) is known as "Extensive Form"
+
+### Components of a game tree
+
+- This is called the [Entrant Game]{.hi}
+
+- The [_node_]{.hi} at the top represents the player who goes first in the game
+   - This is called the _root node_
+- [_Edges_]{.hi} connect the nodes, and represent strategies
+- Payoffs are shown at the bottom in the order of ($\pi_1, \pi_2$)
+   - These are called _terminal nodes_
+- Each non-terminal node is a player
+
+![](imgs/entrant-game.png){.absolute width=50% right=10 bottom=-100}
+
+### Using Extensive Form Games
+
+- Each "level" (often a horizontal row) of the game represents a [_stage_]{.hi} of the game
+   - In other economics classes, you might call this a _period_
+
+- We can trace out a path on the game tree to represent an _outcome_ of a game
+
+- At times, it will also be helpful to circle the payoffs that result from this outcome (I've omitted that here though)
+
+![](imgs/ent-path.png){.absolute width=50% right=10 bottom=-90}
+
+### A Refinement
+
+- Previously, we used the term "strategy" interchangeably with "move" and "action"
+
+- However, you might recall that this was the following definition:
+
+   - > [**Def:**]{.def} A strategy is an [information contingent]{.ul} plan of action
+
+- Now, this has real meaning: at different stages of the game, players have different information
+   - Note that they still have common knowledge of the rules of the game + rationality
+
+- What does _information-contingent_ mean?
+
+### Strategies in Extensive Form Games
+
+- Since a strategy is information-contingent, it must include an action for each possible state of the world that could be realized
+   - You have outfits in mind that vary based on the weather
+
+. . .
+
+::::{.columns}
+
+:::{.column width="50%"}
+
+- In this game, player 2's strategies must capture a 'move' for _each_ possible state of the world that player 2 knows they could end up at
+   - Therefore, one such strategy is $(X,Z)$
+   - As player 2, this reads "play $X$ if $P_1$ plays $A$, and play $Z$ if player 1 plays $B$.
+   - Player 2's full set of strategies is $S_2=\{(X,Z), (X,W), (Y,Z), (Y, W)\}$
+- Player 1, on the other hand, still only has two possible moves (based on their own information)
+   - $S_{1}=\{A, B\}$
+
+:::
+
+![](imgs/basic-game.png){.absolute width=50% right=10 bottom=-70}
+
+::::
+
+### How many strategies does each player have?
+
+![](imgs/bigger-game.png)
+
+
+### How many strategies does each player have?
+
+- That game was a little big...
+
+- Examples of  $P_2$'s strategies
+   - $(B,C,F)$
+   - $(A,D,G)$
+   - $(A,C,E)$
+   - There are $2\cdot 2\cdot 3=12$ in total
+
+- Examples of $P_1$'s strategies
+   - $\{\text{Fight}, (x,x,x,x,y,y,y)\}$
+      - "Play Fight", "play x I saw player 2 play any of A, B,C, D", "play y if I saw player 2 play any of E, F, G"
+   - Even though player 1 plays first, to analyze the game (e.g. to check deviations), a strategy for player 1 should include a plan of action at [every]{.ul} info set!
+
+
+### Drawing game paths
+
+- We often don't just want to specify an _outcome_
+
+- We want to analyze a game so we can
+   - Make a (hopefully good) prediction
+   - Model the behavior of agents in a game 
+
+- To analyze a game, we want to describe the _strategies_ that individuals are playing
+
+- Therefore, we often trace out paths of _strategies_ rather than _outcomes_
+   - In this game, we end up at (the outcome associated with) $2,1$
+
+![](imgs/egame-test.png){.absolute width=60% right=10 bottom=-60}
+
+
+### Conversion from Extensive Form
+
+- Consider the following game
+
+   1. Write down each player
+      - $P_1$, $P_2$
+   1. Write down the strategy space for each player
+      - $S_1=\{R,S\}$
+      - $S_2 = \{(SG, SG), (SG, RD), (RD, SG), (RD, RD)\}$
+   1. Write down the payoffs
+      - okay, we get the idea
+
+![](imgs/chicken.png){.absolute width=50% right=10 bottom=0}
+
+
+- What if that's all the information you got?
+   - E.g., these players, strategies, and payoffs
+
+### You could make a table!
+
+- We can convert extensive form games (_EFG_) into normal form games (_NFG_) 
+
+- How big is the payoff matrix you have from the previous slide?
+   - 2x4
+
+. . .
+
+![](imgs/sfg-chicken.png){.absolute width=50% right=100}
+
+
+### Equilibria
+
+- To find NE on a game tree, it turns out to be easiest to just convert the game into normal form and underline
+   - In the game from the previous slide, we can see that the NE are (S, (SG, SG)), (R, (RD, SG)), and (R, (RD, RD))
+
+![](imgs/sfg-chicken__solved.png)
+
+
+- Specifying payoffs like this in normal form might seem ~~dumb~~ silly, but it allows us to capture the more subtle notion of deviation from a strategy than normal form play does
+
+### Gooder Predictions
+
+- So, why use the tree?
+
+- Consider the following example (again)
+
+![](imgs/entrant-game.png)
+
+- Convert the game to normal form (and find the NE)
+
+### Gooder Predictions (cont.)
+
+- (Out, Fight) and (In, Accomodate) are NE
+
+![](imgs/sfg-ent.png){.absolute width=40% right=200 bottom=100}
+
+
+
+- Are both of these predictions equally as good?
+
+### Gooder Games
+
+- Game trees can help us find more refined versions of NE, which is indeed what we will be after
+
+- However, there are a few more aspects of game trees to introduce
+
+- It turns out that we can capture some pretty interesting games with this model
+
+### Information
+
+- We can easily visualize varying levels of _information_ in a game using game trees
+
+- So far, we have shown games where players knew what players before them did
+
+- Each node is contained in whats called a [_Singleton_ information set]{.hi} 
+
+- However, game trees allow us to incorporate some leve of _hidden_ information
+
+### Information Sets
+
+- In this game, the dashed line (often a bubble, both are equally common) represents where player 2 knows where they _could_ be in a game
+
+![](imgs/hidden-chicken.png)
+
+- This dashed line explicitly indicates the notion of [_information sets_]{.hi}
+   - Player 2 knows when they are [**somewhere**]{.hi} on the dashed line
+   - They just don't know which spot they are at within the line
+
+- Now what do strategies look like?
+
+
+### Strategies and information
+
+- Since player 2 now has less information, they will have a different kind of strategy
+
+- In the previous example
+   - Player 1's strategies are still $\{R,S\}$
+   - However, now player 2 can't base their action on player 1's move -- _because they don't see it_
+   - Therefore, $S_2=\{SG, RD\}$
+
+- In general, the strategy for a player in a game will have [one action for each information set]{.uli} the player has in a game

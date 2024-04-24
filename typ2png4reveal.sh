@@ -6,8 +6,8 @@
 ## cleans pdfs that might be hanging around in `typ-games/` 
 
 
-# cd lecture-slides/wk-3/mon-deck/;
-cd lecture-slides/wk-3/wednes-deck/typ-games/;
+cd lecture-slides/wk-4/mon-deck/typ-games/;
+# cd lecture-slides/wk-4/wednes-deck/typ-games/;
 
 for f in ./*.typ; 
 do typst c -f png --ppi 600 ${f} ${f%.typ}.png;
