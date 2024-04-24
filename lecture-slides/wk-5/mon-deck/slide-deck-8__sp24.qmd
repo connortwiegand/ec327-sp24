@@ -19,5 +19,4 @@ lightbox: true
 ### Extensive Form Games
 
 
-
 ###
