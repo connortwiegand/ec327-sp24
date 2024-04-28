@@ -1,46 +1,36 @@
-#import "@preview/cetz:0.2.2": tree, draw, canvas
 #set page(
   width: auto, 
   height: auto,
   margin: (rest:0.25em),
   fill: rgb(255,255,255,0%)
   )
-
+#import "@preview/cetz:0.2.2": tree, draw, canvas
 
 #canvas({
-  import draw: *
-  import tree: *
-  let node-rad = .5
-  set-style(
-    content: (padding: .1),
-    circle: (radius: node-rad)
-  )
-  
-  
-  let strats = (
-    p1: ([$a$], [$b$]),
-    p2: (
-      "0": ([$A$], [$B$]),
-      "1": ([$X$], [$Y$], [$Z$])
+    import draw: *
+    import tree: *
+    let node-rad = .5
+    set-style(
+      content: (padding: .1),
+      circle: (radius: node-rad, stroke: 1.33pt),
+      line: (stroke: 1.33pt)
+    )
+
+    let strats = (
+      p1: ([Out], [Enter]),
+      p2: (
+        "1": ([Fight], [Acc.])
       )
-  )
+    )
 
-  let pis = (
-    "0-0": [$0,3$], 
-    "0-1": [$1,3$], 
-    "1-0": [$1,-1$],
-    "1-1": [$2,1$],
-    "1-2": [$2,1$]
-  )
+    let tree-struct = (
+      "1",
+      ([$0, 3$], ),
+      ("2", [$1, -1$], [$2, 1$])
+    )
 
-  let tree-struct = (
-    "1",
-    ("2", pis.at("0-0"), pis.at("0-1")),
-    ("2", pis.at("1-0"), pis.at("1-1"), pis.at("1-2"))
-  ) 
-
-  let gamepath = none
-  
+    let gamepath = ([Enter], [Acc.])
+    
     tree(
       tree-struct,
       grow: 3.5,
@@ -106,4 +96,4 @@
         )
       } //end draw-edge
   ) //end tree!
-})
+}) //end canvas

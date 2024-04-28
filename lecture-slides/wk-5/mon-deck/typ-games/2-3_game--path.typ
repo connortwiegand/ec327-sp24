@@ -39,7 +39,7 @@
     ("2", pis.at("1-0"), pis.at("1-1"), pis.at("1-2"))
   ) 
 
-  let gamepath = none
+  let gamepath = ([$b$], [$A$], [$Y$])
   
     tree(
       tree-struct,

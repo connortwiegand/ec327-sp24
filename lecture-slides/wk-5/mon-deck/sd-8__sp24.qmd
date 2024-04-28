@@ -1,8 +1,6 @@
 ---
 title: Extensive Form Games
 author: "[with]{.with} Connor T. Wiegand"
-from: markdown+emoji
-stripcomments: true
 format: 
    revealjs:
       slide-level: 3
@@ -38,8 +36,8 @@ lightbox: true
 - Therefore, a strategy for any given player must specify what the player will do in _every_ state of the world^[respecting information sets]
 
 - In the previous example: 
-   - $S_1=\{A, B\}$
-   - $S_2=\{(,X), (,Y), (,Z), (,X), (,Y), (,Z)\}$
+   - $S_1=\{a, b\}$
+   - $S_2=\{(A,X), (A,Y), (A,Z), (B,X), (B,Y), (B,Z)\}$
 
 ### Information Sets
 
@@ -123,7 +121,7 @@ lightbox: true
 ![](imgs/bad-info.jpg){width=50%}
 
 - Write down $S_2$
-   - $\require{ulem}\sout{\{P, Q, U, D\}}$?
+   - $\{P, Q, U, D\}$?
    - $\{(UP), (DQ)\}$?
    - $\{P, D\}$?
    - [None of the above]{.ul}
@@ -141,7 +139,7 @@ lightbox: true
 
 - This is the easiest way to find all of the (vanilla) NE in an Extensive Form Game
 
-![](imgs/conv-ex.png){width=60%}
+![](imgs/conv-ex.png){width=70%}
 
 ### Computing the number of Strategies
 
@@ -318,28 +316,52 @@ lightbox: true
 
 - Like too much of game theory, this method is hard to write down, but easy to display and easy to perform once you get the hang of it
 
+
 - Let's do an example: Entrant Game
 
 - How many subgames?
    - 2 total, 1 proper
 
-<!-- Entrant w/ Subgames -->
+. . . 
+
+
+![](imgs/ent-sgs.png){width=40%}
+
 
 ### SPNE: Entrant Game
 
+- Let's look at the last decision made in the game
 
-### SPNE: Kidnapper Game
-
-
-### SPNE: Kidnapper Game (cont.)
+![](imgs/ent-sg1.png){width=40%}
 
 
-### SPNE: Kidnapper Game w/ Imperfect Info.
+### SPNE: Entrant Game (cont.)
+
+- When it's player 2's turn and they reach this subgame, they will rationally pick _Acc._ because $1>-1$
+
+![](imgs/ent-sg1__solved.png){width=40%}
 
 
-### SPNE: Kidnapper Game w/ Imperfect Info. (cont.)
+### SPNE: Entrant Game (cont.)
+
+- With common knowledge of sequential rationality, player 1 knows this about player 2
+
+- So, let's just replace [_SG1_]{.pl1} with the payoff that will be realized if player 1 plays _Enter_ 
+
+![](imgs/ent-sg0.png){width=40%}
+
+### SPNE: Entrant Game (cont.)
+
+- $2>0$, so player 1 will pick _Enter_ rather than _Out_
+
+![](imgs/ent-sg0__solved.png){width=40%}
+
+### SPNE: Entrant Game (Solved)
+
+- Therefore, $(Enter, Acc.)$ is the Subgame Perfect Nash Equilibrium
 
 
+![](imgs/ent__solved.png){width=40%}
 
 ### Backward Induction, explained
 
@@ -358,3 +380,48 @@ lightbox: true
 
 
 - [Remark:]{.alert} like IDSDS, it may be easiest to _replace_ each subgame with the payoff achieved from following your marked path (see next slide)
+
+
+### Ein Theoremfacten
+
+- [Recall]{.alert}
+   - Nash: Under certain conditions, every game has a Nash Equilibrium
+   - [_For this class_]{.hi}: Every reasonable game has a NE 
+      - Or (I'm fine with): _Every_ game has a NE
+
+- Similarly, there are some exceptions to the following rule, but I'm fine with you treating the following as a fact in this class
+
+- [**Fact**:]{.alert} Every sequential game has a Subgame-Perfect Nash Equilibrium (SPNE), and this SPNE is unique
+
+- Remarks
+   - Existence is pretty robust^[Rarely would a course of any variety address the possibility of EFGs with no SPNE]
+
+   - [Caveat] It's possible to have more than one SPNE, but this is only when there is indifference (e.g. equal payoffs along each step of Backward Induction)
+
+
+
+### Kidnapper Game
+
+
+### Kidnapper Game (NE)
+
+
+### Kidnapper Game (SPNE)
+
+
+### Kidnapper Game w/ Imperfect Info.
+
+
+### Kidnapper Game w/ Imperfect Info. (NF + NE)
+
+
+### Kidnapper Game w/ Imperfect Info. (SPNE)
+
+
+### The Centipede Game
+
+
+### The Centipede Game (cont.)
+
+
+### The Centipede Game (cont.)

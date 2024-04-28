@@ -369,8 +369,8 @@
 <li><p>Therefore, a strategy for any given player must specify what the player will do in <em>every</em> state of the world<sup>1</sup></p></li>
 <li><p>In the previous example:</p>
 <ul>
-<li><span class="math inline">\(S_1=\{A, B\}\)</span></li>
-<li><span class="math inline">\(S_2=\{(,X), (,Y), (,Z), (,X), (,Y), (,Z)\}\)</span></li>
+<li><span class="math inline">\(S_1=\{a, b\}\)</span></li>
+<li><span class="math inline">\(S_2=\{(A,X), (A,Y), (A,Z), (B,X), (B,Y), (B,Z)\}\)</span></li>
 </ul></li>
 </ul>
 <aside><ol class="aside-footnotes"><li id="fn1"><p>respecting information sets</p></li></ol></aside></section>
@@ -496,7 +496,7 @@
 <ul>
 <li>Write down <span class="math inline">\(S_2\)</span>
 <ul>
-<li><span class="math inline">\(\require{ulem}\sout{\{P, Q, U, D\}}\)</span>?</li>
+<li><span class="math inline">\(\{P, Q, U, D\}\)</span>?</li>
 <li><span class="math inline">\(\{(UP), (DQ)\}\)</span>?</li>
 <li><span class="math inline">\(\{P, D\}\)</span>?</li>
 <li><u>None of the above</u></li>
@@ -519,7 +519,7 @@
 </ul></li>
 <li>This is the easiest way to find all of the (vanilla) NE in an Extensive Form Game</li>
 </ul>
-<p><a href="imgs/conv-ex.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img data-src="imgs/conv-ex.png" style="width:60.0%"></a></p>
+<p><a href="imgs/conv-ex.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img data-src="imgs/conv-ex.png" style="width:70.0%"></a></p>
 </section>
 <section id="computing-the-number-of-strategies" class="slide level3">
 <h3>Computing the number of Strategies</h3>
@@ -567,10 +567,29 @@
 </ul>
 </div>
 <div id="tabset-3-3">
-<p><a href="imgs/count-strats-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img data-src="imgs/count-strats-2.png"></a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="imgs/count-strats-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" data-glightbox="description: .lightbox-desc-16" title="Strategies for Ann? Strategies for Beth?"><img data-src="imgs/count-strats-2.png" style="width:110.0%" alt="Strategies for Ann? Strategies for Beth?"></a></p>
+<figcaption>Strategies for Ann? Strategies for Beth?</figcaption>
+</figure>
+</div>
 </div>
 <div id="tabset-3-4">
-
+<ul>
+<li>Ann
+<ul>
+<li><span class="math inline">\(|S_A| = 2\cdot 2\cdot3\cdot3\cdot2 = 54\)</span></li>
+</ul></li>
+<li>Beth
+<ul>
+<li><span class="math inline">\(|S_B| = 2\cdot 2\cdot2\cdot2\cdot2\cdot2 = 12\)</span></li>
+</ul></li>
+</ul>
+<p><br>
+</p>
+<ul>
+<li>Note: I couldn’t ask you to convert this to normal form (too big)</li>
+</ul>
 </div>
 </div>
 </div>
@@ -721,16 +740,45 @@
 <li>2 total, 1 proper</li>
 </ul></li>
 </ul>
-<!-- Image -->
+<div class="fragment">
+<p><a href="imgs/ent-sgs.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23"><img data-src="imgs/ent-sgs.png" style="width:40.0%"></a></p>
+</div>
 </section>
-<section id="section-3" class="slide level3">
-<h3></h3>
+<section id="spne-entrant-game" class="slide level3">
+<h3>SPNE: Entrant Game</h3>
+<ul>
+<li>Let’s look at the last decision made in the game</li>
+</ul>
+<p><a href="imgs/ent-sg1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24"><img data-src="imgs/ent-sg1.png" style="width:40.0%"></a></p>
 </section>
-<section id="section-4" class="slide level3">
-<h3></h3>
+<section id="spne-entrant-game-cont." class="slide level3">
+<h3>SPNE: Entrant Game (cont.)</h3>
+<ul>
+<li>When it’s player 2’s turn and they reach this subgame, they will rationally pick <em>Acc.</em> because <span class="math inline">\(1&gt;-1\)</span></li>
+</ul>
+<p><a href="imgs/ent-sg1__solved.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25"><img data-src="imgs/ent-sg1__solved.png" style="width:40.0%"></a></p>
 </section>
-<section id="section-5" class="slide level3">
-<h3></h3>
+<section id="spne-entrant-game-cont.-1" class="slide level3">
+<h3>SPNE: Entrant Game (cont.)</h3>
+<ul>
+<li><p>With common knowledge of sequential rationality, player 1 knows this about player 2</p></li>
+<li><p>So, let’s just replace <span class="pl1"><em>SG1</em></span> with the payoff that will be realized if player 1 plays <em>Enter</em></p></li>
+</ul>
+<p><a href="imgs/ent-sg0.png" class="lightbox" data-gallery="quarto-lightbox-gallery-26"><img data-src="imgs/ent-sg0.png" style="width:40.0%"></a></p>
+</section>
+<section id="spne-entrant-game-cont.-2" class="slide level3">
+<h3>SPNE: Entrant Game (cont.)</h3>
+<ul>
+<li><span class="math inline">\(2&gt;0\)</span>, so player 1 will pick <em>Enter</em> rather than <em>Out</em></li>
+</ul>
+<p><a href="imgs/ent-sg0__solved.png" class="lightbox" data-gallery="quarto-lightbox-gallery-27"><img data-src="imgs/ent-sg0__solved.png" style="width:40.0%"></a></p>
+</section>
+<section id="spne-entrant-game-solved" class="slide level3">
+<h3>SPNE: Entrant Game (Solved)</h3>
+<ul>
+<li>Therefore, <span class="math inline">\((Enter, Acc.)\)</span> is the Subgame Perfect Nash Equilibrium</li>
+</ul>
+<p><a href="imgs/ent__solved.png" class="lightbox" data-gallery="quarto-lightbox-gallery-28"><img data-src="imgs/ent__solved.png" style="width:40.0%"></a></p>
 </section>
 <section id="backward-induction-explained" class="slide level3">
 <h3>Backward Induction, explained</h3>
@@ -752,6 +800,53 @@
 <ul>
 <li><span class="alert">Remark:</span> like IDSDS, it may be easiest to <em>replace</em> each subgame with the payoff achieved from following your marked path (see next slide)</li>
 </ul>
+</section>
+<section id="ein-theoremfacten" class="slide level3">
+<h3>Ein Theoremfacten</h3>
+<ul>
+<li><p><span class="alert">Recall</span></p>
+<ul>
+<li>Nash: Under certain conditions, every game has a Nash Equilibrium</li>
+<li><span class="hi"><em>For this class</em></span>: Every reasonable game has a NE
+<ul>
+<li>Or (I’m fine with): <em>Every</em> game has a NE</li>
+</ul></li>
+</ul></li>
+<li><p>Similarly, there are some exceptions to the following rule, but I’m fine with you treating the following as a fact in this class</p></li>
+<li><p><span class="alert"><strong>Fact</strong>:</span> Every sequential game has a Subgame-Perfect Nash Equilibrium (SPNE), and this SPNE is unique</p></li>
+<li><p>Remarks</p>
+<ul>
+<li><p>Existence is pretty robust<sup>1</sup></p></li>
+<li><p>[Caveat] It’s possible to have more than one SPNE, but this is only when there is indifference (e.g.&nbsp;equal payoffs along each step of Backward Induction)</p></li>
+</ul></li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn6"><p>Rarely would a course of any variety address the possibility of EFGs with no SPNE</p></li></ol></aside></section>
+<section id="kidnapper-game" class="slide level3">
+<h3>Kidnapper Game</h3>
+</section>
+<section id="kidnapper-game-ne" class="slide level3">
+<h3>Kidnapper Game (NE)</h3>
+</section>
+<section id="kidnapper-game-spne" class="slide level3">
+<h3>Kidnapper Game (SPNE)</h3>
+</section>
+<section id="kidnapper-game-w-imperfect-info." class="slide level3">
+<h3>Kidnapper Game w/ Imperfect Info.</h3>
+</section>
+<section id="kidnapper-game-w-imperfect-info.-nf-ne" class="slide level3">
+<h3>Kidnapper Game w/ Imperfect Info. (NF + NE)</h3>
+</section>
+<section id="kidnapper-game-w-imperfect-info.-spne" class="slide level3">
+<h3>Kidnapper Game w/ Imperfect Info. (SPNE)</h3>
+</section>
+<section id="the-centipede-game" class="slide level3">
+<h3>The Centipede Game</h3>
+</section>
+<section id="the-centipede-game-cont." class="slide level3">
+<h3>The Centipede Game (cont.)</h3>
+</section>
+<section id="the-centipede-game-cont.-1" class="slide level3">
+<h3>The Centipede Game (cont.)</h3>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
@@ -764,6 +859,7 @@
 <span class="glightbox-desc lightbox-desc-6">In the first stage of the game, player 2 does not know whether player 1 played <span class="math inline">\(U\)</span> or <span class="math inline">\(D\)</span>. Later, they essentially <em>learn</em> this move based on how the game progresses. If <span class="math inline">\((U,L)\)</span> was played, player 2 can see whether <span class="math inline">\(A\)</span> or <span class="math inline">\(B\)</span> was played. If <span class="math inline">\((D,R)\)</span> was played, player 2 knows this, but they do not know whether player 1 played <span class="math inline">\(a\)</span> or <span class="math inline">\(b\)</span>.</span>
 <span class="glightbox-desc lightbox-desc-7">Potato quality. What does player 2 know? What does player 3 know?</span>
 <span class="glightbox-desc lightbox-desc-15"><strong>Ignore the directions in this image.</strong></span>
+<span class="glightbox-desc lightbox-desc-16">Strategies for Ann? Strategies for Beth?</span>
 </div>
 </section></section>
 
@@ -1133,7 +1229,7 @@
       }
     });
     </script>
-    <script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","loop":false});
+    <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"bottom"});
     window.onload = () => {
       lightboxQuarto.on('slide_before_load', (data) => {
         const { slideIndex, slideNode, slideConfig, player, trigger } = data;
