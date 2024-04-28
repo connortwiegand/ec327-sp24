@@ -6,7 +6,7 @@
 ## cleans pdfs that might be hanging around in `typ-games/` 
 
 
-cd lecture-slides/wk-4/mon-deck/typ-games/;
+cd lecture-slides/wk-5/mon-deck/typ-games/;
 # cd lecture-slides/wk-4/wednes-deck/typ-games/;
 
 for f in ./*.typ; 

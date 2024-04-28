@@ -117,6 +117,17 @@ $selection-bg: #2c2646 !default;
    min-height: 45%;
 }
 
+.gslide-image,
+img.zoomable{
+   background: $body-bg;
+}
+
+figcaption {
+   color: lighten($body-color, 30%);
+   text-align: center;
+   margin-right: 15%;
+}
+
 // *Reveal* 
 .reveal {
    a {
@@ -163,9 +174,10 @@ $selection-bg: #2c2646 !default;
       padding-left: 16px;
       // font-weight: 300;
       // font-weight: lighter;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: space-around;
+      // flex: 1;
       
       li::marker {
          color: mix($accent, white, 70%);

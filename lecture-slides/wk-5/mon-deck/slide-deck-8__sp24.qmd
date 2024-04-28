@@ -13,10 +13,3 @@ format:
 #    render-on-save: true
 lightbox: true
 ---
-
-## Previously
-
-### Extensive Form Games
-
-
-###

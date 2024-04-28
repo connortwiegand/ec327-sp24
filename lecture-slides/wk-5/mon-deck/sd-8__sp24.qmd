@@ -10,4 +10,351 @@ format:
       # embed-resources: true
 # editor:
 #    render-on-save: true
+incremental: false
+lightbox: true
 ---
+
+## Previously
+
+### Extensive Form Games
+
+- Players move in sequence
+   - _Extensive Form_ is sometimes called [_Sequential Form_]{.hi} for this reason
+
+- Use game trees to model
+
+- Use arrows to denote the _game path_
+
+:::{.r-stack}
+![](imgs/2-3_game.png){.fragment .fade-in-then-out width=80%}
+
+![](imgs/2-3_game--path.png){.fragment width=80%}
+:::
+
+### Strategies in Extensive Form
+
+- Recall: a [**strategy**]{.hi} is an information-contingent plan of action
+
+- Therefore, a strategy for any given player must specify what the player will do in _every_ state of the world^[respecting information sets]
+
+- In the previous example: 
+   - $S_1=\{A, B\}$
+   - $S_2=\{(,X), (,Y), (,Z), (,X), (,Y), (,Z)\}$
+
+### Information Sets
+
+- We can use dashed lines or bubbles to denote non-degenerate [information sets]{.ul} for different players
+
+:::{.panel-tabset}
+
+#### Ex: $\hspace{1em}$ I
+![Player 2 does not know whether player 1 played _Remain_ or _Swerve_](imgs/hidden-chicken.png){width=70%}
+
+#### II
+![Player 2 sees player 1 play R (or L). If (R,R) is played in the first two stages of the game, when it is player 2's turn, they do not know whether player 1 played A or B](imgs/good-info-ex.jpg){width=70%}
+
+#### III
+![Player 2 knows whether player 1 played $A$ or $\bar{A}$, but not whether player 1 played. (Remark: I typically won't give you a game like this: I would combine player 1's first two moves into one.)](imgs/info-ex-2.png){width=60%}
+
+#### IV
+![In the first stage of the game, player 2 does not know whether player 1 played $U$ or $D$. Later, they essentially _learn_ this move based on how the game progresses. If $(U,L)$ was played, player 2 can see whether $A$ or $B$ was played. If $(D,R)$ was played, player 2 knows this, but they do not know whether player 1 played $a$ or $b$.](imgs/info-ex.jpg){width=60%}
+
+#### V
+![Potato quality. What does player 2 know? What does player 3 know?](imgs/tricky-info.png){width=60%}
+
+:::
+
+### Comparing Information
+
+- Across the following games, compare player 3's information at their time of play:
+
+
+:::{.panel-tabset}
+
+#### Ex: $\hspace{1em}$ 0.
+![](imgs/comp-info-0.png){width=70%}
+
+#### 1.
+![](imgs/comp-info-1.png){width=70%}
+
+#### 2.
+![](imgs/comp-info-2.png){width=70%}
+
+#### 3.
+![](imgs/comp-info-3.png){width=70%}
+
+:::
+
+
+### Make sense?
+
+- Consider the following example
+
+. . . 
+
+![](imgs/bad-info.jpg){width=50%}
+
+- Write down $S_2$
+   - $\{P, Q, U, D\}$?
+   - $\{(UP), (DQ)\}$?
+   - $\{P, D\}$?
+
+- Does any of these make sense?
+   - No!
+
+### Trickery^[Tomfoolery, even]
+
+- Information sets determine actions
+
+- Fact: the actions which a player has available to them within an information set must be the same across all nodes within the information set
+
+- Idea: Assume I'm in a (non-degenerate) information set
+   - I.e., I [supposedly] don't know where I am on the tree
+   - Suppose I can play $(A, B, C)$ at one node and $(A, B)$ at another node
+      - I can just look at the strategies available to me^[A player always knows this] to determine where I am
+      - $\implies$ the supposed information set does not make sense
+   - Suppose I can play $(A, B, C)$ at one node and $(X, Y, Z)$ at another node
+      - We are still going to say this doesn't make sense: we will assume I can see the _names_ of the strategies available to me
+
+- TL;DR make sure that a player's actions w/in an information set are constant across all nodes in said information set
+
+### Make sense?
+
+![](imgs/bad-info.jpg){width=50%}
+
+- Write down $S_2$
+   - $\require{ulem}\sout{\{P, Q, U, D\}}$?
+   - $\{(UP), (DQ)\}$?
+   - $\{P, D\}$?
+   - [None of the above]{.ul}
+
+- This game _doesn't_ make sense: we need to change $P \to U$ and $Q\to D$, or vice versa
+
+### Conversion to Normal Form
+
+- To convert a game from extensive form to normal form:
+   - Write down all strategies for each player
+   - This defines the size of your payoff matrix
+      - \#(Player 1 strats) = \#(rows) 
+      - \#(Player 2 strats) = \#(columns)
+   - Fill in game table, ensuring payoffs match to correct outcomes
+
+- This is the easiest way to find all of the (vanilla) NE in an Extensive Form Game
+
+![](imgs/conv-ex.png){width=60%}
+
+### Computing the number of Strategies
+
+- Want to know how many strategies are in an extensive form game?
+
+- Recall: $S_i$ is player $i$'s set of strategies (aka strategy space)
+
+   - Let $|S_i|$ denote the _number_ of strategies in this space
+   - E.g. if $S_i=\{\text{Snitch}, \text{Quiet}\}$, then $|S_i|=2$
+
+- $$ |S_{i}| =  \prod_{\substack{\text{Info sets} \\ \text{for }P_i}}  (\text{actions in each info set}) $$
+
+- In words: the product of the number of actions in  each info set for player $i$, taken over all information sets for player $i$
+
+
+### Counting Strategies (ex.)
+
+- Compute the size of the strategy space for each player
+
+:::{.panel-tabset}
+#### Ex 1
+
+![**Ignore the directions in this image.**](imgs/count-strats-1.jpg){width=50%}
+
+#### Ans 1
+
+- A has 2 info sets
+   - First has 3 actions
+   - Second has 2 actions
+- $|S_A| = 3\cdot 2 = 6$
+
+- B has 2 info sets
+   - First has 2 actions
+   - Second has 2 actions
+- $|S_B| = 2\cdot 2 = 4$
+
+#### Ex 2
+
+![Strategies for Ann? Strategies for Beth?](imgs/count-strats-2.png){width=110%}
+
+#### Ans 2
+
+- Ann
+   - $|S_A| = 2\cdot 2\cdot3\cdot3\cdot2 = 54$
+
+- Beth
+   - $|S_B| = 2\cdot 2\cdot2\cdot2\cdot2\cdot2 = 12$
+
+\
+
+- Note: I couldn't ask you to convert this to normal form (too big)
+
+:::
+
+### The Entrant Game, revised and revisited 
+
+- Recall the Entrant game:
+
+:::{.panel-tabset}
+#### Extensive Form
+![](imgs/entrant-game.png){width=60%}
+
+#### Normal Form
+![](imgs/sfg-ent.png){width=50%}
+
+:::
+
+## Why use Extensive Form Games?
+
+
+### Motivation
+
+- In the Entrant Game, (Out, Fight) seems like a bad prediction
+
+   - *If* the entrant decides to go 'In', is it likely that the incumbent will choose to fight?
+
+   - Think 'Ultimatum game'
+      - "If you offer me less than $50, I will say no" 
+      - Is this [credible]{.hi}?
+
+- How do we formalize this notion?
+
+### Yay...more definitions
+
+- Let $G$ be a game in extensive form
+
+- A [**subgame**]{.hi .ul} of $G$ is
+   - a subset of $G$
+   - which is itself a game
+   - and which doesn't interfere with the information sets of $G$
+
+- Huh?
+   - Start with a non-terminal node in a singleton information set. Trace the node down all of it's "roots" to the terminal nodes
+      - That's a subgame
+
+   - Put another way: start with a non-payoff node (e.g. a player), which isn't connected to a dotted line^[or within a bubble]. Follow all the paths that  branch down from this node
+
+### Yay...more definitions (cont.)
+
+:::{.nonincremental}
+- Let $G$ be a game in extensive form
+
+- A [**subgame**]{.hi .ul} of $G$ is
+   - a subset of $G$
+   - which is itself a game
+   - and which doesn't interfere with the information sets of $G$
+:::
+
+- One more thing:
+   - T or F: $5\le 5$
+      - True
+
+   - In the same vein, $G$ is a subgame of itself
+
+- When referring to subgames
+   - $G$ is the [trivial subgame]{.hi .ul}
+
+   - All other subgames are [**proper subgames**]{.hi .ul}
+
+### Subgame Examples
+
+::::{.columns}
+
+:::{.column width=50%}
+
+![](imgs/sg-ex1.jpg){width=66%}
+
+![](imgs/sg-ex2.jpg){width=66%}
+
+:::
+
+:::{.column width=50%}
+
+![](imgs/sg-ex3.jpg){width=66%}
+
+![](imgs/sg-ex4.jpeg){width=66%}
+
+:::
+::::
+
+### ain't no way this mans got another definition slide
+
+- [**Def**]{.def} A Subgame-Perfect Nash Equilibrium (SPNE) for an arbitrary game $G$ is
+   1. A Nash Equilibrium for $G$
+   2. A Nash Equilibrium in every subgame of $G$
+
+- We can frame this refinement of NE as the result of an additional assumption
+   - Common Knowledge of _Sequential_ Rationality
+      - Players are rational in every subgame
+
+### Good News
+
+- Finding SPNE are pretty straightforward on a game tree
+
+- In fact, given an extensive form game:
+
+   - Need (plain ol') NE?
+
+      - Write down strategies for each player
+
+      - Convert to Normal Form
+
+      - _Method:_ Underline
+   
+   - Need SPNE?
+      
+      - Use the game tree directly
+
+      - _Method:_ [Backward Induction]{.hi}^[IMHO this is a dumb name. Then again, Dixit, Skeath, and McAdams use the term _Rollback Method_ and _Rollback Equilibrium_, so there are worse things]
+
+### Backward Induction
+
+- For now, we will assume singleton info. sets (no dashed lines)
+
+- Like too much of game theory, this method is hard to write down, but easy to display and easy to perform once you get the hang of it
+
+- Let's do an example: Entrant Game
+
+- How many subgames?
+   - 2 total, 1 proper
+
+<!-- Entrant w/ Subgames -->
+
+### SPNE: Entrant Game
+
+
+### SPNE: Kidnapper Game
+
+
+### SPNE: Kidnapper Game (cont.)
+
+
+### SPNE: Kidnapper Game w/ Imperfect Info.
+
+
+### SPNE: Kidnapper Game w/ Imperfect Info. (cont.)
+
+
+
+### Backward Induction, explained
+
+- Start with the lowest (endmost) subgames on a tree
+   
+   - Determine what the player making this decision will do, and mark it
+      - This will indicate what payoffs are realized if this subgame is reached
+   
+   - Repeat this step for every subgame on this 'level' of the tree
+
+- Repeat for all 'levels' of the tree, working your way up to the top
+
+\
+
+\
+
+
+- [Remark:]{.alert} like IDSDS, it may be easiest to _replace_ each subgame with the payoff achieved from following your marked path (see next slide)
