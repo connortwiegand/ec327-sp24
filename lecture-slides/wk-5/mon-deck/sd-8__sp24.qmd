@@ -8,7 +8,7 @@ format:
       # embed-resources: true
 # editor:
 #    render-on-save: true
-incremental: false
+# incremental: false
 lightbox: true
 ---
 

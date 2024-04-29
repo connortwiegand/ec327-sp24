@@ -350,12 +350,12 @@
 <section id="extensive-form-games" class="slide level3">
 <h3>Extensive Form Games</h3>
 <ul>
-<li><p>Players move in sequence</p>
+<li class="fragment"><p>Players move in sequence</p>
 <ul>
-<li><em>Extensive Form</em> is sometimes called <span class="hi"><em>Sequential Form</em></span> for this reason</li>
+<li class="fragment"><em>Extensive Form</em> is sometimes called <span class="hi"><em>Sequential Form</em></span> for this reason</li>
 </ul></li>
-<li><p>Use game trees to model</p></li>
-<li><p>Use arrows to denote the <em>game path</em></p></li>
+<li class="fragment"><p>Use game trees to model</p></li>
+<li class="fragment"><p>Use arrows to denote the <em>game path</em></p></li>
 </ul>
 <div class="r-stack">
 <p><a href="imgs/2-3_game.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="imgs/2-3_game.png" class="fragment fade-in-then-out" style="width:80.0%"></a></p>
@@ -365,19 +365,19 @@
 <section id="strategies-in-extensive-form" class="slide level3">
 <h3>Strategies in Extensive Form</h3>
 <ul>
-<li><p>Recall: a <span class="hi"><strong>strategy</strong></span> is an information-contingent plan of action</p></li>
-<li><p>Therefore, a strategy for any given player must specify what the player will do in <em>every</em> state of the world<sup>1</sup></p></li>
-<li><p>In the previous example:</p>
+<li class="fragment"><p>Recall: a <span class="hi"><strong>strategy</strong></span> is an information-contingent plan of action</p></li>
+<li class="fragment"><p>Therefore, a strategy for any given player must specify what the player will do in <em>every</em> state of the world<sup>1</sup></p></li>
+<li class="fragment"><p>In the previous example:</p>
 <ul>
-<li><span class="math inline">\(S_1=\{a, b\}\)</span></li>
-<li><span class="math inline">\(S_2=\{(A,X), (A,Y), (A,Z), (B,X), (B,Y), (B,Z)\}\)</span></li>
+<li class="fragment"><span class="math inline">\(S_1=\{a, b\}\)</span></li>
+<li class="fragment"><span class="math inline">\(S_2=\{(A,X), (A,Y), (A,Z), (B,X), (B,Y), (B,Z)\}\)</span></li>
 </ul></li>
 </ul>
 <aside><ol class="aside-footnotes"><li id="fn1"><p>respecting information sets</p></li></ol></aside></section>
 <section id="information-sets" class="slide level3">
 <h3>Information Sets</h3>
 <ul>
-<li>We can use dashed lines or bubbles to denote non-degenerate <u>information sets</u> for different players</li>
+<li class="fragment">We can use dashed lines or bubbles to denote non-degenerate <u>information sets</u> for different players</li>
 </ul>
 <div class="panel-tabset">
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Ex: <span class="math inline">\(\hspace{1em}\)</span> I</a></li><li><a href="#tabset-1-2">II</a></li><li><a href="#tabset-1-3">III</a></li><li><a href="#tabset-1-4">IV</a></li><li><a href="#tabset-1-5">V</a></li></ul>
@@ -428,7 +428,7 @@
 <section id="comparing-information" class="slide level3">
 <h3>Comparing Information</h3>
 <ul>
-<li>Across the following games, compare player 3’s information at their time of play:</li>
+<li class="fragment">Across the following games, compare player 3’s information at their time of play:</li>
 </ul>
 <div class="panel-tabset">
 <ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Ex: <span class="math inline">\(\hspace{1em}\)</span> 0.</a></li><li><a href="#tabset-2-2">1.</a></li><li><a href="#tabset-2-3">2.</a></li><li><a href="#tabset-2-4">3.</a></li></ul>
@@ -451,20 +451,20 @@
 <section id="make-sense" class="slide level3">
 <h3>Make sense?</h3>
 <ul>
-<li>Consider the following example</li>
+<li class="fragment">Consider the following example</li>
 </ul>
 <div class="fragment">
 <p><a href="imgs/bad-info.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img data-src="imgs/bad-info.jpg" style="width:50.0%"></a></p>
 <ul>
-<li>Write down <span class="math inline">\(S_2\)</span>
+<li class="fragment">Write down <span class="math inline">\(S_2\)</span>
 <ul>
-<li><span class="math inline">\(\{P, Q, U, D\}\)</span>?</li>
-<li><span class="math inline">\(\{(UP), (DQ)\}\)</span>?</li>
-<li><span class="math inline">\(\{P, D\}\)</span>?</li>
+<li class="fragment"><span class="math inline">\(\{P, Q, U, D\}\)</span>?</li>
+<li class="fragment"><span class="math inline">\(\{(UP), (DQ)\}\)</span>?</li>
+<li class="fragment"><span class="math inline">\(\{P, D\}\)</span>?</li>
 </ul></li>
-<li>Does any of these make sense?
+<li class="fragment">Does any of these make sense?
 <ul>
-<li>No!</li>
+<li class="fragment">No!</li>
 </ul></li>
 </ul>
 </div>
@@ -472,72 +472,72 @@
 <section id="trickery" class="slide level3">
 <h3>Trickery<sup>1</sup></h3>
 <ul>
-<li><p>Information sets determine actions</p></li>
-<li><p>Fact: the actions which a player has available to them within an information set must be the same across all nodes within the information set</p></li>
-<li><p>Idea: Assume I’m in a (non-degenerate) information set</p>
+<li class="fragment"><p>Information sets determine actions</p></li>
+<li class="fragment"><p>Fact: the actions which a player has available to them within an information set must be the same across all nodes within the information set</p></li>
+<li class="fragment"><p>Idea: Assume I’m in a (non-degenerate) information set</p>
 <ul>
-<li>I.e., I [supposedly] don’t know where I am on the tree</li>
-<li>Suppose I can play <span class="math inline">\((A, B, C)\)</span> at one node and <span class="math inline">\((A, B)\)</span> at another node
+<li class="fragment">I.e., I [supposedly] don’t know where I am on the tree</li>
+<li class="fragment">Suppose I can play <span class="math inline">\((A, B, C)\)</span> at one node and <span class="math inline">\((A, B)\)</span> at another node
 <ul>
-<li>I can just look at the strategies available to me<sup>2</sup> to determine where I am</li>
-<li><span class="math inline">\(\implies\)</span> the supposed information set does not make sense</li>
+<li class="fragment">I can just look at the strategies available to me<sup>2</sup> to determine where I am</li>
+<li class="fragment"><span class="math inline">\(\implies\)</span> the supposed information set does not make sense</li>
 </ul></li>
-<li>Suppose I can play <span class="math inline">\((A, B, C)\)</span> at one node and <span class="math inline">\((X, Y, Z)\)</span> at another node
+<li class="fragment">Suppose I can play <span class="math inline">\((A, B, C)\)</span> at one node and <span class="math inline">\((X, Y, Z)\)</span> at another node
 <ul>
-<li>We are still going to say this doesn’t make sense: we will assume I can see the <em>names</em> of the strategies available to me</li>
+<li class="fragment">We are still going to say this doesn’t make sense: we will assume I can see the <em>names</em> of the strategies available to me</li>
 </ul></li>
 </ul></li>
-<li><p>TL;DR make sure that a player’s actions w/in an information set are constant across all nodes in said information set</p></li>
+<li class="fragment"><p>TL;DR make sure that a player’s actions w/in an information set are constant across all nodes in said information set</p></li>
 </ul>
 <aside><ol class="aside-footnotes"><li id="fn2"><p>Tomfoolery, even</p></li><li id="fn3"><p>A player always knows this</p></li></ol></aside></section>
 <section id="make-sense-1" class="slide level3">
 <h3>Make sense?</h3>
 <p><a href="imgs/bad-info.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img data-src="imgs/bad-info.jpg" style="width:50.0%"></a></p>
 <ul>
-<li>Write down <span class="math inline">\(S_2\)</span>
+<li class="fragment">Write down <span class="math inline">\(S_2\)</span>
 <ul>
-<li><span class="math inline">\(\{P, Q, U, D\}\)</span>?</li>
-<li><span class="math inline">\(\{(UP), (DQ)\}\)</span>?</li>
-<li><span class="math inline">\(\{P, D\}\)</span>?</li>
-<li><u>None of the above</u></li>
+<li class="fragment"><span class="math inline">\(\{P, Q, U, D\}\)</span>?</li>
+<li class="fragment"><span class="math inline">\(\{(UP), (DQ)\}\)</span>?</li>
+<li class="fragment"><span class="math inline">\(\{P, D\}\)</span>?</li>
+<li class="fragment"><u>None of the above</u></li>
 </ul></li>
-<li>This game <em>doesn’t</em> make sense: we need to change <span class="math inline">\(P \to U\)</span> and <span class="math inline">\(Q\to D\)</span>, or vice versa</li>
+<li class="fragment">This game <em>doesn’t</em> make sense: we need to change <span class="math inline">\(P \to U\)</span> and <span class="math inline">\(Q\to D\)</span>, or vice versa</li>
 </ul>
 </section>
 <section id="conversion-to-normal-form" class="slide level3">
 <h3>Conversion to Normal Form</h3>
 <ul>
-<li>To convert a game from extensive form to normal form:
+<li class="fragment">To convert a game from extensive form to normal form:
 <ul>
-<li>Write down all strategies for each player</li>
-<li>This defines the size of your payoff matrix
+<li class="fragment">Write down all strategies for each player</li>
+<li class="fragment">This defines the size of your payoff matrix
 <ul>
-<li>#(Player 1 strats) = #(rows)</li>
-<li>#(Player 2 strats) = #(columns)</li>
+<li class="fragment">#(Player 1 strats) = #(rows)</li>
+<li class="fragment">#(Player 2 strats) = #(columns)</li>
 </ul></li>
-<li>Fill in game table, ensuring payoffs match to correct outcomes</li>
+<li class="fragment">Fill in game table, ensuring payoffs match to correct outcomes</li>
 </ul></li>
-<li>This is the easiest way to find all of the (vanilla) NE in an Extensive Form Game</li>
+<li class="fragment">This is the easiest way to find all of the (vanilla) NE in an Extensive Form Game</li>
 </ul>
 <p><a href="imgs/conv-ex.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img data-src="imgs/conv-ex.png" style="width:70.0%"></a></p>
 </section>
 <section id="computing-the-number-of-strategies" class="slide level3">
 <h3>Computing the number of Strategies</h3>
 <ul>
-<li><p>Want to know how many strategies are in an extensive form game?</p></li>
-<li><p>Recall: <span class="math inline">\(S_i\)</span> is player <span class="math inline">\(i\)</span>’s set of strategies (aka strategy space)</p>
+<li class="fragment"><p>Want to know how many strategies are in an extensive form game?</p></li>
+<li class="fragment"><p>Recall: <span class="math inline">\(S_i\)</span> is player <span class="math inline">\(i\)</span>’s set of strategies (aka strategy space)</p>
 <ul>
-<li>Let <span class="math inline">\(|S_i|\)</span> denote the <em>number</em> of strategies in this space</li>
-<li>E.g. if <span class="math inline">\(S_i=\{\text{Snitch}, \text{Quiet}\}\)</span>, then <span class="math inline">\(|S_i|=2\)</span></li>
+<li class="fragment">Let <span class="math inline">\(|S_i|\)</span> denote the <em>number</em> of strategies in this space</li>
+<li class="fragment">E.g. if <span class="math inline">\(S_i=\{\text{Snitch}, \text{Quiet}\}\)</span>, then <span class="math inline">\(|S_i|=2\)</span></li>
 </ul></li>
-<li><p><span class="math display">\[ |S_{i}| =  \prod_{\substack{\text{Info sets} \\ \text{for }P_i}}  (\text{actions in each info set}) \]</span></p></li>
-<li><p>In words: the product of the number of actions in each info set for player <span class="math inline">\(i\)</span>, taken over all information sets for player <span class="math inline">\(i\)</span></p></li>
+<li class="fragment"><p><span class="math display">\[ |S_{i}| =  \prod_{\substack{\text{Info sets} \\ \text{for }P_i}}  (\text{actions in each info set}) \]</span></p></li>
+<li class="fragment"><p>In words: the product of the number of actions in each info set for player <span class="math inline">\(i\)</span>, taken over all information sets for player <span class="math inline">\(i\)</span></p></li>
 </ul>
 </section>
 <section id="counting-strategies-ex." class="slide level3">
 <h3>Counting Strategies (ex.)</h3>
 <ul>
-<li>Compute the size of the strategy space for each player</li>
+<li class="fragment">Compute the size of the strategy space for each player</li>
 </ul>
 <div class="panel-tabset">
 <ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Ex 1</a></li><li><a href="#tabset-3-2">Ans 1</a></li><li><a href="#tabset-3-3">Ex 2</a></li><li><a href="#tabset-3-4">Ans 2</a></li></ul>
@@ -552,18 +552,18 @@
 </div>
 <div id="tabset-3-2">
 <ul>
-<li><p>A has 2 info sets</p>
+<li class="fragment"><p>A has 2 info sets</p>
 <ul>
-<li>First has 3 actions</li>
-<li>Second has 2 actions</li>
+<li class="fragment">First has 3 actions</li>
+<li class="fragment">Second has 2 actions</li>
 </ul></li>
-<li><p><span class="math inline">\(|S_A| = 3\cdot 2 = 6\)</span></p></li>
-<li><p>B has 2 info sets</p>
+<li class="fragment"><p><span class="math inline">\(|S_A| = 3\cdot 2 = 6\)</span></p></li>
+<li class="fragment"><p>B has 2 info sets</p>
 <ul>
-<li>First has 2 actions</li>
-<li>Second has 2 actions</li>
+<li class="fragment">First has 2 actions</li>
+<li class="fragment">Second has 2 actions</li>
 </ul></li>
-<li><p><span class="math inline">\(|S_B| = 2\cdot 2 = 4\)</span></p></li>
+<li class="fragment"><p><span class="math inline">\(|S_B| = 2\cdot 2 = 4\)</span></p></li>
 </ul>
 </div>
 <div id="tabset-3-3">
@@ -576,19 +576,19 @@
 </div>
 <div id="tabset-3-4">
 <ul>
-<li>Ann
+<li class="fragment">Ann
 <ul>
-<li><span class="math inline">\(|S_A| = 2\cdot 2\cdot3\cdot3\cdot2 = 54\)</span></li>
+<li class="fragment"><span class="math inline">\(|S_A| = 2\cdot 2\cdot3\cdot3\cdot2 = 54\)</span></li>
 </ul></li>
-<li>Beth
+<li class="fragment">Beth
 <ul>
-<li><span class="math inline">\(|S_B| = 2\cdot 2\cdot2\cdot2\cdot2\cdot2 = 12\)</span></li>
+<li class="fragment"><span class="math inline">\(|S_B| = 2\cdot 2\cdot2\cdot2\cdot2\cdot2 = 12\)</span></li>
 </ul></li>
 </ul>
 <p><br>
 </p>
 <ul>
-<li>Note: I couldn’t ask you to convert this to normal form (too big)</li>
+<li class="fragment">Note: I couldn’t ask you to convert this to normal form (too big)</li>
 </ul>
 </div>
 </div>
@@ -597,7 +597,7 @@
 <section id="the-entrant-game-revised-and-revisited" class="slide level3">
 <h3>The Entrant Game, revised and revisited</h3>
 <ul>
-<li>Recall the Entrant game:</li>
+<li class="fragment">Recall the Entrant game:</li>
 </ul>
 <div class="panel-tabset">
 <ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Extensive Form</a></li><li><a href="#tabset-4-2">Normal Form</a></li></ul>
@@ -619,35 +619,35 @@
 <section id="motivation" class="slide level3">
 <h3>Motivation</h3>
 <ul>
-<li><p>In the Entrant Game, (Out, Fight) seems like a bad prediction</p>
+<li class="fragment"><p>In the Entrant Game, (Out, Fight) seems like a bad prediction</p>
 <ul>
-<li><p><em>If</em> the entrant decides to go ‘In’, is it likely that the incumbent will choose to fight?</p></li>
-<li><p>Think ‘Ultimatum game’</p>
+<li class="fragment"><p><em>If</em> the entrant decides to go ‘In’, is it likely that the incumbent will choose to fight?</p></li>
+<li class="fragment"><p>Think ‘Ultimatum game’</p>
 <ul>
-<li>“If you offer me less than $50, I will say no”</li>
-<li>Is this <span class="hi">credible</span>?</li>
+<li class="fragment">“If you offer me less than $50, I will say no”</li>
+<li class="fragment">Is this <span class="hi">credible</span>?</li>
 </ul></li>
 </ul></li>
-<li><p>How do we formalize this notion?</p></li>
+<li class="fragment"><p>How do we formalize this notion?</p></li>
 </ul>
 </section>
 <section id="yaymore-definitions" class="slide level3">
 <h3>Yay…more definitions</h3>
 <ul>
-<li><p>Let <span class="math inline">\(G\)</span> be a game in extensive form</p></li>
-<li><p>A <span class="hi"><u><strong>subgame</strong></u></span> of <span class="math inline">\(G\)</span> is</p>
+<li class="fragment"><p>Let <span class="math inline">\(G\)</span> be a game in extensive form</p></li>
+<li class="fragment"><p>A <span class="hi"><u><strong>subgame</strong></u></span> of <span class="math inline">\(G\)</span> is</p>
 <ul>
-<li>a subset of <span class="math inline">\(G\)</span></li>
-<li>which is itself a game</li>
-<li>and which doesn’t interfere with the information sets of <span class="math inline">\(G\)</span></li>
+<li class="fragment">a subset of <span class="math inline">\(G\)</span></li>
+<li class="fragment">which is itself a game</li>
+<li class="fragment">and which doesn’t interfere with the information sets of <span class="math inline">\(G\)</span></li>
 </ul></li>
-<li><p>Huh?</p>
+<li class="fragment"><p>Huh?</p>
 <ul>
-<li>Start with a non-terminal node in a singleton information set. Trace the node down all of it’s “roots” to the terminal nodes
+<li class="fragment">Start with a non-terminal node in a singleton information set. Trace the node down all of it’s “roots” to the terminal nodes
 <ul>
-<li>That’s a subgame</li>
+<li class="fragment">That’s a subgame</li>
 </ul></li>
-<li>Put another way: start with a non-payoff node (e.g.&nbsp;a player), which isn’t connected to a dotted line<sup>1</sup>. Follow all the paths that branch down from this node</li>
+<li class="fragment">Put another way: start with a non-payoff node (e.g.&nbsp;a player), which isn’t connected to a dotted line<sup>1</sup>. Follow all the paths that branch down from this node</li>
 </ul></li>
 </ul>
 <aside><ol class="aside-footnotes"><li id="fn4"><p>or within a bubble</p></li></ol></aside></section>
@@ -665,18 +665,18 @@
 </ul>
 </div>
 <ul>
-<li>One more thing:
+<li class="fragment">One more thing:
 <ul>
-<li>T or F: <span class="math inline">\(5\le 5\)</span>
+<li class="fragment">T or F: <span class="math inline">\(5\le 5\)</span>
 <ul>
-<li>True</li>
+<li class="fragment">True</li>
 </ul></li>
-<li>In the same vein, <span class="math inline">\(G\)</span> is a subgame of itself</li>
+<li class="fragment">In the same vein, <span class="math inline">\(G\)</span> is a subgame of itself</li>
 </ul></li>
-<li>When referring to subgames
+<li class="fragment">When referring to subgames
 <ul>
-<li><p><span class="math inline">\(G\)</span> is the <span class="hi"><u>trivial subgame</u></span></p></li>
-<li><p>All other subgames are <span class="hi"><u><strong>proper subgames</strong></u></span></p></li>
+<li class="fragment"><p><span class="math inline">\(G\)</span> is the <span class="hi"><u>trivial subgame</u></span></p></li>
+<li class="fragment"><p>All other subgames are <span class="hi"><u><strong>proper subgames</strong></u></span></p></li>
 </ul></li>
 </ul>
 </section>
@@ -695,16 +695,16 @@
 <section id="aint-no-way-this-mans-got-another-definition-slide" class="slide level3">
 <h3>ain’t no way this mans got another definition slide</h3>
 <ul>
-<li><span class="def"><strong>Def</strong></span> A Subgame-Perfect Nash Equilibrium (SPNE) for an arbitrary game <span class="math inline">\(G\)</span> is
+<li class="fragment"><span class="def"><strong>Def</strong></span> A Subgame-Perfect Nash Equilibrium (SPNE) for an arbitrary game <span class="math inline">\(G\)</span> is
 <ol type="1">
-<li>A Nash Equilibrium for <span class="math inline">\(G\)</span></li>
-<li>A Nash Equilibrium in every subgame of <span class="math inline">\(G\)</span></li>
+<li class="fragment">A Nash Equilibrium for <span class="math inline">\(G\)</span></li>
+<li class="fragment">A Nash Equilibrium in every subgame of <span class="math inline">\(G\)</span></li>
 </ol></li>
-<li>We can frame this refinement of NE as the result of an additional assumption
+<li class="fragment">We can frame this refinement of NE as the result of an additional assumption
 <ul>
-<li>Common Knowledge of <em>Sequential</em> Rationality
+<li class="fragment">Common Knowledge of <em>Sequential</em> Rationality
 <ul>
-<li>Players are rational in every subgame</li>
+<li class="fragment">Players are rational in every subgame</li>
 </ul></li>
 </ul></li>
 </ul>
@@ -712,19 +712,19 @@
 <section id="good-news" class="slide level3">
 <h3>Good News</h3>
 <ul>
-<li><p>Finding SPNE are pretty straightforward on a game tree</p></li>
-<li><p>In fact, given an extensive form game:</p>
+<li class="fragment"><p>Finding SPNE are pretty straightforward on a game tree</p></li>
+<li class="fragment"><p>In fact, given an extensive form game:</p>
 <ul>
-<li><p>Need (plain ol’) NE?</p>
+<li class="fragment"><p>Need (plain ol’) NE?</p>
 <ul>
-<li><p>Write down strategies for each player</p></li>
-<li><p>Convert to Normal Form</p></li>
-<li><p><em>Method:</em> Underline</p></li>
+<li class="fragment"><p>Write down strategies for each player</p></li>
+<li class="fragment"><p>Convert to Normal Form</p></li>
+<li class="fragment"><p><em>Method:</em> Underline</p></li>
 </ul></li>
-<li><p>Need SPNE?</p>
+<li class="fragment"><p>Need SPNE?</p>
 <ul>
-<li><p>Use the game tree directly</p></li>
-<li><p><em>Method:</em> <span class="hi">Backward Induction</span><sup>1</sup></p></li>
+<li class="fragment"><p>Use the game tree directly</p></li>
+<li class="fragment"><p><em>Method:</em> <span class="hi">Backward Induction</span><sup>1</sup></p></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -732,12 +732,12 @@
 <section id="backward-induction" class="slide level3">
 <h3>Backward Induction</h3>
 <ul>
-<li><p>For now, we will assume singleton info. sets (no dashed lines)</p></li>
-<li><p>Like too much of game theory, this method is hard to write down, but easy to display and easy to perform once you get the hang of it</p></li>
-<li><p>Let’s do an example: Entrant Game</p></li>
-<li><p>How many subgames?</p>
+<li class="fragment"><p>For now, we will assume singleton info. sets (no dashed lines)</p></li>
+<li class="fragment"><p>Like too much of game theory, this method is hard to write down, but easy to display and easy to perform once you get the hang of it</p></li>
+<li class="fragment"><p>Let’s do an example: Entrant Game</p></li>
+<li class="fragment"><p>How many subgames?</p>
 <ul>
-<li>2 total, 1 proper</li>
+<li class="fragment">2 total, 1 proper</li>
 </ul></li>
 </ul>
 <div class="fragment">
@@ -747,77 +747,77 @@
 <section id="spne-entrant-game" class="slide level3">
 <h3>SPNE: Entrant Game</h3>
 <ul>
-<li>Let’s look at the last decision made in the game</li>
+<li class="fragment">Let’s look at the last decision made in the game</li>
 </ul>
 <p><a href="imgs/ent-sg1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24"><img data-src="imgs/ent-sg1.png" style="width:40.0%"></a></p>
 </section>
 <section id="spne-entrant-game-cont." class="slide level3">
 <h3>SPNE: Entrant Game (cont.)</h3>
 <ul>
-<li>When it’s player 2’s turn and they reach this subgame, they will rationally pick <em>Acc.</em> because <span class="math inline">\(1&gt;-1\)</span></li>
+<li class="fragment">When it’s player 2’s turn and they reach this subgame, they will rationally pick <em>Acc.</em> because <span class="math inline">\(1&gt;-1\)</span></li>
 </ul>
 <p><a href="imgs/ent-sg1__solved.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25"><img data-src="imgs/ent-sg1__solved.png" style="width:40.0%"></a></p>
 </section>
 <section id="spne-entrant-game-cont.-1" class="slide level3">
 <h3>SPNE: Entrant Game (cont.)</h3>
 <ul>
-<li><p>With common knowledge of sequential rationality, player 1 knows this about player 2</p></li>
-<li><p>So, let’s just replace <span class="pl1"><em>SG1</em></span> with the payoff that will be realized if player 1 plays <em>Enter</em></p></li>
+<li class="fragment"><p>With common knowledge of sequential rationality, player 1 knows this about player 2</p></li>
+<li class="fragment"><p>So, let’s just replace <span class="pl1"><em>SG1</em></span> with the payoff that will be realized if player 1 plays <em>Enter</em></p></li>
 </ul>
 <p><a href="imgs/ent-sg0.png" class="lightbox" data-gallery="quarto-lightbox-gallery-26"><img data-src="imgs/ent-sg0.png" style="width:40.0%"></a></p>
 </section>
 <section id="spne-entrant-game-cont.-2" class="slide level3">
 <h3>SPNE: Entrant Game (cont.)</h3>
 <ul>
-<li><span class="math inline">\(2&gt;0\)</span>, so player 1 will pick <em>Enter</em> rather than <em>Out</em></li>
+<li class="fragment"><span class="math inline">\(2&gt;0\)</span>, so player 1 will pick <em>Enter</em> rather than <em>Out</em></li>
 </ul>
 <p><a href="imgs/ent-sg0__solved.png" class="lightbox" data-gallery="quarto-lightbox-gallery-27"><img data-src="imgs/ent-sg0__solved.png" style="width:40.0%"></a></p>
 </section>
 <section id="spne-entrant-game-solved" class="slide level3">
 <h3>SPNE: Entrant Game (Solved)</h3>
 <ul>
-<li>Therefore, <span class="math inline">\((Enter, Acc.)\)</span> is the Subgame Perfect Nash Equilibrium</li>
+<li class="fragment">Therefore, <span class="math inline">\((Enter, Acc.)\)</span> is the Subgame Perfect Nash Equilibrium</li>
 </ul>
 <p><a href="imgs/ent__solved.png" class="lightbox" data-gallery="quarto-lightbox-gallery-28"><img data-src="imgs/ent__solved.png" style="width:40.0%"></a></p>
 </section>
 <section id="backward-induction-explained" class="slide level3">
 <h3>Backward Induction, explained</h3>
 <ul>
-<li><p>Start with the lowest (endmost) subgames on a tree</p>
+<li class="fragment"><p>Start with the lowest (endmost) subgames on a tree</p>
 <ul>
-<li>Determine what the player making this decision will do, and mark it
+<li class="fragment">Determine what the player making this decision will do, and mark it
 <ul>
-<li>This will indicate what payoffs are realized if this subgame is reached</li>
+<li class="fragment">This will indicate what payoffs are realized if this subgame is reached</li>
 </ul></li>
-<li>Repeat this step for every subgame on this ‘level’ of the tree</li>
+<li class="fragment">Repeat this step for every subgame on this ‘level’ of the tree</li>
 </ul></li>
-<li><p>Repeat for all ‘levels’ of the tree, working your way up to the top</p></li>
+<li class="fragment"><p>Repeat for all ‘levels’ of the tree, working your way up to the top</p></li>
 </ul>
 <p><br>
 </p>
 <p><br>
 </p>
 <ul>
-<li><span class="alert">Remark:</span> like IDSDS, it may be easiest to <em>replace</em> each subgame with the payoff achieved from following your marked path (see next slide)</li>
+<li class="fragment"><span class="alert">Remark:</span> like IDSDS, it may be easiest to <em>replace</em> each subgame with the payoff achieved from following your marked path (see next slide)</li>
 </ul>
 </section>
 <section id="ein-theoremfacten" class="slide level3">
 <h3>Ein Theoremfacten</h3>
 <ul>
-<li><p><span class="alert">Recall</span></p>
+<li class="fragment"><p><span class="alert">Recall</span></p>
 <ul>
-<li>Nash: Under certain conditions, every game has a Nash Equilibrium</li>
-<li><span class="hi"><em>For this class</em></span>: Every reasonable game has a NE
+<li class="fragment">Nash: Under certain conditions, every game has a Nash Equilibrium</li>
+<li class="fragment"><span class="hi"><em>For this class</em></span>: Every reasonable game has a NE
 <ul>
-<li>Or (I’m fine with): <em>Every</em> game has a NE</li>
+<li class="fragment">Or (I’m fine with): <em>Every</em> game has a NE</li>
 </ul></li>
 </ul></li>
-<li><p>Similarly, there are some exceptions to the following rule, but I’m fine with you treating the following as a fact in this class</p></li>
-<li><p><span class="alert"><strong>Fact</strong>:</span> Every sequential game has a Subgame-Perfect Nash Equilibrium (SPNE), and this SPNE is unique</p></li>
-<li><p>Remarks</p>
+<li class="fragment"><p>Similarly, there are some exceptions to the following rule, but I’m fine with you treating the following as a fact in this class</p></li>
+<li class="fragment"><p><span class="alert"><strong>Fact</strong>:</span> Every sequential game has a Subgame-Perfect Nash Equilibrium (SPNE), and this SPNE is unique</p></li>
+<li class="fragment"><p>Remarks</p>
 <ul>
-<li><p>Existence is pretty robust<sup>1</sup></p></li>
-<li><p>[Caveat] It’s possible to have more than one SPNE, but this is only when there is indifference (e.g.&nbsp;equal payoffs along each step of Backward Induction)</p></li>
+<li class="fragment"><p>Existence is pretty robust<sup>1</sup></p></li>
+<li class="fragment"><p>[Caveat] It’s possible to have more than one SPNE, but this is only when there is indifference (e.g.&nbsp;equal payoffs along each step of Backward Induction)</p></li>
 </ul></li>
 </ul>
 <aside><ol class="aside-footnotes"><li id="fn6"><p>Rarely would a course of any variety address the possibility of EFGs with no SPNE</p></li></ol></aside></section>
@@ -1229,7 +1229,7 @@
       }
     });
     </script>
-    <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"bottom"});
+    <script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom"});
     window.onload = () => {
       lightboxQuarto.on('slide_before_load', (data) => {
         const { slideIndex, slideNode, slideConfig, player, trigger } = data;

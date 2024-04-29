@@ -9,17 +9,24 @@
 cd lecture-slides/wk-5/mon-deck/typ-games/;
 # cd lecture-slides/wk-4/wednes-deck/typ-games/;
 
-for f in ./*.typ; 
-do typst c -f png --ppi 600 ${f} ${f%.typ}.png;
-mv ${f%.typ}.png ./png-games/;
-done
+for f in ./*.typ; do
+FNAME=${f%.typ};
+if [ -f ${FNAME}.pdf ]; then
+typst c -f png --ppi 600 ${f} ${FNAME}.png;
+mv ${FNAME}.png ./png-games/;
 
-for f in ./*.pdf; do
-if [ -f ${f} ]; then
-rm ${f}; 
+convert ./png-games/${FNAME}.png -transparent white "../imgs/${FNAME}.png";
+
+rm ${FNAME}.pdf; 
 fi
 done
 
-for f in png-games/*.png;
-do convert "${f#/}" -transparent white "../imgs/${f#*/}";
-done
+# for f in ./*.pdf; do
+# if [ -f ${f} ]; then
+# rm ${f}; 
+# fi
+# done
+
+# for f in png-games/*.png;
+# do convert "${f#/}" -transparent white "../imgs/${f#*/}";
+# done

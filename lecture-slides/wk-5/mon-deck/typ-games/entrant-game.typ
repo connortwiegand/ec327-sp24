@@ -25,7 +25,7 @@
 
     let tree-struct = (
       "1",
-      ([$0, #text(fill: white.transparentize(100%), [--])3$], ),
+      ([$0, 3$], ),
       ("2", [$0, -1$], [$2, 1$])
     )
 
