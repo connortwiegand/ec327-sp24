@@ -11,3 +11,473 @@ format:
 # editor:
 #    render-on-save: true
 ---
+
+## Recall
+
+### Subgames
+
+- Let $G$ be a game in extensive form
+
+- A [**subgame**]{.hi .ul} of $G$ is
+   - a subset of $G$
+   - which is itself a game
+   - and which doesn't interfere with the information sets of $G$
+
+### Subgame Perfect Equilibria
+
+- [**Def**]{.def} A Subgame-Perfect Nash Equilibrium (SPNE) for an arbitrary game $G$ is a Nash Equilibrium in every subgame of $G$
+   - Including the trivial subgame ($G$ itself)
+
+- This refinement of traditional NE is the result of assuming that players are rational in every subgame^[and that players have common knowledge of this]
+   - We call this _Sequential Rationality_ 
+
+### A two-fold example
+
+Recall perfect-information chicken:
+
+- First, let's start by verifying the NE we found _on the game tree_
+
+:::{.panel-tabset}
+#### EFG
+
+![](imgs/chicken.png){width=40%}
+
+#### NFG
+
+![](imgs/sfg-chicken__solved.png){width=40%}
+
+:::
+
+
+### 3 good predictions?
+
+- I propose that $\{S, (SG, SG)\}$ and $\{R, (RD, RD)\}$ are both bad predictions. Why?
+
+- Barry gets to see Andrea's move before making their own
+
+   - Upon seeing Remain, Barry would never Stand Ground
+
+   - Upon seeing Swerve, Barry has no reason to Roll Dodge
+
+- Barry's optimal action depends on which subgame he is in
+
+
+### Credible Threats
+
+- At $\{R, (RD, SG)\}$, Barry receives a payoff of 0
+
+- How could Barry improve his payoff?
+
+- He could threaten to always Stand his Ground
+   - Is this credible?
+   - No
+
+- Imagine that Barry can FlexSeal his feet to the pavement, and Andrea sees him do this while driving
+   - Now what?
+
+### Fold 1: SPNE motivation
+
+- If Barry can FlexSeal his feet to the pavement while Andrea is driving, he is locked in to playing $(SG, SG)$. How should Andrea respond?
+   - Andrea's best response to $(SG, SG)$ is $S$, putting us back at one of the non-subgame-perfect equilibria
+   - In this case, Barry's payoff would increase from 0 to 20
+
+- There are two lessons I want you to take out of this thought exercise
+
+1. Many of the Nash Equilibria which are not subgame-perfect can be thought of as resulting from [**non-credible threats**]{.hi}
+
+- This is the classic motivation for subgame perfect Equilibria
+
+
+### Fold 2: An interesting Economic Result
+
+- Recall: in intermediate micro (EC 311), individual agents maximize their expected payoffs subject to some constraints
+   - If the agent can choose $x$ and $y$ to get utility from, this constraint is typically thought of resulting from some budget, with prices $p_j$ and income $I$: 
+      $$ p_x\cdot X + p_y \cdot Y \le I $$
+
+   - As income shrinks relative to prices, our constraint tightens
+
+   - Almost always, this results in a decline in agent's utility
+
+- Notice, in the previous Chicken exercise, Barry _added a constraint_ and it subsequently _increased his payoff_
+
+- Or, if we think of this in reverse: giving Barry more freedoms actually **reduces** his equilibrium payoffs
+
+2. Unlike classical, single-agent models of utility maximization, in game theory, agents' equilibrium payoffs can improve as a result of increased restrictions
+
+## Finding SPNE
+
+### Good News
+
+- Finding SPNE are pretty straightforward on a game tree
+
+- In fact, given an extensive form game:
+
+   - Need (plain ol') NE?
+
+      - Write down strategies for each player
+
+      - Convert to Normal Form
+
+      - _Method:_ Underline
+   
+   - Need SPNE?
+      
+      - Use the game tree directly
+
+      - _Method:_ [Backward Induction]{.hi}^[IMHO this is a dumb name. Then again, _Dixit, Skeath, and McAdams_ use the term [_Rollback Method_]{.alert2} and [_Rollback Equilibrium_]{.alert2}, so there are worse things I guess.]
+
+
+### The Entrant Game, revised and revisited 
+
+- Recall the Entrant game:
+
+:::{.panel-tabset}
+#### Extensive Form
+![](imgs/entrant-game.png){width=40%}
+
+#### Normal Form
+![](imgs/sfg-ent.png){width=40%}
+
+:::
+
+### Motivation
+
+- In the Entrant Game, (Out, Fight) seems like a bad prediction
+
+   - *If* the entrant decides to go 'In', is it likely that the incumbent will choose to fight?
+
+   - Think 'Ultimatum game'
+      - "If you offer me less than $50, I will say no" 
+      - Is this [credible]{.hi}?
+
+
+### Backward Induction
+
+- For now, we will assume singleton info. sets (no dashed lines)
+
+- Like too much of game theory, this method is hard to write down, but easy to display and straightforward to perform once you get the hang of it
+
+
+- Let's do an example w/ the Entrant Game
+
+- How many subgames?
+   - 2 total, 1 proper
+
+. . . 
+
+![](imgs/ent-sgs.png){fig-align="right" width=40%}
+
+
+### SPNE: Entrant Game
+
+- Let's look at the last decision made in the game
+
+![](imgs/ent-sg1.png){width=40%}
+
+
+### SPNE: Entrant Game (cont.)
+
+- When it's player 2's turn and they reach this subgame, they will rationally pick _Acc._ because $1>-1$
+
+![](imgs/ent-sg1__solved.png){width=40%}
+
+
+### SPNE: Entrant Game (cont.)
+
+- With common knowledge of sequential rationality, player 1 knows this about player 2
+
+- So, let's just replace [_SG1_]{.pl1} with the payoff that will be realized if player 1 plays _Enter_ 
+
+![](imgs/ent-sg0.png){width=40%}
+
+### SPNE: Entrant Game (cont.)
+
+- $2>0$, so player 1 will pick _Enter_ rather than _Out_
+
+![](imgs/ent-sg0__solved.png){width=40%}
+
+### SPNE: Entrant Game (Solved)
+
+- Therefore, $(Enter, Acc.)$ is the Subgame Perfect Nash Equilibrium
+
+
+![](imgs/ent__solved.png){width=40%}
+
+### Backward Induction, explained
+
+- Start with the lowest (endmost) subgames on a tree
+   
+   - Determine what the player making this decision will do, and mark it
+      - This will indicate what payoffs are realized if this subgame is reached
+   
+   - Repeat this step for every subgame on this 'level' of the tree
+
+- Repeat for all 'levels' of the tree, working your way up to the top
+
+\
+
+\
+
+
+- [Remark:]{.alert} like IDSDS, it may be easiest to _replace_ each subgame with the payoff achieved from following your marked path
+
+
+### Ein Theoremfacten
+
+- There are a few exceptions to the following rule, but they are far outside the scope of this class
+
+- Therefore, I'm fine with you treating the following as a fact
+
+\
+
+- [**Fact**:]{.alert} Every sequential game has a Subgame-Perfect Nash Equilibrium (SPNE), and this SPNE is unique
+\
+
+\
+
+- Remarks
+   - Existence is pretty robust, and uniqueness is only violated when there is lots of indifference in the game (e.g. equal payoffs along each step of Backward Induction)
+
+
+### Kidnapper Game
+
+Consider the following game
+
+- Start by finding all Nash Equilibria
+
+![](imgs/kdnp_fi_.png){width=40%}
+
+### Kidnapper Game (NE)
+
+:::::{.columns}
+
+::::{.column width=65%}
+- What do the strategy spaces for each player look like?
+   - $Kmr\in S_C$ and $|S_{C}|=2(2)(2)=8$
+   - $P\in S_W$ and $|S_W|=2$
+
+- So how big is our box?
+   - 8x2
+::::
+
+::::{.column width=35%}
+
+:::{.r-stack}
+![](imgs/kdnp_fi_sfg.png){.fragment .fade-in-then-out fig-align="right" width=100%}
+
+![](imgs/kdnp_fi_sfg__solved.png){.fragment fig-align="right" width=100%}
+:::
+::::
+
+:::::
+
+### Kidnapper Game (SPNE)
+
+What about SPNE?
+
+
+:::{.panel-tabset}
+
+#### EFG
+
+![](imgs/kdnp_fi_.png){width=50%}
+
+
+#### SPNE
+
+![In the last stage of the game, the criminal will release if they are paid, and murder otherwise. Given this, the Wife will choose to Pay since 3>2. Therefore, in the first stage of the game, the Criminal is comparing 3 to 5 and decides to Kidnap because 5>3](imgs/kdnp_fi__spne.png){width=45%}
+
+:::
+
+### The Centipede Game (Rules)
+
+[Start]{.ul}
+
+- Pot A has $2, pot B has $0
+   - Throughout the game, players take turns playing "end" or "continue"
+
+   - Playing "end" ends the game, and both players get all of the money in the pot they are holding
+
+   - Playing "continue" adds $1 to each pot and both players swap pots
+
+   - The total pool of money is $200. If both pots have $\ge \$99$ and the game continues, then both players receive $100 and the game ends
+
+### The Centipede Game (E.F.)
+
+Here is the previous game in extensive form
+
+- Any Predictions?
+
+- Where would you end?
+
+![](imgs/centipede.png){width=40%}
+
+### The Centipede Game (Analysis)
+
+- In the last stage of the game, player 2 chooses to [end]{.pl2} rather than [continue]{.pl2} to get the extra dollar
+
+- Knowing that player 2 will do this, player 1 will end the game a round early, yielding $(100, 98)$
+
+- ...but player 2 can reason to this point^[common knowledge of sequential rationality], so they will end a round before that
+
+- But what does player 1 do before this?
+
+. . . 
+
+![](imgs/and-the-next-day.gif){.absolute right=30 bottom=80 width=40%}
+
+
+### The Centipede Game
+
+- We continue this line of thought alllll the way back up the game 'tree'
+
+- The result from backward induction is that player 1 ends the game on their first move
+
+- This sort of phenomenon is commonly known as [**unravelling**]{.hi}
+
+## Admin
+
+### Midterm
+
+:::{.nonincremental}
+
+- Midterm next Wednesday
+   - Bring a pencil
+   - Bring a calculator
+      - I will have some on Wednesday, but they suck and there won't be enough for everyone
+   - front + back of 3x5^[that's inches, people] notecard allowed
+      - I will have some at my office if you want to stop by
+      - I can try to bring some one Monday, no promises
+      - I have no remorse about tearing up a piece of paper that is 1/2" too big, so make sure it's the right size
+
+<!-- - Monday we will review the course up to this point
+   - If you want to see something specific, let me know with some [advanced]{.ul} notice -->
+
+:::
+
+## Appendix
+
+
+### Kidnapper Game w/ Imperfect Info.
+
+Consider the following variant on the kidnapping game
+- How many subgames are there?
+
+![](imgs/kdnp_ii_.png){width=50%}
+
+### Kidnapper Game w/ Imperfect Info. (Subgames)
+
+:::::{.columns}
+
+::::{.column width=55%}
+- Only 2 subgames^[recall that we can't break up information sets]
+
+- Let's first consider the only _proper_ subgame
+   - We have to be careful about whose payoffs are whose
+::::
+
+::::{.column width=45%}
+:::{.panel-tabset}
+
+#### SGs
+![](imgs/kdnp_ii_sgs.png){width=100%}
+
+#### SG 1
+
+![](imgs/kdnp_ii_sgp.png){width=100%}
+
+:::
+::::
+:::::
+
+
+### Quick Aside
+
+:::::{.columns}
+
+::::{.column width=55%}
+- In [SG 1]{.hi}, each player has 2 strategies
+   - neither player knows other's move before they make their own
+
+- In [Aside]{.hi}, I have switched the Criminal and Wife
+   - and, since I'm using colors, I could switch the order payoffs in either one of these diagrams^[as long as we make sure the structure of the game is still preserved -- e.g., the same players have the same payoffs]
+
+- Keeping track of payoffs, how does the Normal Form representation of each of these Extensive Form games differ?
+   - They don't!
+
+- Takeaway?
+   - EFGs with imperfect information capture elements of simultaneous-move play
+
+::::
+
+::::{.column width=45%}
+:::{.panel-tabset}
+
+#### SG 1
+
+![](imgs/kdnp_ii_sgp.png){width=100%}
+
+#### Aside
+![](imgs/aside.png){width=100%}
+
+#### NF
+![](imgs/kdnp_ii_sg_nf.png){width=100%}
+
+:::
+::::
+:::::
+
+### Kidnapper Game w/ Imperfect Info. (NE)
+
+:::::{.columns}
+
+::::{.column width=55%}
+- Let's first consider the only _proper_ subgame
+
+- What are the NE?
+   - $(m, NP)$
+::::
+
+::::{.column width=45%}
+:::{.panel-tabset}
+#### SG 1
+
+![](imgs/kdnp_ii_sgp.png){width=100%}
+
+#### NF
+![](imgs/kdnp_ii_sg_nf.png){width=100%}
+
+#### NE
+![](imgs/kdnp_ii_sg_nf__solved.png){width=100%}
+
+:::
+::::
+:::::
+
+
+### Kidnapper Game w/ Imperfect Info. (Finish)
+
+- See captions for details
+
+:::{.panel-tabset}
+#### OG
+
+![Original Game](imgs/kdnp_ii_.png){width=45%}
+
+#### Replace SG
+![Let's replace the proper subgame with it's normal form representation](imgs/kdnp_ii_comb.png){width=45%}
+
+#### SG NE
+![We can solve that!](imgs/kdnp_ii_sg_nf__solved.png){width=45%}
+
+#### Replace payoff
+![So: let's replace NFG in the game tree with the NE outcome we just found](imgs/kdnp_ii_reduced.png){width=40%}
+
+#### Last Step
+![Now the Criminal Faces a simple decision](imgs/kdnp_ii_reduced__solved.png){width=40%}
+
+#### Altogether
+![Put it all together...The husband lives!!!](imgs/kdnp_ii_full_spne.png){width=45%}
+
+:::
+
