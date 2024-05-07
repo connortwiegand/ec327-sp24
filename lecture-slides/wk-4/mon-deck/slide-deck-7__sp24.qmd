@@ -6,8 +6,10 @@ format:
       slide-level: 3
       # chalkboard: false
       embed-resources: true
+      incremental: false
 # editor:
 #    render-on-save: true
+lightbox: true
 ---
 
 ### Games in Sequence
@@ -35,7 +37,7 @@ format:
    - These are called _terminal nodes_
 - Each non-terminal node is a player
 
-![](imgs/entrant-game.png){.absolute width=50% right=10 bottom=-100}
+![](imgs/entrant-game.png){fig-align="right" width="40%"}
 
 ### Using Extensive Form Games
 
@@ -46,7 +48,7 @@ format:
 
 - At times, it will also be helpful to circle the payoffs that result from this outcome (I've omitted that here though)
 
-![](imgs/ent-path.png){.absolute width=50% right=10 bottom=-90}
+![](imgs/ent-path.png){fig-align="right width=40%}
 
 ### A Refinement
 
@@ -81,7 +83,11 @@ format:
 
 :::
 
-![](imgs/basic-game.png){.absolute width=50% right=10 bottom=-70}
+:::{.column}
+
+![](imgs/basic-game.png){fig-align="right" width=80%}
+
+:::
 
 ::::
 
@@ -119,7 +125,7 @@ format:
 - Therefore, we often trace out paths of _strategies_ rather than _outcomes_
    - In this game, we end up at (the outcome associated with) $2,1$
 
-![](imgs/egame-test.png){.absolute width=60% right=10 bottom=-60}
+![](imgs/egame-test.png){fig-align="right" width=40%}
 
 
 ### Conversion from Extensive Form
@@ -134,7 +140,7 @@ format:
    1. Write down the payoffs
       - okay, we get the idea
 
-![](imgs/chicken.png){.absolute width=50% right=10 bottom=0}
+![](imgs/chicken.png){fig-align="right" width=40%}
 
 
 - What if that's all the information you got?
@@ -149,7 +155,7 @@ format:
 
 . . .
 
-![](imgs/sfg-chicken.png){.absolute width=50% right=100}
+![](imgs/sfg-chicken.png){fig-align="right"" width=40%}
 
 
 ### Equilibria
@@ -168,7 +174,7 @@ format:
 
 - Consider the following example (again)
 
-![](imgs/entrant-game.png)
+![](imgs/entrant-game.png){fig-align="right" width=50%}
 
 - Convert the game to normal form (and find the NE)
 
@@ -176,7 +182,7 @@ format:
 
 - (Out, Fight) and (In, Accomodate) are NE
 
-![](imgs/sfg-ent.png){.absolute width=40% right=200 bottom=100}
+![](imgs/sfg-ent.png){fig-align="right" width=50%}
 
 
 
@@ -204,7 +210,7 @@ format:
 
 - In this game, the dashed line (often a bubble, both are equally common) represents where player 2 knows where they _could_ be in a game
 
-![](imgs/hidden-chicken.png)
+![](imgs/hidden-chicken.png){fig-align="right" width=40%}
 
 - This dashed line explicitly indicates the notion of [_information sets_]{.hi}
    - Player 2 knows when they are [**somewhere**]{.hi} on the dashed line

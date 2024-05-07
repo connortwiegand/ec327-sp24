@@ -11,3 +11,268 @@ format:
 # editor:
 #    render-on-save: true
 ---
+
+
+## From last time 
+
+### Kidnapper Game
+
+Consider the following game
+
+- Start by finding all Nash Equilibria
+
+![](imgs/kdnp_fi_.png){width=40%}
+
+### Kidnapper Game (NE)
+
+:::::{.columns}
+
+::::{.column width=65%}
+- What do the strategy spaces for each player look like?
+   - $Kmr\in S_C$ and $|S_{C}|=2(2)(2)=8$
+   - $P\in S_W$ and $|S_W|=2$
+
+- So how big is our box?
+   - 8x2
+::::
+
+::::{.column width=35%}
+
+:::{.r-stack}
+![](imgs/kdnp_fi_sfg.png){.fragment .fade-in-then-out fig-align="right" width=100%}
+
+![](imgs/kdnp_fi_sfg__solved.png){.fragment fig-align="right" width=100%}
+:::
+::::
+
+:::::
+
+### Kidnapper Game (SPNE)
+
+What about SPNE?
+
+
+:::{.panel-tabset}
+
+#### EFG
+
+![](imgs/kdnp_fi_.png){width=50%}
+
+
+#### SPNE
+
+![In the last stage of the game, the criminal will release if they are paid, and murder otherwise. Given this, the Wife will choose to Pay since 3>2. Therefore, in the first stage of the game, the Criminal is comparing 3 to 5 and decides to Kidnap because 5>3](imgs/kdnp_fi__spne.png){width=45%}
+
+:::
+
+### The Centipede Game (Rules)
+
+[Start]{.ul}
+
+- Pot A has $2, pot B has $0
+   - Throughout the game, players take turns playing "end" or "continue"
+
+   - Playing "end" ends the game, and both players get all of the money in the pot they are holding
+
+   - Playing "continue" adds $1 to each pot and both players swap pots
+
+   - The total pool of money is $200. If both pots have $\ge \$99$ and the game continues, then both players receive $100 and the game ends
+
+### The Centipede Game (E.F.)
+
+Here is the previous game in extensive form
+
+- Any Predictions?
+
+- Where would you end?
+
+![](imgs/centipede.png){width=40%}
+
+### The Centipede Game (Analysis)
+
+- In the last stage of the game, player 2 chooses to [end]{.pl2} rather than [continue]{.pl2} to get the extra dollar
+
+- Knowing that player 2 will do this, player 1 will end the game a round early, yielding $(100, 98)$
+
+- ...but player 2 can reason to this point^[common knowledge of sequential rationality], so they will end a round before that
+
+- But what does player 1 do before this?
+
+. . . 
+
+![](imgs/and-the-next-day.gif){.absolute right=30 bottom=80 width=40%}
+
+
+### The Centipede Game
+
+- We continue this line of thought alllll the way back up the game 'tree'
+
+- The result from backward induction is that player 1 ends the game on their first move
+
+- This sort of phenomenon is commonly known as [**unravelling**]{.hi}
+
+## Midterm Prep
+
+
+###
+
+
+
+###
+
+
+
+###
+
+
+###
+
+
+
+###
+
+
+
+###
+
+
+###
+
+
+
+###
+
+
+
+###
+
+
+
+
+
+
+## Appendix
+
+
+### Kidnapper Game w/ Imperfect Info.
+
+Consider the following variant on the kidnapping game
+- How many subgames are there?
+
+![](imgs/kdnp_ii_.png){width=50%}
+
+### Kidnapper Game w/ Imperfect Info. (Subgames)
+
+:::::{.columns}
+
+::::{.column width=55%}
+- Only 2 subgames^[recall that we can't break up information sets]
+
+- Let's first consider the only _proper_ subgame
+   - We have to be careful about whose payoffs are whose
+::::
+
+::::{.column width=45%}
+:::{.panel-tabset}
+
+#### SGs
+![](imgs/kdnp_ii_sgs.png){width=100%}
+
+#### SG 1
+
+![](imgs/kdnp_ii_sgp.png){width=100%}
+
+:::
+::::
+:::::
+
+
+### Quick Aside
+
+:::::{.columns}
+
+::::{.column width=55%}
+- In [SG 1]{.hi}, each player has 2 strategies
+   - neither player knows other's move before they make their own
+
+- In [Aside]{.hi}, I have switched the Criminal and Wife
+   - and, since I'm using colors, I could switch the order payoffs in either one of these diagrams^[as long as we make sure the structure of the game is still preserved -- e.g., the same players have the same payoffs]
+
+- Keeping track of payoffs, how does the Normal Form representation of each of these Extensive Form games differ?
+   - They don't!
+
+- Takeaway?
+   - EFGs with imperfect information capture elements of simultaneous-move play
+
+::::
+
+::::{.column width=45%}
+:::{.panel-tabset}
+
+#### SG 1
+
+![](imgs/kdnp_ii_sgp.png){width=100%}
+
+#### Aside
+![](imgs/aside.png){width=100%}
+
+#### NF
+![](imgs/kdnp_ii_sg_nf.png){width=100%}
+
+:::
+::::
+:::::
+
+### Kidnapper Game w/ Imperfect Info. (NE)
+
+:::::{.columns}
+
+::::{.column width=55%}
+- Let's first consider the only _proper_ subgame
+
+- What are the NE?
+   - $(m, NP)$
+::::
+
+::::{.column width=45%}
+:::{.panel-tabset}
+#### SG 1
+
+![](imgs/kdnp_ii_sgp.png){width=100%}
+
+#### NF
+![](imgs/kdnp_ii_sg_nf.png){width=100%}
+
+#### NE
+![](imgs/kdnp_ii_sg_nf__solved.png){width=100%}
+
+:::
+::::
+:::::
+
+
+### Kidnapper Game w/ Imperfect Info. (Finish)
+
+- See captions for details
+
+:::{.panel-tabset}
+#### OG
+
+![Original Game](imgs/kdnp_ii_.png){width=45%}
+
+#### Replace SG
+![Let's replace the proper subgame with it's normal form representation](imgs/kdnp_ii_comb.png){width=45%}
+
+#### SG NE
+![We can solve that!](imgs/kdnp_ii_sg_nf__solved.png){width=45%}
+
+#### Replace payoff
+![So: let's replace NFG in the game tree with the NE outcome we just found](imgs/kdnp_ii_reduced.png){width=40%}
+
+#### Last Step
+![Now the Criminal Faces a simple decision](imgs/kdnp_ii_reduced__solved.png){width=40%}
+
+#### Altogether
+![Put it all together...The husband lives!!!](imgs/kdnp_ii_full_spne.png){width=45%}
+
+:::
