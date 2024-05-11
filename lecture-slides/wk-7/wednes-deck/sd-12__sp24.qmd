@@ -11,3 +11,272 @@ format:
 # editor:
 #    render-on-save: true
 ---
+
+## Last Time
+
+### Infinitely Repeated Games
+
+- Play PD repeatedly
+
+- Motivation:
+
+   1. The game continues tomorrow with prob. $\delta$, ends forever with prob. $1-\delta$
+
+   2. We are infinitely lived agents, but we discount the future by a factor of $\delta$
+
+      - Later, we may think that each player could have a different $\delta$, which makes the second interpretation more versatile
+
+[](imgs/pd.png){fig-align="right" width=40%}
+
+### Math
+
+- The geometric series
+
+- 
+   $$
+   \begin{aligned}
+   \sum_{k=0}^{\infty} x^{n} &= 1 + x + x^2 + \cdots\\
+   & = \frac{1}{1-x}
+   \end{aligned}
+   $$
+
+- Note: we can multiply constants in and out of these sums
+
+- E.g.
+   $$
+   \begin{aligned}
+   \sum_{k=1}^{\infty} cx^{n} &= cx + cx^2 + cx^3 + \cdots\\
+   c\frac{x}{1-x}
+   \end{aligned}
+   $$
+
+##
+
+### GT
+
+- Recall the so-called "Grim Trigger" strategy: 
+   $$
+      s_{GT} = \begin{cases}
+         C & \text{if } D\notin \mathcal{H}\\
+         D & \text{otherwise}
+      \end{cases}
+   $$
+
+- Let's assume it's day 1^[In fact, it's equivalent assume it's any day, and we have only cooperated thus far], and, for simplicity, assume that your opponent is just playing $C$ all the time^[call this strategy $\overline{C}$]
+
+- What happens if you play $C$ all the time?
+
+   $$\pi(\overline{C},\overline{C}) = 10 + 10\delta + 10 \delta^2 + 10 \delta^3 + \cdots$$
+
+- From the POV of day 1, the prob. of getting to stage $k$ is $\delta^k$
+
+- What is this payoff sum equal to?
+
+### 
+
+- Recall: $\delta\in(0,1)$
+$$
+\pi(\overline{C},\overline{C}) &= 10 + 10\delta + 10 \delta^2 + 10 \delta^3 + \cdots\\
+&= 10 (1 + \delta + \delta^2 + \delta^3 + \cdots)\\
+&= 10\sum_{k=0}^{\infty} \delta^k
+$$
+
+It's a geometric series!
+
+$$
+\begin{aligned}
+\pi(\overline{C},\overline{C}) &= 10\sum_{k=0}^{\infty} \delta^k\\
+&= \frac{10}{1-\delta}
+\end{aligned}
+$$
+
+- In some classes, you might refer to this infinite stream of income using the term "present discounted value" (PDV)
+
+### 
+
+- Let's consider another case: suppose I cheat you, but you don't cheat me, on day 1, and then we defect every day thereafter
+
+- Now what's our PDV?
+
+- 
+
+$$
+\pi &= 20 + (2)\delta + (2) \delta^{2} + (2)\delta^3 + \cdots\\
+&= 20 + 2\sum_{k=1}^{\infty}\delta^{k}\\
+&= 20 + \frac{2\delta}{1-\delta}
+$$
+
+- Remark: if you can, please feel free to [omit]{.ul} the $1$ when writing $1\cdot \delta$
+
+### What are we doing again?
+
+- What's our goal?
+
+   - See if we can enforce cooperative play in PD, in a subgame-perfect sense
+
+- Proposition: this can be achieved, for certain ranges of $\delta$, if both players play grim trigger
+
+1. Let's say both players have cooperated thus far in the game. What happens if we both decide to cooperate tomorrow
+
+   - That's the same as $\pi(\overline{C}, \overline{C})$
+
+      $$
+      \begin{aligned}
+      10 + 10\delta + 10 \delta^{2} + \cdots &= 10\sum_{k=0}^{\infty} \delta^k\\
+      &= \frac{10}{1-\delta}
+      \end{aligned}
+      $$
+
+### 
+
+- Maintain the assumption that both players have cooperated thus far in the game. Now, what happens if I cheat my partner?
+
+   - 
+      $$
+      \begin{aligned}
+      20 + 5\delta + 5\delta^{2} + 5\delta^{3} + \cdots &= 20 + 5\sum_{k=1}^{\infty} \delta^k\\
+      &= 20 + \frac{5\delta}{1-\delta}
+      \end{aligned}
+      $$
+
+
+- When will I stick with G.T. (e.g. not deviate for a strictly higher payoff)? 
+
+   - When $\frac{10}{1-\delta} > 20 + \frac{5\delta}{1-\delta}$
+
+###
+
+$$\begin{aligned}
+\frac{10}{1-\delta} &> 20 + \frac{5\delta}{1-\delta} \\
+10 &> 20 (1-\delta) + 5\delta\\
+10 &> 20 - 15\delta\\
+15\delta &> 10\\
+\delta&>\frac{10}{15}\\
+&= \boxed{\delta&>\frac{2}{3}}
+\end{aligned}
+$$
+
+- What does this mean?
+
+### Interpretation
+
+- Given a history of cooperation, 
+
+   - (i) a _sufficiently patient_ agent ($\delta > 0.66$) will rationally stick with G.T. going forward
+
+   - (ii) given a sufficiently high probability that the game will continue ($\delta > 0.66$), players rationally stick with G.T. going forward
+
+- Are we done?
+
+   - Unfortunately not
+
+### 
+
+- We also must consider histories where someone [did]{.ul} already defect
+
+- Assume we keep playing $s_{GT}$:
+
+   $$\begin{aligned}
+   \pi(s_{GT}, s_{GT}| \mathcal{H}) &= \pi(\overline{D}, \overline{D}) \\
+   &= 5 + 5\delta + 5\delta^2 + 5\delta^3 + \cdots\\
+   &=\sum{k=0}^}{\infty} 5\delta^{k}
+   &= \frac{5}{1-\delta}
+   \end{aligned}
+   $$
+
+- Assume instead that we forgive them, and switch to playing Cooperative today (but then revert to grim trigger forever). Now what does our payoff stream look like?
+
+- 
+   $$\begin{aligned}
+   2 + 5\delta + 5\delta^2 + 5\delta^3 + \cdots\\
+   &= 2 + \sum{k=1}^}{\infty} 5\delta^{k}\\
+   &= 2 + \frac{5\delta}{1-\delta}
+   \end{aligned}
+   $$
+
+- When will we maintain grim trigger?
+
+###
+
+- Maintain grim trigger if
+   $$ 
+   \begin{aligned}
+   \frac{5}{1-\delta} > 2 + \frac{5\delta}{1-\delta}\\
+   \frac{5}{1-\delta} -  \frac{5\delta}{1-\delta} > 2 \\
+   \frac{5(1-\delta)}{1-\delta} > 2 \\
+   5 > 2 \\
+   \end{aligned}
+   $$
+
+- When will we mantain grim trigger (as opposed to forgiving?)
+   
+   - [Always]{.ul}
+
+### Remarks
+
+- As a result of the One-shot Deviation principle, it suffices to check forgiving once and then playing $s_{GT}$ forever
+
+   - As opposed to checking all (infinite) different strategies
+
+   - In this case, think about it as our _best_ deviation
+
+      - Consider the unilateral deviation to $\overline{C}$
+
+         $$2 + 2\delta + 2\delta^2$$
+
+      - You're getting screwed every time; this will not possibly be better
+
+- In PD, checking the history where someone has deviated is often the boring part, but this isn't necessarily true for other games
+
+
+
+### Ex. 
+
+
+### Sol.
+
+
+### Ex.
+
+
+### Remarks (cont.)
+
+- What happens if you get $\delta < 0$?
+
+   - This means the assumed condition to get us to that point [_never_]{.ul} happens
+
+- What if you find $\delta > 1$?
+
+   - Similar
+
+- What if you find $\delta < 2/3$ in the first history case, and $\delta\in [1/4, 3/4]$ for the other?
+
+   - To find whe GT admits a cooperative SPNE, we need to combine these conditions:
+
+      - <!-- number line -->
+
+      - $\delta\in[1/4, 2/3]$
+
+- What if you end up with $\delta<1/4$ and $\delta>2/3$?
+   
+   - Again: impossible
+
+- Use quantitative reasoning!
+
+### Other interesting strategies
+
+- Is grim trigger the only way to enforce the cooperative outcome?
+
+   - As it turns out, no
+
+- Tit-for-tat
+
+- Pavlovs dogs
+
+### Other games
+
+- We ask similar questions about other simultaneous-move games played infinitely
+
+- They are interesting, but we will restrict ourselves to PD for the most part
+
+## Quadratic Optimization
