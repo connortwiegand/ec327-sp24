@@ -73,41 +73,48 @@ format:
 
 - What is this payoff sum equal to?
 
-### 
+### .
 
 - Recall: $\delta\in(0,1)$
 $$
+\begin{aligned}
 \pi(\overline{C},\overline{C}) &= 10 + 10\delta + 10 \delta^2 + 10 \delta^3 + \cdots\\
 &= 10 (1 + \delta + \delta^2 + \delta^3 + \cdots)\\
 &= 10\sum_{k=0}^{\infty} \delta^k
-$$
-
-It's a geometric series!
-
-$$
-\begin{aligned}
-\pi(\overline{C},\overline{C}) &= 10\sum_{k=0}^{\infty} \delta^k\\
-&= \frac{10}{1-\delta}
 \end{aligned}
+$$
+
+- It's a geometric series!
+
+. . . 
+
+$$
+\pi(\overline{C},\overline{C}) = 10\sum_{k=0}^{\infty} \delta^k = \frac{10}{1-\delta}
 $$
 
 - In some classes, you might refer to this infinite stream of income using the term "present discounted value" (PDV)
 
-### 
+### .
 
 - Let's consider another case: suppose I cheat you, but you don't cheat me, on day 1, and then we defect every day thereafter
 
 - Now what's our PDV?
 
 - 
+   $$
+   \begin{aligned}
+   \pi &= 20 + (2)\delta + (2) \delta^{2} + (2)\delta^3 + \cdots\\
+   &= 20 + 2\sum_{k=1}^{\infty}\delta^{k}\\
+   &= 20 + \frac{2\delta}{1-\delta}
+   \end{aligned}
+   $$
 
-$$
-\pi &= 20 + (2)\delta + (2) \delta^{2} + (2)\delta^3 + \cdots\\
-&= 20 + 2\sum_{k=1}^{\infty}\delta^{k}\\
-&= 20 + \frac{2\delta}{1-\delta}
-$$
+\
 
-- Remark: if you can, please feel free to [omit]{.ul} the $1$ when writing $1\cdot \delta$
+\
+
+
+- Remark: if you can, please feel free to [omit]{.ul} ones ($1$) when writing $1\cdot \delta$
 
 ### What are we doing again?
 
@@ -121,39 +128,43 @@ $$
 
    - That's the same as $\pi(\overline{C}, \overline{C})$
 
-      $$
-      \begin{aligned}
-      10 + 10\delta + 10 \delta^{2} + \cdots &= 10\sum_{k=0}^{\infty} \delta^k\\
-      &= \frac{10}{1-\delta}
-      \end{aligned}
-      $$
+. . . 
 
-### 
+$$
+\begin{aligned}
+10 + 10\delta + 10 \delta^{2} + \cdots &= 10\sum_{k=0}^{\infty} \delta^k\\
+&= \frac{10}{1-\delta}
+\end{aligned}
+$$
+
+### .
 
 - Maintain the assumption that both players have cooperated thus far in the game. Now, what happens if I cheat my partner?
 
-   - 
-      $$
-      \begin{aligned}
-      20 + 5\delta + 5\delta^{2} + 5\delta^{3} + \cdots &= 20 + 5\sum_{k=1}^{\infty} \delta^k\\
-      &= 20 + \frac{5\delta}{1-\delta}
-      \end{aligned}
-      $$
+. . . 
+
+$$
+\begin{aligned}
+20 + 5\delta + 5\delta^{2} + 5\delta^{3} + \cdots &= 20 + 5\sum_{k=1}^{\infty} \delta^k\\
+&= 20 + \frac{5\delta}{1-\delta}
+\end{aligned}
+$$
 
 
 - When will I stick with G.T. (e.g. not deviate for a strictly higher payoff)? 
 
    - When $\frac{10}{1-\delta} > 20 + \frac{5\delta}{1-\delta}$
 
-###
+### .
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 \frac{10}{1-\delta} &> 20 + \frac{5\delta}{1-\delta} \\
 10 &> 20 (1-\delta) + 5\delta\\
 10 &> 20 - 15\delta\\
 15\delta &> 10\\
 \delta&>\frac{10}{15}\\
-&= \boxed{\delta&>\frac{2}{3}}
+\delta&>\frac{2}{3}
 \end{aligned}
 $$
 
@@ -171,41 +182,51 @@ $$
 
    - Unfortunately not
 
-### 
+### Continue Defecting
 
 - We also must consider histories where someone [did]{.ul} already defect
 
 - Assume we keep playing $s_{GT}$:
 
-   $$\begin{aligned}
-   \pi(s_{GT}, s_{GT}| \mathcal{H}) &= \pi(\overline{D}, \overline{D}) \\
-   &= 5 + 5\delta + 5\delta^2 + 5\delta^3 + \cdots\\
-   &=\sum{k=0}^}{\infty} 5\delta^{k}
-   &= \frac{5}{1-\delta}
-   \end{aligned}
-   $$
+. . . 
+
+$$
+\begin{aligned}
+\pi(s_{GT}, s_{GT}| \mathcal{H}) &= \pi(\overline{D}, \overline{D}) \\
+&= 5 + 5\delta + 5\delta^2 + 5\delta^3 + \cdots\\
+&=\sum_{k=0}^{\infty} 5\delta^{k}\\
+&= \frac{5}{1-\delta}
+\end{aligned}
+$$
+
+
+
+### Forgive
+
+:::{.nonincremental}
+- We also must consider histories where someone [did]{.ul} already defect
+:::
 
 - Assume instead that we forgive them, and switch to playing Cooperative today (but then revert to grim trigger forever). Now what does our payoff stream look like?
 
-- 
-   $$\begin{aligned}
-   2 + 5\delta + 5\delta^2 + 5\delta^3 + \cdots\\
-   &= 2 + \sum{k=1}^}{\infty} 5\delta^{k}\\
-   &= 2 + \frac{5\delta}{1-\delta}
-   \end{aligned}
-   $$
+$$
+\begin{aligned}
+2 + 5\delta + 5\delta^2 + 5\delta^3 + \cdots &= 2 + \sum_{k=1}^{\infty}5\delta^{k}\\
+&= 2 + \frac{5\delta}{1-\delta}
+\end{aligned}
+$$
 
 - When will we maintain grim trigger?
 
-###
+### .
 
 - Maintain grim trigger if
    $$ 
    \begin{aligned}
    \frac{5}{1-\delta} > 2 + \frac{5\delta}{1-\delta}\\
-   \frac{5}{1-\delta} -  \frac{5\delta}{1-\delta} > 2 \\
+   \frac{5}{1-\delta} - \frac{5\delta}{1-\delta} > 2 \\
    \frac{5(1-\delta)}{1-\delta} > 2 \\
-   5 > 2 \\
+   5 > 2
    \end{aligned}
    $$
 
@@ -231,13 +252,227 @@ $$
 
 
 
-### Ex. 
+### Ex. 0
+
+![](imgs/pd-ex1.png){fig-align="right" width="40%"}
 
 
-### Sol.
+### Sol. 0
+
+:::{.panel-tabset}
+#### Case 1 Payoffs
+
+Continue with Grim Trigger:
+$$
+\begin{aligned}
+\pi(s_{GT}, s_{GT})= 12 + 12\delta + 12\delta^2 + \cdots = \frac{12}{1-\delta}
+\end{aligned}
+$$
+
+Deviate once, then revert to G.T.:
+$$
+\begin{aligned}
+\pi(\hat{s}_{GT}, s_{GT})= 18 + 6\delta + 6\delta^2 + \cdots = 18 + \frac{6\delta}{1-\delta}
+\end{aligned}
+$$
 
 
-### Ex.
+#### Case 1 Analysis
+
+Maintain Grim Trigger when
+
+$$
+\begin{aligned}
+\frac{12}{1-\delta} &> 18 + \frac{6\delta}{1-\delta}\\
+12 &> 18-18\delta+6\delta\\
+12\delta &> 6\\
+\delta &> \frac{1}{2}
+\end{aligned}
+$$
+
+
+#### Case 2 Payoffs
+
+Continue with Grim Trigger:
+$$
+\begin{aligned}
+\pi(s_{GT}, s_{GT})= 6 + 6\delta + 6\delta^2 + \cdots = \frac{6}{1-\delta}
+\end{aligned}
+$$
+
+Deviate once, then revert to G.T.:
+$$
+\begin{aligned}
+\pi(s_{GT}, s_{GT})= 3 + 6\delta + 6\delta^2 + \cdots = 3 + \frac{6\delta}{1-\delta}
+\end{aligned}
+$$
+
+
+#### Case 2 Analysis
+
+Maintain G.T. when 
+$$
+\begin{aligned}
+\frac{6}{1-\delta} &> 3 + \frac{6\delta}{1-\delta}\\
+6 &> 3
+\end{aligned}
+$$
+
+- $\implies$ always
+
+#### Answer
+
+Cooperative play can be enforced when players are sufficiently patient ($\delta>0.5$)
+:::
+
+
+### Ex. 1-2
+
+1. Assume Mermaid Man and Barnacle Boy discount at [different]{.ul} rates, $\delta_{MM}$ and $\delta_{BB}$. When can G.T. lead us to a coop. outcome?
+
+2. Assume Mermaid Man and Barnacle Boy face the same probability that the game ends. When can G.T. enforce a coop outcome?
+
+![](imgs/pd-ex2.png){fig-align="center" width="50%"}
+
+
+### Sol. 1
+
+I'll leave it to you to check the histories when $D\in\mathcal{H}$
+
+:::{.panel-tabset}
+#### MM
+
+Assume $D\notin\mathcal{H}$
+
+- Maintain G.T. when
+   $$
+   \begin{aligned}
+   \frac{18}{1-\delta} &> 24 + \frac{16\delta}{1-\delta}\\
+   18 &> 24-24\delta + 16\delta\\
+   8\delta &> 6\\
+   \delta &> \frac{6}{8}=\frac{2}{3}
+   \end{aligned}
+   $$
+
+
+#### BB
+
+Assume $D\notin\mathcal{H}$
+
+- Maintain G.T. when
+   $$
+   \begin{aligned}
+   \frac{12}{1-\delta} &> 32 + \frac{8\delta}{1-\delta}\\
+   12 &> 32-32\delta + 8\delta\\
+   24\delta &> 20\\
+   \delta &> \frac{20}{24}=\frac{5}{6}=0.\bar{4}
+   \end{aligned}
+   $$
+
+#### Ans
+
+Coop play possible via G.T. when 
+
+$$\delta_{MM}>\frac{2}{3}\qquad\text{and}\qquad\delta_{BB}>\frac{5}{6}$$
+
+:::
+
+### Sol. 2
+ 
+- Math doesn't change; what does is the final "Answer" Step
+
+:::{.panel-tabset}
+#### MM
+
+Assume $D\notin\mathcal{H}$
+
+- Maintain G.T. when
+   $$
+   \begin{aligned}
+   \frac{18}{1-\delta} &> 24 + \frac{16\delta}{1-\delta}\\
+   18 &> 24-24\delta + 16\delta\\
+   8\delta &> 6\\
+   \delta &> \frac{6}{8}=\frac{2}{3}
+   \end{aligned}
+   $$
+
+#### BB
+
+Assume $D\notin\mathcal{H}$
+
+- Maintain G.T. when
+   $$
+   \begin{aligned}
+   \frac{12}{1-\delta} &> 32 + \frac{8\delta}{1-\delta}\\
+   12 &> 32-32\delta + 8\delta\\
+   24\delta &> 20\\
+   \delta &> \frac{20}{24}=\frac{5}{6}=0.\bar{4}
+   \end{aligned}
+   $$
+
+
+#### Ans
+
+- If MM and BB share a common delta, we have to combine (take the intersection of) the conditions
+
+   - $2/3\approx0.67$
+
+   - $5/6\approx0.83$
+
+- We need [both]{.ul .hi} players to be on board with playing G.T. and sticking to it
+
+   - Therefore, we need the stricter of the two conditions:
+
+   $$\delta > 5/6$$
+
+:::
+
+### Ex. 3
+
+![](imgs/pd-ex3.png){fig-align="center" width="40%"}
+
+### Sol. 3
+
+:::{.panel-tabset}
+
+#### Case 1 
+
+$D \notin \mathcal{H}$
+
+Maintain Grim Trigger when
+
+$$
+\begin{aligned}
+\frac{16}{1-\delta} &> 24 + \frac{4\delta}{1-\delta}\\
+12 &> 24-24\delta+4\delta\\
+20\delta &> 12\\
+\delta &> \frac{12}{20}=\frac{3}{5}
+\end{aligned}
+$$
+
+
+#### Case 2
+
+$D \in \mathcal{H}$
+
+Maintain G.T. when 
+$$
+\begin{aligned}
+\frac{4}{1-\delta} &> 8 + \frac{4\delta}{1-\delta}\\
+4 &> 8
+\end{aligned}
+$$
+
+- $\implies$ [_never_]{.ul}
+
+#### Answer
+
+We can't enforce coopertive play using G.T.
+
+- Why? 
+
+   - This isn't a true PD: getting cheated is better than mutual defection
+:::
 
 
 ### Remarks (cont.)
@@ -298,12 +533,14 @@ $$
 
 - Tit-for-tat
 
-- Pavlovs dogs
+- Pavlovs dogs (aka Win-Stay Lose-Switch)
+
+- [Others](https://plato.stanford.edu/entries/prisoner-dilemma/strategy-table.html) (not all support cooperative play as a SPNE)
 
 ### Other games
 
 - We ask similar questions about other simultaneous-move games played infinitely
 
-- They are interesting, but we will restrict ourselves to PD for the most part
+- They are interesting, but we will restrict ourselves to PD (and similar) games, for the most part
 
 ## Quadratic Optimization

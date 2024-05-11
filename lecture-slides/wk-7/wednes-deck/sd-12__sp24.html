@@ -403,39 +403,45 @@ c\frac{x}{1-x}
 </ul>
 <aside><ol class="aside-footnotes"><li id="fn1"><p>In fact, it’s equivalent assume it’s any day, and we have only cooperated thus far</p></li><li id="fn2"><p>call this strategy <span class="math inline">\(\overline{C}\)</span></p></li></ol></aside></section>
 <section id="section-1" class="slide level3">
-<h3></h3>
+<h3>.</h3>
 <ul>
-<li class="fragment">Recall: <span class="math inline">\(\delta\in(0,1)\)</span> <span class="math display">\[
+<li class="fragment"><p>Recall: <span class="math inline">\(\delta\in(0,1)\)</span> <span class="math display">\[
+\begin{aligned}
 \pi(\overline{C},\overline{C}) &amp;= 10 + 10\delta + 10 \delta^2 + 10 \delta^3 + \cdots\\
 &amp;= 10 (1 + \delta + \delta^2 + \delta^3 + \cdots)\\
 &amp;= 10\sum_{k=0}^{\infty} \delta^k
-\]</span></li>
-</ul>
-<p>It’s a geometric series!</p>
-<p><span class="math display">\[
-\begin{aligned}
-\pi(\overline{C},\overline{C}) &amp;= 10\sum_{k=0}^{\infty} \delta^k\\
-&amp;= \frac{10}{1-\delta}
 \end{aligned}
+\]</span></p></li>
+<li class="fragment"><p>It’s a geometric series!</p></li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[
+\pi(\overline{C},\overline{C}) = 10\sum_{k=0}^{\infty} \delta^k = \frac{10}{1-\delta}
 \]</span></p>
 <ul>
 <li class="fragment">In some classes, you might refer to this infinite stream of income using the term “present discounted value” (PDV)</li>
 </ul>
+</div>
 </section>
 <section id="section-2" class="slide level3">
-<h3></h3>
+<h3>.</h3>
 <ul>
 <li class="fragment"><p>Let’s consider another case: suppose I cheat you, but you don’t cheat me, on day 1, and then we defect every day thereafter</p></li>
 <li class="fragment"><p>Now what’s our PDV?</p></li>
-<li class="fragment"></li>
-</ul>
-<p><span class="math display">\[
+<li class="fragment"><p><span class="math display">\[
+\begin{aligned}
 \pi &amp;= 20 + (2)\delta + (2) \delta^{2} + (2)\delta^3 + \cdots\\
 &amp;= 20 + 2\sum_{k=1}^{\infty}\delta^{k}\\
 &amp;= 20 + \frac{2\delta}{1-\delta}
-\]</span></p>
+\end{aligned}
+\]</span></p></li>
+</ul>
+<p><br>
+</p>
+<p><br>
+</p>
 <ul>
-<li class="fragment">Remark: if you can, please feel free to <u>omit</u> the <span class="math inline">\(1\)</span> when writing <span class="math inline">\(1\cdot \delta\)</span></li>
+<li class="fragment">Remark: if you can, please feel free to <u>omit</u> ones (<span class="math inline">\(1\)</span>) when writing <span class="math inline">\(1\cdot \delta\)</span></li>
 </ul>
 </section>
 <section id="what-are-we-doing-again" class="slide level3">
@@ -450,43 +456,48 @@ c\frac{x}{1-x}
 <ol type="1">
 <li class="fragment"><p>Let’s say both players have cooperated thus far in the game. What happens if we both decide to cooperate tomorrow</p>
 <ul>
-<li class="fragment"><p>That’s the same as <span class="math inline">\(\pi(\overline{C}, \overline{C})\)</span></p>
+<li class="fragment">That’s the same as <span class="math inline">\(\pi(\overline{C}, \overline{C})\)</span></li>
+</ul></li>
+</ol>
+<div class="fragment">
 <p><span class="math display">\[
 \begin{aligned}
 10 + 10\delta + 10 \delta^{2} + \cdots &amp;= 10\sum_{k=0}^{\infty} \delta^k\\
 &amp;= \frac{10}{1-\delta}
 \end{aligned}
-\]</span></p></li>
-</ul></li>
-</ol>
+\]</span></p>
+</div>
 </section>
 <section id="section-3" class="slide level3">
-<h3></h3>
+<h3>.</h3>
 <ul>
-<li class="fragment"><p>Maintain the assumption that both players have cooperated thus far in the game. Now, what happens if I cheat my partner?</p>
-<ul>
-<li class="fragment"><span class="math display">\[
+<li class="fragment">Maintain the assumption that both players have cooperated thus far in the game. Now, what happens if I cheat my partner?</li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[
 \begin{aligned}
 20 + 5\delta + 5\delta^{2} + 5\delta^{3} + \cdots &amp;= 20 + 5\sum_{k=1}^{\infty} \delta^k\\
 &amp;= 20 + \frac{5\delta}{1-\delta}
 \end{aligned}
-\]</span></li>
-</ul></li>
+\]</span></p>
+<ul>
 <li class="fragment"><p>When will I stick with G.T. (e.g.&nbsp;not deviate for a strictly higher payoff)?</p>
 <ul>
 <li class="fragment">When <span class="math inline">\(\frac{10}{1-\delta} &gt; 20 + \frac{5\delta}{1-\delta}\)</span></li>
 </ul></li>
 </ul>
+</div>
 </section>
 <section id="section-4" class="slide level3">
-<h3></h3>
-<p><span class="math display">\[\begin{aligned}
+<h3>.</h3>
+<p><span class="math display">\[
+\begin{aligned}
 \frac{10}{1-\delta} &amp;&gt; 20 + \frac{5\delta}{1-\delta} \\
 10 &amp;&gt; 20 (1-\delta) + 5\delta\\
 10 &amp;&gt; 20 - 15\delta\\
 15\delta &amp;&gt; 10\\
 \delta&amp;&gt;\frac{10}{15}\\
-&amp;= \boxed{\delta&amp;&gt;\frac{2}{3}}
+\delta&amp;&gt;\frac{2}{3}
 \end{aligned}
 \]</span></p>
 <ul>
@@ -511,37 +522,52 @@ c\frac{x}{1-x}
 </ul></li>
 </ul>
 </section>
-<section id="section-5" class="slide level3">
-<h3></h3>
+<section id="continue-defecting" class="slide level3">
+<h3>Continue Defecting</h3>
 <ul>
 <li class="fragment"><p>We also must consider histories where someone <u>did</u> already defect</p></li>
-<li class="fragment"><p>Assume we keep playing <span class="math inline">\(s_{GT}\)</span>:</p>
-<p><span class="math display">\[\begin{aligned}
+<li class="fragment"><p>Assume we keep playing <span class="math inline">\(s_{GT}\)</span>:</p></li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[
+\begin{aligned}
 \pi(s_{GT}, s_{GT}| \mathcal{H}) &amp;= \pi(\overline{D}, \overline{D}) \\
 &amp;= 5 + 5\delta + 5\delta^2 + 5\delta^3 + \cdots\\
-&amp;=\sum{k=0}^}{\infty} 5\delta^{k}
+&amp;=\sum_{k=0}^{\infty} 5\delta^{k}\\
 &amp;= \frac{5}{1-\delta}
 \end{aligned}
-\]</span></p></li>
-<li class="fragment"><p>Assume instead that we forgive them, and switch to playing Cooperative today (but then revert to grim trigger forever). Now what does our payoff stream look like?</p></li>
-<li class="fragment"><p><span class="math display">\[\begin{aligned}
-2 + 5\delta + 5\delta^2 + 5\delta^3 + \cdots\\
-&amp;= 2 + \sum{k=1}^}{\infty} 5\delta^{k}\\
+\]</span></p>
+</div>
+</section>
+<section id="forgive" class="slide level3">
+<h3>Forgive</h3>
+<div>
+<ul>
+<li>We also must consider histories where someone <u>did</u> already defect</li>
+</ul>
+</div>
+<ul>
+<li class="fragment">Assume instead that we forgive them, and switch to playing Cooperative today (but then revert to grim trigger forever). Now what does our payoff stream look like?</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+2 + 5\delta + 5\delta^2 + 5\delta^3 + \cdots &amp;= 2 + \sum_{k=1}^{\infty}5\delta^{k}\\
 &amp;= 2 + \frac{5\delta}{1-\delta}
 \end{aligned}
-\]</span></p></li>
-<li class="fragment"><p>When will we maintain grim trigger?</p></li>
+\]</span></p>
+<ul>
+<li class="fragment">When will we maintain grim trigger?</li>
 </ul>
 </section>
-<section id="section-6" class="slide level3">
-<h3></h3>
+<section id="section-5" class="slide level3">
+<h3>.</h3>
 <ul>
 <li class="fragment"><p>Maintain grim trigger if <span class="math display">\[
 \begin{aligned}
 \frac{5}{1-\delta} &gt; 2 + \frac{5\delta}{1-\delta}\\
-\frac{5}{1-\delta} -  \frac{5\delta}{1-\delta} &gt; 2 \\
+\frac{5}{1-\delta} - \frac{5\delta}{1-\delta} &gt; 2 \\
 \frac{5(1-\delta)}{1-\delta} &gt; 2 \\
-5 &gt; 2 \\
+5 &gt; 2
 \end{aligned}
 \]</span></p></li>
 <li class="fragment"><p>When will we mantain grim trigger (as opposed to forgiving?)</p>
@@ -566,14 +592,221 @@ c\frac{x}{1-x}
 <li class="fragment"><p>In PD, checking the history where someone has deviated is often the boring part, but this isn’t necessarily true for other games</p></li>
 </ul>
 </section>
-<section id="ex." class="slide level3">
-<h3>Ex.</h3>
+<section id="ex.-0" class="slide level3">
+<h3>Ex. 0</h3>
+<div class="quarto-figure quarto-figure-right">
+<figure>
+<p><a href="imgs/pd-ex1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="imgs/pd-ex1.png" class="quarto-figure quarto-figure-right" style="width:40.0%"></a></p>
+</figure>
+</div>
 </section>
-<section id="sol." class="slide level3">
-<h3>Sol.</h3>
+<section id="sol.-0" class="slide level3">
+<h3>Sol. 0</h3>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Case 1 Payoffs</a></li><li><a href="#tabset-1-2">Case 1 Analysis</a></li><li><a href="#tabset-1-3">Case 2 Payoffs</a></li><li><a href="#tabset-1-4">Case 2 Analysis</a></li><li><a href="#tabset-1-5">Answer</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<p>Continue with Grim Trigger: <span class="math display">\[
+\begin{aligned}
+\pi(s_{GT}, s_{GT})= 12 + 12\delta + 12\delta^2 + \cdots = \frac{12}{1-\delta}
+\end{aligned}
+\]</span></p>
+<p>Deviate once, then revert to G.T.: <span class="math display">\[
+\begin{aligned}
+\pi(\hat{s}_{GT}, s_{GT})= 18 + 6\delta + 6\delta^2 + \cdots = 18 + \frac{6\delta}{1-\delta}
+\end{aligned}
+\]</span></p>
+</div>
+<div id="tabset-1-2">
+<p>Maintain Grim Trigger when</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{12}{1-\delta} &amp;&gt; 18 + \frac{6\delta}{1-\delta}\\
+12 &amp;&gt; 18-18\delta+6\delta\\
+12\delta &amp;&gt; 6\\
+\delta &amp;&gt; \frac{1}{2}
+\end{aligned}
+\]</span></p>
+</div>
+<div id="tabset-1-3">
+<p>Continue with Grim Trigger: <span class="math display">\[
+\begin{aligned}
+\pi(s_{GT}, s_{GT})= 6 + 6\delta + 6\delta^2 + \cdots = \frac{6}{1-\delta}
+\end{aligned}
+\]</span></p>
+<p>Deviate once, then revert to G.T.: <span class="math display">\[
+\begin{aligned}
+\pi(s_{GT}, s_{GT})= 3 + 6\delta + 6\delta^2 + \cdots = 3 + \frac{6\delta}{1-\delta}
+\end{aligned}
+\]</span></p>
+</div>
+<div id="tabset-1-4">
+<p>Maintain G.T. when <span class="math display">\[
+\begin{aligned}
+\frac{6}{1-\delta} &amp;&gt; 3 + \frac{6\delta}{1-\delta}\\
+6 &amp;&gt; 3
+\end{aligned}
+\]</span></p>
+<ul>
+<li class="fragment"><span class="math inline">\(\implies\)</span> always</li>
+</ul>
+</div>
+<div id="tabset-1-5">
+<p>Cooperative play can be enforced when players are sufficiently patient (<span class="math inline">\(\delta&gt;0.5\)</span>)</p>
+</div>
+</div>
+</div>
 </section>
-<section id="ex.-1" class="slide level3">
-<h3>Ex.</h3>
+<section id="ex.-1-2" class="slide level3">
+<h3>Ex. 1-2</h3>
+<ol type="1">
+<li class="fragment"><p>Assume Mermaid Man and Barnacle Boy discount at <u>different</u> rates, <span class="math inline">\(\delta_{MM}\)</span> and <span class="math inline">\(\delta_{BB}\)</span>. When can G.T. lead us to a coop. outcome?</p></li>
+<li class="fragment"><p>Assume Mermaid Man and Barnacle Boy face the same probability that the game ends. When can G.T. enforce a coop outcome?</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="imgs/pd-ex2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img data-src="imgs/pd-ex2.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></a></p>
+</figure>
+</div>
+</section>
+<section id="sol.-1" class="slide level3">
+<h3>Sol. 1</h3>
+<p>I’ll leave it to you to check the histories when <span class="math inline">\(D\in\mathcal{H}\)</span></p>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">MM</a></li><li><a href="#tabset-2-2">BB</a></li><li><a href="#tabset-2-3">Ans</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<p>Assume <span class="math inline">\(D\notin\mathcal{H}\)</span></p>
+<ul>
+<li class="fragment">Maintain G.T. when <span class="math display">\[
+\begin{aligned}
+\frac{18}{1-\delta} &amp;&gt; 24 + \frac{16\delta}{1-\delta}\\
+18 &amp;&gt; 24-24\delta + 16\delta\\
+8\delta &amp;&gt; 6\\
+\delta &amp;&gt; \frac{6}{8}=\frac{2}{3}
+\end{aligned}
+\]</span></li>
+</ul>
+</div>
+<div id="tabset-2-2">
+<p>Assume <span class="math inline">\(D\notin\mathcal{H}\)</span></p>
+<ul>
+<li class="fragment">Maintain G.T. when <span class="math display">\[
+\begin{aligned}
+\frac{12}{1-\delta} &amp;&gt; 32 + \frac{8\delta}{1-\delta}\\
+12 &amp;&gt; 32-32\delta + 8\delta\\
+24\delta &amp;&gt; 20\\
+\delta &amp;&gt; \frac{20}{24}=\frac{5}{6}=0.\bar{4}
+\end{aligned}
+\]</span></li>
+</ul>
+</div>
+<div id="tabset-2-3">
+<p>Coop play possible via G.T. when</p>
+<p><span class="math display">\[\delta_{MM}&gt;\frac{2}{3}\qquad\text{and}\qquad\delta_{BB}&gt;\frac{5}{6}\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="sol.-2" class="slide level3">
+<h3>Sol. 2</h3>
+<ul>
+<li class="fragment">Math doesn’t change; what does is the final “Answer” Step</li>
+</ul>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">MM</a></li><li><a href="#tabset-3-2">BB</a></li><li><a href="#tabset-3-3">Ans</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<p>Assume <span class="math inline">\(D\notin\mathcal{H}\)</span></p>
+<ul>
+<li class="fragment">Maintain G.T. when <span class="math display">\[
+\begin{aligned}
+\frac{18}{1-\delta} &amp;&gt; 24 + \frac{16\delta}{1-\delta}\\
+18 &amp;&gt; 24-24\delta + 16\delta\\
+8\delta &amp;&gt; 6\\
+\delta &amp;&gt; \frac{6}{8}=\frac{2}{3}
+\end{aligned}
+\]</span></li>
+</ul>
+</div>
+<div id="tabset-3-2">
+<p>Assume <span class="math inline">\(D\notin\mathcal{H}\)</span></p>
+<ul>
+<li class="fragment">Maintain G.T. when <span class="math display">\[
+\begin{aligned}
+\frac{12}{1-\delta} &amp;&gt; 32 + \frac{8\delta}{1-\delta}\\
+12 &amp;&gt; 32-32\delta + 8\delta\\
+24\delta &amp;&gt; 20\\
+\delta &amp;&gt; \frac{20}{24}=\frac{5}{6}=0.\bar{4}
+\end{aligned}
+\]</span></li>
+</ul>
+</div>
+<div id="tabset-3-3">
+<ul>
+<li class="fragment"><p>If MM and BB share a common delta, we have to combine (take the intersection of) the conditions</p>
+<ul>
+<li class="fragment"><p><span class="math inline">\(2/3\approx0.67\)</span></p></li>
+<li class="fragment"><p><span class="math inline">\(5/6\approx0.83\)</span></p></li>
+</ul></li>
+<li class="fragment"><p>We need <span class="hi"><u>both</u></span> players to be on board with playing G.T. and sticking to it</p>
+<ul>
+<li class="fragment">Therefore, we need the stricter of the two conditions:</li>
+</ul>
+<p><span class="math display">\[\delta &gt; 5/6\]</span></p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="ex.-3" class="slide level3">
+<h3>Ex. 3</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="imgs/pd-ex3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img data-src="imgs/pd-ex3.png" class="quarto-figure quarto-figure-center" style="width:40.0%"></a></p>
+</figure>
+</div>
+</section>
+<section id="sol.-3" class="slide level3">
+<h3>Sol. 3</h3>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Case 1</a></li><li><a href="#tabset-4-2">Case 2</a></li><li><a href="#tabset-4-3">Answer</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<p><span class="math inline">\(D \notin \mathcal{H}\)</span></p>
+<p>Maintain Grim Trigger when</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{16}{1-\delta} &amp;&gt; 24 + \frac{4\delta}{1-\delta}\\
+12 &amp;&gt; 24-24\delta+4\delta\\
+20\delta &amp;&gt; 12\\
+\delta &amp;&gt; \frac{12}{20}=\frac{3}{5}
+\end{aligned}
+\]</span></p>
+</div>
+<div id="tabset-4-2">
+<p><span class="math inline">\(D \in \mathcal{H}\)</span></p>
+<p>Maintain G.T. when <span class="math display">\[
+\begin{aligned}
+\frac{4}{1-\delta} &amp;&gt; 8 + \frac{4\delta}{1-\delta}\\
+4 &amp;&gt; 8
+\end{aligned}
+\]</span></p>
+<ul>
+<li class="fragment"><span class="math inline">\(\implies\)</span> <u><em>never</em></u></li>
+</ul>
+</div>
+<div id="tabset-4-3">
+<p>We can’t enforce coopertive play using G.T.</p>
+<ul>
+<li class="fragment"><p>Why?</p>
+<ul>
+<li class="fragment">This isn’t a true PD: getting cheated is better than mutual defection</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
 </section>
 <section id="remarks-cont." class="slide level3">
 <h3>Remarks (cont.)</h3>
@@ -598,12 +831,12 @@ c\frac{x}{1-x}
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="imgs/numb-line1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="imgs/numb-line1.png" class="fragment fade-in-then-out quarto-figure quarto-figure-center" style="width:40.0%"></a></p>
+<p><a href="imgs/numb-line1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img data-src="imgs/numb-line1.png" class="fragment fade-in-then-out quarto-figure quarto-figure-center" style="width:40.0%"></a></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="imgs/numb-line2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img data-src="imgs/numb-line2.png" class="fragment quarto-figure quarto-figure-center" style="width:40.0%"></a></p>
+<p><a href="imgs/numb-line2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img data-src="imgs/numb-line2.png" class="fragment quarto-figure quarto-figure-center" style="width:40.0%"></a></p>
 </figure>
 </div>
 <ul>
@@ -647,14 +880,15 @@ c\frac{x}{1-x}
 <li class="fragment">As it turns out, no</li>
 </ul></li>
 <li class="fragment"><p>Tit-for-tat</p></li>
-<li class="fragment"><p>Pavlovs dogs</p></li>
+<li class="fragment"><p>Pavlovs dogs (aka Win-Stay Lose-Switch)</p></li>
+<li class="fragment"><p><a href="https://plato.stanford.edu/entries/prisoner-dilemma/strategy-table.html">Others</a> (not all support cooperative play as a SPNE)</p></li>
 </ul>
 </section>
 <section id="other-games" class="slide level3">
 <h3>Other games</h3>
 <ul>
 <li class="fragment"><p>We ask similar questions about other simultaneous-move games played infinitely</p></li>
-<li class="fragment"><p>They are interesting, but we will restrict ourselves to PD for the most part</p></li>
+<li class="fragment"><p>They are interesting, but we will restrict ourselves to PD (and similar) games, for the most part</p></li>
 </ul>
 </section></section>
 <section id="quadratic-optimization" class="title-slide slide level2 center">
@@ -1033,7 +1267,7 @@ c\frac{x}{1-x}
       }
     });
     </script>
-    <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom","selector":".lightbox","loop":false});
+    <script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","loop":false,"openEffect":"zoom"});
     window.onload = () => {
       lightboxQuarto.on('slide_before_load', (data) => {
         const { slideIndex, slideNode, slideConfig, player, trigger } = data;
