@@ -8,6 +8,7 @@ format:
       slide-level: 3
       chalkboard: true
       # embed-resources: true
+      lightbox: true
 # editor:
 #    render-on-save: true
 ---

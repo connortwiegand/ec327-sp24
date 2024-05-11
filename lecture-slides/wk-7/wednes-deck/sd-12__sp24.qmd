@@ -8,6 +8,7 @@ format:
       slide-level: 3
       chalkboard: true
       # embed-resources: true
+      lightbox: true
 # editor:
 #    render-on-save: true
 ---
@@ -249,13 +250,39 @@ $$
 
    - Similar
 
-- What if you find $\delta < 2/3$ in the first history case, and $\delta\in [1/4, 3/4]$ for the other?
 
-   - To find whe GT admits a cooperative SPNE, we need to combine these conditions:
+### Remarks (cont.)
 
-      - <!-- number line -->
+- What if you find $\delta < 2/3$ in the first history case, and $\delta\in [\frac{1}{4}, \frac{3}{4}]$ for the other?
 
-      - $\delta\in[1/4, 2/3]$
+   - To find when G.T. admits a cooperative SPNE, we need to combine these conditions:
+
+
+![](imgs/numb-line1.png){.fragment .fade-in-then-out fig-align="center" width=40%}
+
+![](imgs/numb-line2.png){.fragment fig-align="center" width=40%}
+
+- 
+   - $\delta\in[\frac{1}{4}, \frac{2}{3}]$
+
+
+### Remarks (cont.)
+
+:::{.nonincremental}
+- What happens if you get $\delta < 0$?
+
+   - This means the assumed condition to get us to that point [_never_]{.ul} happens
+
+- What if you find $\delta > 1$?
+
+   - Similar
+
+- What if you find $\delta < 2/3$ in the first history case, and $\delta\in [\frac{1}{4}, \frac{3}{4}]$ for the other?
+
+   - To find when G.T. admits a cooperative SPNE, we need to combine these conditions
+
+   - $\delta\in[\frac{1}{4}, \frac{2}{3}]$
+:::
 
 - What if you end up with $\delta<1/4$ and $\delta>2/3$?
    

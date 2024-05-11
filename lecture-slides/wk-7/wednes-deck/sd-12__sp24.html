@@ -7,7 +7,10 @@
 <link href="sd-12__sp24_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="sd-12__sp24_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="sd-12__sp24_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="sd-12__sp24_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="sd-12__sp24_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="sd-12__sp24_files/libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="sd-12__sp24_files/libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="sd-12__sp24_files/libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.549">
 
   <meta name="author" content="with Connor T. Wiegand">
@@ -583,14 +586,52 @@ c\frac{x}{1-x}
 <ul>
 <li class="fragment">Similar</li>
 </ul></li>
-<li class="fragment"><p>What if you find <span class="math inline">\(\delta &lt; 2/3\)</span> in the first history case, and <span class="math inline">\(\delta\in [1/4, 3/4]\)</span> for the other?</p>
+</ul>
+</section>
+<section id="remarks-cont.-1" class="slide level3">
+<h3>Remarks (cont.)</h3>
 <ul>
-<li class="fragment"><p>To find whe GT admits a cooperative SPNE, we need to combine these conditions:</p>
+<li class="fragment"><p>What if you find <span class="math inline">\(\delta &lt; 2/3\)</span> in the first history case, and <span class="math inline">\(\delta\in [\frac{1}{4}, \frac{3}{4}]\)</span> for the other?</p>
 <ul>
-<li class="fragment"><!-- number line --></li>
-<li class="fragment"><span class="math inline">\(\delta\in[1/4, 2/3]\)</span></li>
+<li class="fragment">To find when G.T. admits a cooperative SPNE, we need to combine these conditions:</li>
 </ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="imgs/numb-line1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="imgs/numb-line1.png" class="fragment fade-in-then-out quarto-figure quarto-figure-center" style="width:40.0%"></a></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="imgs/numb-line2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img data-src="imgs/numb-line2.png" class="fragment quarto-figure quarto-figure-center" style="width:40.0%"></a></p>
+</figure>
+</div>
+<ul>
+<li class="fragment"><ul>
+<li class="fragment"><span class="math inline">\(\delta\in[\frac{1}{4}, \frac{2}{3}]\)</span></li>
 </ul></li>
+</ul>
+</section>
+<section id="remarks-cont.-2" class="slide level3">
+<h3>Remarks (cont.)</h3>
+<div>
+<ul>
+<li><p>What happens if you get <span class="math inline">\(\delta &lt; 0\)</span>?</p>
+<ul>
+<li>This means the assumed condition to get us to that point <u><em>never</em></u> happens</li>
+</ul></li>
+<li><p>What if you find <span class="math inline">\(\delta &gt; 1\)</span>?</p>
+<ul>
+<li>Similar</li>
+</ul></li>
+<li><p>What if you find <span class="math inline">\(\delta &lt; 2/3\)</span> in the first history case, and <span class="math inline">\(\delta\in [\frac{1}{4}, \frac{3}{4}]\)</span> for the other?</p>
+<ul>
+<li><p>To find when G.T. admits a cooperative SPNE, we need to combine these conditions</p></li>
+<li><p><span class="math inline">\(\delta\in[\frac{1}{4}, \frac{2}{3}]\)</span></p></li>
+</ul></li>
+</ul>
+</div>
+<ul>
 <li class="fragment"><p>What if you end up with <span class="math inline">\(\delta&lt;1/4\)</span> and <span class="math inline">\(\delta&gt;2/3\)</span>?</p>
 <ul>
 <li class="fragment">Again: impossible</li>
@@ -992,6 +1033,31 @@ c\frac{x}{1-x}
       }
     });
     </script>
+    <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom","selector":".lightbox","loop":false});
+    window.onload = () => {
+      lightboxQuarto.on('slide_before_load', (data) => {
+        const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+        const href = trigger.getAttribute('href');
+        if (href !== null) {
+          const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+          if (imgEl !== null) {
+            const srcAttr = imgEl.getAttribute("src");
+            if (srcAttr && srcAttr.startsWith("data:")) {
+              slideConfig.href = srcAttr;
+            }
+          }
+        } 
+      });
+
+      lightboxQuarto.on('slide_after_load', (data) => {
+        const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(slideNode);
+        }
+      });
+
+    };
+              </script>
     
 
 </body></html>
