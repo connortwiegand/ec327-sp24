@@ -1,5 +1,5 @@
 ---
-title: Extensive Form Games
+title: Repeated Interaction
 author: "[with]{.with} Connor T. Wiegand"
 from: markdown+emoji
 stripcomments: true
@@ -16,8 +16,373 @@ lightbox: true
 
 ## Previously
 
-### Extensive Form Games
+### Centipede Game
+
+![](imgs/centipede.png){width=40%}
+
+### Analysis
+
+- At the end of the game, player 2 will end instead of continue to get an extra dollar
+
+- Player 1 knows this, so they will end a round early for the extra dollar
+
+- This line of thinking continues all the way back to the beginning of the game, where Backward Induction predicts that the game will end at the first stage
+
+   - This is what we call [**Unravelling**]{.hi}
+
+
+## Repeated Games
+
+### Recall: Prisoner's Dilema
+
+- Here, I am using _Cooperate_^[Cooperate with your partner, not with 12] and _Defect_ as opposed to _Quiet_ and _Snitch_
+
+![](imgs/pd.png){fig-align="right" width=40%}
+
+- [**Question**]{.alert2}
+   - Can we _enforce_^[in a subgame-perfect sense] the cooperative outcome, $(Q,Q)$, during repeated play?
+
+
+### Repeated PD
+
+- Suppose we play PD 30 times
+
+- The thought: on day 1, we know we have 29 more days of PD in front of us;
+
+   - maybe we should try cooperating, using the remaining days as motivation to play the cooperative strategy
+
+- Does this actually happen?
+
+- Consider the following information-contingent plan of action:
+
+   $$
+   s=\begin{cases}
+   \text{Play } C &\text{ if D has never been played before}\\
+   \text{Play } D &\text{ if someone has played D before}
+   \end{cases}
+   $$
 
 
 
-###
+### Analysis
+
+- Looking for SPNE $\implies$ use backward induction
+
+- What happens on the last day of play?
+   - In the last stage of the game, each player is deciding between 0 and 20 (assuming that we have been cooperating thus far)
+   - We aren't playing tomorrow, so there is no way to incentivize the players not to cheat one another on the last day
+
+- ...
+
+- On the second to last day of play, both players know that they will rationally defect tomorrow
+   - Hence, the incentive (or [_enforcement mechanism_]{.alert2}) on the second-to-last-day is gone
+   - Therefore, both players, assuming sequential rationality, will defect on day 29 as well. 
+
+- What happens on day 28? Day 20? Day 2?
+
+
+### Fact
+
+- Using backward induction, it turns out that this incentive mechanism isn't enough to pull us away from $(D,D)$, even on the first day
+
+- As it turns out, finitely repeated games -- especially those with non-changing stage games -- are not that interesting
+
+   - E.g., there isn't some clever mechanism to enforce cooperation in a subgame-perfect sense
+
+- What is this phenomenon called?
+
+   - [**Unravelling!**]{.hi}
+
+   - This is also an application of the [One-Shot Deviation Principle]{.hi}
+      
+      - Checking SPNE in finite multi-stage games typically amounts to checking for a deviation in a single stage game
+
+## Infinitely repeated play
+
+### Playing games forever
+
+- How should we think about playing games forever?
+
+- There are two stories we can tell which motivate infinite repeated play
+   - They are _roughly_ equivalent, less some differences in interpretation
+
+   - One is easier to grasp and imagine
+
+   - The other provides a more economically-portable interpretation
+
+1. Game ends with fixed probability
+
+2. Agents discount the future
+
+### Game ends with fixed probability
+
+- Let $\delta\in(0,1)$^[We may occasionally toss in the idea that delta could = 0 or 1] 
+
+- Suppose that you are playing prisoner's dilemma repeatedly
+   - On day 0, you definitely play PD
+   - On day 1, there is a $\delta$ probability that you play PD again, and a $1-\delta$ chance that the game is over...forever
+   - Assuming the game didn't end on day 1: On day 2, there is a $\delta$ probability that you play PD again, and a $1-\delta$ chance that the game is over
+   - ... (so on and so forth)
+
+- This allows us to "simulate" infinite play
+   - In theory, the game could go on forever
+   - On the other hand, _\*math\*_ tells us that this process will almost surely end at some point
+
+- In particular, there is no "last stage" where our opponent will cheat us
+
+### Why would this change things?
+
+- Think about $\delta$ being very small (e.g. close to 0):
+
+   - When you play prisoner's dilemma, there is a very small chance that you will see this person again
+
+   - What should you do?
+
+      - Probably cheat them; it's not likely that this will have negative repercussions
+
+
+- Now, think about $\delta$ being very large (close to 1):
+
+   - Each time you play, there is a pretty good chance you will play them again tomorrow
+
+   - So, you have more [_**incentive**_]{.hi} to cooperate today, in hopes that this will lead to cooperation tomorrow
+   
+### Story 2: Discounting
+
+- The other motivation for infinitely repeated assumes that agents _are_ infinitely living
+
+   - This is actually pretty common in econ: a decision you make frequently with no clear stopping point, a company, etc.
+
+- However, the agents, much like you and I, like consumption today more than consumption tomorrow
+   - Do you want \$1 now, or \$1.10 in 1 month?
+   - \$1 now or \$2 in a month?
+   - \$5 in a month?
+   - \$10 in a month?
+
+### Discounting, cont.
+
+- Let's assume the infinite-horizon agents discount the future at a constant factor of $\delta$
+   - What is $\delta$?
+
+- Suppose the [interest rate]{.alert} is 25%: you would be indifferent between \$1 now and \$1.25 in the next [**period**]{.hi}  
+   - If $r$ is the interest rate, then $\delta$ is given by
+      $$ \delta = \frac{1}{1+r}$$
+
+   - In this example, $\delta=1/1.25=\frac{1}{5/4}=4/5=0.8$
+
+   - What does that mean?
+
+      - In this world suppose we asked "what is \$1.25 received tomorrow worth today?"
+
+
+
+### Discounting, cont.
+
+- [$r$]{.alert} = 25%: indifferent between \$1 now and \$1.25 in the next [period]{.hi}  
+   - If $r$ is the interest rate, then $\delta$ is given by
+      $$ \delta = \frac{1}{1+0.25}=0.8$$
+
+- What does that mean?
+
+   - In this world, suppose we asked "what is \$1.25 received tomorrow worth today?"
+
+   - $\delta$ is the discount [factor]{.uli} is because it's what we multiply '\$1.25 tomorrow' by to get it's worth today
+      - e.g. $$(\$1.25)\delta = \$1.25(0.8)=\$1$$ 
+\
+
+- I'm not too interested in [you] transforming the interest rate to the discount factor, so I might use "rate" interchangeably with "factor"
+
+### What does this change?
+
+- Now, we think of agents actually playing PD forever: they wake up each day^[or _period_] and play; it's just a part of their every-day life
+
+- However, these players prefer utility today over utility tomorrow
+
+- Let's think about a very low $\delta$ (close to 0)
+   - This says that I care about future consumption [much]{.ul} less than present consumption
+   - Because of this, I might cheat you today in PD for a higher payoff, even though it means a possibly infinite future of low payoffs
+
+- Now let's think about a very high $\delta$ (close to 1)
+   - $\delta = 1$ says I value consumption today just as much as consumption tomorrow
+   - Since tomorrow's utility is close to today's, I no longer have a strong incentive to cheat my partner, as this would likely ruin our long-term relationship
+
+### An Infinite Strategy
+
+- What's a strategy?
+   - Information-contingent plan of action
+
+- Let's model information at a given stage of the game by $H$, which contains a [h]{.ul}istory of all moves played thus far^[we are going to keep $H$ fairly non-technical, e.g. without rigorous definition, extracting intuition from it when needed]
+
+- Consider the following strategy:
+   $$
+      s_{GT} = \begin{cases}
+         C & \text{if } D\notin H\\
+         D & \text{otherwise}
+      \end{cases}
+   $$
+
+- This says: 
+   - Try to cooperate (stay quiet) if no one has snitched before
+   - If someone has defected (snitched) before, then defect again
+
+- This stragey is aptly named [**Grim Trigger**]{.hi}: if someone defects once, then we defect forever
+   - This will be our primary focus going forward
+
+### What are we after?
+
+- In general, with repeated games, we are interested in checking whether we can achieve a more pareto-efficient outcome, maintaining the assumption of sequential rationality
+
+   - If we can: when?
+
+      - e.g. what range of $\delta$ (using either interpretation) allows^[moving forward, _admits_] this?
+
+
+- For our discourse, we are interested in finding what values of $\delta$, if any, allow us to enforce the cooperative outcome in PD, using some particular strategy
+
+   - This will limit our technical discussion to Grim Trigger, but we can discuss other commonly-studied strategies at some point
+
+## the good, the bad, the Mathy
+
+### Reminder
+
+- [This](https://www.mathsisfun.com/algebra/sequences-sums-geometric.html) is a very good reference
+
+- Recall: if $x\neq 0$, then $x^{0}=1$
+
+### Infinite Cake
+
+Consider a cake
+
+- I eat half the cake
+   - You eat half of what's left
+      - e.g., a quarter of the whole cake
+   - I then eat half of what's left
+      - e.g., an 1/8
+   - Then, you eat half of what's left
+      - ...
+
+- How much did we eat?
+   - On the one hand: 
+      $$\frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \cdots $$
+   - On the other hand: [1]{.hi} whole cake
+
+### Sigma Notation
+
+- Consider a sequence of terms $x_{1}, x_{2}, \dots$
+   - What are they? Just numbers
+      - Often, they take the form $a \cdot x^{k}$, for some real number $a$, some $x\in(0,1)$, and some "natural" (counting) number $k$
+
+- Then the _series_ from $1$ to $k$ is a sum of the terms of this sequence, denoted by the following
+
+   $$ \sum_{k=1}^{n}x_{k}= x_{1} + x_{2} + x_3 + \cdots + x_{n}$$
+
+- Consider $\{x_{k}\}=\left(\frac{1}{2}\right)^{k}$. We will often want to start at 0:
+
+   $$ 
+   \begin{aligned}
+   \sum_{k=0}^{n}x_{k}&=\left(\frac{1}{2}\right)^{0} + \left(\frac{1}{2}\right)^{1} + \left(\frac{1}{2}\right)^{2} + \cdots + \left(\frac{1}{2}\right)^{n}\\
+   &= 1 + \frac{1}{2} + \frac{1}{4}+\frac{1}{8} + \cdots + \frac{1}{2^n}
+   \end{aligned}
+   $$
+
+
+
+### The geometric series
+
+- Instead of ending at the $n^{\text{th}}$ term, we can even compute _infinite_ sums
+
+- We will primarily be focused on some flavor of the **geometric** series: 
+   $$\sum^{\infty} x^{n}$$
+
+   - When $|x|<1$, we say the series _converges_ to a value
+   - When $|x|\geq 1$, we say the series _diverges_
+
+- Here are some important sums to know; assume $|x| < 1$
+
+- $$\sum_{k=0}^{\infty} x^{n} = \frac{1}{1-x}$$
+
+- $$\sum_{k=1}^{\infty} x^{n} = \frac{x}{1-x}$$
+
+### What if I can only remember one of those?
+
+- No problem; use math to determine the other
+
+- Suppose you know $\sum_{k=0}^{\infty} x^{n} = \frac{1}{1-x}$. Then
+
+   $$
+   \begin{aligned}
+      \sum_{k=1}^{\infty} x^n &= \left(\sum_{k=0}^{\infty} x^{n}\right) - x^0\\
+      &= \left(\frac{1}{1-x}\right) - 1\\
+      &=\frac{1}{1-x} - \frac{1-x}{1-x}\\
+      &=\frac{x}{1-x}
+   \end{aligned}
+   $$
+
+- Intuition: If $x<1$, then $\frac{x}{1-x}$ will be [smaller]{.ul} than $\frac{1}{1-x}$
+   - So, $\frac{x}{1-x}$ is associated with the series which includes 1 less term
+
+
+## Preview of next time
+
+### GT
+
+- Recall the so-called "Grim Trigger" strategy: 
+   $$
+      s_{GT} = \begin{cases}
+         C & \text{if } D\notin \mathcal{H}\\
+         D & \text{otherwise}
+      \end{cases}
+   $$
+
+- Let's assume it's day 1^[In fact, it's equivalent assume it's any day, and we have only cooperated thus far], and, for simplicity, assume that your opponent is just playing $C$ all the time^[call this strategy $\overline{C}$]
+
+- What happens if you play $C$ all the time?
+
+   $$\pi(\overline{C},\overline{C}) = 10 + 10\delta + 10 \delta^2 + 10 \delta^3 + \cdots$$
+
+- From the POV of day 1, the prob. of getting to stage $k$ is $\delta^k$
+
+- What is this payoff sum equal to?
+
+### Payoff of Infinite Cooperation
+
+- Recall: $\delta\in(0,1)$
+$$
+\begin{aligned}
+\pi(\overline{C},\overline{C}) &= 10 + 10\delta + 10 \delta^2 + 10 \delta^3 + \cdots\\
+&= 10 (1 + \delta + \delta^2 + \delta^3 + \cdots)\\
+&= 10\sum_{k=0}^{\infty} \delta^k
+\end{aligned}
+$$
+
+- It's a geometric series!
+
+. . . 
+
+$$
+\pi(\overline{C},\overline{C}) = 10\sum_{k=0}^{\infty} \delta^k = \frac{10}{1-\delta}
+$$
+
+- In some classes, you might refer to this infinite stream of income using the term "present discounted value" (PDV)
+
+### Payoff of Breaking Relationship 
+
+- Let's consider another case: suppose I cheat you, but you don't cheat me, on day 1, and then we defect every day thereafter
+
+- Now what's our PDV?
+
+- 
+   $$
+   \begin{aligned}
+   \pi &= 20 + (5)\delta + (5) \delta^{2} + (5)\delta^3 + \cdots\\
+   &= 20 + 5\sum_{k=1}^{\infty}\delta^{k}\\
+   &= 20 + \frac{5\delta}{1-\delta}
+   \end{aligned}
+   $$
+
+\
+
+\
+
+
+- Remark: if you can, please feel free to [omit]{.ul} ones ($1$) when writing $1\cdot \delta$

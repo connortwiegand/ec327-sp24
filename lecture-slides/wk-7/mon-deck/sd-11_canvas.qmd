@@ -163,13 +163,34 @@ format:
 
 - Let's assume the infinite-horizon agents discount the future at a constant factor of $\delta$
    - What is $\delta$?
-   - Suppose the [interest rate]{.alert} is 25%: you would be indifferent between \$1 now and \$1.25 in the next [**period**]{.hi}  
+
+- Suppose the [interest rate]{.alert} is 25%: you would be indifferent between \$1 now and \$1.25 in the next [**period**]{.hi}  
    - If $r$ is the interest rate, then $\delta$ is given by
       $$ \delta = \frac{1}{1+r}$$
 
    - In this example, $\delta=1/1.25=\frac{1}{5/4}=4/5=0.8$
 
-   - I'm not too interested in [you] transforming the interest rate to the discount factor, so I might use "rate" interchangeably with "factor"
+   - What does that mean?
+
+      - In this world suppose we asked "what is \$1.25 received tomorrow worth today?"
+
+
+
+### Discounting, cont.
+
+- [$r$]{.alert} = 25%: indifferent between \$1 now and \$1.25 in the next [period]{.hi}  
+   - If $r$ is the interest rate, then $\delta$ is given by
+      $$ \delta = \frac{1}{1+0.25}=0.8$$
+
+- What does that mean?
+
+   - In this world, suppose we asked "what is \$1.25 received tomorrow worth today?"
+
+   - $\delta$ is the discount [factor]{.uli} is because it's what we multiply '\$1.25 tomorrow' by to get it's worth today
+      - e.g. $$(\$1.25)\delta = \$1.25(0.8)=\$1$$ 
+\
+
+- I'm not too interested in [you] transforming the interest rate to the discount factor, so I might use "rate" interchangeably with "factor"
 
 ### What does this change?
 
@@ -183,7 +204,7 @@ format:
 
 - Now let's think about a very high $\delta$ (close to 1)
    - $\delta = 1$ says I value consumption today just as much as consumption tomorrow
-   -Since tomorrow's utility is close to today's, I no longer have a strong incentive to cheat my partner, as this would likely ruin our long-term relationship
+   - Since tomorrow's utility is close to today's, I no longer have a strong incentive to cheat my partner, as this would likely ruin our long-term relationship
 
 ### An Infinite Strategy
 
@@ -253,7 +274,7 @@ Consider a cake
 
 - Then the _series_ from $1$ to $k$ is a sum of the terms of this sequence, denoted by the following
 
-   $$ \sum_{k=1}^{n}x_{k}=x_{0} + x_{1} + x_{2} + \cdots + x_{n}$$
+   $$ \sum_{k=1}^{n}x_{k}= x_{1} + x_{2} + x_3 + \cdots + x_{n}$$
 
 - Consider $\{x_{k}\}=\left(\frac{1}{2}\right)^{k}$. We will often want to start at 0:
 
@@ -270,7 +291,7 @@ Consider a cake
 
 - Instead of ending at the $n^{\text{th}}$ term, we can even compute _infinite_ sums
 
-- We will primarily be focused on some flavor of the [**geometric**] series: 
+- We will primarily be focused on some flavor of the **geometric** series: 
    $$\sum^{\infty} x^{n}$$
 
    - When $|x|<1$, we say the series _converges_ to a value
@@ -299,3 +320,69 @@ Consider a cake
 
 - Intuition: If $x<1$, then $\frac{x}{1-x}$ will be [smaller]{.ul} than $\frac{1}{1-x}$
    - So, $\frac{x}{1-x}$ is associated with the series which includes 1 less term
+
+
+## Preview of next time
+
+### GT
+
+- Recall the so-called "Grim Trigger" strategy: 
+   $$
+      s_{GT} = \begin{cases}
+         C & \text{if } D\notin \mathcal{H}\\
+         D & \text{otherwise}
+      \end{cases}
+   $$
+
+- Let's assume it's day 1^[In fact, it's equivalent assume it's any day, and we have only cooperated thus far], and, for simplicity, assume that your opponent is just playing $C$ all the time^[call this strategy $\overline{C}$]
+
+- What happens if you play $C$ all the time?
+
+   $$\pi(\overline{C},\overline{C}) = 10 + 10\delta + 10 \delta^2 + 10 \delta^3 + \cdots$$
+
+- From the POV of day 1, the prob. of getting to stage $k$ is $\delta^k$
+
+- What is this payoff sum equal to?
+
+### Payoff of Infinite Cooperation
+
+- Recall: $\delta\in(0,1)$
+$$
+\begin{aligned}
+\pi(\overline{C},\overline{C}) &= 10 + 10\delta + 10 \delta^2 + 10 \delta^3 + \cdots\\
+&= 10 (1 + \delta + \delta^2 + \delta^3 + \cdots)\\
+&= 10\sum_{k=0}^{\infty} \delta^k
+\end{aligned}
+$$
+
+- It's a geometric series!
+
+. . . 
+
+$$
+\pi(\overline{C},\overline{C}) = 10\sum_{k=0}^{\infty} \delta^k = \frac{10}{1-\delta}
+$$
+
+- In some classes, you might refer to this infinite stream of income using the term "present discounted value" (PDV)
+
+### Payoff of Breaking Relationship 
+
+- Let's consider another case: suppose I cheat you, but you don't cheat me, on day 1, and then we defect every day thereafter
+
+- Now what's our PDV?
+
+- 
+   $$
+   \begin{aligned}
+   \pi &= 20 + (5)\delta + (5) \delta^{2} + (5)\delta^3 + \cdots\\
+   &= 20 + 5\sum_{k=1}^{\infty}\delta^{k}\\
+   &= 20 + \frac{5\delta}{1-\delta}
+   \end{aligned}
+   $$
+
+\
+
+\
+
+
+- Remark: if you can, please feel free to [omit]{.ul} ones ($1$) when writing $1\cdot \delta$

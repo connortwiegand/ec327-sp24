@@ -350,7 +350,14 @@
 <section id="infinitely-repeated-games" class="slide level3">
 <h3>Infinitely Repeated Games</h3>
 <ul>
-<li class="fragment"><p>Play PD repeatedly</p></li>
+<li class="fragment">Play PD repeatedly</li>
+</ul>
+<div class="quarto-figure quarto-figure-right">
+<figure>
+<p><a href="imgs/pd.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="imgs/pd.png" class="quarto-figure quarto-figure-right" style="width:40.0%"></a></p>
+</figure>
+</div>
+<ul>
 <li class="fragment"><p>Motivation:</p>
 <ol type="1">
 <li class="fragment"><p>The game continues tomorrow with prob. <span class="math inline">\(\delta\)</span>, ends forever with prob. <span class="math inline">\(1-\delta\)</span></p></li>
@@ -360,7 +367,6 @@
 </ul></li>
 </ol></li>
 </ul>
-<p><a href="imgs/pd.png" data-fig-align="right" width="40%"></a></p>
 </section>
 <section id="math" class="slide level3">
 <h3>Math</h3>
@@ -376,7 +382,7 @@
 <li class="fragment"><p>E.g. <span class="math display">\[
 \begin{aligned}
 \sum_{k=1}^{\infty} cx^{n} &amp;= cx + cx^2 + cx^3 + \cdots\\
-c\frac{x}{1-x}
+&amp;= c\sum_{k=1}^{\infty} x^{n} = c\left(\frac{x}{1-x}\right)
 \end{aligned}
 \]</span></p></li>
 </ul>
@@ -386,8 +392,8 @@ c\frac{x}{1-x}
 <h2></h2>
 
 </section>
-<section id="gt" class="slide level3">
-<h3>GT</h3>
+<section id="g.t." class="slide level3">
+<h3>G.T.</h3>
 <ul>
 <li class="fragment"><p>Recall the so-called “Grim Trigger” strategy: <span class="math display">\[
     s_{GT} = \begin{cases}
@@ -402,8 +408,8 @@ c\frac{x}{1-x}
 <li class="fragment"><p>What is this payoff sum equal to?</p></li>
 </ul>
 <aside><ol class="aside-footnotes"><li id="fn1"><p>In fact, it’s equivalent assume it’s any day, and we have only cooperated thus far</p></li><li id="fn2"><p>call this strategy <span class="math inline">\(\overline{C}\)</span></p></li></ol></aside></section>
-<section id="section-1" class="slide level3">
-<h3>.</h3>
+<section id="payoff-of-infinite-cooperation" class="slide level3">
+<h3>Payoff of Infinite Cooperation</h3>
 <ul>
 <li class="fragment"><p>Recall: <span class="math inline">\(\delta\in(0,1)\)</span> <span class="math display">\[
 \begin{aligned}
@@ -423,16 +429,16 @@ c\frac{x}{1-x}
 </ul>
 </div>
 </section>
-<section id="section-2" class="slide level3">
-<h3>.</h3>
+<section id="payoff-of-breaking-relationship" class="slide level3">
+<h3>Payoff of Breaking Relationship</h3>
 <ul>
 <li class="fragment"><p>Let’s consider another case: suppose I cheat you, but you don’t cheat me, on day 1, and then we defect every day thereafter</p></li>
 <li class="fragment"><p>Now what’s our PDV?</p></li>
 <li class="fragment"><p><span class="math display">\[
 \begin{aligned}
-\pi &amp;= 20 + (2)\delta + (2) \delta^{2} + (2)\delta^3 + \cdots\\
-&amp;= 20 + 2\sum_{k=1}^{\infty}\delta^{k}\\
-&amp;= 20 + \frac{2\delta}{1-\delta}
+\pi &amp;= 20 + (5)\delta + (5) \delta^{2} + (5)\delta^3 + \cdots\\
+&amp;= 20 + 5\sum_{k=1}^{\infty}\delta^{k}\\
+&amp;= 20 + \frac{5\delta}{1-\delta}
 \end{aligned}
 \]</span></p></li>
 </ul>
@@ -468,8 +474,8 @@ c\frac{x}{1-x}
 \]</span></p>
 </div>
 </section>
-<section id="section-3" class="slide level3">
-<h3>.</h3>
+<section id="defecting-from-g.t." class="slide level3">
+<h3>Defecting from G.T.</h3>
 <ul>
 <li class="fragment">Maintain the assumption that both players have cooperated thus far in the game. Now, what happens if I cheat my partner?</li>
 </ul>
@@ -488,8 +494,8 @@ c\frac{x}{1-x}
 </ul>
 </div>
 </section>
-<section id="section-4" class="slide level3">
-<h3>.</h3>
+<section id="defecting-from-g.t.-cont." class="slide level3">
+<h3>Defecting from G.T. (cont.)</h3>
 <p><span class="math display">\[
 \begin{aligned}
 \frac{10}{1-\delta} &amp;&gt; 20 + \frac{5\delta}{1-\delta} \\
@@ -559,8 +565,8 @@ c\frac{x}{1-x}
 <li class="fragment">When will we maintain grim trigger?</li>
 </ul>
 </section>
-<section id="section-5" class="slide level3">
-<h3>.</h3>
+<section id="when-to-forgive" class="slide level3">
+<h3>When to forgive?</h3>
 <ul>
 <li class="fragment"><p>Maintain grim trigger if <span class="math display">\[
 \begin{aligned}
@@ -596,7 +602,7 @@ c\frac{x}{1-x}
 <h3>Ex. 0</h3>
 <div class="quarto-figure quarto-figure-right">
 <figure>
-<p><a href="imgs/pd-ex1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="imgs/pd-ex1.png" class="quarto-figure quarto-figure-right" style="width:40.0%"></a></p>
+<p><a href="imgs/pd-ex1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img data-src="imgs/pd-ex1.png" class="quarto-figure quarto-figure-right" style="width:40.0%"></a></p>
 </figure>
 </div>
 </section>
@@ -665,7 +671,7 @@ c\frac{x}{1-x}
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="imgs/pd-ex2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img data-src="imgs/pd-ex2.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></a></p>
+<p><a href="imgs/pd-ex2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img data-src="imgs/pd-ex2.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></a></p>
 </figure>
 </div>
 </section>
@@ -763,7 +769,7 @@ c\frac{x}{1-x}
 <h3>Ex. 3</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="imgs/pd-ex3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img data-src="imgs/pd-ex3.png" class="quarto-figure quarto-figure-center" style="width:40.0%"></a></p>
+<p><a href="imgs/pd-ex3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img data-src="imgs/pd-ex3.png" class="quarto-figure quarto-figure-center" style="width:40.0%"></a></p>
 </figure>
 </div>
 </section>
@@ -831,12 +837,12 @@ c\frac{x}{1-x}
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="imgs/numb-line1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img data-src="imgs/numb-line1.png" class="fragment fade-in-then-out quarto-figure quarto-figure-center" style="width:40.0%"></a></p>
+<p><a href="imgs/numb-line1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img data-src="imgs/numb-line1.png" class="fragment fade-in-then-out quarto-figure quarto-figure-center" style="width:40.0%"></a></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="imgs/numb-line2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img data-src="imgs/numb-line2.png" class="fragment quarto-figure quarto-figure-center" style="width:40.0%"></a></p>
+<p><a href="imgs/numb-line2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img data-src="imgs/numb-line2.png" class="fragment quarto-figure quarto-figure-center" style="width:40.0%"></a></p>
 </figure>
 </div>
 <ul>
@@ -891,15 +897,187 @@ c\frac{x}{1-x}
 <li class="fragment"><p>They are interesting, but we will restrict ourselves to PD (and similar) games, for the most part</p></li>
 </ul>
 </section></section>
+<section>
 <section id="quadratic-optimization" class="title-slide slide level2 center">
 <h2>Quadratic Optimization</h2>
+<div class="cell">
+<style type="text/css">
+figcaption {
+  margin-left: 50%;
+  text-align: right;
+}
+</style>
+</div>
+</section>
+<section id="section-1" class="slide level3">
+<h3>:(</h3>
+<ul>
+<li class="fragment"><p>Let <span class="math inline">\(a&lt;0\)</span>. Consider the function <span class="math inline">\(f(x) = ax^2 + bx + c\)</span></p></li>
+<li class="fragment"><p>Graphically, this is an upside-down parabola</p>
+<div class="cell" data-layout-align="right">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-right">
+<figure>
+<p><a href="sd-12__sp24_files/figure-revealjs/unnamed-chunk-2-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-7" data-gallery="quarto-lightbox-gallery-7" title="a = -2,\, b = 10,\, c = 0"><img data-src="sd-12__sp24_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-right" style="width:50.0%" alt="a = -2,\, b = 10,\, c = 0"></a></p>
+<figcaption><span class="math inline">\(a = -2,\, b = 10,\, c = 0\)</span></figcaption>
+</figure>
+</div>
+</div>
+</div></li>
+</ul>
+</section>
+<section id="section-2" class="slide level3">
+<h3>:(</h3>
+<div>
+<ul>
+<li><p>Let <span class="math inline">\(a&lt;0\)</span>. Consider the function <span class="math inline">\(f(x) = ax^2 + bx + c\)</span></p></li>
+<li><p>Graphically, this is an upside-down parabola</p>
+<div class="cell" data-layout-align="right">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-right">
+<figure>
+<p><a href="sd-12__sp24_files/figure-revealjs/unnamed-chunk-3-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-8" data-gallery="quarto-lightbox-gallery-8" title="a = -2,\, b = 10,\, c = 0"><img data-src="sd-12__sp24_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-right" style="width:50.0%" alt="a = -2,\, b = 10,\, c = 0"></a></p>
+<figcaption><span class="math inline">\(a = -2,\, b = 10,\, c = 0\)</span></figcaption>
+</figure>
+</div>
+</div>
+</div></li>
+<li><p>For the next set of games we will be looking at, we need to know how to find the maximum value that this parabola obtains</p></li>
+</ul>
+</div>
+</section>
+<section id="remember-the-quadratic-formula" class="slide level3">
+<h3>Remember the quadratic formula?</h3>
+<ul>
+<li class="fragment"><p>For a quadratic given by <span class="math inline">\(f(x) = ax^2 + bx + c\)</span>, the roots can be found using the quadratic formula: <span class="math display">\[x = \frac{-b\pm \sqrt{b^2 - 4ac}}{2a}\]</span></p>
+<ul>
+<li class="fragment">This gives us the <span class="math inline">\(\hat{x}\)</span> values for which <span class="math inline">\(f(\hat{x})=0\)</span></li>
+</ul></li>
+<li class="fragment"><p>As it turns out, the <span class="math inline">\(x^{*}\)</span> value which maximizes <span class="math inline">\(f(x)\)</span> is halfway between these points</p></li>
+<li class="fragment"><p>Using some math, we can find the midpoint between the two roots</p>
+<ul>
+<li class="fragment"><p>If <span class="math inline">\(\hat{x}_1\)</span> and <span class="math inline">\(\hat{x}_2\)</span> are the parabola’s roots (found via the quadratic equation), then</p>
+<p><span class="math display">\[x^{*}=\frac{1}{2}(\hat{x}_1 + \hat{x}_2) = -\frac{b}{2a}\]</span></p></li>
+</ul></li>
+</ul>
+</section>
+<section id="the-maximum-of-a-quadratic" class="slide level3">
+<h3>The maximum of a quadratic</h3>
+<ul>
+<li class="fragment"><p>So, given a quadratic of the form <span class="math inline">\(f(x) = ax^2 + bx + c\)</span>,</p>
+<ul>
+<li class="fragment"><p>The value which maximizes <span class="math inline">\(f\)</span> (called the <span class="alert">maximizer</span> or <span class="hi">arg. maximum</span>), <span class="math inline">\(x^{*}\)</span>, is given by <span class="math display">\[x^{*}=\frac{-b}{2a}\]</span></p></li>
+<li class="fragment"><p>The maximum <em>value</em> of <span class="math inline">\(f\)</span> is given by <span class="math inline">\(f(x^{*})\)</span></p>
+<ul>
+<li class="fragment">With some math, we can show that <span class="math display">\[ f(x^{*}) = c - \frac{b^2}{4a}\]</span></li>
+</ul></li>
+</ul></li>
+<li class="fragment"><p>Remark: you’re going to need to know how to get the maximum as well as the arg. max, so finding <span class="math inline">\(x^{*}\)</span> and plugging it in to <span class="math inline">\(f\)</span> is good practice</p></li>
+</ul>
+</section>
+<section id="ex-0" class="slide level3">
+<h3>Ex 0</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li class="fragment"><p>Recall our parabola from earlier: <span class="math inline">\(f(x)=-2x^2+10x+0\)</span></p></li>
+<li class="fragment"><p>The arg. max: <span class="math display">\[\frac{-10}{2(-2)}=\frac{10}{4}=2.5\]</span></p></li>
+<li class="fragment"><p>The function’s maximum:</p>
+<p><span class="math display">\[f(x^{*})=-2(2.5)^2+10(2.5)=12.5\]</span></p></li>
+</ul>
+</div><div class="column fragment" style="width:50%;">
+<div class="cell" data-layout-align="right">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-right">
+<figure>
+<p><a href="sd-12__sp24_files/figure-revealjs/unnamed-chunk-4-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-9" data-gallery="quarto-lightbox-gallery-9" title="f(x)=-2x^2 + 10x"><img data-src="sd-12__sp24_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-right" style="width:100.0%" alt="f(x)=-2x^2 + 10x"></a></p>
+<figcaption><span class="math inline">\(f(x)=-2x^2 + 10x\)</span></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ex-1" class="slide level3">
+<h3>Ex 1</h3>
+<ul>
+<li class="fragment"><p>Let <span class="math display">\[\pi = (100 - q_1 - q_2) q_1 - 10q_1\]</span></p></li>
+<li class="fragment"><p>Find the <span class="math inline">\(q_1\)</span> which maximizes <span class="math inline">\(\pi\)</span>, and report the function maximum</p></li>
+</ul>
+<div class="fragment">
+<ul>
+<li class="fragment"><p>Rewrite <span class="math inline">\(\pi\)</span> as <span class="math display">\[\pi(q_1) = -q_1^2 + (90 - q_2)q_1\]</span></p></li>
+<li class="fragment"><p>What’s <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span>?</p>
+<ul>
+<li class="fragment"><span class="math inline">\(a=-1\)</span>, <span class="math inline">\(b=90-q_2\)</span>, and <span class="math inline">\(c=0\)</span></li>
+</ul></li>
+<li class="fragment"><p>Therefore, the arg. max is given by</p>
+<p><span class="math display">\[q_1^{*}=\frac{-(90-q_2)}{-2}=\frac{90-q_2}{2}\]</span></p></li>
+<li class="fragment"><p>The maximum <span class="math inline">\(\pi\)</span> is then given by</p>
+<p><span class="math display">\[\pi^{*}=-\frac{(90-q_2)^2}{-4}=\frac{(90-q_2)^{2}}{4}\]</span></p></li>
+</ul>
+</div>
+</section>
+<section id="alternative-use-calculus" class="slide level3">
+<h3>Alternative: Use Calculus</h3>
+<ul>
+<li class="fragment"><p>If you have seen any introductory calculus, you can recall that we can just use the power rule and a bit of algebra to find the maximum of <span class="math inline">\(f(x)=ax^2 + bx + c\)</span></p></li>
+<li class="fragment"><p><a href="https://www.khanacademy.org/math/old-ap-calculus-ab/ab-derivative-rules/ab-diff-negative-fraction-powers/a/power-rule-review">Kahn Academy on the Power Rule</a></p>
+<p><span class="math display">\[\frac{d}{dx}c\cdot x^n = c(n \cdot x^{n-1})\]</span></p></li>
+<li class="fragment"><p>So</p>
+<p><span class="math display">\[f'(x)=2ax + b\]</span></p></li>
+<li class="fragment"><p>To find the maximum (an extreme value), we set <span class="math inline">\(f'(x)=0\)</span>:</p>
+<p><span class="math display">\[2ax+b=0\ \implies\ x=\frac{-b}{2a}\]</span></p></li>
+</ul>
+</section>
+<section id="ex-2" class="slide level3">
+<h3>Ex 2</h3>
+<ul>
+<li class="fragment"><p>Let <span class="math display">\[\pi = (100 - 2q_1 - q_2) q_1 - 25q_1  - 10\]</span></p></li>
+<li class="fragment"><p>Find the <span class="math inline">\(q_1\)</span> which maximizes <span class="math inline">\(\pi\)</span>, and report the function maximum</p></li>
+</ul>
+<div class="fragment">
+<ul>
+<li class="fragment"><p>Rewrite <span class="math inline">\(\pi\)</span> as <span class="math display">\[\pi(q_1) = -2q_1^2 + (75 - q_2)q_1 - 10\]</span></p></li>
+<li class="fragment"><p>What’s <span class="math inline">\(\frac{d\pi}{dq_{1}}\)</span>?</p>
+<ul>
+<li class="fragment"><span class="math inline">\(\pi'= -4q_1 + 75 - q_2\)</span></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="ex-2-solved" class="slide level3">
+<h3>Ex 2 (Solved)</h3>
+<ul>
+<li class="fragment"><p>To get the arg. max, set this <span class="math inline">\(\pi'\)</span> to 0 and solve for <span class="math inline">\(q_1\)</span>: <span class="math display">\[
+\begin{aligned}
+0 &amp;= -4q_1 + 75 - q_2\\
+4q_1 &amp;= 75 - q_2\\
+q_1^{*} &amp;= \frac{75-q_2}{4}
+\end{aligned}
+\]</span></p></li>
+<li class="fragment"><p>The maximum <span class="math inline">\(\pi\)</span> is then given by</p>
+<p><span class="math display">\[\pi^{*}=-10 - \frac{(75 - q_2)^{2}}{4(-2)}=\frac{(75 - q_2)^{2}}{8} - 10\]</span></p></li>
+</ul>
+</section>
+<section id="remarks-1" class="slide level3">
+<h3>Remarks</h3>
+<ul>
+<li class="fragment"><p>I don’t care which one you use</p></li>
+<li class="fragment"><p>Using Calculus will also work for games with more complex payoff functions<sup>1</sup></p></li>
+</ul>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
 </div>
-</section>
-
+<div class="hidden" aria-hidden="true">
+<span class="glightbox-desc lightbox-desc-7"><span class="math inline">\(a = -2,\, b = 10,\, c = 0\)</span></span>
+<span class="glightbox-desc lightbox-desc-8"><span class="math inline">\(a = -2,\, b = 10,\, c = 0\)</span></span>
+<span class="glightbox-desc lightbox-desc-9"><span class="math inline">\(f(x)=-2x^2 + 10x\)</span></span>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn3"><p>We will restrict ourselves to quadratics</p></li></ol></aside></section></section>
 
     </div>
   </div>
@@ -1113,6 +1291,44 @@ c\frac{x}{1-x}
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
@@ -1267,7 +1483,7 @@ c\frac{x}{1-x}
       }
     });
     </script>
-    <script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","loop":false,"openEffect":"zoom"});
+    <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":false,"openEffect":"zoom"});
     window.onload = () => {
       lightboxQuarto.on('slide_before_load', (data) => {
         const { slideIndex, slideNode, slideConfig, player, trigger } = data;

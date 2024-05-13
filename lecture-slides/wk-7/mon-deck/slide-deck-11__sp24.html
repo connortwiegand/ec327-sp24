@@ -1188,11 +1188,11 @@ margin-right: 0; }
 <section id="analysis" class="slide level3">
 <h3>Analysis</h3>
 <ul>
-<li class="fragment"><p>At the end of the game, player 2 will end instead of continue to get an extra dollar</p></li>
-<li class="fragment"><p>Player 1 knows this, so they will end a round early for the extra dollar</p></li>
-<li class="fragment"><p>This line of thinking continues all the way back to the beginning of the game, where Backward Induction predicts that the game will end at the first stage</p>
+<li><p>At the end of the game, player 2 will end instead of continue to get an extra dollar</p></li>
+<li><p>Player 1 knows this, so they will end a round early for the extra dollar</p></li>
+<li><p>This line of thinking continues all the way back to the beginning of the game, where Backward Induction predicts that the game will end at the first stage</p>
 <ul>
-<li class="fragment">This is what we call <span class="hi"><strong>Unravelling</strong></span></li>
+<li>This is what we call <span class="hi"><strong>Unravelling</strong></span></li>
 </ul></li>
 </ul>
 </section></section>
@@ -1204,7 +1204,7 @@ margin-right: 0; }
 <section id="recall-prisoners-dilema" class="slide level3">
 <h3>Recall: Prisoner’s Dilema</h3>
 <ul>
-<li class="fragment">Here, I am using <em>Cooperate</em><sup>1</sup> and <em>Defect</em> as opposed to <em>Quiet</em> and <em>Snitch</em></li>
+<li>Here, I am using <em>Cooperate</em><sup>1</sup> and <em>Defect</em> as opposed to <em>Quiet</em> and <em>Snitch</em></li>
 </ul>
 <div class="quarto-figure quarto-figure-right">
 <figure>
@@ -1212,22 +1212,22 @@ margin-right: 0; }
 </figure>
 </div>
 <ul>
-<li class="fragment"><span class="alert2"><strong>Question</strong></span>
+<li><span class="alert2"><strong>Question</strong></span>
 <ul>
-<li class="fragment">Can we <em>enforce</em><sup>2</sup> the cooperative outcome, <span class="math inline">\((Q,Q)\)</span>, during repeated play?</li>
+<li>Can we <em>enforce</em><sup>2</sup> the cooperative outcome, <span class="math inline">\((Q,Q)\)</span>, during repeated play?</li>
 </ul></li>
 </ul>
 <aside><ol class="aside-footnotes"><li id="fn1"><p>Cooperate with your partner, not with 12</p></li><li id="fn2"><p>in a subgame-perfect sense</p></li></ol></aside></section>
 <section id="repeated-pd" class="slide level3">
 <h3>Repeated PD</h3>
 <ul>
-<li class="fragment"><p>Suppose we play PD 30 times</p></li>
-<li class="fragment"><p>The thought: on day 1, we know we have 29 more days of PD in front of us;</p>
+<li><p>Suppose we play PD 30 times</p></li>
+<li><p>The thought: on day 1, we know we have 29 more days of PD in front of us;</p>
 <ul>
-<li class="fragment">maybe we should try cooperating, using the remaining days as motivation to play the cooperative strategy</li>
+<li>maybe we should try cooperating, using the remaining days as motivation to play the cooperative strategy</li>
 </ul></li>
-<li class="fragment"><p>Does this actually happen?</p></li>
-<li class="fragment"><p>Consider the following information-contingent plan of action:</p>
+<li><p>Does this actually happen?</p></li>
+<li><p>Consider the following information-contingent plan of action:</p>
 <p><span class="math display">\[
 s=\begin{cases}
 \text{Play } C &amp;\text{ if D has never been played before}\\
@@ -1239,35 +1239,35 @@ s=\begin{cases}
 <section id="analysis-1" class="slide level3">
 <h3>Analysis</h3>
 <ul>
-<li class="fragment"><p>Looking for SPNE <span class="math inline">\(\implies\)</span> use backward induction</p></li>
-<li class="fragment"><p>What happens on the last day of play?</p>
+<li><p>Looking for SPNE <span class="math inline">\(\implies\)</span> use backward induction</p></li>
+<li><p>What happens on the last day of play?</p>
 <ul>
-<li class="fragment">In the last stage of the game, each player is deciding between 0 and 20 (assuming that we have been cooperating thus far)</li>
-<li class="fragment">We aren’t playing tomorrow, so there is no way to incentivize the players not to cheat one another on the last day</li>
+<li>In the last stage of the game, each player is deciding between 0 and 20 (assuming that we have been cooperating thus far)</li>
+<li>We aren’t playing tomorrow, so there is no way to incentivize the players not to cheat one another on the last day</li>
 </ul></li>
-<li class="fragment"><p>…</p></li>
-<li class="fragment"><p>On the second to last day of play, both players know that they will rationally defect tomorrow</p>
+<li><p>…</p></li>
+<li><p>On the second to last day of play, both players know that they will rationally defect tomorrow</p>
 <ul>
-<li class="fragment">Hence, the incentive (or <span class="alert2"><em>enforcement mechanism</em></span>) on the second-to-last-day is gone</li>
-<li class="fragment">Therefore, both players, assuming sequential rationality, will defect on day 29 as well.</li>
+<li>Hence, the incentive (or <span class="alert2"><em>enforcement mechanism</em></span>) on the second-to-last-day is gone</li>
+<li>Therefore, both players, assuming sequential rationality, will defect on day 29 as well.</li>
 </ul></li>
-<li class="fragment"><p>What happens on day 28? Day 20? Day 2?</p></li>
+<li><p>What happens on day 28? Day 20? Day 2?</p></li>
 </ul>
 </section>
 <section id="fact" class="slide level3">
 <h3>Fact</h3>
 <ul>
-<li class="fragment"><p>Using backward induction, it turns out that this incentive mechanism isn’t enough to pull us away from <span class="math inline">\((D,D)\)</span>, even on the first day</p></li>
-<li class="fragment"><p>As it turns out, finitely repeated games – especially those with non-changing stage games – are not that interesting</p>
+<li><p>Using backward induction, it turns out that this incentive mechanism isn’t enough to pull us away from <span class="math inline">\((D,D)\)</span>, even on the first day</p></li>
+<li><p>As it turns out, finitely repeated games – especially those with non-changing stage games – are not that interesting</p>
 <ul>
-<li class="fragment">E.g., there isn’t some clever mechanism to enforce cooperation in a subgame-perfect sense</li>
+<li>E.g., there isn’t some clever mechanism to enforce cooperation in a subgame-perfect sense</li>
 </ul></li>
-<li class="fragment"><p>What is this phenomenon called?</p>
+<li><p>What is this phenomenon called?</p>
 <ul>
-<li class="fragment"><p><span class="hi"><strong>Unravelling!</strong></span></p></li>
-<li class="fragment"><p>This is also an application of the <span class="hi">One-Shot Deviation Principle</span></p>
+<li><p><span class="hi"><strong>Unravelling!</strong></span></p></li>
+<li><p>This is also an application of the <span class="hi">One-Shot Deviation Principle</span></p>
 <ul>
-<li class="fragment">Checking SPNE in finite multi-stage games typically amounts to checking for a deviation in a single stage game</li>
+<li>Checking SPNE in finite multi-stage games typically amounts to checking for a deviation in a single stage game</li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1280,86 +1280,86 @@ s=\begin{cases}
 <section id="playing-games-forever" class="slide level3">
 <h3>Playing games forever</h3>
 <ul>
-<li class="fragment"><p>How should we think about playing games forever?</p></li>
-<li class="fragment"><p>There are two stories we can tell which motivate infinite repeated play</p>
+<li><p>How should we think about playing games forever?</p></li>
+<li><p>There are two stories we can tell which motivate infinite repeated play</p>
 <ul>
-<li class="fragment"><p>They are <em>roughly</em> equivalent, less some differences in interpretation</p></li>
-<li class="fragment"><p>One is easier to grasp and imagine</p></li>
-<li class="fragment"><p>The other provides a more economically-portable interpretation</p></li>
+<li><p>They are <em>roughly</em> equivalent, less some differences in interpretation</p></li>
+<li><p>One is easier to grasp and imagine</p></li>
+<li><p>The other provides a more economically-portable interpretation</p></li>
 </ul></li>
 </ul>
 <ol type="1">
-<li class="fragment"><p>Game ends with fixed probability</p></li>
-<li class="fragment"><p>Agents discount the future</p></li>
+<li><p>Game ends with fixed probability</p></li>
+<li><p>Agents discount the future</p></li>
 </ol>
 </section>
 <section id="game-ends-with-fixed-probability" class="slide level3">
 <h3>Game ends with fixed probability</h3>
 <ul>
-<li class="fragment"><p>Let <span class="math inline">\(\delta\in(0,1)\)</span><sup>1</sup></p></li>
-<li class="fragment"><p>Suppose that you are playing prisoner’s dilemma repeatedly</p>
+<li><p>Let <span class="math inline">\(\delta\in(0,1)\)</span><sup>1</sup></p></li>
+<li><p>Suppose that you are playing prisoner’s dilemma repeatedly</p>
 <ul>
-<li class="fragment">On day 0, you definitely play PD</li>
-<li class="fragment">On day 1, there is a <span class="math inline">\(\delta\)</span> probability that you play PD again, and a <span class="math inline">\(1-\delta\)</span> chance that the game is over…forever</li>
-<li class="fragment">Assuming the game didn’t end on day 1: On day 2, there is a <span class="math inline">\(\delta\)</span> probability that you play PD again, and a <span class="math inline">\(1-\delta\)</span> chance that the game is over</li>
-<li class="fragment">… (so on and so forth)</li>
+<li>On day 0, you definitely play PD</li>
+<li>On day 1, there is a <span class="math inline">\(\delta\)</span> probability that you play PD again, and a <span class="math inline">\(1-\delta\)</span> chance that the game is over…forever</li>
+<li>Assuming the game didn’t end on day 1: On day 2, there is a <span class="math inline">\(\delta\)</span> probability that you play PD again, and a <span class="math inline">\(1-\delta\)</span> chance that the game is over</li>
+<li>… (so on and so forth)</li>
 </ul></li>
-<li class="fragment"><p>This allows us to “simulate” infinite play</p>
+<li><p>This allows us to “simulate” infinite play</p>
 <ul>
-<li class="fragment">In theory, the game could go on forever</li>
-<li class="fragment">On the other hand, <em>*math*</em> tells us that this process will almost surely end at some point</li>
+<li>In theory, the game could go on forever</li>
+<li>On the other hand, <em>*math*</em> tells us that this process will almost surely end at some point</li>
 </ul></li>
-<li class="fragment"><p>In particular, there is no “last stage” where our opponent will cheat us</p></li>
+<li><p>In particular, there is no “last stage” where our opponent will cheat us</p></li>
 </ul>
 <aside><ol class="aside-footnotes"><li id="fn3"><p>We may occasionally toss in the idea that delta could = 0 or 1</p></li></ol></aside></section>
 <section id="why-would-this-change-things" class="slide level3">
 <h3>Why would this change things?</h3>
 <ul>
-<li class="fragment"><p>Think about <span class="math inline">\(\delta\)</span> being very small (e.g. close to 0):</p>
+<li><p>Think about <span class="math inline">\(\delta\)</span> being very small (e.g. close to 0):</p>
 <ul>
-<li class="fragment"><p>When you play prisoner’s dilemma, there is a very small chance that you will see this person again</p></li>
-<li class="fragment"><p>What should you do?</p>
+<li><p>When you play prisoner’s dilemma, there is a very small chance that you will see this person again</p></li>
+<li><p>What should you do?</p>
 <ul>
-<li class="fragment">Probably cheat them; it’s not likely that this will have negative repercussions</li>
+<li>Probably cheat them; it’s not likely that this will have negative repercussions</li>
 </ul></li>
 </ul></li>
-<li class="fragment"><p>Now, think about <span class="math inline">\(\delta\)</span> being very large (close to 1):</p>
+<li><p>Now, think about <span class="math inline">\(\delta\)</span> being very large (close to 1):</p>
 <ul>
-<li class="fragment"><p>Each time you play, there is a pretty good chance you will play them again tomorrow</p></li>
-<li class="fragment"><p>So, you have more <span class="hi"><em><strong>incentive</strong></em></span> to cooperate today, in hopes that this will lead to cooperation tomorrow</p></li>
+<li><p>Each time you play, there is a pretty good chance you will play them again tomorrow</p></li>
+<li><p>So, you have more <span class="hi"><em><strong>incentive</strong></em></span> to cooperate today, in hopes that this will lead to cooperation tomorrow</p></li>
 </ul></li>
 </ul>
 </section>
 <section id="story-2-discounting" class="slide level3">
 <h3>Story 2: Discounting</h3>
 <ul>
-<li class="fragment"><p>The other motivation for infinitely repeated assumes that agents <em>are</em> infinitely living</p>
+<li><p>The other motivation for infinitely repeated assumes that agents <em>are</em> infinitely living</p>
 <ul>
-<li class="fragment">This is actually pretty common in econ: a decision you make frequently with no clear stopping point, a company, etc.</li>
+<li>This is actually pretty common in econ: a decision you make frequently with no clear stopping point, a company, etc.</li>
 </ul></li>
-<li class="fragment"><p>However, the agents, much like you and I, like consumption today more than consumption tomorrow</p>
+<li><p>However, the agents, much like you and I, like consumption today more than consumption tomorrow</p>
 <ul>
-<li class="fragment">Do you want $1 now, or $1.10 in 1 month?</li>
-<li class="fragment">$1 now or $2 in a month?</li>
-<li class="fragment">$5 in a month?</li>
-<li class="fragment">$10 in a month?</li>
+<li>Do you want $1 now, or $1.10 in 1 month?</li>
+<li>$1 now or $2 in a month?</li>
+<li>$5 in a month?</li>
+<li>$10 in a month?</li>
 </ul></li>
 </ul>
 </section>
 <section id="discounting-cont." class="slide level3">
 <h3>Discounting, cont.</h3>
 <ul>
-<li class="fragment">Let’s assume the infinite-horizon agents discount the future at a constant factor of <span class="math inline">\(\delta\)</span>
+<li>Let’s assume the infinite-horizon agents discount the future at a constant factor of <span class="math inline">\(\delta\)</span>
 <ul>
-<li class="fragment">What is <span class="math inline">\(\delta\)</span>?</li>
+<li>What is <span class="math inline">\(\delta\)</span>?</li>
 </ul></li>
-<li class="fragment">Suppose the <span class="alert">interest rate</span> is 25%: you would be indifferent between $1 now and $1.25 in the next <span class="hi"><strong>period</strong></span>
+<li>Suppose the <span class="alert">interest rate</span> is 25%: you would be indifferent between $1 now and $1.25 in the next <span class="hi"><strong>period</strong></span>
 <ul>
-<li class="fragment"><p>If <span class="math inline">\(r\)</span> is the interest rate, then <span class="math inline">\(\delta\)</span> is given by <span class="math display">\[ \delta = \frac{1}{1+r}\]</span></p></li>
-<li class="fragment"><p>In this example, <span class="math inline">\(\delta=1/1.25=\frac{1}{5/4}=4/5=0.8\)</span></p></li>
-<li class="fragment"><p>What does that mean?</p>
+<li><p>If <span class="math inline">\(r\)</span> is the interest rate, then <span class="math inline">\(\delta\)</span> is given by <span class="math display">\[ \delta = \frac{1}{1+r}\]</span></p></li>
+<li><p>In this example, <span class="math inline">\(\delta=1/1.25=\frac{1}{5/4}=4/5=0.8\)</span></p></li>
+<li><p>What does that mean?</p>
 <ul>
-<li class="fragment">In this world suppose we asked “what is $1.25 received tomorrow worth today?”</li>
+<li>In this world suppose we asked “what is $1.25 received tomorrow worth today?”</li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1367,77 +1367,77 @@ s=\begin{cases}
 <section id="discounting-cont.-1" class="slide level3">
 <h3>Discounting, cont.</h3>
 <ul>
-<li class="fragment"><p><span class="alert"><span class="math inline">\(r\)</span></span> = 25%: indifferent between $1 now and $1.25 in the next <span class="hi">period</span></p>
+<li><p><span class="alert"><span class="math inline">\(r\)</span></span> = 25%: indifferent between $1 now and $1.25 in the next <span class="hi">period</span></p>
 <ul>
-<li class="fragment">If <span class="math inline">\(r\)</span> is the interest rate, then <span class="math inline">\(\delta\)</span> is given by <span class="math display">\[ \delta = \frac{1}{1+0.25}=0.8\]</span></li>
+<li>If <span class="math inline">\(r\)</span> is the interest rate, then <span class="math inline">\(\delta\)</span> is given by <span class="math display">\[ \delta = \frac{1}{1+0.25}=0.8\]</span></li>
 </ul></li>
-<li class="fragment"><p>What does that mean?</p>
+<li><p>What does that mean?</p>
 <ul>
-<li class="fragment"><p>In this world, suppose we asked “what is $1.25 received tomorrow worth today?”</p></li>
-<li class="fragment"><p><span class="math inline">\(\delta\)</span> is the discount <span class="uli">factor</span> is because it’s what we multiply ‘$1.25 tomorrow’ by to get it’s worth today</p>
+<li><p>In this world, suppose we asked “what is $1.25 received tomorrow worth today?”</p></li>
+<li><p><span class="math inline">\(\delta\)</span> is the discount <span class="uli">factor</span> is because it’s what we multiply ‘$1.25 tomorrow’ by to get it’s worth today</p>
 <ul>
-<li class="fragment">e.g. <span class="math display">\[(\$1.25)\delta = \$1.25(0.8)=\$1\]</span><br>
+<li>e.g. <span class="math display">\[(\$1.25)\delta = \$1.25(0.8)=\$1\]</span><br>
 </li>
 </ul></li>
 </ul></li>
-<li class="fragment"><p>I’m not too interested in [you] transforming the interest rate to the discount factor, so I might use “rate” interchangeably with “factor”</p></li>
+<li><p>I’m not too interested in [you] transforming the interest rate to the discount factor, so I might use “rate” interchangeably with “factor”</p></li>
 </ul>
 </section>
 <section id="what-does-this-change" class="slide level3">
 <h3>What does this change?</h3>
 <ul>
-<li class="fragment"><p>Now, we think of agents actually playing PD forever: they wake up each day<sup>1</sup> and play; it’s just a part of their every-day life</p></li>
-<li class="fragment"><p>However, these players prefer utility today over utility tomorrow</p></li>
-<li class="fragment"><p>Let’s think about a very low <span class="math inline">\(\delta\)</span> (close to 0)</p>
+<li><p>Now, we think of agents actually playing PD forever: they wake up each day<sup>1</sup> and play; it’s just a part of their every-day life</p></li>
+<li><p>However, these players prefer utility today over utility tomorrow</p></li>
+<li><p>Let’s think about a very low <span class="math inline">\(\delta\)</span> (close to 0)</p>
 <ul>
-<li class="fragment">This says that I care about future consumption <u>much</u> less than present consumption</li>
-<li class="fragment">Because of this, I might cheat you today in PD for a higher payoff, even though it means a possibly infinite future of low payoffs</li>
+<li>This says that I care about future consumption <u>much</u> less than present consumption</li>
+<li>Because of this, I might cheat you today in PD for a higher payoff, even though it means a possibly infinite future of low payoffs</li>
 </ul></li>
-<li class="fragment"><p>Now let’s think about a very high <span class="math inline">\(\delta\)</span> (close to 1)</p>
+<li><p>Now let’s think about a very high <span class="math inline">\(\delta\)</span> (close to 1)</p>
 <ul>
-<li class="fragment"><span class="math inline">\(\delta = 1\)</span> says I value consumption today just as much as consumption tomorrow</li>
-<li class="fragment">Since tomorrow’s utility is close to today’s, I no longer have a strong incentive to cheat my partner, as this would likely ruin our long-term relationship</li>
+<li><span class="math inline">\(\delta = 1\)</span> says I value consumption today just as much as consumption tomorrow</li>
+<li>Since tomorrow’s utility is close to today’s, I no longer have a strong incentive to cheat my partner, as this would likely ruin our long-term relationship</li>
 </ul></li>
 </ul>
 <aside><ol class="aside-footnotes"><li id="fn4"><p>or <em>period</em></p></li></ol></aside></section>
 <section id="an-infinite-strategy" class="slide level3">
 <h3>An Infinite Strategy</h3>
 <ul>
-<li class="fragment"><p>What’s a strategy?</p>
+<li><p>What’s a strategy?</p>
 <ul>
-<li class="fragment">Information-contingent plan of action</li>
+<li>Information-contingent plan of action</li>
 </ul></li>
-<li class="fragment"><p>Let’s model information at a given stage of the game by <span class="math inline">\(H\)</span>, which contains a <u>h</u>istory of all moves played thus far<sup>1</sup></p></li>
-<li class="fragment"><p>Consider the following strategy: <span class="math display">\[
+<li><p>Let’s model information at a given stage of the game by <span class="math inline">\(H\)</span>, which contains a <u>h</u>istory of all moves played thus far<sup>1</sup></p></li>
+<li><p>Consider the following strategy: <span class="math display">\[
     s_{GT} = \begin{cases}
        C &amp; \text{if } D\notin H\\
        D &amp; \text{otherwise}
     \end{cases}
 \]</span></p></li>
-<li class="fragment"><p>This says:</p>
+<li><p>This says:</p>
 <ul>
-<li class="fragment">Try to cooperate (stay quiet) if no one has snitched before</li>
-<li class="fragment">If someone has defected (snitched) before, then defect again</li>
+<li>Try to cooperate (stay quiet) if no one has snitched before</li>
+<li>If someone has defected (snitched) before, then defect again</li>
 </ul></li>
-<li class="fragment"><p>This stragey is aptly named <span class="hi"><strong>Grim Trigger</strong></span>: if someone defects once, then we defect forever</p>
+<li><p>This stragey is aptly named <span class="hi"><strong>Grim Trigger</strong></span>: if someone defects once, then we defect forever</p>
 <ul>
-<li class="fragment">This will be our primary focus going forward</li>
+<li>This will be our primary focus going forward</li>
 </ul></li>
 </ul>
 <aside><ol class="aside-footnotes"><li id="fn5"><p>we are going to keep <span class="math inline">\(H\)</span> fairly non-technical, e.g. without rigorous definition, extracting intuition from it when needed</p></li></ol></aside></section>
 <section id="what-are-we-after" class="slide level3">
 <h3>What are we after?</h3>
 <ul>
-<li class="fragment"><p>In general, with repeated games, we are interested in checking whether we can achieve a more pareto-efficient outcome, maintaining the assumption of sequential rationality</p>
+<li><p>In general, with repeated games, we are interested in checking whether we can achieve a more pareto-efficient outcome, maintaining the assumption of sequential rationality</p>
 <ul>
-<li class="fragment"><p>If we can: when?</p>
+<li><p>If we can: when?</p>
 <ul>
-<li class="fragment">e.g. what range of <span class="math inline">\(\delta\)</span> (using either interpretation) allows<sup>1</sup> this?</li>
+<li>e.g. what range of <span class="math inline">\(\delta\)</span> (using either interpretation) allows<sup>1</sup> this?</li>
 </ul></li>
 </ul></li>
-<li class="fragment"><p>For our discourse, we are interested in finding what values of <span class="math inline">\(\delta\)</span>, if any, allow us to enforce the cooperative outcome in PD, using some particular strategy</p>
+<li><p>For our discourse, we are interested in finding what values of <span class="math inline">\(\delta\)</span>, if any, allow us to enforce the cooperative outcome in PD, using some particular strategy</p>
 <ul>
-<li class="fragment">This will limit our technical discussion to Grim Trigger, but we can discuss other commonly-studied strategies at some point</li>
+<li>This will limit our technical discussion to Grim Trigger, but we can discuss other commonly-studied strategies at some point</li>
 </ul></li>
 </ul>
 <aside><ol class="aside-footnotes"><li id="fn6"><p>moving forward, <em>admits</em></p></li></ol></aside></section></section>
@@ -1449,49 +1449,49 @@ s=\begin{cases}
 <section id="reminder" class="slide level3">
 <h3>Reminder</h3>
 <ul>
-<li class="fragment"><p><a href="https://www.mathsisfun.com/algebra/sequences-sums-geometric.html">This</a> is a very good reference</p></li>
-<li class="fragment"><p>Recall: if <span class="math inline">\(x\neq 0\)</span>, then <span class="math inline">\(x^{0}=1\)</span></p></li>
+<li><p><a href="https://www.mathsisfun.com/algebra/sequences-sums-geometric.html">This</a> is a very good reference</p></li>
+<li><p>Recall: if <span class="math inline">\(x\neq 0\)</span>, then <span class="math inline">\(x^{0}=1\)</span></p></li>
 </ul>
 </section>
 <section id="infinite-cake" class="slide level3">
 <h3>Infinite Cake</h3>
 <p>Consider a cake</p>
 <ul>
-<li class="fragment">I eat half the cake
+<li>I eat half the cake
 <ul>
-<li class="fragment">You eat half of what’s left
+<li>You eat half of what’s left
 <ul>
-<li class="fragment">e.g., a quarter of the whole cake</li>
+<li>e.g., a quarter of the whole cake</li>
 </ul></li>
-<li class="fragment">I then eat half of what’s left
+<li>I then eat half of what’s left
 <ul>
-<li class="fragment">e.g., an 1/8</li>
+<li>e.g., an 1/8</li>
 </ul></li>
-<li class="fragment">Then, you eat half of what’s left
+<li>Then, you eat half of what’s left
 <ul>
-<li class="fragment">…</li>
+<li>…</li>
 </ul></li>
 </ul></li>
-<li class="fragment">How much did we eat?
+<li>How much did we eat?
 <ul>
-<li class="fragment">On the one hand: <span class="math display">\[\frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \cdots \]</span></li>
-<li class="fragment">On the other hand: <span class="hi">1</span> whole cake</li>
+<li>On the one hand: <span class="math display">\[\frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \cdots \]</span></li>
+<li>On the other hand: <span class="hi">1</span> whole cake</li>
 </ul></li>
 </ul>
 </section>
 <section id="sigma-notation" class="slide level3">
 <h3>Sigma Notation</h3>
 <ul>
-<li class="fragment"><p>Consider a sequence of terms <span class="math inline">\(x_{1}, x_{2}, \dots\)</span></p>
+<li><p>Consider a sequence of terms <span class="math inline">\(x_{1}, x_{2}, \dots\)</span></p>
 <ul>
-<li class="fragment">What are they? Just numbers
+<li>What are they? Just numbers
 <ul>
-<li class="fragment">Often, they take the form <span class="math inline">\(a \cdot x^{k}\)</span>, for some real number <span class="math inline">\(a\)</span>, some <span class="math inline">\(x\in(0,1)\)</span>, and some “natural” (counting) number <span class="math inline">\(k\)</span></li>
+<li>Often, they take the form <span class="math inline">\(a \cdot x^{k}\)</span>, for some real number <span class="math inline">\(a\)</span>, some <span class="math inline">\(x\in(0,1)\)</span>, and some “natural” (counting) number <span class="math inline">\(k\)</span></li>
 </ul></li>
 </ul></li>
-<li class="fragment"><p>Then the <em>series</em> from <span class="math inline">\(1\)</span> to <span class="math inline">\(k\)</span> is a sum of the terms of this sequence, denoted by the following</p>
+<li><p>Then the <em>series</em> from <span class="math inline">\(1\)</span> to <span class="math inline">\(k\)</span> is a sum of the terms of this sequence, denoted by the following</p>
 <p><span class="math display">\[ \sum_{k=1}^{n}x_{k}= x_{1} + x_{2} + x_3 + \cdots + x_{n}\]</span></p></li>
-<li class="fragment"><p>Consider <span class="math inline">\(\{x_{k}\}=\left(\frac{1}{2}\right)^{k}\)</span>. We will often want to start at 0:</p>
+<li><p>Consider <span class="math inline">\(\{x_{k}\}=\left(\frac{1}{2}\right)^{k}\)</span>. We will often want to start at 0:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \sum_{k=0}^{n}x_{k}&amp;=\left(\frac{1}{2}\right)^{0} + \left(\frac{1}{2}\right)^{1} + \left(\frac{1}{2}\right)^{2} + \cdots + \left(\frac{1}{2}\right)^{n}\\
@@ -1503,22 +1503,22 @@ s=\begin{cases}
 <section id="the-geometric-series" class="slide level3">
 <h3>The geometric series</h3>
 <ul>
-<li class="fragment"><p>Instead of ending at the <span class="math inline">\(n^{\text{th}}\)</span> term, we can even compute <em>infinite</em> sums</p></li>
-<li class="fragment"><p>We will primarily be focused on some flavor of the <strong>geometric</strong> series: <span class="math display">\[\sum^{\infty} x^{n}\]</span></p>
+<li><p>Instead of ending at the <span class="math inline">\(n^{\text{th}}\)</span> term, we can even compute <em>infinite</em> sums</p></li>
+<li><p>We will primarily be focused on some flavor of the <strong>geometric</strong> series: <span class="math display">\[\sum^{\infty} x^{n}\]</span></p>
 <ul>
-<li class="fragment">When <span class="math inline">\(|x|&lt;1\)</span>, we say the series <em>converges</em> to a value</li>
-<li class="fragment">When <span class="math inline">\(|x|\geq 1\)</span>, we say the series <em>diverges</em></li>
+<li>When <span class="math inline">\(|x|&lt;1\)</span>, we say the series <em>converges</em> to a value</li>
+<li>When <span class="math inline">\(|x|\geq 1\)</span>, we say the series <em>diverges</em></li>
 </ul></li>
-<li class="fragment"><p>Here are some important sums to know; assume <span class="math inline">\(|x| &lt; 1\)</span></p></li>
-<li class="fragment"><p><span class="math display">\[\sum_{k=0}^{\infty} x^{n} = \frac{1}{1-x}\]</span></p></li>
-<li class="fragment"><p><span class="math display">\[\sum_{k=1}^{\infty} x^{n} = \frac{x}{1-x}\]</span></p></li>
+<li><p>Here are some important sums to know; assume <span class="math inline">\(|x| &lt; 1\)</span></p></li>
+<li><p><span class="math display">\[\sum_{k=0}^{\infty} x^{n} = \frac{1}{1-x}\]</span></p></li>
+<li><p><span class="math display">\[\sum_{k=1}^{\infty} x^{n} = \frac{x}{1-x}\]</span></p></li>
 </ul>
 </section>
 <section id="what-if-i-can-only-remember-one-of-those" class="slide level3">
 <h3>What if I can only remember one of those?</h3>
 <ul>
-<li class="fragment"><p>No problem; use math to determine the other</p></li>
-<li class="fragment"><p>Suppose you know <span class="math inline">\(\sum_{k=0}^{\infty} x^{n} = \frac{1}{1-x}\)</span>. Then</p>
+<li><p>No problem; use math to determine the other</p></li>
+<li><p>Suppose you know <span class="math inline">\(\sum_{k=0}^{\infty} x^{n} = \frac{1}{1-x}\)</span>. Then</p>
 <p><span class="math display">\[
 \begin{aligned}
     \sum_{k=1}^{\infty} x^n &amp;= \left(\sum_{k=0}^{\infty} x^{n}\right) - x^0\\
@@ -1527,9 +1527,9 @@ s=\begin{cases}
     &amp;=\frac{x}{1-x}
 \end{aligned}
 \]</span></p></li>
-<li class="fragment"><p>Intuition: If <span class="math inline">\(x&lt;1\)</span>, then <span class="math inline">\(\frac{x}{1-x}\)</span> will be <u>smaller</u> than <span class="math inline">\(\frac{1}{1-x}\)</span></p>
+<li><p>Intuition: If <span class="math inline">\(x&lt;1\)</span>, then <span class="math inline">\(\frac{x}{1-x}\)</span> will be <u>smaller</u> than <span class="math inline">\(\frac{1}{1-x}\)</span></p>
 <ul>
-<li class="fragment">So, <span class="math inline">\(\frac{x}{1-x}\)</span> is associated with the series which includes 1 less term</li>
+<li>So, <span class="math inline">\(\frac{x}{1-x}\)</span> is associated with the series which includes 1 less term</li>
 </ul></li>
 </ul>
 </section></section>
@@ -1541,46 +1541,46 @@ s=\begin{cases}
 <section id="gt" class="slide level3">
 <h3>GT</h3>
 <ul>
-<li class="fragment"><p>Recall the so-called “Grim Trigger” strategy: <span class="math display">\[
+<li><p>Recall the so-called “Grim Trigger” strategy: <span class="math display">\[
     s_{GT} = \begin{cases}
        C &amp; \text{if } D\notin \mathcal{H}\\
        D &amp; \text{otherwise}
     \end{cases}
 \]</span></p></li>
-<li class="fragment"><p>Let’s assume it’s day 1<sup>1</sup>, and, for simplicity, assume that your opponent is just playing <span class="math inline">\(C\)</span> all the time<sup>2</sup></p></li>
-<li class="fragment"><p>What happens if you play <span class="math inline">\(C\)</span> all the time?</p>
+<li><p>Let’s assume it’s day 1<sup>1</sup>, and, for simplicity, assume that your opponent is just playing <span class="math inline">\(C\)</span> all the time<sup>2</sup></p></li>
+<li><p>What happens if you play <span class="math inline">\(C\)</span> all the time?</p>
 <p><span class="math display">\[\pi(\overline{C},\overline{C}) = 10 + 10\delta + 10 \delta^2 + 10 \delta^3 + \cdots\]</span></p></li>
-<li class="fragment"><p>From the POV of day 1, the prob. of getting to stage <span class="math inline">\(k\)</span> is <span class="math inline">\(\delta^k\)</span></p></li>
-<li class="fragment"><p>What is this payoff sum equal to?</p></li>
+<li><p>From the POV of day 1, the prob. of getting to stage <span class="math inline">\(k\)</span> is <span class="math inline">\(\delta^k\)</span></p></li>
+<li><p>What is this payoff sum equal to?</p></li>
 </ul>
 <aside><ol class="aside-footnotes"><li id="fn7"><p>In fact, it’s equivalent assume it’s any day, and we have only cooperated thus far</p></li><li id="fn8"><p>call this strategy <span class="math inline">\(\overline{C}\)</span></p></li></ol></aside></section>
 <section id="payoff-of-infinite-cooperation" class="slide level3">
 <h3>Payoff of Infinite Cooperation</h3>
 <ul>
-<li class="fragment"><p>Recall: <span class="math inline">\(\delta\in(0,1)\)</span> <span class="math display">\[
+<li><p>Recall: <span class="math inline">\(\delta\in(0,1)\)</span> <span class="math display">\[
 \begin{aligned}
 \pi(\overline{C},\overline{C}) &amp;= 10 + 10\delta + 10 \delta^2 + 10 \delta^3 + \cdots\\
 &amp;= 10 (1 + \delta + \delta^2 + \delta^3 + \cdots)\\
 &amp;= 10\sum_{k=0}^{\infty} \delta^k
 \end{aligned}
 \]</span></p></li>
-<li class="fragment"><p>It’s a geometric series!</p></li>
+<li><p>It’s a geometric series!</p></li>
 </ul>
 <div class="fragment">
 <p><span class="math display">\[
 \pi(\overline{C},\overline{C}) = 10\sum_{k=0}^{\infty} \delta^k = \frac{10}{1-\delta}
 \]</span></p>
 <ul>
-<li class="fragment">In some classes, you might refer to this infinite stream of income using the term “present discounted value” (PDV)</li>
+<li>In some classes, you might refer to this infinite stream of income using the term “present discounted value” (PDV)</li>
 </ul>
 </div>
 </section>
 <section id="payoff-of-breaking-relationship" class="slide level3">
 <h3>Payoff of Breaking Relationship</h3>
 <ul>
-<li class="fragment"><p>Let’s consider another case: suppose I cheat you, but you don’t cheat me, on day 1, and then we defect every day thereafter</p></li>
-<li class="fragment"><p>Now what’s our PDV?</p></li>
-<li class="fragment"><p><span class="math display">\[
+<li><p>Let’s consider another case: suppose I cheat you, but you don’t cheat me, on day 1, and then we defect every day thereafter</p></li>
+<li><p>Now what’s our PDV?</p></li>
+<li><p><span class="math display">\[
 \begin{aligned}
 \pi &amp;= 20 + (5)\delta + (5) \delta^{2} + (5)\delta^3 + \cdots\\
 &amp;= 20 + 5\sum_{k=1}^{\infty}\delta^{k}\\
@@ -1593,7 +1593,7 @@ s=\begin{cases}
 <p><br>
 </p>
 <ul>
-<li class="fragment">Remark: if you can, please feel free to <u>omit</u> ones (<span class="math inline">\(1\)</span>) when writing <span class="math inline">\(1\cdot \delta\)</span></li>
+<li>Remark: if you can, please feel free to <u>omit</u> ones (<span class="math inline">\(1\)</span>) when writing <span class="math inline">\(1\cdot \delta\)</span></li>
 </ul>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
@@ -2811,7 +2811,7 @@ window.QuartoSupport = function () {
       }
     });
     </script>
-    <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","loop":false,"descPosition":"bottom","selector":".lightbox"});
+    <script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"descPosition":"bottom","selector":".lightbox","closeEffect":"zoom"});
     window.onload = () => {
       lightboxQuarto.on('slide_before_load', (data) => {
         const { slideIndex, slideNode, slideConfig, player, trigger } = data;
