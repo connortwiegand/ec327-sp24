@@ -1,5 +1,5 @@
 ---
-title: Extensive Form Games
+title: Repeated Interaction
 author: "[with]{.with} Connor T. Wiegand"
 from: markdown+emoji
 stripcomments: true
@@ -8,6 +8,791 @@ format:
       slide-level: 3
       # chalkboard: false
       embed-resources: true
+      lightbox: true
 # editor:
 #    render-on-save: true
 ---
+
+
+## Last Time
+
+### Infinitely Repeated Games
+
+- Play PD repeatedly
+
+![](imgs/pd.png){fig-align="right" width=40%}
+
+- Motivation:
+
+   1. The game continues tomorrow with prob. $\delta$, ends forever with prob. $1-\delta$
+
+   2. We are infinitely lived agents, but we discount the future by a factor of $\delta$
+
+      - Later, we may think that each player could have a different $\delta$, which makes the second interpretation more versatile
+
+### Math
+
+- The geometric series
+   $$
+   \begin{aligned}
+   \sum_{k=0}^{\infty} x^{n} &= 1 + x + x^2 + \cdots\\
+   & = \frac{1}{1-x}
+   \end{aligned}
+   $$
+
+- Note: we can multiply constants in and out of these sums
+
+- E.g.
+   $$
+   \begin{aligned}
+   \sum_{k=1}^{\infty} cx^{n} &= cx + cx^2 + cx^3 + \cdots\\
+   &= c\sum_{k=1}^{\infty} x^{n} = c\left(\frac{x}{1-x}\right)
+   \end{aligned}
+   $$
+
+##
+
+### G.T.
+
+- Recall the so-called "Grim Trigger" strategy: 
+   $$
+      s_{GT} = \begin{cases}
+         C & \text{if } D\notin \mathcal{H}\\
+         D & \text{otherwise}
+      \end{cases}
+   $$
+
+- Let's assume it's day 1^[In fact, it's equivalent assume it's any day, and we have only cooperated thus far], and, for simplicity, assume that your opponent is just playing $C$ all the time^[call this strategy $\overline{C}$]
+
+- What happens if you play $C$ all the time?
+
+   $$\pi(\overline{C},\overline{C}) = 10 + 10\delta + 10 \delta^2 + 10 \delta^3 + \cdots$$
+
+- From the POV of day 1, the prob. of getting to stage $k$ is $\delta^k$
+
+- What is this payoff sum equal to?
+
+### Payoff of Infinite Cooperation
+
+- Recall: $\delta\in(0,1)$
+$$
+\begin{aligned}
+\pi(\overline{C},\overline{C}) &= 10 + 10\delta + 10 \delta^2 + 10 \delta^3 + \cdots\\
+&= 10 (1 + \delta + \delta^2 + \delta^3 + \cdots)\\
+&= 10\sum_{k=0}^{\infty} \delta^k
+\end{aligned}
+$$
+
+- It's a geometric series!
+
+. . . 
+
+$$
+\pi(\overline{C},\overline{C}) = 10\sum_{k=0}^{\infty} \delta^k = \frac{10}{1-\delta}
+$$
+
+- In some classes, you might refer to this infinite stream of income using the term "present discounted value" (PDV)
+
+### Payoff of Breaking Relationship 
+
+- Let's consider another case: suppose I cheat you, but you don't cheat me, on day 1, and then we defect every day thereafter
+
+- Now what's our PDV?
+
+- 
+   $$
+   \begin{aligned}
+   \pi &= 20 + (5)\delta + (5) \delta^{2} + (5)\delta^3 + \cdots\\
+   &= 20 + 5\sum_{k=1}^{\infty}\delta^{k}\\
+   &= 20 + \frac{5\delta}{1-\delta}
+   \end{aligned}
+   $$
+
+\
+
+\
+
+
+- Remark: if you can, please feel free to [omit]{.ul} ones ($1$) when writing $1\cdot \delta$
+
+### What are we doing again?
+
+- What's our goal?
+
+   - See if we can enforce cooperative play in PD, in a subgame-perfect sense
+
+- Proposition: this can be achieved, for certain ranges of $\delta$, if both players play grim trigger
+
+1. Let's say both players have cooperated thus far in the game. What happens if we both decide to cooperate tomorrow
+
+   - That's the same as $\pi(\overline{C}, \overline{C})$
+
+. . . 
+
+$$
+\begin{aligned}
+10 + 10\delta + 10 \delta^{2} + \cdots &= 10\sum_{k=0}^{\infty} \delta^k\\
+&= \frac{10}{1-\delta}
+\end{aligned}
+$$
+
+### Defecting from G.T.
+
+- Maintain the assumption that both players have cooperated thus far in the game. Now, what happens if I cheat my partner?
+
+. . . 
+
+$$
+\begin{aligned}
+20 + 5\delta + 5\delta^{2} + 5\delta^{3} + \cdots &= 20 + 5\sum_{k=1}^{\infty} \delta^k\\
+&= 20 + \frac{5\delta}{1-\delta}
+\end{aligned}
+$$
+
+
+- When will I stick with G.T. (e.g. not deviate for a strictly higher payoff)? 
+
+   - When $\frac{10}{1-\delta} > 20 + \frac{5\delta}{1-\delta}$
+
+### Defecting from G.T. (cont.)
+
+$$
+\begin{aligned}
+\frac{10}{1-\delta} &> 20 + \frac{5\delta}{1-\delta} \\
+10 &> 20 (1-\delta) + 5\delta\\
+10 &> 20 - 15\delta\\
+15\delta &> 10\\
+\delta&>\frac{10}{15}\\
+\delta&>\frac{2}{3}
+\end{aligned}
+$$
+
+- What does this mean?
+
+### Interpretation
+
+- Given a history of cooperation, 
+
+   - (i) a _sufficiently patient_ agent ($\delta > 0.66$) will rationally stick with G.T. going forward
+
+   - (ii) given a sufficiently high probability that the game will continue ($\delta > 0.66$), players rationally stick with G.T. going forward
+
+- Are we done?
+
+   - Unfortunately not
+
+### Continue Defecting
+
+- We also must consider histories where someone [did]{.ul} already defect
+
+- Assume we keep playing $s_{GT}$:
+
+. . . 
+
+$$
+\begin{aligned}
+\pi(s_{GT}, s_{GT}| \mathcal{H}) &= \pi(\overline{D}, \overline{D}) \\
+&= 5 + 5\delta + 5\delta^2 + 5\delta^3 + \cdots\\
+&=\sum_{k=0}^{\infty} 5\delta^{k}\\
+&= \frac{5}{1-\delta}
+\end{aligned}
+$$
+
+
+
+### Forgive
+
+:::{.nonincremental}
+- We also must consider histories where someone [did]{.ul} already defect
+:::
+
+- Assume instead that we forgive them, and switch to playing Cooperative today (but then revert to grim trigger forever). Now what does our payoff stream look like?
+
+$$
+\begin{aligned}
+2 + 5\delta + 5\delta^2 + 5\delta^3 + \cdots &= 2 + \sum_{k=1}^{\infty}5\delta^{k}\\
+&= 2 + \frac{5\delta}{1-\delta}
+\end{aligned}
+$$
+
+- When will we maintain grim trigger?
+
+### When to forgive?
+
+- Maintain grim trigger if
+   $$ 
+   \begin{aligned}
+   \frac{5}{1-\delta} > 2 + \frac{5\delta}{1-\delta}\\
+   \frac{5}{1-\delta} - \frac{5\delta}{1-\delta} > 2 \\
+   \frac{5(1-\delta)}{1-\delta} > 2 \\
+   5 > 2
+   \end{aligned}
+   $$
+
+- When will we mantain grim trigger (as opposed to forgiving?)
+   
+   - [Always]{.ul}
+
+### Remarks
+
+- As a result of the One-shot Deviation principle, it suffices to check forgiving once and then playing $s_{GT}$ forever
+
+   - As opposed to checking all (infinite) different strategies
+
+   - In this case, think about it as our _best_ deviation
+
+      - Consider the unilateral deviation to $\overline{C}$
+
+         $$2 + 2\delta + 2\delta^2$$
+
+      - You're getting screwed every time; this will not possibly be better
+
+- In PD, checking the history where someone has deviated is often the boring part, but this isn't necessarily true for other games
+
+
+
+### Ex. 0
+
+![](imgs/pd-ex1.png){fig-align="right" width="40%"}
+
+
+### Sol. 0
+
+:::{.panel-tabset}
+#### Case 1 Payoffs
+
+Continue with Grim Trigger:
+$$
+\begin{aligned}
+\pi(s_{GT}, s_{GT})= 12 + 12\delta + 12\delta^2 + \cdots = \frac{12}{1-\delta}
+\end{aligned}
+$$
+
+Deviate once, then revert to G.T.:
+$$
+\begin{aligned}
+\pi(\hat{s}_{GT}, s_{GT})= 18 + 6\delta + 6\delta^2 + \cdots = 18 + \frac{6\delta}{1-\delta}
+\end{aligned}
+$$
+
+
+#### Case 1 Analysis
+
+Maintain Grim Trigger when
+
+$$
+\begin{aligned}
+\frac{12}{1-\delta} &> 18 + \frac{6\delta}{1-\delta}\\
+12 &> 18-18\delta+6\delta\\
+12\delta &> 6\\
+\delta &> \frac{1}{2}
+\end{aligned}
+$$
+
+
+#### Case 2 Payoffs
+
+Continue with Grim Trigger:
+$$
+\begin{aligned}
+\pi(s_{GT}, s_{GT})= 6 + 6\delta + 6\delta^2 + \cdots = \frac{6}{1-\delta}
+\end{aligned}
+$$
+
+Deviate once, then revert to G.T.:
+$$
+\begin{aligned}
+\pi(s_{GT}, s_{GT})= 3 + 6\delta + 6\delta^2 + \cdots = 3 + \frac{6\delta}{1-\delta}
+\end{aligned}
+$$
+
+
+#### Case 2 Analysis
+
+Maintain G.T. when 
+$$
+\begin{aligned}
+\frac{6}{1-\delta} &> 3 + \frac{6\delta}{1-\delta}\\
+6 &> 3
+\end{aligned}
+$$
+
+- $\implies$ always
+
+#### Answer
+
+Cooperative play can be enforced when players are sufficiently patient ($\delta>0.5$)
+:::
+
+
+### Ex. 1-2
+
+1. Assume Mermaid Man and Barnacle Boy discount at [different]{.ul} rates, $\delta_{MM}$ and $\delta_{BB}$. When can G.T. lead us to a coop. outcome?
+
+2. Assume Mermaid Man and Barnacle Boy face the same probability that the game ends. When can G.T. enforce a coop outcome?
+
+![](imgs/pd-ex2.png){fig-align="center" width="50%"}
+
+
+### Sol. 1
+
+I'll leave it to you to check the histories when $D\in\mathcal{H}$
+
+:::{.panel-tabset}
+#### MM
+
+Assume $D\notin\mathcal{H}$
+
+- Maintain G.T. when
+   $$
+   \begin{aligned}
+   \frac{18}{1-\delta} &> 24 + \frac{16\delta}{1-\delta}\\
+   18 &> 24-24\delta + 16\delta\\
+   8\delta &> 6\\
+   \delta &> \frac{6}{8}=\frac{2}{3}
+   \end{aligned}
+   $$
+
+
+#### BB
+
+Assume $D\notin\mathcal{H}$
+
+- Maintain G.T. when
+   $$
+   \begin{aligned}
+   \frac{12}{1-\delta} &> 32 + \frac{8\delta}{1-\delta}\\
+   12 &> 32-32\delta + 8\delta\\
+   24\delta &> 20\\
+   \delta &> \frac{20}{24}=\frac{5}{6}=0.\bar{4}
+   \end{aligned}
+   $$
+
+#### Ans
+
+Coop play possible via G.T. when 
+
+$$\delta_{MM}>\frac{2}{3}\qquad\text{and}\qquad\delta_{BB}>\frac{5}{6}$$
+
+:::
+
+### Sol. 2
+ 
+- Math doesn't change; what does is the final "Answer" Step
+
+:::{.panel-tabset}
+#### MM
+
+Assume $D\notin\mathcal{H}$
+
+- Maintain G.T. when
+   $$
+   \begin{aligned}
+   \frac{18}{1-\delta} &> 24 + \frac{16\delta}{1-\delta}\\
+   18 &> 24-24\delta + 16\delta\\
+   8\delta &> 6\\
+   \delta &> \frac{6}{8}=\frac{2}{3}
+   \end{aligned}
+   $$
+
+#### BB
+
+Assume $D\notin\mathcal{H}$
+
+- Maintain G.T. when
+   $$
+   \begin{aligned}
+   \frac{12}{1-\delta} &> 32 + \frac{8\delta}{1-\delta}\\
+   12 &> 32-32\delta + 8\delta\\
+   24\delta &> 20\\
+   \delta &> \frac{20}{24}=\frac{5}{6}=0.\bar{4}
+   \end{aligned}
+   $$
+
+
+#### Ans
+
+- If MM and BB share a common delta, we have to combine (take the intersection of) the conditions
+
+   - $2/3\approx0.67$
+
+   - $5/6\approx0.83$
+
+- We need [both]{.ul .hi} players to be on board with playing G.T. and sticking to it
+
+   - Therefore, we need the stricter of the two conditions:
+
+   $$\delta > 5/6$$
+
+:::
+
+### Ex. 3
+
+![](imgs/pd-ex3.png){fig-align="center" width="40%"}
+
+### Sol. 3
+
+:::{.panel-tabset}
+
+#### Case 1 
+
+$D \notin \mathcal{H}$
+
+Maintain Grim Trigger when
+
+$$
+\begin{aligned}
+\frac{16}{1-\delta} &> 24 + \frac{4\delta}{1-\delta}\\
+12 &> 24-24\delta+4\delta\\
+20\delta &> 12\\
+\delta &> \frac{12}{20}=\frac{3}{5}
+\end{aligned}
+$$
+
+
+#### Case 2
+
+$D \in \mathcal{H}$
+
+Maintain G.T. when 
+$$
+\begin{aligned}
+\frac{4}{1-\delta} &> 8 + \frac{4\delta}{1-\delta}\\
+4 &> 8
+\end{aligned}
+$$
+
+- $\implies$ [_never_]{.ul}
+
+#### Answer
+
+We can't enforce coopertive play using G.T.
+
+- Why? 
+
+   - This isn't a true PD: getting cheated is better than mutual defection
+:::
+
+
+### Remarks (cont.)
+
+- What happens if you get $\delta < 0$?
+
+   - This means the assumed condition to get us to that point [_never_]{.ul} happens
+
+- What if you find $\delta > 1$?
+
+   - Similar
+
+
+### Remarks (cont.)
+
+- What if you find $\delta < 2/3$ in the first history case, and $\delta\in [\frac{1}{4}, \frac{3}{4}]$ for the other?
+
+   - To find when G.T. admits a cooperative SPNE, we need to combine these conditions:
+
+
+![](imgs/numb-line1.png){.fragment .fade-in-then-out fig-align="center" width=40%}
+
+![](imgs/numb-line2.png){.fragment fig-align="center" width=40%}
+
+- 
+   - $\delta\in[\frac{1}{4}, \frac{2}{3}]$
+
+
+### Remarks (cont.)
+
+:::{.nonincremental}
+- What happens if you get $\delta < 0$?
+
+   - This means the assumed condition to get us to that point [_never_]{.ul} happens
+
+- What if you find $\delta > 1$?
+
+   - Similar
+
+- What if you find $\delta < 2/3$ in the first history case, and $\delta\in [\frac{1}{4}, \frac{3}{4}]$ for the other?
+
+   - To find when G.T. admits a cooperative SPNE, we need to combine these conditions
+
+   - $\delta\in[\frac{1}{4}, \frac{2}{3}]$
+:::
+
+- What if you end up with $\delta<1/4$ and $\delta>2/3$?
+   
+   - Again: impossible
+
+- Use quantitative reasoning!
+
+### Other interesting strategies
+
+- Is grim trigger the only way to enforce the cooperative outcome?
+
+   - As it turns out, no
+
+- Tit-for-tat
+
+- Pavlovs dogs (aka Win-Stay Lose-Switch)
+
+- [Others](https://plato.stanford.edu/entries/prisoner-dilemma/strategy-table.html) (not all support cooperative play as a SPNE)
+
+### Other games
+
+- We ask similar questions about other simultaneous-move games played infinitely
+
+- They are interesting, but we will restrict ourselves to PD (and similar) games, for the most part
+
+## Quadratic Optimization
+
+```{css}
+/*| echo: false */
+figcaption {
+  margin-left: 50%;
+  text-align: right;
+}
+```
+
+### :(
+
+- Let $a<0$. Consider the function $f(x) = ax^2 + bx + c$
+
+ - Graphically, this is an upside-down parabola
+   
+   ```{r}
+   #| code-fold: true
+   #| dev.args: !expr 'list(bg = "transparent")'
+   #| out.width: 50%
+   #| fig.align: 'right'
+   #| fig.cap: '$a = -2,\, b = 10,\, c = 0$'
+
+   pacman::p_load(ggplot2, magrittr)
+   quad <- function(x, a = -2, b = 10, c = 0) {
+      a * x^2 + b * x + c
+   }
+
+   x <- seq(0, 5, 0.1)
+
+   p <- data.frame(x = x, y = quad(x)) %>%
+      ggplot(aes(x = x, y = y)) +
+      geom_line(color = "aquamarine4", linewidth = 2) +
+      scale_y_continuous(expand = c(0, 0), limits = c(0, 16), n.breaks = 4) +
+      scale_x_continuous(expand = c(0, 0)) +
+      # theme_classic() +
+      theme(
+         axis.text = element_text(size = 16),
+         panel.ontop = T,
+         panel.grid.major = element_blank(),
+         panel.grid.minor = element_blank(),
+         panel.background = element_rect(fill = "transparent", color = NA),
+         plot.background = element_rect(fill = "transparent", color = NA),
+         axis.line = element_line(color = "black")
+      )
+   p
+   ```
+   
+
+
+### :(
+
+::::{.nonincremental}
+- Let $a<0$. Consider the function $f(x) = ax^2 + bx + c$
+
+ - Graphically, this is an upside-down parabola
+
+   ```{r}
+   #| code-fold: true
+   #| dev.args: !expr 'list(bg = "transparent")'
+   #| out.width: 50%
+   #| fig.align: 'right'
+   #| fig.cap: '$a = -2,\, b = 10,\, c = 0$'
+
+   p + 
+      annotate(
+         "point", 
+         x = 2.5, 
+         y = max(quad(x)), 
+         color = "#ef876a", 
+         size = 7) + 
+      geom_segment(
+         x = 2.5, 
+         y = 0, 
+         yend = 12.5, 
+         color = "#ef876a", 
+         linetype = 2)
+   ```
+   
+- For the next set of games we will be looking at, we need to know how to find the maximum value that this parabola obtains
+::::
+
+### Remember the quadratic formula?
+
+- For a quadratic given by $f(x) = ax^2 + bx + c$, the roots can be found using the quadratic formula:
+   $$x = \frac{-b\pm \sqrt{b^2 - 4ac}}{2a}$$
+
+   - This gives us the $\hat{x}$ values for which $f(\hat{x})=0$
+
+- As it turns out, the $x^{*}$ value which maximizes $f(x)$ is halfway between these points
+
+- Using some math, we can find the midpoint between the two roots
+
+   - If $\hat{x}_1$ and $\hat{x}_2$ are the parabola's roots (found via the quadratic equation), then 
+
+      $$x^{*}=\frac{1}{2}(\hat{x}_1 + \hat{x}_2) = -\frac{b}{2a}$$
+
+
+### The maximum of a quadratic
+
+- So, given a quadratic of the form $f(x) = ax^2 + bx + c$,
+   
+   - The value which maximizes $f$ (called the [maximizer]{.alert} or [arg. maximum]{.hi}), $x^{*}$, is given by 
+      $$x^{*}=\frac{-b}{2a}$$
+
+   - The maximum _value_ of $f$ is given by $f(x^{*})$
+
+      - With some math, we can show that 
+         $$ f(x^{*}) = c - \frac{b^2}{4a}$$
+
+- Remark: you're going to need to know how to get the maximum as well as the arg. max, so finding $x^{*}$ and plugging it in to $f$ is good practice
+
+
+### Ex 0 
+
+::::{.columns}
+:::{.column width=50%}
+- Recall our parabola from earlier: $f(x)=-2x^2+10x+0$
+
+- The arg. max: 
+   $$\frac{-10}{2(-2)}=\frac{10}{4}=2.5$$
+
+- The function's maximum:
+
+   $$f(x^{*})=-2(2.5)^2+10(2.5)=12.5$$
+:::
+
+:::{.column .fragment width=50%}
+
+```{r}
+#| code-fold: true
+#| dev.args: !expr 'list(bg = "transparent")'
+#| out.width: 100%
+#| fig.height: 10
+#| fig.align: 'right'
+#| fig.cap: '$f(x)=-2x^2 + 10x$'
+
+p +
+   annotate(
+      "point",
+      x = 2.5,
+      y = max(quad(x)),
+      color = "#ef876a",
+      size = 7
+   ) +
+   geom_segment(
+      x = 2.5,
+      y = 0,
+      yend = 12.5,
+      color = "#ef876a",
+      linetype = 2
+   ) +
+   annotate(
+      "text",
+      x = 2.5,
+      y = 13.5,
+      label = "12.5",
+      color = "#ef876a",
+      size = 14
+   ) +
+   geom_text(label = "2.5", x = 2.5, y = -0.35, size = 10, color = "#ef876a") + coord_cartesian(clip = "off")
+```
+
+:::
+::::
+
+### Ex 1
+
+- Let 
+   $$\pi = (100 - q_1 - q_2) q_1 - 10q_1$$
+
+- Find the $q_1$ which maximizes $\pi$, and report the function maximum
+
+. . . 
+
+- Rewrite $\pi$ as 
+   $$\pi(q_1) = -q_1^2 + (90 - q_2)q_1$$
+
+- What's $a$, $b$, and $c$?
+   - $a=-1$, $b=90-q_2$, and $c=0$
+
+- Therefore, the arg. max is given by 
+
+   $$q_1^{*}=\frac{-(90-q_2)}{-2}=\frac{90-q_2}{2}$$
+
+### Ex 1 (solved)
+
+:::{.nonincremental}
+- Let 
+   $$\pi = (100 - q_1 - q_2) q_1 - 10q_1$$
+
+- Find the $q_1$ which maximizes $\pi$, and report the function maximum
+
+:::
+
+- The arg. max is given by 
+
+   $$q_1^{*}=\frac{-(90-q_2)}{-2}=\frac{90-q_2}{2}$$
+
+- The maximum $\pi$ is then given by
+
+   $$\pi^{*}=-\frac{(90-q_2)^2}{-4}=\frac{(90-q_2)^{2}}{4}$$
+
+### Alternative: Use Calculus
+
+- If you have seen any introductory calculus, you can recall that we can just use the power rule and a bit of algebra to find the maximum of $f(x)=ax^2 + bx + c$
+
+- [Kahn Academy on the Power Rule](https://www.khanacademy.org/math/old-ap-calculus-ab/ab-derivative-rules/ab-diff-negative-fraction-powers/a/power-rule-review)
+
+   $$\frac{d}{dx}c\cdot x^n = c(n \cdot x^{n-1})$$
+
+- So 
+
+   $$f'(x)=2ax + b$$
+
+- To find the maximum (an extreme value), we set $f'(x)=0$:
+
+   $$2ax+b=0\ \implies\ x=\frac{-b}{2a}$$
+
+### Ex 2
+
+- Let 
+   $$\pi = (100 - 2q_1 - q_2) q_1 - 25q_1  - 10$$
+
+- Find the $q_1$ which maximizes $\pi$, and report the function maximum
+
+. . . 
+
+- Rewrite $\pi$ as 
+   $$\pi(q_1) = -2q_1^2 + (75 - q_2)q_1 - 10$$
+
+- What's $\frac{d\pi}{dq_{1}}$?
+
+   - $\pi'= -4q_1 + 75 - q_2$
+
+### Ex 2 (Solved)
+- To get the arg. max, set this $\pi'$ to 0 and solve for $q_1$:
+   $$
+   \begin{aligned}
+   0 &= -4q_1 + 75 - q_2\\
+   4q_1 &= 75 - q_2\\
+   q_1^{*} &= \frac{75-q_2}{4}
+   \end{aligned}
+   $$
+
+- The maximum $\pi$ is then given by
+
+   $$\pi^{*}=-10 - \frac{(75 - q_2)^{2}}{4(-2)}=\frac{(75 - q_2)^{2}}{8} - 10$$
+
+### Remarks
+
+- I don't care which one you use
+
+- Using Calculus will also work for games with more complex payoff functions^[We will restrict ourselves to quadratics]

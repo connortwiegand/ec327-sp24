@@ -1,5 +1,5 @@
 ---
-title: Extensive Form Games
+title: Repeated Interaction
 author: "[with]{.with} Connor T. Wiegand"
 from: markdown+emoji
 stripcomments: true
@@ -729,9 +729,24 @@ p +
 
    $$q_1^{*}=\frac{-(90-q_2)}{-2}=\frac{90-q_2}{2}$$
 
+### Ex 1 (solved)
+
+:::{.nonincremental}
+- Let 
+   $$\pi = (100 - q_1 - q_2) q_1 - 10q_1$$
+
+- Find the $q_1$ which maximizes $\pi$, and report the function maximum
+
+:::
+
+- The arg. max is given by 
+
+   $$q_1^{*}=\frac{-(90-q_2)}{-2}=\frac{90-q_2}{2}$$
+
 - The maximum $\pi$ is then given by
 
    $$\pi^{*}=-\frac{(90-q_2)^2}{-4}=\frac{(90-q_2)^{2}}{4}$$
+
 
 ### Alternative: Use Calculus
 

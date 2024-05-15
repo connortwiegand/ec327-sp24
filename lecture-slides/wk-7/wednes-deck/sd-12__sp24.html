@@ -14,7 +14,7 @@
   <meta name="generator" content="quarto-1.4.549">
 
   <meta name="author" content="with Connor T. Wiegand">
-  <title>Extensive Form Games</title>
+  <title>Repeated Interaction</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -331,7 +331,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Extensive Form Games</h1>
+  <h1 class="title">Repeated Interaction</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -371,8 +371,7 @@
 <section id="math" class="slide level3">
 <h3>Math</h3>
 <ul>
-<li class="fragment"><p>The geometric series</p></li>
-<li class="fragment"><p><span class="math display">\[
+<li class="fragment"><p>The geometric series <span class="math display">\[
 \begin{aligned}
 \sum_{k=0}^{\infty} x^{n} &amp;= 1 + x + x^2 + \cdots\\
 &amp; = \frac{1}{1-x}
@@ -1014,10 +1013,23 @@ figcaption {
 </ul></li>
 <li class="fragment"><p>Therefore, the arg. max is given by</p>
 <p><span class="math display">\[q_1^{*}=\frac{-(90-q_2)}{-2}=\frac{90-q_2}{2}\]</span></p></li>
+</ul>
+</div>
+</section>
+<section id="ex-1-solved" class="slide level3">
+<h3>Ex 1 (solved)</h3>
+<div>
+<ul>
+<li><p>Let <span class="math display">\[\pi = (100 - q_1 - q_2) q_1 - 10q_1\]</span></p></li>
+<li><p>Find the <span class="math inline">\(q_1\)</span> which maximizes <span class="math inline">\(\pi\)</span>, and report the function maximum</p></li>
+</ul>
+</div>
+<ul>
+<li class="fragment"><p>The arg. max is given by</p>
+<p><span class="math display">\[q_1^{*}=\frac{-(90-q_2)}{-2}=\frac{90-q_2}{2}\]</span></p></li>
 <li class="fragment"><p>The maximum <span class="math inline">\(\pi\)</span> is then given by</p>
 <p><span class="math display">\[\pi^{*}=-\frac{(90-q_2)^2}{-4}=\frac{(90-q_2)^{2}}{4}\]</span></p></li>
 </ul>
-</div>
 </section>
 <section id="alternative-use-calculus" class="slide level3">
 <h3>Alternative: Use Calculus</h3>
@@ -1483,7 +1495,7 @@ q_1^{*} &amp;= \frac{75-q_2}{4}
       }
     });
     </script>
-    <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":false,"openEffect":"zoom"});
+    <script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","loop":false,"openEffect":"zoom","closeEffect":"zoom"});
     window.onload = () => {
       lightboxQuarto.on('slide_before_load', (data) => {
         const { slideIndex, slideNode, slideConfig, player, trigger } = data;
