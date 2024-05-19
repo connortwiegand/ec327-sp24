@@ -349,7 +349,7 @@ Assume $D\notin\mathcal{H}$
    \frac{18}{1-\delta} &> 24 + \frac{16\delta}{1-\delta}\\
    18 &> 24-24\delta + 16\delta\\
    8\delta &> 6\\
-   \delta &> \frac{6}{8}=\frac{2}{3}
+   \delta &> \frac{6}{8}=\frac{3}{4}
    \end{aligned}
    $$
 
@@ -364,7 +364,7 @@ Assume $D\notin\mathcal{H}$
    \frac{12}{1-\delta} &> 32 + \frac{8\delta}{1-\delta}\\
    12 &> 32-32\delta + 8\delta\\
    24\delta &> 20\\
-   \delta &> \frac{20}{24}=\frac{5}{6}=0.\bar{4}
+   \delta &> \frac{20}{24}=\frac{5}{6}=0.8\bar{3}
    \end{aligned}
    $$
 
@@ -391,7 +391,7 @@ Assume $D\notin\mathcal{H}$
    \frac{18}{1-\delta} &> 24 + \frac{16\delta}{1-\delta}\\
    18 &> 24-24\delta + 16\delta\\
    8\delta &> 6\\
-   \delta &> \frac{6}{8}=\frac{2}{3}
+   \delta &> \frac{6}{8}=\frac{3}{4}
    \end{aligned}
    $$
 
@@ -405,7 +405,7 @@ Assume $D\notin\mathcal{H}$
    \frac{12}{1-\delta} &> 32 + \frac{8\delta}{1-\delta}\\
    12 &> 32-32\delta + 8\delta\\
    24\delta &> 20\\
-   \delta &> \frac{20}{24}=\frac{5}{6}=0.\bar{4}
+   \delta &> \frac{20}{24}=\frac{5}{6}=0.8\bar{3}
    \end{aligned}
    $$
 
@@ -414,7 +414,7 @@ Assume $D\notin\mathcal{H}$
 
 - If MM and BB share a common delta, we have to combine (take the intersection of) the conditions
 
-   - $2/3\approx0.67$
+   - $3/4=0.75$
 
    - $5/6\approx0.83$
 
@@ -478,7 +478,7 @@ We can't enforce coopertive play using G.T.
 
 - What happens if you get $\delta < 0$?
 
-   - This means the assumed condition to get us to that point [_never_]{.ul} happens
+   - This means the assumed condition to get us to that point [_never_]{.ul} happens^[I had discounting in mind, but we also don't typically think of negative discount factors as this would imply interest rates are in excess of $-100\%$]
 
 - What if you find $\delta > 1$?
 
@@ -505,7 +505,7 @@ We can't enforce coopertive play using G.T.
 :::{.nonincremental}
 - What happens if you get $\delta < 0$?
 
-   - This means the assumed condition to get us to that point [_never_]{.ul} happens
+   - This means the assumed condition to get us to that point [_never_]{.ul} happens^[I had discounting in mind, but we also don't typically think of negative discount factors as this would imply interest rates are in excess of $-100\%$]
 
 - What if you find $\delta > 1$?
 

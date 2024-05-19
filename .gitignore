@@ -8,3 +8,6 @@ Templates/*
 /hw/*GK*
 /hw/*StuKey*
 *_cache
+*.csv
+.Rhistory
+*curve*.R
