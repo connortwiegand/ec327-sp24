@@ -1,0 +1,423 @@
+---
+title: The Cournot Duopoly Model
+author: "[with]{.with} Connor T. Wiegand"
+from: markdown+emoji
+stripcomments: true
+format: 
+   revealjs:
+      slide-level: 3
+      # chalkboard: true
+      embed-resources: true
+      lightbox: true
+# editor:
+#    render-on-save: true
+---
+
+## Finishing Up Repeated Interaction
+
+### Other interesting strategies
+
+- Is grim trigger the only way to enforce the cooperative outcome?
+
+   - As it turns out, no
+
+- Tit-for-tat
+
+- Pavlovs dogs (aka Win-Stay Lose-Switch)
+
+- [Others](https://plato.stanford.edu/entries/prisoner-dilemma/strategy-table.html) (not all support cooperative play as a SPNE)
+
+### Other games
+
+- We ask similar questions about other simultaneous-move games played infinitely
+
+- They are interesting, but we will restrict ourselves to PD (and similar) games, for the most part
+
+## Quadratic Optimization
+
+```{css}
+/*| echo: false */
+figcaption {
+  margin-left: 50%;
+  text-align: right;
+}
+```
+
+### :(
+
+- Let $a<0$. Consider the function $f(x) = ax^2 + bx + c$
+
+ - Graphically, this is an upside-down parabola
+   
+   ```{r}
+   #| code-fold: true
+   #| dev.args: !expr 'list(bg = "transparent")'
+   #| out.width: 50%
+   #| fig.align: 'right'
+   #| fig.cap: '$a = -2,\, b = 10,\, c = 0$'
+
+   pacman::p_load(ggplot2, magrittr)
+   quad <- function(x, a = -2, b = 10, c = 0) {
+      a * x^2 + b * x + c
+   }
+
+   x <- seq(0, 5, 0.1)
+
+   p <- data.frame(x = x, y = quad(x)) %>%
+      ggplot(aes(x = x, y = y)) +
+      geom_line(color = "aquamarine4", linewidth = 2) +
+      scale_y_continuous(expand = c(0, 0), limits = c(0, 16), n.breaks = 4) +
+      scale_x_continuous(expand = c(0, 0)) +
+      # theme_classic() +
+      theme(
+         axis.text = element_text(size = 16),
+         panel.ontop = T,
+         panel.grid.major = element_blank(),
+         panel.grid.minor = element_blank(),
+         panel.background = element_rect(fill = "transparent", color = NA),
+         plot.background = element_rect(fill = "transparent", color = NA),
+         axis.line = element_line(color = "black")
+      )
+   p
+   ```
+   
+
+
+### :(
+
+::::{.nonincremental}
+- Let $a<0$. Consider the function $f(x) = ax^2 + bx + c$
+
+ - Graphically, this is an upside-down parabola
+
+   ```{r}
+   #| code-fold: true
+   #| dev.args: !expr 'list(bg = "transparent")'
+   #| out.width: 50%
+   #| fig.align: 'right'
+   #| fig.cap: '$a = -2,\, b = 10,\, c = 0$'
+
+   p + 
+      annotate(
+         "point", 
+         x = 2.5, 
+         y = max(quad(x)), 
+         color = "#ef876a", 
+         size = 7) + 
+      geom_segment(
+         x = 2.5, 
+         y = 0, 
+         yend = 12.5, 
+         color = "#ef876a", 
+         linetype = 2)
+   ```
+   
+- For the next set of games we will be looking at, we need to know how to find the maximum value that this parabola obtains
+::::
+
+### Remember the quadratic formula?
+
+- For a quadratic given by $f(x) = ax^2 + bx + c$, the roots can be found using the quadratic formula:
+   $$x = \frac{-b\pm \sqrt{b^2 - 4ac}}{2a}$$
+
+   - This gives us the $\hat{x}$ values for which $f(\hat{x})=0$
+
+- As it turns out, the $x^{*}$ value which maximizes $f(x)$ is halfway between these points
+
+- Using some math, we can find the midpoint between the two roots
+
+   - If $\hat{x}_1$ and $\hat{x}_2$ are the parabola's roots (found via the quadratic equation), then 
+
+      $$x^{*}=\frac{1}{2}(\hat{x}_1 + \hat{x}_2) = -\frac{b}{2a}$$
+
+
+### The maximum of a quadratic
+
+- So, given a quadratic of the form $f(x) = ax^2 + bx + c$,
+   
+   - The value which maximizes $f$ (called the [maximizer]{.alert} or [arg. maximum]{.hi}), $x^{*}$, is given by 
+      $$x^{*}=\frac{-b}{2a}$$
+
+   - The maximum _value_ of $f$ is given by $f(x^{*})$
+
+      - With some math, we can show that 
+         $$ f(x^{*}) = c - \frac{b^2}{4a}$$
+
+- Remark: you're going to need to know how to get the maximum as well as the arg. max, so finding $x^{*}$ and plugging it in to $f$ is good practice
+
+
+### Ex 0 
+
+::::{.columns}
+:::{.column width=50%}
+- Recall our parabola from earlier: $f(x)=-2x^2+10x+0$
+
+- The arg. max: 
+   $$\frac{-10}{2(-2)}=\frac{10}{4}=2.5$$
+
+- The function's maximum:
+
+   $$f(x^{*})=-2(2.5)^2+10(2.5)=12.5$$
+:::
+
+:::{.column .fragment width=50%}
+
+```{r}
+#| code-fold: true
+#| dev.args: !expr 'list(bg = "transparent")'
+#| out.width: 100%
+#| fig.height: 10
+#| fig.align: 'right'
+#| fig.cap: '$f(x)=-2x^2 + 10x$'
+
+p +
+   annotate(
+      "point",
+      x = 2.5,
+      y = max(quad(x)),
+      color = "#ef876a",
+      size = 7
+   ) +
+   geom_segment(
+      x = 2.5,
+      y = 0,
+      yend = 12.5,
+      color = "#ef876a",
+      linetype = 2
+   ) +
+   annotate(
+      "text",
+      x = 2.5,
+      y = 13.5,
+      label = "12.5",
+      color = "#ef876a",
+      size = 14
+   ) +
+   geom_text(label = "2.5", x = 2.5, y = -0.35, size = 10, color = "#ef876a") + coord_cartesian(clip = "off")
+```
+
+:::
+::::
+
+### Ex 1
+
+- Let 
+   $$\pi = (100 - q_1 - q_2) q_1 - 10q_1$$
+
+- Find the $q_1$ which maximizes $\pi$, and report the function maximum
+
+. . . 
+
+- Rewrite $\pi$ as 
+   $$\pi(q_1) = -q_1^2 + (90 - q_2)q_1$$
+
+- What's $a$, $b$, and $c$?
+   - $a=-1$, $b=90-q_2$, and $c=0$
+
+- Therefore, the arg. max is given by 
+
+   $$q_1^{*}=\frac{-(90-q_2)}{-2}=\frac{90-q_2}{2}$$
+
+### Ex 1 (solved)
+
+:::{.nonincremental}
+- Let 
+   $$\pi = (100 - q_1 - q_2) q_1 - 10q_1$$
+
+- Find the $q_1$ which maximizes $\pi$, and report the function maximum
+
+:::
+
+- The arg. max is given by 
+
+   $$q_1^{*}=\frac{-(90-q_2)}{-2}=\frac{90-q_2}{2}$$
+
+- The maximum $\pi$ is then given by
+
+   $$\pi^{*}=-\frac{(90-q_2)^2}{-4}=\frac{(90-q_2)^{2}}{4}$$
+
+### Alternative: Use Calculus
+
+- If you have seen any introductory calculus, you can recall that we can just use the power rule and a bit of algebra to find the maximum of $f(x)=ax^2 + bx + c$
+
+- [Kahn Academy on the Power Rule](https://www.khanacademy.org/math/old-ap-calculus-ab/ab-derivative-rules/ab-diff-negative-fraction-powers/a/power-rule-review)
+
+   $$\frac{d}{dx}c\cdot x^n = c(n \cdot x^{n-1})$$
+
+- So 
+
+   $$f'(x)=2ax + b$$
+
+- To find the maximum (an extreme value), we set $f'(x)=0$:
+
+   $$2ax+b=0\ \implies\ x=\frac{-b}{2a}$$
+
+### Ex 2
+
+- Let 
+   $$\pi = (100 - 2q_1 - q_2) q_1 - 25q_1  - 10$$
+
+- Find the $q_1$ which maximizes $\pi$, and report the function maximum
+
+. . . 
+
+- Rewrite $\pi$ as 
+   $$\pi(q_1) = -2q_1^2 + (75 - q_2)q_1 - 10$$
+
+- What's $\frac{d\pi}{dq_{1}}$?
+
+   - $\pi'= -4q_1 + 75 - q_2$
+
+### Ex 2 (Solved)
+- To get the arg. max, set this $\pi'$ to 0 and solve for $q_1$:
+   $$
+   \begin{aligned}
+   0 &= -4q_1 + 75 - q_2\\
+   4q_1 &= 75 - q_2\\
+   q_1^{*} &= \frac{75-q_2}{4}
+   \end{aligned}
+   $$
+
+- The maximum $\pi$ is then given by
+
+   $$\pi^{*}=-10 - \frac{(75 - q_2)^{2}}{4(-2)}=\frac{(75 - q_2)^{2}}{8} - 10$$
+
+### Remarks
+
+- I don't care which one you use
+
+- Using Calculus will also work for games with more complex payoff functions^[We will restrict ourselves to quadratics]
+
+## The Cournot Duopoly Model
+
+### Setting
+
+- So far, our discussion of games has only included games with finite strategy spaces^[Technically speaking, finite action spaces; the strategy spaces are _discrete_]
+
+- There is a natural setting in which we can explore games with [_continuous_]{.hi} action spaces
+
+- Competition in a Duopoly
+
+- In EC 311, you may have looked at firms maximizing profits subject to demand and marginal costs
+
+   - Similar to agents maximizing expected utility, things look a little different under the lens of strategic interaction
+
+### The model
+
+- Consider two firms, $F_1$ and $F_2$, producing some good $X$
+
+- The firms choose an _amount_ to produce, which we will call $q_1$ and $q_2$, respectively
+
+- Let $Q=q_1+ q_2$ denote the total amount of $X$ produced in the market
+
+### Costs
+- Each firm faces cost function $c_i(q_i)$
+
+   - Notably, $c_i$ may be firm-specific, but I may still use $c(q)$ for notational convenience
+
+   - We will restrict ourselves to cases where the cost function is at most quadratic in $q_i$
+
+- When $c_i(q_i)$ is linear
+
+   - $c_i(q_i)=a+bq_i$
+
+   - $a$ is the [fixed cost]{.hi}
+
+   - $b$ is the [marginal cost]{.hi}
+
+### Prices
+
+:::{.panel-tabset}
+
+#### Pricing Model
+
+- The price that the firms can sell for in the market is entirely determined by the demand function, $P(Q)$
+
+- Outside of monopolies, economists typically model firms as choosing only one of price and quantity, not both
+
+- Though it might seem more natural to consider price competition, it takes a little bit of complexity to get such games to an interesting level
+
+   - In game theory, this is called the [**Bertrand Model**]{.hi} of price competition, and I'll leave it for you to read in the text
+
+#### Pricing Function
+
+- Let's back up a second: suppose that market price, denoted $P$, is the output of some function of market quantity, $f(Q)$
+
+   - That is, price varies with quantity; if you want to know the price, you have to plug in a specific $\overline{Q}$ into $f$ to get $f(\overline{Q})=\overline{P}$. 
+
+- In many settings, this function that maps $Q$ to $P$ is simply given by [market demand]{.hi}
+
+- Instead of talking about an arbitrary $f$, economists use $P(Q)$ to denote this demand function
+
+
+
+#### Demand Function
+
+- You will often see economists call $P(Q)$ the [**Inverse Demand Function**]{.hi}, reserving [_Demand Function_]{.alert2} for $Q(P)$
+
+   - For instance, these both represent the same demand line:
+
+      - Inverse demand: $P(Q)=100-2Q$ (often just $P=100-2Q$)
+
+      - Demand: $Q(P)=Q=50-\frac{P}{2}$
+
+\
+\
+
+- I'm not huge on this distinction, but I may use the term "inverse demand" from time to time; just know that it means _the demand function written in a specific way_
+
+:::
+
+### The model (cont.)
+
+:::{.nonincremental}
+- Two firms, $F_1$ and $F_2$, producing 
+
+- Each firm $F_i$ chooses an _amount_ to produce, $q_i$
+
+- Let $Q=q_1+ q_2$ denote the total amount of [X] produced in the market
+:::
+
+- Costs are given by some cost function $c_i(q_i)$, which is at most quadratic in $q_i$
+
+- Prices are determined entirely by (inverse) demand, $P(Q)$
+
+### Example
+
+- Two firms, Vapenite and Jul-or-ee are competing to produce vaporizers for children
+
+- The firms face identical cost functions $c_i(q_i)=10q_i$, and market demand is given by $Q=100-P$
+
+- What is each player's payoff function?
+
+. . . 
+
+![](imgs/bznz_meme.jpg){fig-align="right", width=30%}
+
+
+### The Firm's Problem
+
+- Payoff function = profit function
+   - Revenue: _price_ $\cdot$ _quantity_
+      - Price: $Q=100-P$ $\implies$ $P=100-Q$
+      - Revenue: $P(Q)\cdot q_i=(100-q_1-q_2)q_i$
+   - Costs: $c_i(q_i)=10q_i$
+
+- Therefore, each firm is simultaneously solving  
+
+   - $\max_{q_i} (100-q_1-q_2)q_i - 10q_i$
+
+- How do we proceed?
+
+- Notice: $\pi_1(q_1, q_2)=-q_1^2 + 100q_1-q_2q_1-10q_1)$
+   - $\pi_1(q_1, q_2)=-q_1^2 + (90-q_2)q_1$
+
+- It's a quadratic with $a=-1$ and $b=90-q_2$
+
+- Each firm effectively takes the other's quantity as given, so we just need to find $q_i$ which maximizes $\pi_i$ for each player
+
+## Next time
+
+### Next time
+
+Solving Cournot Duopoly models

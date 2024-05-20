@@ -1,0 +1,15 @@
+---
+title: The Cournot Duopoly Model
+author: "[with]{.with} Connor T. Wiegand"
+from: markdown+emoji
+stripcomments: true
+format: 
+   revealjs:
+      slide-level: 3
+      # chalkboard: true
+      embed-resources: true
+      lightbox: true
+      incremental: false
+# editor:
+#    render-on-save: true
+---

@@ -11,3 +11,4 @@ Templates/*
 *.csv
 .Rhistory
 *curve*.R
+.vscode/
