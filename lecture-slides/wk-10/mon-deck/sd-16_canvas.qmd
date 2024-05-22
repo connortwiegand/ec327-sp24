@@ -1,5 +1,5 @@
 ---
-title: Stackelberg + Return to Mixed Strategies
+title: MSNE
 author: "[with]{.with} Connor T. Wiegand"
 from: markdown+emoji
 stripcomments: true

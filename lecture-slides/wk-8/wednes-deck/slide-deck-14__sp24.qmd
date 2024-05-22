@@ -13,3 +13,387 @@ format:
 # editor:
 #    render-on-save: true
 ---
+
+
+## Last Time
+
+### The Cournot Model
+
+- Two firms, $F_1$ and $F_2$, producing good $X$
+
+- Each firm $F_i$ chooses an _amount_ to produce, $q_i$
+
+- Let $Q=q_1+ q_2$ denote the total amount of $X$ produced in the market
+
+
+- Costs are given by some cost function $c_i(q_i)$, which is at most quadratic in $q_i$
+
+- Prices are determined entirely by (inverse) demand, $P(Q)$
+
+### Example
+
+- Two firms, Vapenite and Jul-or-ee are competing to produce vaporizers for children
+
+- The firms face identical cost functions $c_i(q_i)=10q_i$, and market demand is given by $Q=100-P$
+
+- What is each player's payoff function?
+
+### The Firm's Problem
+
+- Payoff function = profit function
+   - Revenue: _price_ $\cdot$ _quantity_
+      - Price: $Q=100-P$ $\implies$ $P=100-Q$
+      - Revenue: $P(Q)\cdot q_i=(100-q_1-q_2)q_i$
+   - Costs: $c_i(q_i)=10q_i$
+
+- Therefore, each firm is simultaneously solving  
+
+   - $$\max_{q_i} (100-q_1-q_2)q_i - 10q_i$$
+
+- Notice: $\pi_1(q_1, q_2)=-q_1^2 + 100q_1-q_2q_1-10q_1$
+   - $\pi_1(q_1, q_2)=-q_1^2 + (90-q_2)q_1$
+
+- It's a quadratic with $a=-1$ and $b=90-q_2$
+
+
+
+## Solving Cournot Models
+
+### Next Step
+
+- How do we proceed?
+   - Each firm effectively takes the other's quantity as given
+   - So we just need to find $q_i$ which maximizes $\pi_i$ for each player
+
+- Using our formula for the vertex of a parabola ($x$-value)^[AKA Arg. Max.]: 
+   $$\hat{q}_1=-\frac{90-q_{2}}{2(-1)}=\frac{90-q_2}{2}$$
+
+. . . 
+
+![](imgs/bttf.gif){fig-align="center" width=45%}
+
+### _What the hell is even that?_
+
+- As a _function_ of $q_2$:
+$$\hat{q}_1(q_2)=-\frac{90-q_{2}}{2(-1)}=\frac{90-q_2}{2}$$
+
+   - Takes opponent's strategy as an input
+   
+   - Output's my own strategy, which maximizes my payoff (given my opponent's input strat.)
+
+- What is this?
+
+   - It's a [**Best Response Function**]{.hi}
+
+- From now on, I'm going to ask you for BR function
+   - This means finding arg. max (either using vertex rule or calculus)
+
+### $BR_2$
+
+$$\hat{q}_1=\frac{90-q_2}{2}$$
+
+- Similarly, $\pi_2(q_1, q_2) = (100-q_1-q_2)q_2 - 10q_2$
+   - $=-q_2^2 + (90-q_1)q_2$
+
+   - $$\hat{q}_2=-\frac{90-q_{1}}{2(-1)}=\frac{90-q_1}{2}$$
+
+- Now what?
+   - 2 Equations, 2 unknowns
+   - Solve simultaneously
+      - Elimination
+      - Substitution
+
+### NE
+
+- 
+   \begin{align*}
+   q_1 = \frac{90-q_2}{2} &= 45 - \frac{1}{2}(\frac{90-q_1}{2})\\
+   &= 45 - \frac{90}{4} +\frac{q_1}{4}
+   \end{align*}
+\
+
+- $\implies$
+   \begin{align*}
+   \frac{3}{4}q_1 &= \frac{90}{4}\\
+   q_1^{*}&=30
+   \end{align*}
+
+\
+
+- $q_2^* = \frac{90 - q_1^*}{2} = \frac{90-30}{2}=30$
+
+### Profits
+
+- So, $(q_1^*, q_2^*) = (30,30)$ is our Nash Equilibrium
+
+- What are equilibrium profits?
+   - Can compute $\pi_i^*=\pi_i(q_1^*, q_2^*)$
+   - Or can use formula for the $y$-value of a parabola's vertex: $c-\frac{b^2}{4a}$
+      - $\pi_1=-q_1^2 + (90-q_2)q_1$
+      - $a=-1$, $b=(90-q_2)=60$, and $c=0$
+      - $\pi_1^*=\frac{60^2}{4}=900$
+      - Notice that profits (and strategies) are symmetric
+
+
+## Ex 2: Heterogeneous Firms
+
+### Consider another Example
+
+- Demand: $P+Q=60$
+
+- This time, firms are heterogeneous in their costs:
+   - $c_1(q_1)=2q_1^2$
+   - $c_2(q_2)=33q_2$
+
+
+### Profit Functions
+
+- Demand: $P=60-Q$
+
+- Therefore, firm profits are given by
+   - $$ \pi_1(q_1, q_2) = (60-q_1-q_2)q_1-2q_1^2$$
+
+   - $$ \pi_2(q_1, q_2) = (60-q_1-q_2)q_2-33q_2$$
+
+### Best Responses --Firm 1
+
+- Profits: 
+   - $\pi_1(q_1, q_2) = -3q_1^2 + (60-q_2)q_1$
+
+:::{.panel-tabset}
+#### Calculus
+
+- First, take the derivative and set it equal to 0: 
+   $$\frac{d\pi_1}{dq_1}=-6q_1+(60-q_2)=0$$
+
+   - $$ q_{1}^{BR}=\frac{60-q_2}{6} $$
+
+#### Algebra
+
+- Using formula: $a = -3$, $b=(60-q_2)$, $c=0$
+   - $$ q_{1}^{BR}=-\frac{60-q_2}{2(-3)}=\frac{60-q_2}{6} $$
+
+:::
+
+### Best Responses --Firm 2
+
+- Profits: 
+   - $\pi_2(q_1, q_2) = -q_2^2 + (27-q_1)q_2$
+
+:::{.panel-tabset}
+#### Calculus
+
+- First, take the derivative and set it equal to 0: 
+   $$\frac{d\pi_2}{dq_2}=-2q_2+27-q_1=0$$
+
+   - $$ q_{2}^{BR}=\frac{27-q_1}{2} $$
+
+#### Algebra
+
+- Using formula: $a = -1$, $b=(27-q_1)$, $c=0$
+   - $$ q_{2}^{BR}=-\frac{27-q_1}{2(-1)}=\frac{27-q_1}{2} $$
+
+:::
+
+### NE
+
+We have 
+$$
+\begin{cases}
+q_1=\frac{60-q_2}{6}\\
+q_2=\frac{27-q_1}{2}
+\end{cases}
+$$
+
+. . . 
+
+$$
+q_1 = \frac{60 - \frac{27-q_1}{2}}{6}\\
+$$
+
+\
+\
+\
+\ 
+\
+
+. . .
+
+$$q_1^{*}=\frac{93}{11}$$
+
+### NE (cont.)
+
+- $$q_2 = \frac{27-q_1}{2}$$
+   - $$q_2 = \frac{27 - \frac{93}{11}}{2}$$
+
+\
+\
+\
+\
+
+- $$q_2^{*}=\frac{102}{11}$$
+
+
+### Equilibrium Profits
+
+- $q_1^{*}=\frac{93}{11}$, $q_2^{*}=\frac{102}{11}$
+   - $\pi_1(q_1, q_2) = -3q_1^2 + (60-q_2)q_1$
+   - $\pi_2(q_1, q_2) = -q_2^2 + (27-q_1)q_2$
+
+- $$\pi_1^{*} = \frac{(60-q_2^*)^2}{12}$$
+   - $\pi_1^*\approx 214.43$
+- $$\pi_2^{*} = \frac{(27-q_1^*)^2}{2}$$
+   - $\pi_2^*\approx 171.97$
+
+## Ex 3
+
+### Setup
+
+- Demand: $Q = 120 - 3P$
+
+- Costs:
+   - $c_1(q_1)=5q_1+10$
+   - $c_2(q_2)=10q_2+5$
+
+
+
+### Work
+- Demand: $Q = 120 - 3P$
+- Costs:$c_1(q_1)=5q_1+10$ and $c_2(q_2)=10q_2+5$
+
+
+
+
+### Solution
+
+:::{.panel-tabset}
+#### Profits
+
+$$\pi_1(q_1, q_2) = (40 - \frac{q_1}{3} - \frac{q_2}{3})q_1 - 5q_1 -10$$
+
+$$\pi_1(q_1, q_2) = (40 - \frac{q_1}{3} - \frac{q_2}{3})q_2 - 10q_2 - 5$$
+
+#### BRs
+
+$$q_1^*= \frac{105-q_2}{2}$$
+
+$$q_2^* = \frac{90-q_2}{2}$$
+
+
+#### NE
+
+$$q_1^*= 40$$
+
+$$q_2^* = 25$$
+
+
+#### Profits
+$$\pi_1^*=10 - \frac{(35 - \frac{1}{3}(25))^2}{-4(1/3)} = 543.\bar{3}$$
+
+$$\pi_2^*=5 - \frac{(30 - \frac{1}{3}(40)^2)}{-4(1/3)} = 213.\bar{3}$$
+:::
+
+## Application: Cartels
+
+### Setting
+
+- Return to our first example:
+
+   - $P=100-Q$
+
+   - $c_i(q_i)=c(q)=10q$ for $i=1,2$
+
+### Monopoly
+
+- Suppose there is just one firm in the market, acting as a monopolist
+
+- The monopolist chooses $q^*$ to maximize
+
+   $$ (100 - q)q - 10q $$
+
+- ...
+
+- $q_M^* = \frac{90}{2}=45$
+- $\pi_M^*=2025$
+
+### Cournot
+
+- Now, suppose that there are two firms in the market, competing for profit
+
+- We solved this already
+
+- $q_1^*=q_2^*=30$
+
+- $\pi_1^*=\pi_2^*=900$
+
+### Collusion
+
+- Now suppose that the firms have the option to [collude]{.hi}
+
+- When firms collude, they operate as monopoly, but split the production and profit between them
+   - $\tilde{q}_1=\tilde{q}_2=\frac{q_M}{2}$
+   - $\tilde{\pi}_1=\tilde{\pi}_2=\pi_i(\frac{q_M}{2}, \frac{q_M}{2})$
+\
+\
+\
+
+- In our example, this means each firm produces $\tilde{q}=22.5$ and earn profits of 
+   $$\tilde{\pi}=(100-q_M)\frac{q_M}{2}-10\frac{q_M}{2}=\frac{\pi_M}{2}=\frac{2025}{2}=1012.5$$
+
+
+### Will firms collude?
+
+- Despite this benefit from colluding, each firm has an incentive to deviate in a one-shot game
+
+- To see this, consider a one shot game of choosing production. Take as given that firm 2 is trying to collude by producing $\tilde{q}=\frac{q_M}{2}$
+
+- Then, firm 1's profits are given by 
+   $$\pi_1(q_1, \tilde{q})=(100-q_1-\tilde{q})q_1-10q_1$$
+
+- What should firm 1 do?
+
+### Will firms collude? (cont.)
+
+- We can find the arg. max. for firm 1's profits:
+   - $q_1^{D}=\frac{90-\tilde{q}}{2}=45-\frac{q_M}{4}=\frac{3}{4}(45)=33.75$
+
+- This gives firm 1 profits of $$\pi_1^D=\left(100-\frac{3\cdot45}{4}-\frac{45}{2}\right)\frac{3\cdot45}{4}-10\left(\frac{3\cdot45}{4}\right)=\frac{18225}{16}$$
+   - Or $$\pi_1^D=(100-33.75-22.5)(33.75)-10(33.75)=1139.0625$$
+
+- This is bigger than the profits from colluding, so mutual collusion can't possibly be the Nash Equilibrium
+
+### Repeated Interaction
+
+- Now suppose that the two firms in this example are playing this game of production [_repeatedly_]{.hi}, where the chance of playing again next period (as opposed to being done forever) is given by $\delta>0$
+
+- Consider the following trigger strategy:
+   - Play $\tilde{q}=\frac{q_{M}}{2}$ in the first period
+	   \begin{cases}
+         \text{If $\tilde{q}$ is all that has been played thus far, then play $\tilde{q}$}\\
+         \text{Otherwise, play $q^{*}$ (traditional Cournot output)}
+	   \end{cases}
+
+- In words: "collude until someone deviates, and then play Cournot forever"
+
+- Can the firms stick to this strategy and collude forever?
+
+### Analysis
+
+- If firms stick with grim trigger, they each get 
+   $$\tilde{\pi}+\tilde{\pi}\delta+\tilde{\pi}\delta^2+\cdots = \frac{\tilde{\pi}}{1-\delta}$$
+
+- Assuming no one has deviated before, a firm deviating (to their best possible deviation) would receive
+   $$\pi^D+\pi^*\delta+\pi^*\delta^2+\cdots=\pi^D + \frac{\pi^*\delta}{1-\delta}$$
+
+- When will firms collude by using this trigger strategy?
+   - When $$\frac{\tilde{\pi}}{1-\delta} > \pi^D + \frac{\pi^*\delta}{1-\delta}$$
+
+## No Class Monday
+
+### Stackelberg
+
+- No class Monday, but here is some food for thought
+
+- Consider the Cournot game, but player 1 has to pick $q_1$ first. Player 2 gets to observe $q_1$ first, before picking $q_2$. 
+
+- Who would you rather be?
