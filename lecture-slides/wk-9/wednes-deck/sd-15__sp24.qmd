@@ -1,5 +1,5 @@
 ---
-title: Stackelberg + Return to Mixed Strategies
+title: Mixed Strategies
 author: "[with]{.with} Connor T. Wiegand"
 from: markdown+emoji
 stripcomments: true
@@ -13,3 +13,377 @@ format:
 # editor:
 #    render-on-save: true
 ---
+
+## Admin
+
+### Due Dates
+
+:::{.nonincremental}
+- Deadline for homework 4 is getting moved up to Friday, June 7th, with [**no** grace period]{.ul}
+   - Final exam on Monday
+   - I want you to have access to the answer key over the weekend
+
+- Project due date getting moved back to Tuesday of finals week
+
+:::
+
+
+## Mixed strategies
+
+### Recall
+
+- Earlier in the term, I suggested that we can think about agent's playing _non-deterministically_
+
+   - Sometimes I play one thing, sometimes I play another
+
+   - ex: Rock, Paper, Scissors
+
+- To model this, we need only think about the [probability]{.ul} that a player plays a certain (pure) strategy
+
+   - If $s_1$ and $s_2$ are my pure strategies, then one mixed strategy I could play is 
+   $$\frac{1}{3}s_1+\frac{2}{3}s_2$$
+
+   - _I play $s_1$ a one third of time, and I play $s_2$ two thirds of the time_
+
+### Ex: Matching Pennies
+
+- Sean's pure strategies: $S_1=\{H, T\}$
+
+- Examples of Sean's mixed strategies:
+
+   - $(1/6)H + (5/6)T$
+
+   - $(5/8)H + (3/8)T$
+
+- In general: 
+
+   - $pH + qT$, where $p$ and $q$ are probabilities
+
+![](imgs/matching-pennies.png){fig-align="right" width=40%}
+
+### Pause: what's a probability?
+
+- $\{p_1, \dots, p_k\}$ are valid probabilities provided that 
+
+   - All $p$'s are non-negative
+      - $p_j\ge 0$ for all $j$
+
+   - All $p$'s are (weakly) smaller than 1
+      - $p_j\le 1$ for all $j$
+
+   - $p$'s sum to 1
+      - $$\sum_{j=1}^{k}p_j=p_1+\cdots+p_k=1$$
+
+### Ex: Matching Pennies (cont.)
+
+- Sean's pure strategies: $S_1=\{H, T\}$
+
+- Examples of Sean's mixed strategies:
+
+   - $(1/6)H + (5/6)T$
+
+   - $(5/8)H + (3/8)T$
+
+   - $pH + qT$, where $p$ and $q$ are probabilities
+
+- [**Question**]{.alert2}: can we simplify this general mixed strategy?
+
+   - _Hint_: do we need both $p$ and $q$?
+
+![](imgs/matching-pennies.png){fig-align="right" width=40%}
+
+
+### \# of Parameters
+
+- Consider $pH + qT$; what's true about $p$ and $q$?
+
+   - $p,q\ge 0$
+
+   - $p,q \le 1$
+
+   - $p+q=1$
+
+- Based on the last point, we can rewrite $q$ as $$q=1-p$$
+
+- Using this, let's rewrite Sean's strategy as $$pH+(1-p)T$$
+
+   - Now, Sean's mixed strategy can be written using only 1 parameter
+
+   - In general, a mixed strategy composed of $m$ pure strategies only needs $m-1$ probabilities
+
+
+### Interpreting Mixed Strategies
+
+::::{.columns}
+:::{.column width=50%}
+- Sean's mixed strategy: $pH+(1-p)T$
+
+   - What happens when $p=0$?
+
+      - $0H+(1-0)T=0H+1T=T$
+
+      - Sean plays Tails all the time
+
+   - What happens when $p=1$?
+
+      - $1H+(1-1)T=1H+0T=H$
+
+      - Sean plays Heads all the time
+
+:::
+
+:::{.column width=50%}
+
+![](imgs/matching-pennies.png){fig-align="right" width=90%}
+:::
+::::
+
+- Technically, any pure strategy is a (degenerate) mixed strategy
+
+   - If we want to be certain that we aren't talking about pure strategies, we might use the term [**truly mixed strategy**]{.hi}
+
+      - However, we can often get away with just using _mixed strategy_ and understanding what we mean based on context
+
+
+### Notation
+
+- If $S_i=\{s_1, \dots, s_{k}\}$ denotes a player's pure strategies in a game
+
+- Then $\Sigma_i$ denotes a player's [mixed]{.hi} strategies in a game
+
+   - An example strategy, call it $\sigma$, takes the form $$\sigma=p_1 s_1 + \dots + p_k s_k$$
+
+      where $p_\ell$ are probabilities
+
+- Limiting ourselves to 2-player games, we can typcially get away with $p, q, r$ for probabilities, and $\sigma$, $\tau$^[_sigma_ and _tau_] for the names of mixed strategies
+
+- Again: a [**truly mixed strategy**]{.hi} is one where there is no $p_\ell=1$
+
+- Similarly, a [**totally**]{.hi .ul} [**mixed strategy**]{.hi} is one where there is no $p_\ell=0$
+   - That is, every pure strategy a player has gets played with positive probability
+   - This term will also rarely be used
+
+### Ex
+
+- General Mixed Strategy:
+
+   $$\sigma=p_X X + p_Y Y + p_Z Z$$
+
+- Example of truly, not totally mixed strategy:
+
+   $$\hat\sigma=0.35X+0.65Z$$
+
+- Example of totally mixed strategy:
+
+   $$\tilde\sigma=0.3X+0.1Y+0.6Z$$
+
+![](imgs/3x3-mixed.png){fig-align="right" width=40%}
+
+
+## Context 
+
+### Setting
+
+- Where do mixed strategies exist?
+
+   - Everywhere, but we will limit our discussion to 2-player normal form games
+
+   - If I ask you for [all]{.ul} NE of a normal form game, I mean both mixed and pure-strategy
+
+   - On the other hand, if I ask for [all]{.ul} NE in an extensive form game, I mean both vanilla (pure-strategy) and subgame-perfect
+      - I'll never ask for mixed strategies in extensive form games, even though we could talk about them
+
+### The importance of mixed strategies
+
+- What Nash did for his dissertation is show that, when we allow for mixed strategies, every "reasonable"^[See week 3 notes for definition] game has _some_ Nash equilibrium
+
+- Remarks
+   - I want you to assume that every game I show you in this class is "reasonable"
+   - In particular, I'm never looking for the answer "this game does not have any NE"
+   - Maybe none _of a certain flavor_ or _class_, but not "none"
+
+- Reminder: What is a NE? 
+   - Intersection of Best Responses
+
+## When would someone mix?
+
+### Example
+
+- Let's return to matching pennies: 
+
+- Let's assume -- for whatever reason -- that Sean is playing _some_ mixed strategy $\sigma=pH+(1-p)T$
+   - $p$: prob. of playing Heads
+   - $1-p$: prob. of playing Tails
+
+![](imgs/matching-pennies.png){fig-align="right" width=40%}
+
+### When will someone play a mixed strategy?
+
+- Let's take for granted that Sean might be playing a mixed strategy
+
+- Given this, Bean is thinking about playing a mixed strategy as well. When does it make sense to do so?
+   - Let's compare $E[u_B(\sigma, H)]$ vs. $E[u_B(\sigma, T)]$
+
+1. Suppose $E[u_B(\sigma, H)] > E[u_B(\sigma, T)]$
+   - "Bean gets a higher e.p.^[expected payoff] from playing H than T"
+   - So: does Bean have any reason to play $T$?
+      - No! That would be adding probability to a worse outcome
+      - Bean should just play $H$
+
+### When will someone play a mixed strategy? (cont.)
+
+:::{.nonincremental}
+1. Suppose $E[u_B(\sigma, H)] > E[u_B(\sigma, T)]$
+   - "Bean gets a higher e.p. from playing H than T"
+   - So Bean should just play $H$
+:::
+
+2. Instead suppose $E[u_B(\sigma, H)] < E[u_B(\sigma, T)]$
+   - "Bean gets a higher e.p. from playing T than H"
+   - Does Bean have any reason to play $H$?
+      - No! Bean should just play $T$
+
+- Should you ever play a mixed strategy that includes quitting?
+   - Not if you want to win
+   - Juking out your opponent doesn't work -- even if your opponent doesn't expect it -- if you go out of bounds
+
+### When will someone play a mixed strategy? (cont.)
+
+1. Suppose $E[u_B(\sigma, H)] > E[u_B(\sigma, T)]$
+   - Bean should just play $H$
+2. Suppose $E[u_B(\sigma, H)] < E[u_B(\sigma, T)]$
+   - Bean should just play $T$
+3. What if $E[u_B(\sigma, H)] = E[u_B(\sigma, T)]$?
+   - What does this say in words?
+   - "Bean is _indifferent_ between playing $H$ and $T$"
+
+- If Bean gets equal (expected) payoffs from playing either pure strategy, then (and only then) will they have reason to play a mixed strategy
+
+- This holds true in general:
+   - An agent will only play a mixed strategy when they are indifferent between a subset of their pure strategies, _holding fixed what the other player is doing_
+   - ...and, assuming these strategies are the best pure strategies they can play, in response to the opponent's strategy
+      - Ex. suppose _scream_ $\sim$ _cry_, but _**try**_ is better than both
+
+## Finding MSNE
+
+### Start Somewhere
+
+- Suppose Bean is playing some mixed strategy $\tau=qH+(1-q)T$
+
+- What is $E[u_S(H, \tau)]$? $E[u_S(T, \tau)]$?
+
+   - $E[u_S(H, \tau)]$ 
+      $$ = q \cdot u_S(H,H) + (1-q) \cdot u_S(T,H) = q(1) + (1-q)(-1) = 2q-1$$
+
+   - $E[u_S(T, \tau)]$ 
+      
+      $$ = q \cdot u_S(H,T) + (1-q) \cdot u_S(T,T) = q(-1)+(1-q)(1)=1-2q$$
+
+- When will Sean (rationally) play a mixed strategy?
+
+![](imgs/mp-tau.png){fig-align="right" width=40%}
+
+### When does Sean mix?
+
+:::{.nonincremental}
+- $E[u_S(H, \tau)]=2q-1$ 
+
+- $E[u_S(T, \tau)]=1-2q$ 
+:::
+
+- When will Sean (rationally) play a mixed strategy?
+
+   - When $E[u_S(H, \tau)] = E[u_S(T, \tau)]$
+   
+   - Why? 
+
+      - Suppose this wasn't true... (Go back a few slides)
+
+- 
+   \begin{align*}
+   E[u_S(H, \tau)] &= E[u_S(T, \tau)]\\
+   2q-1 &= 1-2q\\
+   4q &= 2\\
+   q &= \frac{1}{2}
+
+   \end{align*}
+
+- So?
+
+### When does Sean mix? (cont.)
+
+- Sean can rationally play a mixed strategy when $q=\frac{1}{2}$
+
+- Remember: we assumed Bean was playing $\tau=qH+(1-q)T$
+
+- So, Sean will mix when Bean is playing $\tau=0.5H+0.5T$
+
+### Take it back now y'all
+
+- Now suppose -- for whatever reason -- that Sean is playing some mixed strategy $$\sigma=pH+(1-p)T$$
+
+- When will Bean mix?
+
+   - If Bean's expected payoff of playing $H$ was greater than their expected payoff of playing $T$, then they should play the pure strategy $H$
+
+   - If Bean's expected payoff of playing $T$ was greater than their expected payoff of playing $H$, then they should play the pure strategy $T$
+
+   - So, Bean should mix when the expected payoffs of playing their pure strategies are equal: $$E[u_B(\sigma, H)]=E[u_B(\sigma, T)]$$
+
+### When will Bean mix?
+
+- Bean will mix when $$E[u_B(\sigma, H)]=E[u_B(\sigma, T)]$$
+
+   - $E[u_B(\sigma, H)]=p(-1)+(1-p)(1)=1-2p$
+
+   - $E[u_B(\sigma, T)]=p(1)+(1-p)(-1)=2p-1$
+
+- $1-2p = 2p-1$ $\implies$ $p=\frac{1}{2}$ 
+
+- Bean will rationally mix when $p=\frac{1}{2}$
+
+![](imgs/mp-sigma.png){fig-align="right" width=40%}
+
+### When will Bean mix? (cont.)
+
+- Recall: Sean's strategy is $\sigma=pH+(1-p)T$
+
+- Therefore, Bean will rationally play a mixed strategy when Sean is playing $$\sigma\left(p=\frac{1}{2}\right)=0.5H+0.5T$$
+
+- [**And**]{.alert}, we know that Sean will rationally play a mixed strategy when Bean is playing $\tau(\frac{1}{2})=0.5H+0.5T$
+
+- ...
+
+- Therefore, each player can best-respond to each other with the strategy profile $$\left(\sigma(1/2), \tau(1/2)\right)=\left(0.5H+0.5T, 0.5H+0.5T\right)$$
+
+- This is our [Mixed Strategy Nash Equilibrium]{.hi}
+
+## Next time
+
+### What does this tell us?
+
+- Let's return to just before we solved for when Bean mixes
+
+### What should Sean do?
+
+- Sean can rationally play a mixed strategy when $q=\frac{1}{2}$
+
+- I want you now to think of tau as a function
+   
+   - $\tau(\cdot)$ takes in a probability and spits out a particular mixed strategy
+
+   - Our $\tau$ at the beginning was just an arbitrary output^[instance] of $\tau(q)$
+
+- Sean can rationally mix when Bean is playing $\tau(1/2)$
+
+- [**Question**]{.alert2}: what [_should_]{.ul} Sean do?
+
+   - There are a lot of mixed strategies Sean could play
+
+      - Infinite of the form $\sigma=pH+(1-p)T$
+
+   - Recall: We **know** (by assumption) that Sean is indifferent between playing Heads and playing Tails in response to $\tau(1/2)$
+      
+      - It turns out that Sean will be indifferent between Heads, Tails, and [any mixed strategy]{.ul .alert} in response to $\tau(1/2)$
+
+### 

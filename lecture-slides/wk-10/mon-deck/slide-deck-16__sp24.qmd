@@ -13,3 +13,409 @@ format:
 # editor:
 #    render-on-save: true
 ---
+
+
+## Last Time
+
+### Matching Pennies
+
+- There is no Nash Equilibirum in pure strategies
+
+   - Not to be confused with subgame-perfect Nash Equilibria (SPNE), we may refer to pure strategy Nash Equilibria as [**PSNE**]{.hi}
+
+- What do we do?
+
+   1. Assume Bean is playing a mixed strategy
+      
+      - Compute Sean's expected payoffs in response to Bean
+
+      - Use these to find when Sean could be induced to play a mixed strategy 
+
+   2. Assume Sean is playing a mixed strategy
+
+      - Compute Bean's expected payoffs in response to Sean
+
+      - Use these to find when Bean could be induced to play a mixed strategy 
+
+   - When [both]{.ul} players play (mixed) strategies that induce the other player to mix, we called this our [**MSNE**]{.hi}
+
+![](imgs/matching-pennies.png){fig-align="right" width=40%}
+
+
+### Example 1: BoS
+
+Let's find all NE in BoS
+
+- First things first: check for PSNE
+
+   - (R,R) and (F,F) are NE
+
+:::{.panel-tabset}
+
+#### Step 1-0
+- Suppose player 2 is playing $\tau=qR+(1-q)F$
+
+   - $E[u_1(R, \tau)] = 3q+(1-q)=1+2q$
+
+   - $E[u_1(F, \tau)] = 0+2(1-q)=2-2q$
+
+- Player 1 mixes when these expected payoffs are equal
+
+#### 1-1
+
+\begin{align*}
+   E[u_1(R, \tau)]&=E[u_1(F, \tau)]\\
+   1+2q&=2-2q\\
+   4q&=1\\
+   q&=\frac{1}{4}
+\end{align*}
+
+- Player 1 mixes when $q=1/4$, ie when player 2 is playing $\frac{1}{4}R+\frac{3}{4}F$
+
+#### Step 2-0
+- Suppose player 1 is playing $\sigma=pR+(1-p)F$
+
+   - $E[u_2(\sigma, R)] = 2p$
+
+   - $E[u_2(\sigma, F)] = p+3(1-p)=3-2p$
+
+- Player 2 mixes when these expected payoffs are equal
+
+#### 2-1
+
+\begin{align*}
+   E[u_2(\sigma, R)] &=E[u_2(\sigma, F)]\\
+   2p&=3-2p\\
+   4p&=3\\
+   p&=\frac{3}{4}
+\end{align*}
+
+- Player 2 mixes when $q=3/4$, ie when player 1 is playing $\frac{3}{4}R+\frac{1}{4}F$
+:::
+
+![](imgs/bos.png){fig-align="right" width=20%}
+
+### Example 1: BoS (cont.)
+
+- When player 1 is playing $\sigma(3/4)=(3/4)R+(1/4)F$, player 2 is indifferent between their pure strategies, so they can be induced to mix
+
+- When player 2 is playing $\tau(1/4)=(1/4)R+(3/4)F$, player 1 is indifferent between their pure strategies, so they can be induced to mix
+
+- So, when players are playing $\{\sigma(3/4), \tau(1/4)\}$, both players are indifferent between any other strategies they could play
+
+   - In other words, no one can deviate for strictly higher payoffs
+
+- Hence, $$\{\sigma(3/4), \tau(1/4)\}$$ is our MSNE
+
+[](imgs/bos.png){fig-align="right" width=40%}
+
+
+### Fun fact: an Oddity
+
+- We already know that some form of NE exists in every normal-form game
+
+- How many exist?
+
+- A fun, wild theorem was proven in the '80s: if you populate a normal form game of any size with random values, the probability of getting a game with an odd number of NE is [1]{.hi}
+
+   - Note: that _doesn't_ actually mean always, it just means it's very unlikely that you get a game with an even \# of equilibria
+
+## Visualizing MSNE
+
+### 
+
+- Visualizing mixed strategies will give us a lot of information about our game in question
+
+- There are two types of graphs which we are interested in drawing:
+
+   1. Expected payoff graph
+
+   2. Best response plot
+
+- We will focus on first one today
+
+### Expected Payoff Graph
+
+- Suppose opponent is playing a mixed strategy involving only two pure strategies
+
+   - ex:  $\tau(q)=qX+(1-q) Y$
+
+- _Idea:_ graph the expected payoff of playing each of one's pure strategies in response to this mixed strategy against the probability parameter
+   - e.g. plot $E[u_i(s, \tau)]$ on the y-axis, and $q$ on the x-axis. 
+
+- Ex: For BoS, we found
+
+   - $E[u_1(R, \tau)] = 1+2q$
+
+   - $E[u_1(F, \tau)] = 2-2q$
+
+- So, let's plot each of these against $q$
+
+   - _Note:_ let's de-clutter some notation: 
+      - we know we are taking expected values
+      - we know the opponent is playing a mixed strategy, and the name isn't all too important
+
+### Expected Payoff Graph for BoS
+Player 1's expected payoff from playing ...
+
+- $R$ in response to $\tau$ is $u_1(R) = 1+2q$ 
+- $F$ in response to $\tau$ is $u_1(F) = 2-2q$
+
+
+:::{#fig-des-bos}
+<iframe src="https://www.desmos.com/calculator/qlrxqp4t0h?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0 data-external="1"></iframe>
+
+What do you notice? [(Sauce)](https://www.desmos.com/calculator/qlrxqp4t0h?invertedColors=true) 
+:::
+
+
+### BR from a graph
+
+::::{.columns}
+:::{.column width=70%}
+- Where the lines intersect = where player 1 is indifferent between playing $R$ and playing $F$
+
+   - This is exactly $q=0.25$, like we found
+
+- What else?
+
+- _What happens when_ $q\neq0.25$?
+
+   - When $q<0.25$, the payoff of playing $F$ exceeds that of playing $R$
+
+   - When $q>0.25$, the payoff of playing $R$ exceeds that of playing $F$
+
+- With this info, we can now build player 1's Best Response as a function of $q$: 
+   $$ BR_1(q)=
+      \begin{cases}
+         F & q<0.25\\
+         \{R,F\} & q=0.25\\
+         R & q>0.25
+      \end{cases}
+   $$
+
+:::
+
+
+:::{.column width=30%}
+
+<iframe src="https://www.desmos.com/calculator/qlrxqp4t0h?embed" width="300" height="300" style="border: 1px solid #ccc" frameborder=0 data-external="1"></iframe>
+
+:::
+::::
+
+## Sketching E.P. Graphs
+
+### Sketching E.P. Graphs
+
+- It's easier than you think to sketch one of these from a game table
+
+. . . 
+
+::::{.columns}
+:::{.column width=50%}
+![](imgs/bos-var2.png){width=90%}
+:::
+
+
+:::{.column width=50%}
+
+<iframe src="https://www.desmos.com/calculator/2rg9czrcvh?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0 data-external="1"></iframe>
+
+:::
+::::
+
+- Read from [bottom to top]{.ul}, the payoffs for each strategy match the left-to-right values on the graph
+
+
+### Another Example
+
+::::{.columns}
+:::{.column width=50%}
+![](imgs/bos-var1.png){width=90%}
+:::
+
+
+:::{.column width=50%}
+
+<iframe src="https://www.desmos.com/calculator/qlrxqp4t0h?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0 data-external="1"></iframe>
+
+:::
+::::
+
+- Similarly: For player 1, the payoffs for each strategy, read from [right to left]{.ul}, match the left-to-right values on the graph
+
+### Why?
+- Our arbitrary mixed strategies simply mimic the definition of a line 
+
+- For starting point $p_1$ to end point $p_2$, a line can be parameterized according to $$tp_1 + (1-t)p_2$$ for $t\in[0,1]$
+
+- Our mixed strategies are just linear combinations of pure strategies, but I digress
+
+- The fact that we have to read the tables "backwards" is because we put $q$ on the "first" strategy^[For this reason, some authors choose to denote mixed strategies as $(1-q)X+qY$]
+
+## More info from E.P. Graphs
+
+### Best response
+
+- We already saw one connection between the the expected payoff graph for a player and the player's BR function
+
+- As it turns out, the entirety of a player's best response function is baked into this graph
+
+   - For a given $q$ value, we can trace up to the highest line on the expected payoff graph at the point $q$: this is our best response!
+
+
+### The Upper Envelope
+
+- What's more: focus on the highest lines for any given $q$ value, and stitch these together
+
+- This generates what is called the [**Upper Envelope**]{.hi} for a graph, and let's us get direct information on the best response function
+
+- Ex: Consider the following expected payoff graph
+
+   - Assume it's for some player with access to strategies $X$, $Y$, and $Z$
+
+   - In response to a strategy of the form $\sigma=pA+(1-p)B$
+
+. . . 
+
+<iframe src="https://www.desmos.com/calculator/knqjknppqy?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0 data-external="1"></iframe>
+
+### Using the Upper Envelope to get a BR function
+
+
+::::{.panel-tabset}
+#### Upper Envelope
+<iframe src="https://www.desmos.com/calculator/x4tm02ragw?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0 data-external="1"></iframe>
+
+#### BR function
+
+$$BR_2(p)=
+\begin{cases}
+X & p < p_1^*\\
+{X, Y} & p = p_1^*\\
+Y & p \in p_1^*\le p \le p_2^*\\
+{Y, Z} & p = p_2^*\\
+Z & p=p_2^*
+\end{cases}
+$$
+::::
+
+
+
+## Dominance and Non-Rationalizability in Expected Payoff Graphs
+
+### Bigger example
+
+- Let's take a look at the following example -- it's big
+
+- Assume that you drew this graph from some payoff matrix
+
+<iframe src="https://www.desmos.com/calculator/kmpwqbrxqd?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0 data-external="1"></iframe>
+
+### Observations
+
+The fact that some lines sit completely (or mostly) above each other tell us information about dominated strategies for player 1
+   - $A$ is strictly dominated by $B$ and $D$
+
+   - $B$ is weakly dominated by $D$
+
+   - $C$ is strictly dominated by $D$ and $E$
+
+- What about $E$?^[This was the yellow $G$ in class]
+
+   - Will you ever play it? 
+
+      - No, not in upper envelope (so not in BR function)
+
+   - Does anything dominate
+
+      - Also no
+
+   - Can we get rid of it?
+
+### Recall
+
+- At the end of week 3 (slide deck 6), we saw the following information 
+
+:::{.panel-tabset style="color:gray"}
+#### Sd-6
+- [Def]{.def} [[Version 1.0]{.alert}]: A (pure) strategy $\tilde{s}\in S_{i}$ is said to be [Never a Best Response]{.hii} provided that $\tilde{s}\notin BR_{i}(s_{-i})$ for [any]{.ul} $s_{-i}\in S_{-i}$
+
+- How is this related to strict/weak domination?
+
+- [**Fact:**]{.alert} a strictly dominated strategy is never a best response
+   - Why?
+
+- Do we want to eliminate NBRs _a la_ IDSDS? 
+   - No, at least not using this definition
+   - We will return to this later, when we resume mixed strategies
+:::
+
+- Now, it's later
+
+### Updated Definition
+
+- [Def]{.def} [[Version 2.0]{.alert}]: A strategy is said to be [**Never a Best Response**]{.hi} provided that it is never a component of a player's best response function --- _taking into account mixed strategies_
+
+   - In other words, a strategy is an [NBR]{.hi} provided that it isn't in the upper envelope of an agent's expected payoff graph
+
+- For the updated definition, I will also use NBR interchangeably with [**non-rationalizable**]{.hi}
+
+   - We could say an agent's strategy is [rationalizable]{.hi} if it _is_ in the upper envelope (/ is a component of the agent's best response function)
+
+### The importance of rationalizability
+
+- With this updated definition, we actually _can_ eliminate NBRs iteratively -- preserving all of the properties of IDSDS
+
+   - However, since we are now in mixed strategy world, it is often not practical to do so
+
+- In fact, eliminating NBR's in this manner is [equivalent]{.ul} to iteratively eliminating strictly dominated strategies
+
+   - NBR $\implies$ strictly dominated. The strategy may be dominated _by a mixed strategy_
+
+- Once again: the expected payoff graphs give us [a lot]{.ul} of information
+
+### Using the Upper Envelope: An example
+- The game:
+
+![](imgs/fgh-ex.png){fig-align="right" width=30%}
+
+- We have seen this game before. Recall: 
+
+   - $BR_1(X)=F$
+   - $BR_1(Y)=G$
+
+- It is tempting to want to say that $H$ is Never a Best Response, because player 1 would always rather play something other than $H$ in response to a pure strategy
+
+- Should player 1 ever play $H$?
+
+### Example, continued
+
+::::{.panel-tabset}
+#### Game
+![](imgs/fgh-ex.png){width=40%}
+
+#### E.P. Graph
+<iframe src="https://www.desmos.com/calculator/mnsm8siqmj?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0 data-external="1"></iframe>
+
+#### Upper Envelope
+
+<iframe src="https://www.desmos.com/calculator/pgq4zmwdee?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0 data-external="1"></iframe>
+
+#### BR function
+
+$$BR_1(q)=
+\begin{cases}
+G & q < q_1^*\\
+{G, H} & q = q_1^*\\
+H & q_1^*\le q \le q_2^*\\
+{H, F} & q = q_2^*\\
+F & q>q_2^*
+\end{cases}
+$$
+
+::::
+
+
+
