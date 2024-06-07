@@ -13,3 +13,523 @@ format:
 # editor:
 #    render-on-save: true
 ---
+
+## Last Time
+
+### Updated Definition
+
+- [Def]{.def} [[Version 2.0]{.alert}]: A strategy is said to be [**Never a Best Response**]{.hi} provided that it is never a component of a player's best response function --- _taking into account mixed strategies_
+
+   - In other words, a strategy is an [NBR]{.hi} provided that it isn't in the upper envelope of an agent's expected payoff graph
+
+- For the updated definition, I will also use NBR interchangeably with [**non-rationalizable**]{.hi}
+
+   - We could say an agent's strategy is [rationalizable]{.hi} if it _is_ in ever a component of the agent's best response function
+
+### NBR Example
+
+
+:::::{.columns}
+:::{.column width=65%}
+- The game:
+
+- We have seen this game before. Recall: 
+
+   - $BR_1(X)=F$
+   - $BR_1(Y)=G$
+
+:::
+ 
+:::{.column width=35%}
+ ![](imgs/fgh-ex.png){fig-align="right" width=90%}
+:::
+::::
+
+- It is tempting to want to say that $H$ is Never a Best Response, because player 1 would always rather play something other than $H$ in response to a pure strategy
+
+   - Should player 1 ever play $H$?
+
+### NBR Example -- player 1
+
+- Suppose player 2 is playing $\tau=qX+(1-q)Y$
+
+::::{.panel-tabset}
+#### Game
+![](imgs/fgh-tau.png){width=40%}
+
+#### E.P. Graph
+<iframe src="https://www.desmos.com/calculator/mnsm8siqmj?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0 data-external="1"></iframe>
+
+#### Upper Envelope
+
+<iframe src="https://www.desmos.com/calculator/pgq4zmwdee?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0 data-external="1"></iframe>
+
+#### BR function
+
+$$BR_1(q)=
+\begin{cases}
+G & q < q_1^*\\
+{G, H} & q = q_1^*\\
+H & q_1^*\le q \le q_2^*\\
+{H, F} & q = q_2^*\\
+F & q>q_2^*
+\end{cases}
+$$
+
+::::
+
+### What about player 2?
+
+- Note: intersection points in the upper envelope of an expected payoff graph reveal _candidates_ for MSNE
+
+   - But not every intersection in the upper envelope is guaranteed to be a MSNE
+
+- To see this, consider the previous example
+
+   - We know player 1 will never play a _totally_ mixed strategy: if they were to mix, they'd mix between $G$ and $H$ or $F$ and $H$
+
+   - Let's look at player 2's expected payoff graphs for each of the following mixed strategies player 1 may rationally play
+
+      - $\sigma_1=pG+(1-p)H$
+
+      - $\sigma_2=rF+(1-r)H$
+
+### Player 2's E.P. graphs
+
+- Assume player 1 is playing $\sigma_1=pG+(1-p)H$
+
+::::{.panel-tabset}
+#### Game
+![](imgs/fgh-sig1.png){width=40%}
+
+#### E.P. Graph
+<iframe src="https://www.desmos.com/calculator/khel6cafpy?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0 data-external="1"></iframe>
+
+#### BR function
+
+$$BR_2(\sigma_1(p))=
+\begin{cases}
+Y & p < p^*\\
+{X, Y} & p = p^*\\
+X & p>p^*
+\end{cases}
+$$
+
+::::
+
+
+### Player 2's E.P. graphs (cont.)
+
+- Assume player 1 is playing $\sigma_2=rF+(1-r)H$
+
+::::{.panel-tabset}
+#### Game
+![](imgs/fgh-sig2.png){width=40%}
+
+#### E.P. Graph
+<iframe src="https://www.desmos.com/calculator/h0mwwazwtf?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0 data-external="1"></iframe>
+
+#### BR function
+
+$$BR_2(\sigma_2(r))=
+\begin{cases}
+Y & r \in [0,1]
+\end{cases}
+$$
+
+#### Notes
+
+- If player 1 is playing $\sigma_2=rF+(1-r)H$, then player 2 should always play $Y$
+
+- We know there is no PSNE, so this will lead to a loop of best responses which does not converge to a NE (see "Reasoning"{.alert2} for details)
+
+- Therefore, there is **no** MSNE where player 1 plays $\sigma_2$
+
+#### Reasoning 
+
+- If player 1 is playing $\sigma_2=rF+(1-r)H$, then player 2 should always play $Y$
+
+   - If player 2 is playing $Y$, player 1 should play $G$
+
+   - $\implies$ player 2 should play $X$
+
+   - $\implies$ player 1 should play $F$
+
+   - $\implies$ player 2 should play $Y$
+
+   - $\implies$ ...
+::::
+
+### MSNE in 3x2 Example
+
+- So... we know we are looking for a single MSNE when player 1 is playing $\sigma_1$ (which I will now call $\sigma$) and player 2 is playing $\tau$
+
+::::{.panel-tabset}
+#### Game (tau)
+
+![](imgs/fgh-tau.png){width=40%}
+
+#### Step 1.0
+- Assume player 2 is playing $\tau=qX+(1-q)Y$
+
+- Then, player 1 gets
+
+   - $u_1(G)=5q+6(1-q)$
+
+   - $u_1(H)=6q+5(1-q)$
+
+- Player 1 will mix between $G$ and $H$ when they are indifferent between these payoffs
+
+#### Step 1.1
+
+$$
+\begin{align*}
+5q+6(1-q) & = 6q+5(1-q) \\
+\implies q^* =q_1^* &= \frac{1}{2}
+\end{align*}
+$$
+
+- _Remark_: to be careful, we may also want to verify that $u_1(G)$$^\dagger$ yields a greater payoff $u_1(F)$ when $p=1/2$, but I won't ask you to do this
+
+   - $\dagger$ : Or $u_1(H)$. Or $u_1(\sigma_1)$. They are all equal by construction.
+
+#### Game (sigma)
+
+![](imgs/fgh-sig1.png){width=40%}
+
+#### Step 2.0
+- Assume player 1 is playing $\sigma=pG+(1-p)H$
+
+- Then, player 1 gets
+
+   - $u_2(X)=2p+(1-p)=1+p$
+
+   - $u_2(Y)=p+4(1-p)=4-3p$
+
+- Player 2 will mix between $X$ and $Y$ when they are indifferent between these payoffs
+
+#### Step 2.1
+
+$$
+\begin{align*}
+1+p & = 4-3p \\
+4p &= 3\\
+\implies p^* &= \frac{3}{4}
+\end{align*}
+$$
+
+#### MSNE
+Therefore, our MSNE is 
+
+$$
+\left\{\frac{3}{4}G+\frac{1}{4}H, \frac{1}{2}X+\frac{1}{2}Y\right\}\\
+$$
+or 
+$$\{\sigma_1(3/4), \tau(1/2)\}$$
+or 
+$$((F,G,H); (X,Y)) \rightarrow \left\{\left(0,\frac{3}{4}, \frac{1}{4}\right); \left(\frac{1}{2}, \frac{1}{2}\right)\right\}$$
+
+::::
+
+## Graphing Best Responses
+
+### Recall: BoS
+
+- Let's return to the BoS instance we saw on Monday
+
+
+::::::{.panel-tabset}
+#### Game
+
+![](imgs/bos.png){width=40%}
+
+#### Player 1
+
+::::{.columns}
+:::{.column width=50%}
+![](imgs/bos-var1.png){width=90%}
+:::
+
+
+:::{.column width=50%}
+
+<iframe src="https://www.desmos.com/calculator/qlrxqp4t0h?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0 data-external="1"></iframe>
+
+:::
+::::
+
+#### Player 2
+
+::::{.columns}
+:::{.column width=50%}
+![](imgs/bos-var2.png){width=90%}
+:::
+
+
+:::{.column width=50%}
+
+<iframe src="https://www.desmos.com/calculator/2rg9czrcvh?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0 data-external="1"></iframe>
+
+:::
+::::
+
+#### MSNE
+
+- Just as reminder: we found that the MSNE in this game was
+
+   $$
+   ((R, F); (R, F))\rightarrow\left\{\left(\frac{3}{4}, \frac{1}{4}\right); \left(\frac{1}{4}, \frac{3}{4}\right)\right\}
+   $$
+
+
+- This is not what I want to focus on
+
+#### BR functions
+
+- From the expected payoff graphs -- namely, from the upper envelopes -- we found the following BR functions for each player:
+   $$ 
+   BR_1(\tau(q))=
+      \begin{cases}
+         F & q<0.25\\
+         \{R,F\} & q=0.25\\
+         R & q>0.25
+      \end{cases}%
+   \hspace{2em}
+   BR_2(\sigma(p))=
+      \begin{cases}
+         F & p<0.75\\
+         \{R,F\} & p=0.75\\
+         R & q>0.75
+      \end{cases}%
+   $$
+
+- Recall that we assume player 1 is playing $\sigma(p)=pR+(1-p)F$ and player 2 is playing $\tau(q)=qR+(1-q)F$
+
+- _Idea_: let's rewrite the BR functions as written above in terms of each player's [own]{.ul} strategy
+
+   - Put another way: convert the BR functions to be in terms of the probability parameters
+
+::::::
+
+### Converting BR functions
+
+- We assume player 1 is playing $\sigma(p)=pR+(1-p)F$ and player 2 is playing $\tau(q)=qR+(1-q)F$
+   $$ 
+   BR_1(\tau(q))=
+      \begin{cases}
+         F & q<0.25\\
+         \{R,F\} & q=0.25\\
+         R & q>0.25
+      \end{cases}%
+   \hspace{2em}
+   BR_2(\sigma(p))=
+      \begin{cases}
+         F & p<0.75\\
+         \{R,F\} & p=0.75\\
+         R & q>0.75
+      \end{cases}%
+   $$
+
+:::{.panel-tabset}
+#### Idea
+- Let's rewrite the BR functions as written above in terms of each player's [own]{.ul} strategy
+
+- Put another way: convert the BR functions to be in terms of the probability parameters
+
+#### Example
+
+- Player 1 playing $F$ means playing $\sigma(0)=0R+(1-0)F$, so $F$ corresponds to $p=0$ for player 1
+
+- Player 1 playing $R$ means playing $\sigma(1)=1R+(1-1)F$, so $R$ corresponds to $p=1$ for player 1
+
+- $\{R,F\}$ means player 1 is indifferent between $R$ and $F$ -- and everything in between -- so this corresponds to $p\in[0,1]$
+
+- For this game specifically, these correspondences are symmetric for player 2
+
+#### Conversion
+
+- Using the strategy definitions, our BR functions can be converted into the following
+
+   $$ 
+   p^{BR}(\tau(q)) =
+      \begin{cases}
+         0 & q<0.25\\
+         [0,1] & q=0.25\\
+         1 & q>0.25
+      \end{cases}%
+   \hspace{2em}
+   q^{BR}(\sigma(p))=
+      \begin{cases}
+         0 & p<0.75\\
+         [0,1] & p=0.75\\
+         1 & q>0.75
+      \end{cases}%
+   $$
+:::
+
+### Best Response Graph
+
+- Now, we have numeric BR functions
+
+   $$ 
+   p^{BR}(\tau(q)) =
+      \begin{cases}
+         0 & q<0.25\\
+         [0,1] & q=0.25\\
+         1 & q>0.25
+      \end{cases}%
+   \hspace{2em}
+   q^{BR}(\sigma(p))=
+      \begin{cases}
+         0 & p<0.75\\
+         [0,1] & p=0.75\\
+         1 & q>0.75
+      \end{cases}%
+   $$
+
+- Let's plot them in $pq$-space
+
+### Player 1 
+
+::::{.columns}
+:::{.column width=50%}
+
+$$
+p^{BR}(\tau(q)) =
+   \begin{cases}
+      0 & q<0.25\\
+      [0,1] & q=0.25\\
+      1 & q>0.25
+   \end{cases}%
+$$
+:::
+ 
+ 
+:::{.column width=50%}
+<iframe src="https://www.desmos.com/calculator/sr8pt9afuf?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0 data-external="1"></iframe>
+
+:::
+::::
+
+- How to read:
+   - "When $q$ lives in $[0, 0.25]$, $p=0$"
+   - "When $q$ lives in $[0.25, 1]$, $p=1$"
+   - "When $q$ exactly equals $0.25$, $p$ can take on any value in $[0,1]$"
+
+
+
+### Player 2
+
+::::{.columns}
+:::{.column width=50%}
+$$
+q^{BR}(\sigma(p))=
+   \begin{cases}
+      0 & p<0.75\\
+      [0,1] & p=0.75\\
+      1 & q>0.75
+   \end{cases}
+$$
+
+:::
+ 
+:::{.column width=50%}
+<iframe src="https://www.desmos.com/calculator/2iauouxjll?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0 data-external="1"></iframe>
+
+:::
+::::
+
+- How to read:
+   - "When $p$ lives in $[0, 0.75]$, $q=0$"
+   - "When $p$ lives in $[0.75, 1]$, $q=1$"
+   - "When $p$ exactly equals $0.75$, $q$ can take on any value in $[0,1]$"
+
+### Altogether
+
+::::{.columns}
+:::{.column width=50%}
+- Now, let's combine these graphs
+
+
+- What are the circles?
+
+   - Intersections of best response functions
+
+      - Nash Equilibria!
+:::
+
+ 
+:::{.column width=50%}
+<iframe src="https://www.desmos.com/calculator/b2apvd3ddu?embed" width="450" height="450" style="border: 1px solid #ccc" frameborder=0 data-external="1"></iframe>
+:::
+::::
+
+### So many flavors!
+
+::::{.panel-tabset}
+#### Game
+- Here is another example that we don't have time for:
+
+![](imgs/wd-ex.png){width=40%}
+
+#### BR Graph
+
+- The best response graph for this game is shown here:
+
+<iframe src="https://www.desmos.com/calculator/p3bnkkmzbv?embed" width="400" height="400" style="border: 1px solid #ccc" frameborder=0 data-external="1"></iframe>
+
+#### MSNE
+
+- For reference, here is the full set of NE, with $\sigma$ and $\tau$ defined as usual:
+
+$$
+\left(\{\sigma(p): p=0)\}, \left\{\tau(q): q\le \frac{7}{26}\right\}\right)
+$$
+
+- Note that the first component (player 1's strategy) is just $Y$
+
+::::
+
+## Practice
+
+### Link
+
+- Here^[Also on Canvas] is the link to MSNE practice from UO PhD graduate Ethan Holdahl: [https://ethanholdahl.shinyapps.io/Game-Theory-Tools/](https://ethanholdahl.shinyapps.io/Game-Theory-Tools/)
+
+### 
+
+- Blank
+
+###
+
+- Blank
+
+### 
+
+- Blank
+
+###
+
+- Blank
+
+### 
+
+- Blank
+
+## Final
+
+### Admin.
+
+- Similar rules to final
+
+- I will allow you ~~the front~~ **the front and back** of one (standard US 8.5in x 11in) sheet of paper for notes
+
+- 10:15am on Monday, normal room location
+
+- Test format will mimic midterm, but longer as you have a full 2 hours
+
+- Tips:
+
+   - Don't stress too hard
+
+   - Speaking from a lot of experience, your sleep schedule doesn't fix itself the night before you need sleep. Try to pick an attainable goal for going to bed [today]{.ul}, and maintain it through finals week.

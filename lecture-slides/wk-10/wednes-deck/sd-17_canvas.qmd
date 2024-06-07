@@ -522,7 +522,7 @@ $$
 
 - Similar rules to final
 
-- I will allow you **the front** of one (standard US 8.5in x 11in) sheet of paper for notes
+- I will allow you ~~the front~~ **the front and back** of one (standard US 8.5in x 11in) sheet of paper for notes
 
 - 10:15am on Monday, normal room location
 
