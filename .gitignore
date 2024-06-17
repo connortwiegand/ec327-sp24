@@ -1,6 +1,7 @@
 Templates/
 *_files
 old_syllabi/*
+old_syllabi/
 **/*Drafts/*
 Templates/*
 /.quarto/
